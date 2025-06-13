@@ -1,10 +1,12 @@
 import BootScene from "./scenes/bootScene.js";
 
+import TestScene from "./scenes/gameLoop/testScene.js";
+
 const max_w = 1600, max_h = 900, min_w = 320, min_h = 240;
 const config = {
     width: max_w,
     height: max_h,
-    backgroundColor: '#000000',
+    backgroundColor: "#000000",
     version: "1.0",
 
     type: Phaser.AUTO,
@@ -12,6 +14,9 @@ const config = {
     scene: [
         // Carga de assets
         BootScene,
+
+        //TEst
+        TestScene
     ],
     autoFocus: true,
     // Desactivar que aparezca el menu de inspeccionar al hacer click derecho
@@ -31,7 +36,7 @@ const config = {
             height: max_h,
         },
         zoom: 1,
-        parent: 'game',
+        parent: "game",
     },
 }
 
@@ -39,5 +44,5 @@ const game = new Phaser.Game(config);
 // Propiedad debug
 game.debug = {
     enable: false,
-    color: '0x00ff00'
+    color: "0x00ff00"
 }

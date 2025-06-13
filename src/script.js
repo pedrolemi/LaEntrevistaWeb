@@ -6,9 +6,9 @@ window.onload = function () {
 
 // Comprobar si el input es tactil o con teclado y raton
 var IS_TOUCH = false;
-window.addEventListener('touchstart', function () {
+window.addEventListener("touchstart", function () {
     IS_TOUCH = true;
 });
-window.addEventListener('mousedown', function () {
+window.addEventListener("mousedown", function () {
     IS_TOUCH = false;
 });

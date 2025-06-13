@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#game {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*
+Fuentes que se usan en Phaser
+*/
+/* @font-face {
+    font-family: "roboto-regular";
+    src: url('assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: "corpid";
+    src: url('assets/fonts/Corpid.otf');
+}
+
+@font-face {
+    font-family: "corpid-black";
+    src: url('assets/fonts/Corpid-Black.otf');
+} */

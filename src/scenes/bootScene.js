@@ -1,9 +1,5 @@
-// import GameManager from "../managers/gameManager.js";
-
-// import SceneManager from "../managers/sceneManager";
-
 import SceneManager from "../managers/sceneManager.js";
-import Singleton from "../utils/singleton.js";
+import GameManager from "../managers/gameManager.js";
 
 export default class BootScene extends Phaser.Scene {
     /**
@@ -35,18 +31,13 @@ export default class BootScene extends Phaser.Scene {
         this.createLoadingBar();
         this.loadAssets();
 
-        let sceneManager = new SceneManager(this);
+        let sceneManager = SceneManager.create();
+        sceneManager.setCurrScene(this);
         sceneManager.fadeIn();
         
         this.events.once("start", () => {
-            sceneManager.changeScene("TestScene", null, true);
-
-            // let gameManager = GameManager.create(this);
-
-            // TEST
-            // gameManager.startTestScene();
-
-            // gameManager.startTitleScene();
+            let gameManager = GameManager.create();
+            gameManager.startGame();
         })
     }
 

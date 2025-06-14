@@ -1,11 +1,14 @@
 import Singleton from "../utils/singleton.js";
 
+/**
+* Gestiona los cambios de escena y la vida de las mismas para
+* no tener que acceder directamente al ScenePlugin de Phaser
+*/
 export default class SceneManager extends Singleton {
-
-    constructor(scene) {
+    constructor() {
         super("SceneManager");
 
-        this.currentScene = scene;
+        this.currentScene = null;
         this.runningScenes = new Set();
         this.fading = false;
 
@@ -14,12 +17,20 @@ export default class SceneManager extends Singleton {
     }
 
     /**
-    * Metodo para borrar y cerrar todas las escenas activas
+    * Metodo para establecer la escena actual (llamar solo tras crear el singleton)
+    * @param {Phaser.Scene} scene - escena en la que se crea el manager
+    */
+    setCurrScene(scene) {
+        this.currentScene = scene;
+    } 
+
+
+    /**
+    * Metodo para detener y borrar todas las escenas activas
     */
     clearRunningScenes() {
         this.runningScenes.forEach(sc => {
-            // Si la escena es hija de BaseScene, se tiene que llamar a su shutdown 
-            // antes de detener la escena para evitar problemas al borrar los retratos
+            // Si la escena tiene el metodo shutdown, se llama a su shutdown antes de detenerla 
             if (sc.shutdown != null && typeof sc.shutdown === "function") {
                 sc.shutdown();
             }
@@ -32,13 +43,14 @@ export default class SceneManager extends Singleton {
     * Metodo para cambiar de escena
     * @param {String} scene - key de la escena a la que se va a pasar
     * @param {Object} params - informacion que pasar a la escena (opcional)
-    * @param {Boolean} cantReturn - true si se puede regresar a la escena anterior, false en caso contrario
+    * @param {Boolean} anim - true si se va a cambiar de escena con un fade in/out, false en caso contrario (oocional)
+    * @param {Boolean} canReturn - true si se puede regresar a la escena anterior, false en caso contrario (opcional)
     */
-    changeScene(scene, params, anim = false, canReturn = false) {
-        // Reproduce un fade out al cambiar de escena
+    changeScene(scene, params = null, anim = false, canReturn = false) {
         this.fading = false;
         let fadeOutTime = this.DEFAULT_FADE_OUT_TIME;
         let fadeInTime = this.DEFAULT_FADE_IN_TIME;
+
         if (anim) {
             if (params != null) {
                 if (params.fadeOutTime != null) {
@@ -48,7 +60,8 @@ export default class SceneManager extends Singleton {
                     fadeInTime = params.fadeInTime;
                 }
             }
-
+            
+            // Reproduce un fade out al cambiar de escena
             this.fadeOut(fadeOutTime);
         }
 
@@ -93,13 +106,20 @@ export default class SceneManager extends Singleton {
         }
     }
 
-    
-    fadeOut(time) {
+    /**
+    * Metodo para hacer solo fade out
+    * @param {Number} time - tiempo en milisegundos que dura la animacion (opcional)
+    */
+    fadeOut(time = this.DEFAULT_FADE_OUT_TIME) {
         this.currentScene.cameras.main.fadeOut(time, 0, 0, 0);
         this.fading = true;
     }
 
-    fadeIn(time) {
+    /**
+    * Metodo para hacer solo fade in
+    * @param {Number} time - tiempo en milisegundos que dura la animacion (opcional)
+    */
+    fadeIn(time = this.DEFAULT_FADE_IN_TIME) {
         this.currentScene.cameras.main.fadeIn(time, 0, 0, 0);
         this.fading = true;
         this.currentScene.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_IN_COMPLETE, (cam, effect) => {

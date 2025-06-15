@@ -1,0 +1,36 @@
+{
+    "about": "Sobre mí",
+    "name": "Nombre",
+    "civilState": "2 años y medio en pareja",
+    "education": "Grado en STEM",
+    "age": "24 años",
+    
+    "skills": "aptitudes",
+    "skill1": "Inglés nivel C1",
+    "skill2": "Análisis de datos y cálculo",
+    "skill3": "Trabajo bajo presión",
+    "skill4": "Nociones de programación",
+    "skill5": "Trabajo en equipo",
+
+    "data": "Datos de interés sobre mí",
+    "data1Title": "Dato 1: Viajes",
+    "data1Description": "Me gusta viajar y conocer nuevos sitios. Podría desplazarme si el trabajo lo requiere.",
+    "data2Title": "Dato 2: Futuro",
+    "data2Description": "En un futuro me gustaría tener hijos. No tengo ningún problema de horario. Podría adaptarme alas horas que se necesiten.",
+    "data3Title": "Dato 3: Habilidades",
+    "data3Description": "Durante la carrera he trabajado en grandes equipos. Es muy importante aportar ideas relevantes, escuchar las críticas de los compañeros y aprender a controlar el estrés.",
+    "data4Title": "Dato 4: Experiencia",
+    "data4Description": "Aunque no he trabajado en ninguna empresa antes, durante la carrera he trabajado mucho. Tengo ganas de demostrar todo lo que he aprendido estos años.",
+
+    "educationReviewedProgramming": "Grado en informática",
+    "educationReviewedData": "Grado en matemáticas",
+    "skill2Reviewed": "Manejo de bases de datos",
+
+    "skill3ReviewedProgramming": "Programación con C++, Java y JavaScript",
+    "skill3ReviewedData": "Nociones de programación con Python",
+
+    "skill4ReviewedProgramming": "Sistemas de control de versiones",
+    "skill4ReviewedData": "Minería de datos y Machine Learning"
+
+
+}

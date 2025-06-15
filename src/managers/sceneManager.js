@@ -16,11 +16,7 @@ export default class SceneManager extends Singleton {
         this.DEFAULT_FADE_IN_TIME = 200;
     }
 
-    /**
-    * Metodo para establecer la escena actual (llamar solo tras crear el singleton)
-    * @param {Phaser.Scene} scene - escena en la que se crea el manager
-    */
-    setCurrScene(scene) {
+    init(scene) {
         this.currentScene = scene;
     } 
 

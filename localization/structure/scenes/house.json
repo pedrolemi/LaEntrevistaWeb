@@ -1,0 +1,245 @@
+{
+    "start": {
+        "root": {
+            "type": "text",
+            "character": "player"
+        }
+    },
+
+    "search": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "checkEducation"
+        },
+        "checkEducation": {
+            "type": "choice",
+            "choices":[
+                { "next": "checkCV1" }
+            ]
+        },
+        "checkCV1": {
+            "type": "event",
+            "events": [
+                {
+                    "checkCV": { }
+                }
+            ],
+            "next": "educationComplete"
+        },
+        
+        "educationComplete": {
+            "type": "text",
+            "character": "player",
+            "next": "checkLanguages"
+        },
+        "checkLanguages": {
+            "type": "choice",
+            "choices":[
+                { "next": "checkCV2" },
+                { "next": "wrongAnswer1" },
+                { "next": "languagesComplete" },
+                { "next": "setWrongAnswer1" }
+            ]
+        },
+        "checkCV2": {
+            "type": "event",
+            "events": [
+                {
+                    "checkCV": { }
+                }
+            ],
+            "next": "checkLanguages"
+        },
+        "wrongAnswer1": {
+            "type": "event",
+            "events": [
+                {
+                    "wrongAnswer": { }
+                }
+            ],
+            "next": "languagesComplete"
+        },
+        
+        "languagesComplete": {
+            "type": "text",
+            "character": "player",
+            "next": "checkSkills"
+        },
+        "checkSkills": {
+            "type": "choice",
+            "choices":[
+                { "next": "checkCV3" },
+                { "next": "wrongAnswer2" },
+                { "next": "wrongAnswer2" },
+                { "next": "skillsComplete" }
+            ]
+        },
+        "checkCV3": {
+            "type": "event",
+            "events": [
+                {
+                    "checkCV": { }
+                }
+            ],
+            "next": "checkSkills"
+        },
+        "wrongAnswer2": {
+            "type": "event",
+            "events": [
+                {
+                    "wrongAnswer": { }
+                }
+            ],
+            "next": "skillsComplete"
+        },
+
+        "skillsComplete": {
+            "type": "text",
+            "character": "player",
+            "next": "checkSkills2"
+        },
+        "checkSkills2": {
+            "type": "choice",
+            "choices":[
+                { "next": "checkCV4" },
+                { "next": "wrongAnswer3" },
+                { "next": "skills2Complete" },
+                { "next": "wrongAnswer3" }
+            ]
+        },
+        "checkCV4": {
+            "type": "event",
+            "events": [
+                {
+                    "checkCV": { }
+                }
+            ],
+            "next": "checkSkills2"
+        },
+        "wrongAnswer3": {
+            "type": "event",
+            "events": [
+                {
+                    "wrongAnswer": { }
+                }
+            ],
+            "next": "skills2Complete"
+        },
+        
+        "skills2Complete": {
+            "type": "text",
+            "character": "player",
+            "next": "checkAvailability"
+        },
+        "checkAvailability": {
+            "type": "choice",
+            "choices":[
+                { "next": "checkCV5" },
+                { "next": "availabilityComplete" },
+                { "next": "wrongAnswer4" },
+                { "next": "wrongAnswer4" }
+            ]
+        },
+        "checkCV5": {
+            "type": "event",
+            "events": [
+                {
+                    "checkCV": { }
+                }
+            ],
+            "next": "checkAvailability"
+        },
+        "wrongAnswer4": {
+            "type": "event",
+            "events": [
+                {
+                    "wrongAnswer": { }
+                }
+            ],
+            "next": "checkErrors"
+        },
+
+        "checkErrors": {
+            "type": "condition", 
+            "conditions": [
+                {
+                    "next": "noOffers",
+                    "errors": {
+                        "value": 2,
+                        "operator": "greater",
+                        "global": false,
+                        "default": 0
+                    }
+                },
+                {
+                    "next": "findOffers"
+                }
+            ]
+        },
+
+        "noOffers": {
+            "type": "text",
+            "character": "player",
+            "next": "educationComplete"
+        },
+        "findOffers": {
+            "type": "text",
+            "character": "player"
+        }
+    },
+
+    "selectProgrammingOffer": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "confirmSelection"
+        },
+        "confirmSelection": {
+            "type": "event",
+            "events": [
+                {
+                    "confirmSelection": { }
+                }
+            ]
+        }
+    },
+    "selectDataOffer": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "askConfirmation"
+        },
+        "askConfirmation": {
+            "type": "event",
+            "events": [
+                {
+                    "askConfirmation": { }
+                }
+            ]
+        }
+    },
+
+    "askConfirmation": {
+        "root": {
+            "type": "choice",
+            "choices":[
+                { "next": "confirm" },
+                { "next": "cancel" }
+            ]
+        },
+        "confirm": {
+            "type": "text",
+            "character": "player",
+            "next": "end"
+        },
+        "end": {
+            "type": "event",
+            "events": [
+                {
+                    "end": { }
+                }
+            ]
+        }
+    }
+}

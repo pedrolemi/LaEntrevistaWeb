@@ -1,5 +1,6 @@
 import SceneManager from "../managers/sceneManager.js";
 import GameManager from "../managers/gameManager.js";
+import DialogManager from "../managers/dialogManager.js";
 
 export default class BootScene extends Phaser.Scene {
     /**
@@ -32,11 +33,15 @@ export default class BootScene extends Phaser.Scene {
         this.loadAssets();
 
         let sceneManager = SceneManager.create();
-        sceneManager.setCurrScene(this);
+        sceneManager.init(this);
         sceneManager.fadeIn();
         
         this.events.once("start", () => {
             let gameManager = GameManager.create();
+            
+            let dialogManager = DialogManager.create();
+            dialogManager.init(this.plugins.get("rextexttranslationplugin"));
+
             gameManager.startGame();
         })
     }
@@ -125,12 +130,14 @@ export default class BootScene extends Phaser.Scene {
         // Id archivo dialogo --> dialog
         // Namespace --> test\\dialog.json
         let dialogsAndNamespaces = [
-
+            "scenes/house",
+            "scenes/test"
         ]
         // Solo son namespaces del plugin i18next
         // Namespace --> test\\dialog.json
         let onlyNamespaces = [
-            
+            "names",
+            "CVs"
         ]
 
         this.loadDialogs(dialogsAndNamespaces);

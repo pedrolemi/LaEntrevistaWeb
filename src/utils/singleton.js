@@ -13,7 +13,7 @@ export default class Singleton {
         }
         return this.constructor.instance;
     }
-
+    
     /**
     * Metodo para crear y obtener la instancia
     * @returns {Singleton} - instancia unica de la clase

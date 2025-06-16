@@ -1,4 +1,5 @@
 import BootScene from "./scenes/bootScene.js";
+import UI from "./scenes/UI.js";
 
 import TestScene from "./scenes/gameLoop/testScene.js";
 
@@ -15,8 +16,10 @@ const config = {
         // Carga de assets
         BootScene,
 
-        //TEst
-        TestScene
+        //Test
+        TestScene,
+
+        UI,
     ],
     autoFocus: true,
     // Desactivar que aparezca el menu de inspeccionar al hacer click derecho
@@ -43,6 +46,6 @@ const config = {
 const game = new Phaser.Game(config);
 // Propiedad debug
 game.debug = {
-    enable: false,
+    enable: true,
     color: "0x00ff00"
 }

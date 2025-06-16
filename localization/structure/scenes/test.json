@@ -1,21 +1,6 @@
 {
     "root": {
-        "type": "event",
-        "events": [
-            {
-                "name": "talked",
-                "variable": "talked",
-                "global": false,
-                "value": true,
-                "delay": 20
-            },
-            {
-                "name": "smooched"
-            }
-        ],
-        "next": "help"
-    },
-    "help": {
-        "type": "text"
+        "type": "text",
+        "character": "player"
     }
 }

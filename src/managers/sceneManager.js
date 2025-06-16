@@ -1,10 +1,10 @@
 import Singleton from "../utils/singleton.js";
 
-/**
-* Gestiona los cambios de escena y la vida de las mismas para
-* no tener que acceder directamente al ScenePlugin de Phaser
-*/
 export default class SceneManager extends Singleton {
+    /**
+    * Gestiona los cambios de escena y la vida de las mismas para
+    * no tener que acceder directamente al ScenePlugin de Phaser
+    */
     constructor() {
         super("SceneManager");
 
@@ -22,7 +22,7 @@ export default class SceneManager extends Singleton {
 
 
     /**
-    * Metodo para detener y borrar todas las escenas activas
+    * Detener y borrar todas las escenas activas
     */
     clearRunningScenes() {
         this.runningScenes.forEach(sc => {
@@ -36,7 +36,7 @@ export default class SceneManager extends Singleton {
     }
 
     /**
-    * Metodo para cambiar de escena
+    * Cambiar de escena
     * @param {String} scene - key de la escena a la que se va a pasar
     * @param {Object} params - informacion que pasar a la escena (opcional)
     * @param {Boolean} anim - true si se va a cambiar de escena con un fade in/out, false en caso contrario (oocional)
@@ -103,7 +103,7 @@ export default class SceneManager extends Singleton {
     }
 
     /**
-    * Metodo para hacer solo fade out
+    * Hacer solo fade out
     * @param {Number} time - tiempo en milisegundos que dura la animacion (opcional)
     */
     fadeOut(time = this.DEFAULT_FADE_OUT_TIME) {
@@ -112,7 +112,7 @@ export default class SceneManager extends Singleton {
     }
 
     /**
-    * Metodo para hacer solo fade in
+    * Hacer solo fade in
     * @param {Number} time - tiempo en milisegundos que dura la animacion (opcional)
     */
     fadeIn(time = this.DEFAULT_FADE_IN_TIME) {

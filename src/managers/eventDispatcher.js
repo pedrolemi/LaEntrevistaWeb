@@ -1,4 +1,4 @@
-import Singleton from "./utils/singleton.js";
+import Singleton from "../utils/singleton.js";
 
 export default class EventDispatcher extends Singleton {
     /**
@@ -31,7 +31,7 @@ export default class EventDispatcher extends Singleton {
 
 
     /**
-    * Metodo para emitir un evento
+    * Emitir un evento
     * @param {String} event - nombre del evento
     * @param {Object} obj - objeto que reciben los objetos suscritos al evento (opcional)
     */
@@ -40,7 +40,7 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Metodo para comprobar si un evento TEMPORAL o PERMANENTE ya existe
+    * Comprobar si un evento TEMPORAL o PERMANENTE ya existe
     * @param {String} event - nombre del evento 
     * @param {Object} owner - objeto que se suscribe al evento
     * @param {Function} fn - funcion que se ejecuta al producirse el evento
@@ -66,7 +66,7 @@ export default class EventDispatcher extends Singleton {
 
     /**
     * PUBLICO
-    * Metodo para suscribir un objeto a un evento TEMPORAL o PERMANENTE
+    * Suscribir un objeto a un evento TEMPORAL o PERMANENTE
     * @param {String} event - nombre del evento
     * @param {Object} owner - objeto que se suscribe al evento (contexto/scope)
     * @param {Fn} fn - funcion que se ejecuta cuando se produce el evento
@@ -111,7 +111,7 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Metodo para almacenar en los mapas un evento TEMPORAL
+    * Almacenar en los mapas un evento TEMPORAL
     * @param {String} event - nombre del evento 
     * @param {Object} owner - objeto que se suscribe al evento
     * @param {Function} fn - funcion que se ejecuta al producirse el evento
@@ -135,7 +135,7 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Metodo para almacenar en los mapas un evento PERMANENTE
+    * Almacenar en los mapas un evento PERMANENTE
     * @param {String} event - nombre del evento 
     * @param {Object} owner - objeto que se suscribe al evento
     * @param {Function} fn - funcion que se ejecuta al producirse el evento
@@ -145,7 +145,7 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Metodo para almacenar un evento en el mapa de propietarios
+    * Almacenar un evento en el mapa de propietarios
     * @param {String} event - nombre del evento 
     * @param {Object} owner - objeto que se suscribe al evento
     * @param {Function} fn - funcion que se ejecuta al producirse el evento
@@ -172,7 +172,7 @@ export default class EventDispatcher extends Singleton {
 
     /**
     * PUBLICO
-    * Metodo para suscribir un objeto a un evento una sola vez
+    * Suscribir un objeto a un evento una sola vez
     * @param {String} event - nombre del evento
     * @param {Object} owner - objeto que se suscribe al event (contexto)
     * @param {Fn} fn - funcion que se ejecuta cuando se produce el evento
@@ -207,7 +207,7 @@ export default class EventDispatcher extends Singleton {
 
     /**
     * PUBLICO
-    * Metodo para desuscribir a todos los objetos de un evento concreto TEMPORAL
+    * Desuscribir a todos los objetos de un evento concreto TEMPORAL
     * @param {String} event - nombre del evento
     */
     removeByEvent(event) {
@@ -229,7 +229,7 @@ export default class EventDispatcher extends Singleton {
 
     /**
     * PUBLICO
-    * Metodo para desuscribir a un objeto de todos sus eventos TEMPORALES
+    * Desuscribir a un objeto de todos sus eventos TEMPORALES
     * @param {Object} owner - objeto suscrito al evento
     */
     removeByOwner(owner) {
@@ -257,7 +257,7 @@ export default class EventDispatcher extends Singleton {
 
     /**
     * PUBLICO
-    * Metodo para desuscribir a un objeto de un evento concreto TEMPORAL
+    * Desuscribir a un objeto de un evento concreto TEMPORAL
     * @param {String} event - nombre del evento
     * @param {Object} owner - objeto suscrito al evento
     */
@@ -284,9 +284,9 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Metodo para eliminar todos los eventos TEMPORALES
-    * Nota: si no hay comunicacion entre escenas, es recomendable llamarlo por cada
-    * cambio de escenas para mejorar el rendimiento
+    * Eliminar todos los eventos TEMPORALES
+    * Nota: si no hay comunicacion entre escenas, es recomendable 
+    * llamarlo por cada cambio de escenas para mejorar el rendimiento
     */
     removeAll() {
         this.emitter.shutdown();
@@ -307,8 +307,7 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Metodo para limpiar por completo el emisor, por lo tanto,
-    * se eliminan tanto eventos TEMPORALES como PERMANENTES
+    * Limpiar por completo el emisor, por lo tanto, se eliminan tanto eventos TEMPORALES como PERMANENTES
     */
     clear() {
         this.emitter.shutdown();

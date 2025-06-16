@@ -16,7 +16,7 @@ export default class Blackboard {
     }
 
     /**
-    * Metodo que setea un valor en la blackboard
+    * Establece un valor en la blackboard
     * @param {String} key - valor que se va a cambiar
     * @param {Object} value - valor que se le va a poner al valor a cambiar
     * @returns {boolean} - true si se ha sobrescrito un valor. false en caso contrario

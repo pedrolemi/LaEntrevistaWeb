@@ -4,7 +4,6 @@
             "text": "Acabo de terminar la carrera, y estoy buscando ofertas de empleo. Tengo muchas ganas de empezar a trabajar, y demostrar lo que valgo. Seguro que en internet encuentro alguna cosa interesante."
         }
     },
-
     "search": {
         "root": [
             {
@@ -19,87 +18,80 @@
         ],
         "checkEducation": [
             {
-                "text": "(Mirar mi CV)." 
+                "text": "(Mirar mi CV)."
             }
         ],
-        
-        "educationComplete": [
-            {
-                "text": "¡Ahí está! Grado en STEM. Esta pregunta era fácil, pero puede que esto se complique. Siempre que lo necesite, puedo mirar mi CV. ¡No quiero liarla!"
-            },
-            {
-                "text": "¿Qué idiomas hablo? Además del español, claro."
-            }
-        ],
+        "educationComplete": {
+            "text": "¡Ahí está! Grado en STEM. Esta pregunta era fácil, pero puede que esto se complique. Siempre que lo necesite, puedo mirar mi CV. ¡No quiero liarla!"
+        },
+        "restartPoint": {
+            "text": "¿Qué idiomas hablo? Además del español, claro."
+        },
         "checkLanguages": [
             {
-                "text": "(Mirar mi CV)." 
+                "text": "(Mirar mi CV)."
             },
             {
-                "text": "Inglés, nivel A2." 
+                "text": "Inglés, nivel A2."
             },
             {
-                "text": "Inglés, nivel C1." 
+                "text": "Inglés, nivel C1."
             },
             {
-                "text": "Inglés y francés, ambos nivel básico." 
+                "text": "Inglés y francés, ambos nivel básico."
             }
         ],
-        
         "languagesComplete": {
             "text": "¿Aptitudes técnicas? Puedo decir que se me da bien..."
         },
         "checkSkills": [
             {
-                "text": "(Mirar mi CV)." 
+                "text": "(Mirar mi CV)."
             },
             {
-                "text": "El dibujo y el manejo de herramientas de diseño." 
+                "text": "El dibujo y el manejo de herramientas de diseño."
             },
             {
-                "text": "La ofimática y la contabilidad." 
+                "text": "La ofimática y la contabilidad."
             },
             {
-                "text": "La programación, el análisis de datos y el cálculo." 
+                "text": "La programación, el análisis de datos y el cálculo."
             }
         ],
-
         "skillsComplete": {
             "text": "Y otras habilidades. Aquí puedo poner..."
         },
         "checkSkills2": [
             {
-                "text": "(Mirar mi CV)." 
+                "text": "(Mirar mi CV)."
             },
             {
-                "text": "Capacidad de organización y resolución de problemas." 
+                "text": "Capacidad de organización y resolución de problemas."
             },
             {
-                "text": "Trabajo bajo presión y trabajo en equipo." 
+                "text": "Trabajo bajo presión y trabajo en equipo."
             },
             {
-                "text": "Trabajo en equipo y creatividad." 
+                "text": "Trabajo en equipo y creatividad."
             }
         ],
-        
         "skills2Complete": {
             "text": "Y por último, ¿qué tipo de disponibilidad tengo?"
         },
         "checkAvailability": [
             {
-                "text": "(Mirar mi CV)." 
+                "text": "(Mirar mi CV)."
             },
             {
-                "text": "Horaria y para viajar." 
+                "text": "Horaria y para viajar."
             },
             {
-                "text": "Horaria, pero no me gusta viajar." 
+                "text": "Horaria, pero no me gusta viajar."
             },
             {
-                "text": "Para viajar, pero por las tardes no puedo trabajar." 
+                "text": "Para viajar, pero por las tardes no puedo trabajar."
             }
         ],
-
         "noOffers": {
             "text": "Vaya, parece que no encuentra ninguna oferta. Voy a revisar la información, a lo mejor he hecho algo mal..."
         },
@@ -107,7 +99,6 @@
             "text": "Parece que hay dos ofertas. Una es para desarrollar software, y la otra como analista de datos. ¿A cuál me presento?"
         }
     },
-
     "selectProgrammingOffer": {
         "root": {
             "text": "Creo que la idea de desarrollar software me gusta más."
@@ -118,22 +109,21 @@
             "text": "Creo que encajo mejor en el perfil de analista de datos."
         }
     },
-
     "askConfirmation": {
         "root": [
             {
-                "text": "(Presentar candidatura)." 
+                "text": "(Presentar candidatura)."
             },
             {
-                "text": "Mejor voy a pensarlo un poco más..." 
+                "text": "Mejor voy a pensarlo un poco más..."
             }
         ],
         "confirm": [
             {
-                "text": "Voy a retocar un poco el currículum para que se ajuste mejor a la oferta, y... ¡listo! Ya lo he enviado." 
+                "text": "Voy a retocar un poco el currículum para que se ajuste mejor a la oferta, y... ¡listo! Ya lo he enviado."
             },
             {
-                "text": "Parece que las entrevistas son esta misma semana. Espero que todo vaya bien. Llevo preparándome mucho tiempo, y nada me puede estropear esta oportunidad." 
+                "text": "Parece que las entrevistas son esta misma semana. Espero que todo vaya bien. Llevo preparándome mucho tiempo, y nada me puede estropear esta oportunidad."
             }
         ]
     }

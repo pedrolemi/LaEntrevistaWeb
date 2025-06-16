@@ -1,45 +1,45 @@
 import DialogNode from "./dialogNode.js";
 
-/**
-* Clase para la informacion de los nodos de de condicion
-* @extends DialogNode
-* 
-* Ejemplo:
-    "nodeName": {
-        "type": "condition", 
-        "conditions": [
-            {
-                "next": "notTalked",
-                "talked": {
-                    "value": false,
-                    "operator": "equal",
-                    "global": false,
-                    "default": true
+export default class ConditionNode extends DialogNode {
+    /**
+    * Clase para la informacion de los nodos de de condicion
+    * @extends DialogNode
+    * 
+    * Ejemplo:
+        "nodeName": {
+            "type": "condition", 
+            "conditions": [
+                {
+                    "next": "notTalked",
+                    "talked": {
+                        "value": false,
+                        "operator": "equal",
+                        "global": false,
+                        "default": true
+                    },
+                    "sponsored": {
+                        "value": false,
+                        "operator": "equal",
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {...}
                 },
-                "sponsored": {
-                    "value": false,
-                    "operator": "equal",
-                    "type": "boolean",
-                    "default": false
+                {
+                    "next": "talked",
+                    "talked": {
+                        "value": true,
+                        "operator": "equal"
+                    }
                 },
                 {...}
-            },
-            {
-                "next": "talked",
-                "talked": {
-                    "value": true,
-                    "operator": "equal"
-                }
-            },
-            {...}
-        ]
-    }
-*/
-export default class ConditionNode extends DialogNode {
+            ]
+        }
+    */
     constructor(scene, node) {
         super();
         this.conditions = [];           // condiciones con su nombre/identificador y sus atributos
-
+        
         let nodeConditions = node.conditions;
 
         // Recorre todas las condiciones generales del nodo (cada condicion lleva a un nodo distinto)
@@ -60,7 +60,7 @@ export default class ConditionNode extends DialogNode {
 
                 // Determina en que blackboard guardar la variable. Si no se ha definido si es global, o si se
                 // ha definido que si lo es, se guarda en la del gameManager. Si no, se guarda en la de la escena
-                let blackboard = (condition.global != null || condition.global === true) ? scene.gameManager.blackboard : scene.blackboard;
+                let blackboard = (condition.global == null || condition.global === true) ? scene.gameManager.blackboard : scene.blackboard;
                 if (!blackboard.hasValue(key)) {
                     blackboard.setValue(key, defaultValue);
                 }
@@ -81,9 +81,9 @@ export default class ConditionNode extends DialogNode {
     }
 
     /**
-    * Procesa el nodo y devuelve el indice del siguiente nodo. 
-    * El siguiente nodo sera el primero que cumpla todas las condiciones individuales de su condicion general 
-    * @returns {Number} - indice del siguiente nodo
+    * El siguiente nodo sera el primero que cumpla todas las condiciones individuales de su condicion general
+    * (se van comprobando en el orden en el que se han leido) la condicion solo se cumplira si todos sus requisitos
+    * se cumplen (operador &&. De momento no hay soporte para el operador || ) 
     */
     processNode() {
         let conditionMet = false;
@@ -136,18 +136,12 @@ export default class ConditionNode extends DialogNode {
             // Si no se ha cumplido ninguna condicion, pasa a la siguiente
             if (!conditionMet) i++;
         }
-        return i;    
+        
+        this.nextIndex = i;
+        this.nextNode();
     }
 
-    /**
-    * Procesa el nodo actual y pasa al siguiente nodo
-    */
-    nextNode() { 
-        let i = this.processNode();
-        if (this.next.length > i) {
-            setTimeout(() => {
-                this.next[i].nextNode();
-            }, this.nextDelay);
-        }
+    nextNode() {
+        super.nextNode();
     }
 }

@@ -1,9 +1,9 @@
-/**
-* Clase base para los singletons 
-* @extends Phaser.Scene
-* @param {String} className - nombre de la clase. Se usa solo para el mensaje de la constructora
-*/
 export default class Singleton { 
+    /**
+    * Clase base para los singletons 
+    * @extends Phaser.Scene
+    * @param {String} className - nombre de la clase. Se usa solo para el mensaje de la constructora
+    */
     constructor(className = "Singleton") {
         if (this.constructor.instance === undefined) {
             this.constructor.instance = this;
@@ -15,7 +15,7 @@ export default class Singleton {
     }
     
     /**
-    * Metodo para crear y obtener la instancia
+    * Crear y obtener la instancia
     * @returns {Singleton} - instancia unica de la clase
     */
     static create() {
@@ -26,7 +26,7 @@ export default class Singleton {
     }
 
     /**
-    * Metodo para obtener la instancia
+    * Obtener la instancia
     * @returns {Singleton} - instancia unica de la clase
     */
     static getInstance() {

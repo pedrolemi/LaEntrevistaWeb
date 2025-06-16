@@ -1,28 +1,29 @@
 import DialogNode from "./dialogNode.js";
 
-/**
-* Clase para la informacion de los nodos de evento
-* @extends DialogNode
-* Ejemplo:
-    "nodeName": {
-        "type": "event",
-        "events": [
-            {
-                "name": "talked",
-                "variable": "talked",
-                "global": false,
-                "value": true,
-                "delay": 20
-            },
-            {...}
-        ],
-        "next": "checkTalked"
-    }
-*/
-export class EventNode extends DialogNode {
+export default class EventNode extends DialogNode {
+    /**
+    * Clase para la informacion de los nodos de evento
+    * @extends DialogNode
+    * 
+    * Ejemplo:
+        "nodeName": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "talked",
+                    "variable": "talked",
+                    "global": false,
+                    "value": true,
+                    "delay": 20
+                },
+                {...}
+            ],
+            "next": "checkTalked"
+        }
+    */
     constructor(scene, node) {
         super();
-        this.events = [];               // eventos que se llamaran al procesar el nodo (nombre del evento y el retardo con el que se llama)
+        this.events = [];                       // eventos que se llamaran al procesar el nodo (nombre del evento y el retardo con el que se llama)
         this.dispatcher = scene.dispatcher;
          
         let evts = node.events;
@@ -33,15 +34,15 @@ export class EventNode extends DialogNode {
             if (evt.variable != null) {
                 // Determina en que blackboard modificar la variable. Si no se ha definido si es global, o si se
                 // ha definido que si lo es, se guarda en la del gameManager. Si no, se guarda en la de la escena
-                let blackboard = (evt.global != null || evt.global === true) ? scene.gameManager.blackboard : scene.blackboard;
+                let blackboard = (evt.global == null || evt.global === true) ? scene.gameManager.blackboard : scene.blackboard;
                 
                 // Se guarda en la condicion en que blackboard comprobar su valor
                 evt.blackboard = blackboard;
             }
-            
             this.events.push(evt);
         });
 
+        
         // Si hay un nodo despues de este, se guarda su id en la lista de nodos siguientes
         if (node.next != null) {
             this.next.push(node.next);
@@ -66,19 +67,6 @@ export class EventNode extends DialogNode {
                 }
             }, delay);
         }
-    }
-
-    /**
-    * Procesa el nodo actual y pasa al siguiente nodo. Despues de un nodo de evento
-    * solo hay un nodo, por lo que el siguiente nodo sera el primero de la lista
-    */
-    nextNode() {
-        this.processNode();
-        let i = 0;
-        if (this.next.length > i) {
-            setTimeout(() => {
-                this.next[i].nextNode();
-            }, this.nextDelay);
-        }
+        this.nextNode();
     }
 }

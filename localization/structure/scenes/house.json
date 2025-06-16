@@ -22,13 +22,18 @@
             "type": "event",
             "events": [
                 {
-                    "checkCV": { }
+                    "name": "checkCV"
                 }
             ],
             "next": "educationComplete"
         },
         
         "educationComplete": {
+            "type": "text",
+            "character": "player",
+            "next": "restartPoint"
+        },
+        "restartPoint": {
             "type": "text",
             "character": "player",
             "next": "checkLanguages"
@@ -39,14 +44,14 @@
                 { "next": "checkCV2" },
                 { "next": "wrongAnswer1" },
                 { "next": "languagesComplete" },
-                { "next": "setWrongAnswer1" }
+                { "next": "wrongAnswer1" }
             ]
         },
         "checkCV2": {
             "type": "event",
             "events": [
                 {
-                    "checkCV": { }
+                    "name": "checkCV"
                 }
             ],
             "next": "checkLanguages"
@@ -55,7 +60,7 @@
             "type": "event",
             "events": [
                 {
-                    "wrongAnswer": { }
+                    "name": "wrongAnswer"
                 }
             ],
             "next": "languagesComplete"
@@ -79,7 +84,7 @@
             "type": "event",
             "events": [
                 {
-                    "checkCV": { }
+                    "name": "checkCV"
                 }
             ],
             "next": "checkSkills"
@@ -88,7 +93,7 @@
             "type": "event",
             "events": [
                 {
-                    "wrongAnswer": { }
+                    "name": "wrongAnswer"
                 }
             ],
             "next": "skillsComplete"
@@ -112,7 +117,7 @@
             "type": "event",
             "events": [
                 {
-                    "checkCV": { }
+                    "name": "checkCV"
                 }
             ],
             "next": "checkSkills2"
@@ -121,7 +126,7 @@
             "type": "event",
             "events": [
                 {
-                    "wrongAnswer": { }
+                    "name": "wrongAnswer"
                 }
             ],
             "next": "skills2Complete"
@@ -136,7 +141,7 @@
             "type": "choice",
             "choices":[
                 { "next": "checkCV5" },
-                { "next": "availabilityComplete" },
+                { "next": "checkErrors" },
                 { "next": "wrongAnswer4" },
                 { "next": "wrongAnswer4" }
             ]
@@ -145,7 +150,7 @@
             "type": "event",
             "events": [
                 {
-                    "checkCV": { }
+                    "name": "checkCV"
                 }
             ],
             "next": "checkAvailability"
@@ -154,7 +159,7 @@
             "type": "event",
             "events": [
                 {
-                    "wrongAnswer": { }
+                    "name": "wrongAnswer"
                 }
             ],
             "next": "checkErrors"
@@ -166,7 +171,7 @@
                 {
                     "next": "noOffers",
                     "errors": {
-                        "value": 2,
+                        "value": 3,
                         "operator": "greater",
                         "global": false,
                         "default": 0
@@ -181,8 +186,21 @@
         "noOffers": {
             "type": "text",
             "character": "player",
-            "next": "educationComplete"
+            "next": "restart"
         },
+        "restart": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "restart",
+                    "variable": "errors",
+                    "global": false,
+                    "value": 0
+                }
+            ],
+            "next": "restartPoint"
+        },
+
         "findOffers": {
             "type": "text",
             "character": "player"
@@ -199,7 +217,7 @@
             "type": "event",
             "events": [
                 {
-                    "confirmSelection": { }
+                    "name": "confirmSelection"
                 }
             ]
         }
@@ -214,7 +232,7 @@
             "type": "event",
             "events": [
                 {
-                    "askConfirmation": { }
+                    "name": "askConfirmation"
                 }
             ]
         }
@@ -237,7 +255,7 @@
             "type": "event",
             "events": [
                 {
-                    "end": { }
+                    "name": "end"
                 }
             ]
         }

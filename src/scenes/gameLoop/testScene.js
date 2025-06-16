@@ -1,29 +1,52 @@
-import GameManager from "../../managers/gameManager.js";
-import DialogManager from "../../managers/dialogManager.js";
-import Blackboard from "../../utils/blackboard.js";
-import EventDispatcher from "../../eventDispatcher.js";
+import BaseScene from "./baseScene.js";
 
-export default class TestScene extends Phaser.Scene {
+
+export default class TestScene extends BaseScene {
     /**
     * Escena inicial en la que se cargan todos los recursos
     * @extends Phaser.Scene
     */
     constructor() {
-        super({key: "TestScene"});
+        super("TestScene", "TestScene");
     }
 
     create() {
-        this.add.image(0, 0, "mainMenu").setOrigin(0, 0);
+        super.create();
 
-        this.blackboard = new Blackboard();
-        this.gameManager = GameManager.getInstance();
-        this.dialogManager = DialogManager.getInstance();
-        this.dispatcher = EventDispatcher.getInstance();
+        let img = this.add.image(0, 0, "mainMenu").setOrigin(0, 0);
 
-        // let nodes = this.cache.json.get("house");
-        // let lol = this.dialogManager.readNodes(nodes, "house", "search")
-        let nodes = this.cache.json.get("test");
-        let lol = this.dialogManager.readNodes(this, nodes, "test")
+        img.setInteractive();
+        img.on("pointerdown", () => {
+            let video = this.add.video(0, 0, "startAnimation").setOrigin(0, 0);
+            video.play();
 
+            video.on("created", () => {
+                this.CANVAS_WIDTH = this.sys.game.canvas.width;
+                this.CANVAS_HEIGHT = this.sys.game.canvas.height;
+
+                // console.log(video.width)
+                let scaleX = this.CANVAS_WIDTH / video.width;
+                let scaleY = this.CANVAS_HEIGHT / video.height;
+                let scale = Math.max(scaleX, scaleY);
+
+                video.setScale(scale);
+
+                video.on("complete", () => {
+                    video.destroy();
+                })
+            });
+        })
+
+        let nodes = this.cache.json.get("house");
+        let lol = this.dialogManager.readNodes(this, nodes, "scenes\\house", "search");
+        // let nodes = this.cache.json.get("test");
+        // let lol = this.dialogManager.readNodes(this, nodes, "scenes\\test")
+        this.dialogManager.setNode(lol);
+
+        let errors = 0;
+        this.dispatcher.add("wrongAnswer", this, () => {
+            errors++;
+            this.blackboard.setValue("errors", errors);
+        });
     }
 }

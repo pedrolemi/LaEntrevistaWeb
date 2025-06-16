@@ -1,7 +1,7 @@
-/**
-* Gestiona la carga de los nodos de dialogo
-*/
 export default class Localization {
+    /**
+    * Gestiona la carga de los nodos de dialogo
+    */
     constructor(i18n) {
         this.i18next = i18n;
     }
@@ -27,7 +27,7 @@ export default class Localization {
                 }
                 else {
                     return str;
-                    
+
                     // TODO: Arreglar para soportar reemplazo de expresiones regulares
                     // return this.replaceGender(str)
                 }
@@ -50,6 +50,7 @@ export default class Localization {
         }
         return str;
     }
+
 
     /**
     * Reemplaza en el string indicado todos los contenidos que haya entre <>
@@ -105,12 +106,4 @@ export default class Localization {
         result += inputText.slice(lastEndIndex);
         return result;
     }
-
-
-    
-    
-    
-
-    
-    
 }

@@ -18,6 +18,7 @@ export default class GameManager extends Singleton {
     }
     
     startTitleScene() {
+        this.sceneManager.currentScene.scene.run("UI");
         this.sceneManager.changeScene("TestScene", null, true);
     }
 }

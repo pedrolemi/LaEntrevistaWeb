@@ -38,9 +38,6 @@ export default class BootScene extends Phaser.Scene {
         
         this.events.once("start", () => {
             let gameManager = GameManager.create();
-            
-            let dialogManager = DialogManager.create();
-            dialogManager.init(this.plugins.get("rextexttranslationplugin"));
 
             gameManager.startGame();
         })
@@ -144,6 +141,7 @@ export default class BootScene extends Phaser.Scene {
         this.loadComputer();
         this.loadBackgrounds();
         this.loadCharacters();
+        this.loadUI();
 
         this.load.setPath("assets");
 
@@ -164,6 +162,9 @@ export default class BootScene extends Phaser.Scene {
 
         this.load.image("mainMenu", "mainMenu.png");
         this.load.image("credits", "credits.png");
+
+        this.load.video("creditsAnimation", "animacioncreditos.mp4", true);
+        this.load.video("startAnimation", "animacionmenu.mp4", true);
 
         this.load.image("computerScreen", "computerScreen.png");
         this.load.image("desktop", "desktop.png");
@@ -200,6 +201,14 @@ export default class BootScene extends Phaser.Scene {
     loadCharacters() {
 
     }
+
+    loadUI() {
+        this.load.setPath("assets/UI");
+
+        this.load.image("textbox", "textbox.png");
+        this.load.image("optionBox", "optionBox.png");
+    }
+
 
     loadi18next(dialogsAndNamespaces, onlyNamespaces) {
         let namespaces = dialogsAndNamespaces.concat(onlyNamespaces);

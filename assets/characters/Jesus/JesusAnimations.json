@@ -1,0 +1,130 @@
+{
+    "anims": [
+        {
+            "key": "JesusSitting",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Jesus_sitting_0001"
+                },
+                {
+                    "frame": "Jesus_sitting_0008"
+                },
+                {
+                    "frame": "Jesus_sitting_0015"
+                },
+                {
+                    "frame": "Jesus_sitting_0022"
+                },
+                {
+                    "frame": "Jesus_sitting_0029"
+                },
+                {
+                    "frame": "Jesus_sitting_0036"
+                },
+                {
+                    "frame": "Jesus_sitting_0043"
+                },
+                {
+                    "frame": "Jesus_sitting_0050"
+                },
+                {
+                    "frame": "Jesus_sitting_0057"
+                },
+                {
+                    "frame": "Jesus_sitting_0064"
+                },
+                {
+                    "frame": "Jesus_sitting_0070"
+                }
+            ],
+            "defaultTextureKey": "Jesus",
+            "frameRate": 12,
+            "repeat": -1
+        },
+        {
+            "key": "JesusTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Jesus_talking_0001"
+                },
+                {
+                    "frame": "Jesus_talking_0008"
+                },
+                {
+                    "frame": "Jesus_talking_0015"
+                },
+                {
+                    "frame": "Jesus_talking_0022"
+                },
+                {
+                    "frame": "Jesus_talking_0029"
+                },
+                {
+                    "frame": "Jesus_talking_0036"
+                },
+                {
+                    "frame": "Jesus_talking_0043"
+                },
+                {
+                    "frame": "Jesus_talking_0050"
+                },
+                {
+                    "frame": "Jesus_talking_0057"
+                },
+                {
+                    "frame": "Jesus_talking_0064"
+                },
+                {
+                    "frame": "Jesus_talking_0070"
+                }
+            ],
+            "defaultTextureKey": "Jesus",
+            "frameRate": 8,
+            "repeat": -1
+        },
+        {
+            "key": "JesusWalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Jesus_walking_0001"
+                },
+                {
+                    "frame": "Jesus_walking_0006"
+                },
+                {
+                    "frame": "Jesus_walking_0011"
+                },
+                {
+                    "frame": "Jesus_walking_0016"
+                },
+                {
+                    "frame": "Jesus_walking_0021"
+                },
+                {
+                    "frame": "Jesus_walking_0026"
+                },
+                {
+                    "frame": "Jesus_walking_0031"
+                },
+                {
+                    "frame": "Jesus_walking_0036"
+                },
+                {
+                    "frame": "Jesus_walking_0041"
+                },
+                {
+                    "frame": "Jesus_walking_0046"
+                },
+                {
+                    "frame": "Jesus_walking_0049"
+                }
+            ],
+            "defaultTextureKey": "Jesus",
+            "frameRate": 10,
+            "repeat": -1
+        }
+    ]
+}

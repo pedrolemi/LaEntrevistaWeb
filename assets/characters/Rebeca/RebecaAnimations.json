@@ -1,0 +1,112 @@
+{
+    "anims": [
+        {
+            "key": "RebecaIdle",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Rebeca_idle_0001"
+                },
+                {
+                    "frame": "Rebeca_idle_0006"
+                },
+                {
+                    "frame": "Rebeca_idle_0011"
+                },
+                {
+                    "frame": "Rebeca_idle_0016"
+                },
+                {
+                    "frame": "Rebeca_idle_0021"
+                },
+                {
+                    "frame": "Rebeca_idle_0026"
+                },
+                {
+                    "frame": "Rebeca_idle_0031"
+                },
+                {
+                    "frame": "Rebeca_idle_0036"
+                },
+                {
+                    "frame": "Rebeca_idle_0041"
+                },
+                {
+                    "frame": "Rebeca_idle_0046"
+                },
+                {
+                    "frame": "Rebeca_idle_0049"
+                }
+            ],
+            "defaultTextureKey": "Rebeca",
+            "frameRate": 10,
+            "repeat": -1
+        },
+        {
+            "key": "RebecaTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Rebeca_talking_0001"
+                },
+                {
+                    "frame": "Rebeca_talking_0008"
+                },
+                {
+                    "frame": "Rebeca_talking_0015"
+                },
+                {
+                    "frame": "Rebeca_talking_0022"
+                },
+                {
+                    "frame": "Rebeca_talking_0029"
+                },
+                {
+                    "frame": "Rebeca_talking_0036"
+                },
+                {
+                    "frame": "Rebeca_talking_0043"
+                },
+                {
+                    "frame": "Rebeca_talking_0049"
+                }
+            ],
+            "defaultTextureKey": "Rebeca",
+            "frameRate": 6,
+            "repeat": -1
+        },
+        {
+            "key": "RebecaWalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Rebeca_walking_0001"
+                },
+                {
+                    "frame": "Rebeca_walking_0008"
+                },
+                {
+                    "frame": "Rebeca_walking_0015"
+                },
+                {
+                    "frame": "Rebeca_walking_0022"
+                },
+                {
+                    "frame": "Rebeca_walking_0029"
+                },
+                {
+                    "frame": "Rebeca_walking_0036"
+                },
+                {
+                    "frame": "Rebeca_walking_0043"
+                },
+                {
+                    "frame": "Rebeca_walking_0049"
+                }
+            ],
+            "defaultTextureKey": "Rebeca",
+            "frameRate": 10,
+            "repeat": -1
+        }
+    ]
+}

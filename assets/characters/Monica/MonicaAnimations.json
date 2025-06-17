@@ -1,0 +1,118 @@
+{
+    "anims": [
+        {
+            "key": "MonicaIdle",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Monica_idle_0001"
+                },
+                {
+                    "frame": "Monica_idle_0006"
+                },
+                {
+                    "frame": "Monica_idle_0011"
+                },
+                {
+                    "frame": "Monica_idle_0016"
+                },
+                {
+                    "frame": "Monica_idle_0021"
+                },
+                {
+                    "frame": "Monica_idle_0026"
+                },
+                {
+                    "frame": "Monica_idle_0031"
+                },
+                {
+                    "frame": "Monica_idle_0036"
+                },
+                {
+                    "frame": "Monica_idle_0041"
+                },
+                {
+                    "frame": "Monica_idle_0046"
+                },
+                {
+                    "frame": "Monica_idle_0050"
+                }
+            ],
+            "defaultTextureKey": "Monica",
+            "frameRate": 12,
+            "repeat": -1
+        },
+        {
+            "key": "MonicaTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Monica_talking_0001"
+                },
+                {
+                    "frame": "Monica_talking_0008"
+                },
+                {
+                    "frame": "Monica_talking_0015"
+                },
+                {
+                    "frame": "Monica_talking_0022"
+                },
+                {
+                    "frame": "Monica_talking_0029"
+                },
+                {
+                    "frame": "Monica_talking_0036"
+                },
+                {
+                    "frame": "Monica_talking_0043"
+                },
+                {
+                    "frame": "Monica_talking_0050"
+                }
+            ],
+            "defaultTextureKey": "Monica",
+            "frameRate": 6,
+            "repeat": -1
+        },
+        {
+            "key": "MonicaWalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Monica_walking_0001"
+                },
+                {
+                    "frame": "Monica_walking_0006"
+                },
+                {
+                    "frame": "Monica_walking_0011"
+                },
+                {
+                    "frame": "Monica_walking_0016"
+                },
+                {
+                    "frame": "Monica_walking_0021"
+                },
+                {
+                    "frame": "Monica_walking_0026"
+                },
+                {
+                    "frame": "Monica_walking_0036"
+                },
+                {
+                    "frame": "Monica_walking_0041"
+                },
+                {
+                    "frame": "Monica_walking_0046"
+                },
+                {
+                    "frame": "Monica_walking_0049"
+                }
+            ],
+            "defaultTextureKey": "Monica",
+            "frameRate": 10,
+            "repeat": -1
+        }
+    ]
+}

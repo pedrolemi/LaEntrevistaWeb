@@ -1,0 +1,645 @@
+{
+    "textures": [
+        {
+            "image": "texture",
+            "format": "RGBA8888",
+            "size": {
+                "w": 0,
+                "h": 0
+            },
+            "scale": 1,
+            "frames": [
+                {
+                    "filename": "Monica_idle_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0006",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0011",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0016",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0021",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0026",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0036",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0046",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_idle_0050",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_talking_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_talking_0008",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_talking_0015",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_talking_0022",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_talking_0029",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_talking_0036",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_talking_0043",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_talking_0050",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0006",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0011",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0016",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0021",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0026",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0036",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0046",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Monica_walking_0049",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                }
+            ]
+        }
+    ]
+}

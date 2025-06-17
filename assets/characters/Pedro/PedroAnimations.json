@@ -1,0 +1,121 @@
+{
+    "anims": [
+        {
+            "key": "PedroSitting",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Pedro_sitting_0001"
+                },
+                {
+                    "frame": "Pedro_sitting_0007"
+                },
+                {
+                    "frame": "Pedro_sitting_0013"
+                },
+                {
+                    "frame": "Pedro_sitting_0019"
+                },
+                {
+                    "frame": "Pedro_sitting_0025"
+                },
+                {
+                    "frame": "Pedro_sitting_0031"
+                },
+                {
+                    "frame": "Pedro_sitting_0037"
+                },
+                {
+                    "frame": "Pedro_sitting_0043"
+                },
+                {
+                    "frame": "Pedro_sitting_0049"
+                },
+                {
+                    "frame": "Pedro_sitting_0055"
+                },
+                {
+                    "frame": "Pedro_sitting_0060"
+                }
+            ],
+            "defaultTextureKey": "Pedro",
+            "frameRate": 12,
+            "repeat": -1
+        },
+        {
+            "key": "PedroTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Pedro_talking_0001"
+                },
+                {
+                    "frame": "Pedro_talking_0007"
+                },
+                {
+                    "frame": "Pedro_talking_0013"
+                },
+                {
+                    "frame": "Pedro_talking_0019"
+                },
+                {
+                    "frame": "Pedro_talking_0025"
+                },
+                {
+                    "frame": "Pedro_talking_0031"
+                },
+                {
+                    "frame": "Pedro_talking_0037"
+                },
+                {
+                    "frame": "Pedro_talking_0043"
+                },
+                {
+                    "frame": "Pedro_talking_0049"
+                },
+                {
+                    "frame": "Pedro_talking_0055"
+                },
+                {
+                    "frame": "Pedro_talking_0060"
+                }
+            ],
+            "defaultTextureKey": "Pedro",
+            "frameRate": 6,
+            "repeat": -1
+        },
+        {
+            "key": "PedroWalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Pedro_walking_0001"
+                },
+                {
+                    "frame": "Pedro_walking_0007"
+                },
+                {
+                    "frame": "Pedro_walking_0014"
+                },
+                {
+                    "frame": "Pedro_walking_0021"
+                },
+                {
+                    "frame": "Pedro_walking_0028"
+                },
+                {
+                    "frame": "Pedro_walking_0035"
+                },
+                {
+                    "frame": "Pedro_walking_0042"
+                },
+                {
+                    "frame": "Pedro_walking_0049"
+                }
+            ],
+            "defaultTextureKey": "Pedro",
+            "frameRate": 10,
+            "repeat": -1
+        }
+    ]
+}

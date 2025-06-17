@@ -1,0 +1,645 @@
+{
+    "textures": [
+        {
+            "image": "texture",
+            "format": "RGBA8888",
+            "size": {
+                "w": 0,
+                "h": 0
+            },
+            "scale": 1,
+            "frames": [
+                {
+                    "filename": "Pedro_sitting_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0007",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0013",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0019",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0025",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0037",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0043",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0049",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0055",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_sitting_0060",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0007",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0013",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0019",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0025",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0037",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0043",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0049",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0055",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_talking_0060",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_walking_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_walking_0007",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_walking_0014",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_walking_0021",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_walking_0028",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_walking_0035",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2160,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_walking_0042",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 2880,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Pedro_walking_0049",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 3600,
+                        "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                }
+            ]
+        }
+    ]
+}

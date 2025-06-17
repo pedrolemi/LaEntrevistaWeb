@@ -1,6 +1,5 @@
 import SceneManager from "../managers/sceneManager.js";
 import GameManager from "../managers/gameManager.js";
-import DialogManager from "../managers/dialogManager.js";
 
 export default class BootScene extends Phaser.Scene {
     /**
@@ -35,7 +34,7 @@ export default class BootScene extends Phaser.Scene {
         let sceneManager = SceneManager.create();
         sceneManager.init(this);
         sceneManager.fadeIn();
-        
+
         this.events.once("start", () => {
             let gameManager = GameManager.create();
 
@@ -156,7 +155,7 @@ export default class BootScene extends Phaser.Scene {
         });
     }
 
-    
+
     loadComputer() {
         this.load.setPath("assets/computer");
 
@@ -173,17 +172,17 @@ export default class BootScene extends Phaser.Scene {
         this.load.image("data", "data.jpg");
         this.load.image("programming", "programming.jpg");
     }
-    
+
     loadBackgrounds() {
         this.load.setPath("assets/backgrounds");
 
         this.load.image("hall", "hall.png");
         this.load.image("counter", "counter.png");
-        
+
         this.load.image("corridor", "corridor.png");
 
         this.load.image("waitingRoom", "waitingRoom.png");
-        
+
         this.load.image("cafeteria", "cafeteria.png");
         this.load.image("chairs", "chairs.png");
         this.load.image("tableLegs", "tableLegs.png");
@@ -197,9 +196,24 @@ export default class BootScene extends Phaser.Scene {
         this.load.image("mirror", "mirror.png");
         this.load.image("mirrorEffect", "mirrorEffect.png");
     }
-    
-    loadCharacters() {
 
+    loadCharacterAtlas(name) {
+        let path = name + "/" + name
+
+        this.load.atlas(name, path + '.png', path + '.json');
+
+        const ANIMATIONS_KEY = "Animations"
+        let animationsPath = path + ANIMATIONS_KEY
+        this.load.animation(name + ANIMATIONS_KEY, animationsPath + '.json')
+    }
+
+    loadCharacters() {
+        this.load.setPath("assets/characters");
+        this.loadCharacterAtlas("Jesus")
+        this.loadCharacterAtlas("Pedro")
+        this.loadCharacterAtlas("Carlos")
+        this.loadCharacterAtlas("Monica")
+        this.loadCharacterAtlas("Rebeca")
     }
 
     loadUI() {

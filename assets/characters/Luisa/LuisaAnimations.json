@@ -1,0 +1,88 @@
+{
+    "anims": [
+        {
+            "key": "LuisaSitting",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Luisa_sitting_0001"
+                },
+                {
+                    "frame": "Luisa_sitting_0006"
+                },
+                {
+                    "frame": "Luisa_sitting_0011"
+                },
+                {
+                    "frame": "Luisa_sitting_0016"
+                },
+                {
+                    "frame": "Luisa_sitting_0021"
+                },
+                {
+                    "frame": "Luisa_sitting_0026"
+                },
+                {
+                    "frame": "Luisa_sitting_0031"
+                },
+                {
+                    "frame": "Luisa_sitting_0036"
+                },
+                {
+                    "frame": "Luisa_sitting_0041"
+                },
+                {
+                    "frame": "Luisa_sitting_0046"
+                },
+                {
+                    "frame": "Luisa_sitting_0050"
+                }
+            ],
+            "defaultTextureKey": "Luisa",
+            "frameRate": 8,
+            "repeat": -1
+        },
+        {
+            "key": "LuisaTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Luisa_talking_0000"
+                },
+                {
+                    "frame": "Luisa_talking_0005"
+                },
+                {
+                    "frame": "Luisa_talking_0010"
+                },
+                {
+                    "frame": "Luisa_talking_0015"
+                },
+                {
+                    "frame": "Luisa_talking_0020"
+                },
+                {
+                    "frame": "Luisa_talking_0025"
+                },
+                {
+                    "frame": "Luisa_talking_0030"
+                },
+                {
+                    "frame": "Luisa_talking_0035"
+                },
+                {
+                    "frame": "Luisa_talking_0040"
+                },
+                {
+                    "frame": "Luisa_talking_0045"
+                },
+                {
+                    "frame": "Luisa_talking_0049"
+                }
+            ],
+            "defaultTextureKey": "Luisa",
+            "frameRate": 6,
+            "repeat": -1
+        }
+    ]
+}

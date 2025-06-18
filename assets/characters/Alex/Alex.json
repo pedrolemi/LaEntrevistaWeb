@@ -1,0 +1,225 @@
+{
+    "textures": [
+        {
+            "image": "texture",
+            "format": "RGBA8888",
+            "size": {
+                "w": 0,
+                "h": 0
+            },
+            "scale": 1,
+            "frames": [
+                {
+                    "filename": "Alex_idle_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0009",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0017",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0025",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0033",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 862,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0049",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0057",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0065",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 1724,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Alex_idle_0070",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 2586,
+                        "w": 720,
+                        "h": 862
+                    }
+                }
+            ]
+        }
+    ]
+}

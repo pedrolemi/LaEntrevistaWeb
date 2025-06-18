@@ -10,7 +10,7 @@
             "scale": 1,
             "frames": [
                 {
-                    "filename": "Monica_idle_0001",
+                    "filename": "Luis_idle_0001",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -31,7 +31,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0006",
+                    "filename": "Luis_idle_0006",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -52,7 +52,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0011",
+                    "filename": "Luis_idle_0011",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -73,7 +73,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0016",
+                    "filename": "Luis_idle_0016",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -94,7 +94,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0021",
+                    "filename": "Luis_idle_0021",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -115,7 +115,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0026",
+                    "filename": "Luis_idle_0026",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -136,7 +136,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0031",
+                    "filename": "Luis_idle_0031",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -157,7 +157,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0036",
+                    "filename": "Luis_idle_0036",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -178,7 +178,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0041",
+                    "filename": "Luis_idle_0041",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -199,7 +199,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0046",
+                    "filename": "Luis_idle_0046",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -220,7 +220,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0050",
+                    "filename": "Luis_idle_0050",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -241,7 +241,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0000",
+                    "filename": "Luis_talking_0000",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -262,7 +262,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0007",
+                    "filename": "Luis_talking_0004",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -283,7 +283,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0014",
+                    "filename": "Luis_talking_0009",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -304,7 +304,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0021",
+                    "filename": "Luis_talking_0014",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -325,7 +325,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0028",
+                    "filename": "Luis_talking_0019",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -346,7 +346,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0035",
+                    "filename": "Luis_talking_0024",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -367,7 +367,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0042",
+                    "filename": "Luis_talking_0029",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -388,7 +388,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0049",
+                    "filename": "Luis_talking_0034",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -409,7 +409,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0001",
+                    "filename": "Luis_talking_0039",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -430,7 +430,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0006",
+                    "filename": "Luis_talking_0044",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -451,7 +451,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0011",
+                    "filename": "Luis_talking_0049",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -472,7 +472,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0016",
+                    "filename": "Luis_walking_0001",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -493,7 +493,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0021",
+                    "filename": "Luis_walking_0007",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -514,7 +514,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0026",
+                    "filename": "Luis_walking_0014",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -535,7 +535,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0031",
+                    "filename": "Luis_walking_0021",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -556,7 +556,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0036",
+                    "filename": "Luis_walking_0028",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -577,7 +577,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0041",
+                    "filename": "Luis_walking_0035",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -598,7 +598,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0046",
+                    "filename": "Luis_walking_0042",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -619,7 +619,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0049",
+                    "filename": "Luis_walking_0049",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {

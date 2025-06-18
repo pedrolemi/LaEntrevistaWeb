@@ -49,7 +49,7 @@ export default class TestScene extends BaseScene {
             this.blackboard.setValue("errors", errors);
         });
 
-        let character = this.add.sprite(200, 200, "Rebeca", "Rebeca_walking_0001").setScale(0.5)
-        character.play("RebecaTalking")
+        let character = this.add.sprite(200, 200, "Alex", "Alex_idle_0001").setScale(0.5)
+        character.play("AlexIdle")
     }
 }

@@ -214,6 +214,12 @@ export default class BootScene extends Phaser.Scene {
         this.loadCharacterAtlas("Carlos")
         this.loadCharacterAtlas("Monica")
         this.loadCharacterAtlas("Rebeca")
+        this.loadCharacterAtlas("Antonio")
+        this.loadCharacterAtlas("Luis")
+        this.loadCharacterAtlas("Andres")
+        this.loadCharacterAtlas("Luisa")
+        this.loadCharacterAtlas("Jaime")
+        this.loadCharacterAtlas("Alex")
     }
 
     loadUI() {

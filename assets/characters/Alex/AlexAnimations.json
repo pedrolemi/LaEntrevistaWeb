@@ -1,0 +1,43 @@
+{
+    "anims": [
+        {
+            "key": "AlexIdle",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Alex_idle_0001"
+                },
+                {
+                    "frame": "Alex_idle_0009"
+                },
+                {
+                    "frame": "Alex_idle_0017"
+                },
+                {
+                    "frame": "Alex_idle_0025"
+                },
+                {
+                    "frame": "Alex_idle_0033"
+                },
+                {
+                    "frame": "Alex_idle_0041"
+                },
+                {
+                    "frame": "Alex_idle_0049"
+                },
+                {
+                    "frame": "Alex_idle_0057"
+                },
+                {
+                    "frame": "Alex_idle_0065"
+                },
+                {
+                    "frame": "Alex_idle_0070"
+                }
+            ],
+            "defaultTextureKey": "Alex",
+            "frameRate": 6,
+            "repeat": -1
+        }
+    ]
+}

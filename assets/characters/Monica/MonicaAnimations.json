@@ -47,28 +47,28 @@
             "type": "frame",
             "frames": [
                 {
-                    "frame": "Monica_talking_0001"
+                    "frame": "Monica_talking_0000"
                 },
                 {
-                    "frame": "Monica_talking_0008"
+                    "frame": "Monica_talking_0007"
                 },
                 {
-                    "frame": "Monica_talking_0015"
+                    "frame": "Monica_talking_0014"
                 },
                 {
-                    "frame": "Monica_talking_0022"
+                    "frame": "Monica_talking_0021"
                 },
                 {
-                    "frame": "Monica_talking_0029"
+                    "frame": "Monica_talking_0028"
                 },
                 {
-                    "frame": "Monica_talking_0036"
+                    "frame": "Monica_talking_0035"
                 },
                 {
-                    "frame": "Monica_talking_0043"
+                    "frame": "Monica_talking_0042"
                 },
                 {
-                    "frame": "Monica_talking_0050"
+                    "frame": "Monica_talking_0049"
                 }
             ],
             "defaultTextureKey": "Monica",

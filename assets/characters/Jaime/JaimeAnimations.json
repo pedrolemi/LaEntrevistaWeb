@@ -1,0 +1,130 @@
+{
+    "anims": [
+        {
+            "key": "JaimeSitting",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Jaime_sitting_0001"
+                },
+                {
+                    "frame": "Jaime_sitting_0006"
+                },
+                {
+                    "frame": "Jaime_sitting_0011"
+                },
+                {
+                    "frame": "Jaime_sitting_0016"
+                },
+                {
+                    "frame": "Jaime_sitting_0021"
+                },
+                {
+                    "frame": "Jaime_sitting_0026"
+                },
+                {
+                    "frame": "Jaime_sitting_0031"
+                },
+                {
+                    "frame": "Jaime_sitting_0036"
+                },
+                {
+                    "frame": "Jaime_sitting_0041"
+                },
+                {
+                    "frame": "Jaime_sitting_0046"
+                },
+                {
+                    "frame": "Jaime_sitting_0050"
+                }
+            ],
+            "defaultTextureKey": "Jaime",
+            "frameRate": 8,
+            "repeat": -1
+        },
+        {
+            "key": "JaimeTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Jaime_talking_0001"
+                },
+                {
+                    "frame": "Jaime_talking_0006"
+                },
+                {
+                    "frame": "Jaime_talking_0011"
+                },
+                {
+                    "frame": "Jaime_talking_0016"
+                },
+                {
+                    "frame": "Jaime_talking_0021"
+                },
+                {
+                    "frame": "Jaime_talking_0026"
+                },
+                {
+                    "frame": "Jaime_talking_0031"
+                },
+                {
+                    "frame": "Jaime_talking_0036"
+                },
+                {
+                    "frame": "Jaime_talking_0041"
+                },
+                {
+                    "frame": "Jaime_talking_0046"
+                },
+                {
+                    "frame": "Jaime_talking_0050"
+                }
+            ],
+            "defaultTextureKey": "Jaime",
+            "frameRate": 6,
+            "repeat": -1
+        },
+        {
+            "key": "JaimeWalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Jaime_walking_0001"
+                },
+                {
+                    "frame": "Jaime_walking_0006"
+                },
+                {
+                    "frame": "Jaime_walking_0011"
+                },
+                {
+                    "frame": "Jaime_walking_0016"
+                },
+                {
+                    "frame": "Jaime_walking_0021"
+                },
+                {
+                    "frame": "Jaime_walking_0026"
+                },
+                {
+                    "frame": "Jaime_walking_0031"
+                },
+                {
+                    "frame": "Jaime_walking_0036"
+                },
+                {
+                    "frame": "Jaime_walking_0041"
+                },
+                {
+                    "frame": "Jaime_walking_0046"
+                },
+                {
+                    "frame": "Jaime_walking_0048"
+                }
+            ],
+            "defaultTextureKey": "Jaime",
+            "frameRate": 10,
+            "repeat": -1
+        }
+    ]
+}

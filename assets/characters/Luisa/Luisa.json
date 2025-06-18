@@ -1,0 +1,477 @@
+{
+    "textures": [
+        {
+            "image": "texture",
+            "format": "RGBA8888",
+            "size": {
+                "w": 0,
+                "h": 0
+            },
+            "scale": 1,
+            "frames": [
+                {
+                    "filename": "Luisa_sitting_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0006",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 920,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0011",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 1840,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0016",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 2760,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0021",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 3680,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0026",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 1102,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 920,
+                        "y": 1102,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0036",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 1840,
+                        "y": 1102,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 2760,
+                        "y": 1102,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0046",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 3680,
+                        "y": 1102,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_sitting_0050",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 2204,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0000",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 920,
+                        "y": 2204,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0005",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 1840,
+                        "y": 2204,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0010",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 2760,
+                        "y": 2204,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0015",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 3680,
+                        "y": 2204,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0020",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 3306,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0025",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 920,
+                        "y": 3306,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0030",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 1840,
+                        "y": 3306,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0035",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 2760,
+                        "y": 3306,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0040",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 3680,
+                        "y": 3306,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0045",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 4408,
+                        "w": 920,
+                        "h": 1102
+                    }
+                },
+                {
+                    "filename": "Luisa_talking_0049",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 920,
+                        "h": 1102
+                    },
+                    "frame": {
+                        "x": 920,
+                        "y": 4408,
+                        "w": 920,
+                        "h": 1102
+                    }
+                }
+            ]
+        }
+    ]
+}

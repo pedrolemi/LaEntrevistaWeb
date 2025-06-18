@@ -10,7 +10,7 @@
             "scale": 1,
             "frames": [
                 {
-                    "filename": "Monica_idle_0001",
+                    "filename": "Jaime_sitting_0001",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -31,7 +31,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0006",
+                    "filename": "Jaime_sitting_0006",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -52,7 +52,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0011",
+                    "filename": "Jaime_sitting_0011",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -73,7 +73,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0016",
+                    "filename": "Jaime_sitting_0016",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -94,7 +94,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0021",
+                    "filename": "Jaime_sitting_0021",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -115,7 +115,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0026",
+                    "filename": "Jaime_sitting_0026",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -136,7 +136,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0031",
+                    "filename": "Jaime_sitting_0031",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -157,7 +157,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0036",
+                    "filename": "Jaime_sitting_0036",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -178,7 +178,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0041",
+                    "filename": "Jaime_sitting_0041",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -199,7 +199,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0046",
+                    "filename": "Jaime_sitting_0046",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -220,7 +220,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_idle_0050",
+                    "filename": "Jaime_sitting_0050",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -241,7 +241,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0000",
+                    "filename": "Jaime_talking_0001",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -262,7 +262,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0007",
+                    "filename": "Jaime_talking_0006",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -283,7 +283,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0014",
+                    "filename": "Jaime_talking_0011",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -304,7 +304,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0021",
+                    "filename": "Jaime_talking_0016",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -325,7 +325,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0028",
+                    "filename": "Jaime_talking_0021",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -346,7 +346,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0035",
+                    "filename": "Jaime_talking_0026",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -367,7 +367,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0042",
+                    "filename": "Jaime_talking_0031",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -388,7 +388,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_talking_0049",
+                    "filename": "Jaime_talking_0036",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -409,7 +409,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0001",
+                    "filename": "Jaime_talking_0041",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -430,7 +430,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0006",
+                    "filename": "Jaime_talking_0046",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -451,7 +451,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0011",
+                    "filename": "Jaime_talking_0050",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -472,7 +472,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0016",
+                    "filename": "Jaime_walking_0001",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -493,7 +493,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0021",
+                    "filename": "Jaime_walking_0006",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -514,7 +514,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0026",
+                    "filename": "Jaime_walking_0011",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -535,7 +535,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0031",
+                    "filename": "Jaime_walking_0016",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -556,7 +556,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0036",
+                    "filename": "Jaime_walking_0021",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -577,7 +577,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0041",
+                    "filename": "Jaime_walking_0026",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -598,7 +598,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0046",
+                    "filename": "Jaime_walking_0031",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -619,7 +619,7 @@
                     }
                 },
                 {
-                    "filename": "Monica_walking_0049",
+                    "filename": "Jaime_walking_0036",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
@@ -635,6 +635,69 @@
                     "frame": {
                         "x": 3600,
                         "y": 3448,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Jaime_walking_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 4310,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Jaime_walking_0046",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 720,
+                        "y": 4310,
+                        "w": 720,
+                        "h": 862
+                    }
+                },
+                {
+                    "filename": "Jaime_walking_0048",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 720,
+                        "h": 862
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 720,
+                        "h": 862
+                    },
+                    "frame": {
+                        "x": 1440,
+                        "y": 4310,
                         "w": 720,
                         "h": 862
                     }

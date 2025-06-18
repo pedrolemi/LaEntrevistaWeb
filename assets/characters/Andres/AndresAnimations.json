@@ -1,0 +1,88 @@
+{
+    "anims": [
+        {
+            "key": "AndresSitting",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Andres_sitting_0001"
+                },
+                {
+                    "frame": "Andres_sitting_0011"
+                },
+                {
+                    "frame": "Andres_sitting_0021"
+                },
+                {
+                    "frame": "Andres_sitting_0031"
+                },
+                {
+                    "frame": "Andres_sitting_0041"
+                },
+                {
+                    "frame": "Andres_sitting_0051"
+                },
+                {
+                    "frame": "Andres_sitting_0061"
+                },
+                {
+                    "frame": "Andres_sitting_0071"
+                },
+                {
+                    "frame": "Andres_sitting_0081"
+                },
+                {
+                    "frame": "Andres_sitting_0091"
+                },
+                {
+                    "frame": "Andres_sitting_0100"
+                }
+            ],
+            "defaultTextureKey": "Andres",
+            "frameRate": 8,
+            "repeat": -1
+        },
+        {
+            "key": "AndresTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Andres_talking_0000"
+                },
+                {
+                    "frame": "Andres_talking_0010"
+                },
+                {
+                    "frame": "Andres_talking_0020"
+                },
+                {
+                    "frame": "Andres_talking_0030"
+                },
+                {
+                    "frame": "Andres_talking_0040"
+                },
+                {
+                    "frame": "Andres_talking_0050"
+                },
+                {
+                    "frame": "Andres_talking_0060"
+                },
+                {
+                    "frame": "Andres_talking_0070"
+                },
+                {
+                    "frame": "Andres_talking_0080"
+                },
+                {
+                    "frame": "Andres_talking_0090"
+                },
+                {
+                    "frame": "Andres_talking_0099"
+                }
+            ],
+            "defaultTextureKey": "Andres",
+            "frameRate": 6,
+            "repeat": -1
+        }
+    ]
+}

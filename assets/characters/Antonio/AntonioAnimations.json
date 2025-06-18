@@ -1,0 +1,124 @@
+{
+    "anims": [
+        {
+            "key": "AntonioSitting",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Antonio_sitting_0001"
+                },
+                {
+                    "frame": "Antonio_sitting_0006"
+                },
+                {
+                    "frame": "Antonio_sitting_0011"
+                },
+                {
+                    "frame": "Antonio_sitting_0016"
+                },
+                {
+                    "frame": "Antonio_sitting_0021"
+                },
+                {
+                    "frame": "Antonio_sitting_0026"
+                },
+                {
+                    "frame": "Antonio_sitting_0031"
+                },
+                {
+                    "frame": "Antonio_sitting_0036"
+                },
+                {
+                    "frame": "Antonio_sitting_0041"
+                },
+                {
+                    "frame": "Antonio_sitting_0046"
+                },
+                {
+                    "frame": "Antonio_sitting_0050"
+                }
+            ],
+            "defaultTextureKey": "Antonio",
+            "frameRate": 8,
+            "repeat": -1
+        },
+        {
+            "key": "AntonioTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Antonio_talking_0001"
+                },
+                {
+                    "frame": "Antonio_talking_0006"
+                },
+                {
+                    "frame": "Antonio_talking_0011"
+                },
+                {
+                    "frame": "Antonio_talking_0016"
+                },
+                {
+                    "frame": "Antonio_talking_0021"
+                },
+                {
+                    "frame": "Antonio_talking_0026"
+                },
+                {
+                    "frame": "Antonio_talking_0031"
+                },
+                {
+                    "frame": "Antonio_talking_0036"
+                },
+                {
+                    "frame": "Antonio_talking_0041"
+                },
+                {
+                    "frame": "Antonio_talking_0046"
+                },
+                {
+                    "frame": "Antonio_talking_0050"
+                }
+            ],
+            "defaultTextureKey": "Antonio",
+            "frameRate": 6,
+            "repeat": -1
+        },
+        {
+            "key": "AntonioWalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Antonio_walking_0001"
+                },
+                {
+                    "frame": "Antonio_walking_0005"
+                },
+                {
+                    "frame": "Antonio_walking_0009"
+                },
+                {
+                    "frame": "Antonio_walking_0013"
+                },
+                {
+                    "frame": "Antonio_walking_0017"
+                },
+                {
+                    "frame": "Antonio_walking_0021"
+                },
+                {
+                    "frame": "Antonio_walking_0024"
+                },
+                {
+                    "frame": "Antonio_walking_0026"
+                },
+                {
+                    "frame": "Antonio_walking_0026"
+                }
+            ],
+            "defaultTextureKey": "Antonio",
+            "frameRate": 10,
+            "repeat": -1
+        }
+    ]
+}

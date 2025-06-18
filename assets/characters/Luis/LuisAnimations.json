@@ -1,0 +1,121 @@
+{
+    "anims": [
+        {
+            "key": "LuisIdle",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Luis_idle_0001"
+                },
+                {
+                    "frame": "Luis_idle_0006"
+                },
+                {
+                    "frame": "Luis_idle_0011"
+                },
+                {
+                    "frame": "Luis_idle_0016"
+                },
+                {
+                    "frame": "Luis_idle_0021"
+                },
+                {
+                    "frame": "Luis_idle_0026"
+                },
+                {
+                    "frame": "Luis_idle_0031"
+                },
+                {
+                    "frame": "Luis_idle_0036"
+                },
+                {
+                    "frame": "Luis_idle_0041"
+                },
+                {
+                    "frame": "Luis_idle_0046"
+                },
+                {
+                    "frame": "Luis_idle_0050"
+                }
+            ],
+            "defaultTextureKey": "Luis",
+            "frameRate": 12,
+            "repeat": -1
+        },
+        {
+            "key": "LuisTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Luis_talking_0000"
+                },
+                {
+                    "frame": "Luis_talking_0004"
+                },
+                {
+                    "frame": "Luis_talking_0009"
+                },
+                {
+                    "frame": "Luis_talking_0014"
+                },
+                {
+                    "frame": "Luis_talking_0019"
+                },
+                {
+                    "frame": "Luis_talking_0024"
+                },
+                {
+                    "frame": "Luis_talking_0029"
+                },
+                {
+                    "frame": "Luis_talking_0034"
+                },
+                {
+                    "frame": "Luis_talking_0039"
+                },
+                {
+                    "frame": "Luis_talking_0044"
+                },
+                {
+                    "frame": "Luis_talking_0049"
+                }
+            ],
+            "defaultTextureKey": "Luis",
+            "frameRate": 6,
+            "repeat": -1
+        },
+        {
+            "key": "LuisWalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Luis_walking_0001"
+                },
+                {
+                    "frame": "Luis_walking_0007"
+                },
+                {
+                    "frame": "Luis_walking_0014"
+                },
+                {
+                    "frame": "Luis_walking_0021"
+                },
+                {
+                    "frame": "Luis_walking_0028"
+                },
+                {
+                    "frame": "Luis_walking_0035"
+                },
+                {
+                    "frame": "Luis_walking_0042"
+                },
+                {
+                    "frame": "Luis_walking_0049"
+                }
+            ],
+            "defaultTextureKey": "Luis",
+            "frameRate": 10,
+            "repeat": -1
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-import { moveTowards } from "./utils/misc.js";
+import { moveTowards, getInteractiveConfig } from "./utils/misc.js";
 
 export default class Character extends Phaser.GameObjects.Sprite {
     /**
@@ -40,7 +40,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
     }
 
     setInteractive() {
-        super.setInteractive({ cursor: `url(${this.scene.registry.get("pointerOver")}), pointer` });
+        super.setInteractive(getInteractiveConfig(this, {}));
     }
 
     preUpdate(time, deltaTime) {

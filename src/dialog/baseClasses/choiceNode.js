@@ -1,5 +1,5 @@
 import DialogNode from "./dialogNode.js";
-import OptionBox from "../UI/optionBox.js";
+import OptionBox from "../../UI/optionBox.js";
 
 export default class ChoiceNode extends DialogNode {
     /**
@@ -19,7 +19,7 @@ export default class ChoiceNode extends DialogNode {
         }
     */
     constructor(scene, node, fullId, namespace) {
-        super();
+        super(scene);
 
         this.choices = [];              // Lista con el texto traducido de cada opcion
         this.options = [];              // Lista de OptionBox creadas

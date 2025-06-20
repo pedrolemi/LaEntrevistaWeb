@@ -1,7 +1,7 @@
 // Configuracion de texto por defecto
 export let DEFAULT_TEXT_CONFIG = {
     fontFamily: "Arial",        // Fuente (tiene que estar precargada en el html o el css)
-    fontSize: 25,        // Tamano de la fuente del dialogo
+    fontSize: 25,               // Tamano de la fuente del dialogo
     fontStyle: "normal",        // Estilo de la fuente
     backgroundColor: null,      // Color del fondo del texto
     color: "#ffffff",           // Color del texto

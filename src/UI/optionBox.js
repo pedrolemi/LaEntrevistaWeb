@@ -1,12 +1,12 @@
-import DialogObject from "./dialogObject.js";
-import { completeMissingProperties } from "../../utils/misc.js"
-import { DEFAULT_TEXT_CONFIG } from "../../utils/graphics.js"
+import InteractiveContainer from "./interactiveContainer.js";
+import { completeMissingProperties } from "../utils/misc.js"
+import { DEFAULT_TEXT_CONFIG } from "../utils/graphics.js"
 import TextArea from "./textArea.js";
 
-export default class OptionBox extends DialogObject {
+export default class OptionBox extends InteractiveContainer {
     /**
     * Caja de texto para los dialogos
-    * @extends DialogObject
+    * @extends InteractiveContainer
     * @param {Phaser.Scene} scene - escena en la que se crea (idealmente la escena de UI)
     * @param {Number} index - indice de la opcion de entre todas las opciones
     * @param {Number} totalOpts - numero total de opciones
@@ -36,6 +36,8 @@ export default class OptionBox extends DialogObject {
 
             realWidth: 0,
             realHeight: 0,
+            textHorizontalPadding: 25,
+            textVerticalPadding: 25,
 
             noTintColor: "#ffffff",
             pointerOverColor: "#d9d9d9"
@@ -57,17 +59,17 @@ export default class OptionBox extends DialogObject {
         let textY = this.box.y - (this.box.displayHeight * this.boxConfig.imgOriginY) + this.boxConfig.marginY;
 
         if (boxConfig.realWidth == null) {
-            this.boxConfig.realWidth = this.box.displayWidth;
+            this.boxConfig.realWidth = this.box.displayWidth - this.boxConfig.textHorizontalPadding * 2;
         }
         if (boxConfig.realHeight == null) {
-            this.boxConfig.realHeight = this.box.displayHeight;
+            this.boxConfig.realHeight = this.box.displayHeight - this.boxConfig.textVerticalPadding * 2;
         }
 
         // Crear el texto
         this.textObj = this.textObj = new TextArea(scene, textX, textY, this.boxConfig.realWidth, this.boxConfig.realHeight, text, this.textConfig)
             .setOrigin(this.boxConfig.textOriginX, this.boxConfig.textOriginY).setScale(this.boxConfig.scaleX, this.boxConfig.scaleY);
 
-        this.textObj.adjustFontSize(text);
+        this.textObj.adjustFontSize();
 
         // Anadir los elementos al container
         this.add(this.box);

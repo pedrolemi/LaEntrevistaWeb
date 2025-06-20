@@ -24,7 +24,7 @@ export function completeMissingProperties(targetObj, defaultObj) {
 * la funcion devuelve el punto target directamente
 * @param {Object} current - punto actual con propiedades {x, y}
 * @param {Object} target - punto destino con propiedades {x, y}
-* @param {number} maxDistanceDelta - distancia maxima que se puede mover desde el punto actual
+* @param {Number} maxDistanceDelta - distancia maxima que se puede mover desde el punto actual
 * @returns {Object} - nuevo punto movido hacia target
 */
 export function moveTowards(current, target, maxDistanceDelta) {
@@ -41,4 +41,21 @@ export function moveTowards(current, target, maxDistanceDelta) {
         x: current.x + directionX * ratio,
         y: current.y + directionY * ratio
     }
+}
+
+
+/**
+ * Configura los parametros que pasarle al setInteractive de un objeto para coger el cursor correspondiente
+ * @param {Phaser.GameObject} gameObject - objeto que se va a hacer interactivo 
+ * @param {Object} prevConfig - configuracion a la que agregar el paraametro del cursor 
+ * @returns {Object} - configuracion con el parametro del cursor a utilizar
+ */
+export function getInteractiveConfig(gameObject, prevConfig) {
+    if (gameObject.scene.registry.get("pointerOver") != null) {
+        prevConfig.cursor = `url(${gameObject.scene.registry.get("pointerOver")}), pointer`;
+    }
+    else {
+        prevConfig.useHandCursor = true;
+    }
+    return prevConfig;
 }

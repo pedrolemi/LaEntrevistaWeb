@@ -1,12 +1,12 @@
-import DialogObject from "./dialogObject.js";
-import { completeMissingProperties } from "../../utils/misc.js"
-import { DEFAULT_TEXT_CONFIG } from "../../utils/graphics.js"
+import InteractiveContainer from "./interactiveContainer.js";
+import { completeMissingProperties } from "../utils/misc.js"
+import { DEFAULT_TEXT_CONFIG } from "../utils/graphics.js"
 import TextArea from "./textArea.js";
 
-export default class DialogBox extends DialogObject {
+export default class DialogBox extends InteractiveContainer {
     /**
     * Caja de texto para los dialogos
-    * @extends DialogObject
+    * @extends InteractiveContainer
     * @param {Phaser.Scene} scene - escena en la que se crea (idealmente la escena de UI)
     * @param {Boolean} debug - true para mostrar la caja de colision, false en caso contrario (opcional)
     * @param {Object} textboxConfig - configuracion de la caja de texto (opcional)
@@ -101,8 +101,8 @@ export default class DialogBox extends DialogObject {
                 .setOrigin(this.textboxConfig.textOriginX, this.textboxConfig.textOriginY).setScale(this.textboxConfig.scaleX, this.textboxConfig.scaleY);
             let nameBoxDebug = scene.add.rectangle(this.nameBoxConfig.textX, this.nameBoxConfig.textY, this.nameBoxConfig.realWidth, this.nameBoxConfig.realHeight, 0x000, 0.5)
                 .setOrigin(this.nameBoxConfig.textOriginX, this.nameBoxConfig.textOriginY).setScale(this.nameBoxConfig.scaleX, this.nameBoxConfig.scaleY);
-            this.textObj.setText("Lorem Ipsum");
-            this.nameTextObj.setText("Name");
+            this.setText("Lorem Ipsum");
+            this.setName("NameNameNameName");
 
             this.add(textboxDebug);
             this.add(nameBoxDebug);
@@ -133,8 +133,12 @@ export default class DialogBox extends DialogObject {
     * @param {String} name - nombre del personaje
     */
     setName(name) {
+        this.nameTextObj.setFontSize(this.nameTextConfig.fontSize);
+
         this.nameTextObj.setText(name);
         this.lastCharacter = name;
+
+        this.nameTextObj.adjustFontSize();
     }
 
     /**
@@ -231,7 +235,7 @@ export default class DialogBox extends DialogObject {
 
         this.fadeAnim.on("complete", () => {
             if (!active) {
-                this.setText("");
+                this.setDialog("", "", false);
             }
         });
     }
@@ -244,13 +248,5 @@ export default class DialogBox extends DialogObject {
     */
     textFits(text) {
         return this.textObj.fits(text);
-    }
-
-    /**
-    * Ajusta automaticamente el tamano de la fuente hasta que quepa al menos 1 caracter 
-    * @param {String} text - primer caracter del texto a mostrar
-    */
-    adjustFontSize(text) {
-        this.textObj.adjustFontSize(text);
     }
 }

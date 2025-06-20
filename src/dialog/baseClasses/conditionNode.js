@@ -1,4 +1,5 @@
 import DialogNode from "./dialogNode.js";
+import TextNode from "./textNode.js";
 
 export default class ConditionNode extends DialogNode {
     /**
@@ -37,7 +38,7 @@ export default class ConditionNode extends DialogNode {
         }
     */
     constructor(scene, node) {
-        super();
+        super(scene);
         this.conditions = [];           // condiciones con su nombre/identificador y sus atributos
 
         let nodeConditions = node.conditions;
@@ -142,6 +143,11 @@ export default class ConditionNode extends DialogNode {
     }
 
     nextNode() {
+        // Si no hay nodos despues, se crea un nodo de texto vacio para quitar la caja de texto
+        if (this.next.length <= 0) {
+            this.next.push(new TextNode(this.scene, {}, "", ""));
+            this.nextIndex = 0;
+        }
         super.nextNode();
     }
 }

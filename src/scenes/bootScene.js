@@ -45,7 +45,7 @@ export default class BootScene extends Phaser.Scene {
     loadPointers() {
         let defaultPath = "assets/UI/pointers/"
         this.input.setDefaultCursor(`url(${defaultPath}default.png), pointer`);
-        this.scene.scene.registry.set("pointerOver", `${defaultPath}over.png`)
+        this.scene.scene.registry.set("pointerOver", `${defaultPath}over.png`);
     }
 
     createLoadingBar() {
@@ -139,7 +139,8 @@ export default class BootScene extends Phaser.Scene {
         // Namespace --> test\\dialog.json
         let onlyNamespaces = [
             "names",
-            "CVs"
+            "CVs",
+            "scenes"
         ]
 
         this.loadDialogs(dialogsAndNamespaces);
@@ -235,6 +236,9 @@ export default class BootScene extends Phaser.Scene {
 
         this.load.image("textbox", "textbox.png");
         this.load.image("optionBox", "optionBox.png");
+
+        this.load.image("cvSheet", "cvSheet.png");
+
     }
 
 

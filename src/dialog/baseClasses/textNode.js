@@ -16,14 +16,14 @@ export default class TextNode extends DialogNode {
         }
     */
     constructor(scene, node, fullId, namespace) {
-        super();
+        super(scene);
 
         // Se obtiene la id y nombre traducido del personaje
         this.character = node.character;                                            // id del personaje que habla
         this.name = scene.dialogManager.translate(this.character, "names");         // nombre traducido del personaje que habla
 
         this.dialogs = [];                                                          // serie de dialogos que se van a mostrar
-        this.currDialog = 0;                                                     // indice del dialogo que se esta mostrando
+        this.currDialog = 0;                                                        // indice del dialogo que se esta mostrando
 
         this.centered = (node.centered == null) ? false : node.centered;            // indica si el texto esta centrado o no (en caso de que no se especifique aparece alineado arriba a la izquierda)
 
@@ -34,10 +34,10 @@ export default class TextNode extends DialogNode {
         // Si el texto no esta dividido en fragmentos, se guarda en el array de fragmentos
         // si no, el array de fragmentos es directamente el obtenido al traducir el nodo
         let textFragments = [];
-        if (!Array.isArray(translation)) {
+        if (!Array.isArray(translation) && translation != "") {
             textFragments.push(translation);
         }
-        else {
+        else if (Array.isArray(translation) && translation.length > 0) {
             textFragments = translation;
         }
 
@@ -59,21 +59,23 @@ export default class TextNode extends DialogNode {
     * Divide el texto por si alguno es demasiado largo y se sale de la caja de texto
     * @param {StreamPipeOptions} text - texto a dividir
     */
-    split(text, autoAdjustFontSize = true) {
+    split(text) {
         // Se divide el texto por palabras
-        // TODO: Comprobar que soporta multiples idiomas
+        // TODO: Confirmar que soporta multiples idiomas
         const noSpaces = text.replace(/[\r\n]/g, " ");
         const splitText = noSpaces.split(" ").filter(x => x);
 
         // console.log(splitted)
 
-        if (!this.dialogBox.textFits(text[0][0]) && autoAdjustFontSize) {
-            this.dialogBox.adjustFontSize(text[0][0]);
+        // Si el texto es muy grande para mostar siquiera un caracter, no hace nada
+        if (!this.dialogBox.textFits(text[0][0])) {
+            console.warn("Dialog box text size too big! Returning empty dialog");
+            return;
         }
 
         let newText = "";
-        // Mientras queden palabras en el array y al menos la primera letra de la palabra quepa en la caja
-        while (splitText.length > 0 && this.dialogBox.textFits(text[0][0])) {
+        // Mientras queden palabras en el array
+        while (splitText.length > 0) {
             // Saca la siguiente palabra de la lista de palabras
             let nextWord = splitText.shift();
 
@@ -135,10 +137,10 @@ export default class TextNode extends DialogNode {
     }
 
     nextNode() {
+        // Elimina los eventos de pulsar la caja de texto (ya que la comparten todos los nodos de texto)
+        this.dialogBox.off("pointerdown");
+        
         if (this.next.length > this.nextIndex) {
-            // Elimina los eventos de pulsar la caja de texto (ya que la comparten todos los nodos de texto)
-            this.dialogBox.off("pointerdown");
-
             // Si el siguiente nodo es de opcion multiple, se oculta la caja de texto y se pasa al siguiente nodo
             if (this.next[this.nextIndex].choices != null) {
                 this.dialogBox.activate(false, () => {
@@ -214,7 +216,6 @@ export default class TextNode extends DialogNode {
                 // Si no, se pasa al siguiente nodo
                 else {
                     this.nextNode();
-                    // this.dialogBox.setDialog(this.name, "", false);
                 }
             }
         }

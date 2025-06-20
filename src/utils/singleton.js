@@ -9,7 +9,7 @@ export default class Singleton {
             this.constructor.instance = this;
         }
         else {
-            console.warn(className, "is a Singleton class!");
+            console.warn(className,"is a Singleton class!");
         }
         return this.constructor.instance;
     }

@@ -1,4 +1,5 @@
 import DialogNode from "./dialogNode.js";
+import TextNode from "./textNode.js";
 
 export default class EventNode extends DialogNode {
     /**
@@ -22,7 +23,7 @@ export default class EventNode extends DialogNode {
         }
     */
     constructor(scene, node) {
-        super();
+        super(scene);
         this.events = [];                       // eventos que se llamaran al procesar el nodo (nombre del evento y el retardo con el que se llama)
         this.dispatcher = scene.dispatcher;
 
@@ -68,5 +69,14 @@ export default class EventNode extends DialogNode {
             }, delay);
         }
         this.nextNode();
+    }
+
+    nextNode() {
+        // Si no hay nodos despues, se crea un nodo de texto vacio para quitar la caja de texto
+        if (this.next.length <= 0) {
+            this.next.push(new TextNode(this.scene, {}, "", ""));
+            this.nextIndex = 0;
+        }
+        super.nextNode();
     }
 }

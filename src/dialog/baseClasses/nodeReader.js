@@ -1,7 +1,7 @@
-import ConditionNode from "./basicNodes/conditionNode.js";
-import EventNode from "./basicNodes/eventNode.js";
-import TextNode from "./basicNodes/textNode.js";
-import ChoiceNode from "./basicNodes/choiceNode.js"
+import ConditionNode from "./conditionNode.js";
+import EventNode from "./eventNode.js";
+import TextNode from "./textNode.js";
+import ChoiceNode from "./choiceNode.js"
 
 // IMPORTANTE: SI SE QUIEREN ANADIR NUEVOS NODOS O MODIFICAR LA FUNCIONALIDAD DE LOS TIPOS DE NODOS EXISTENTES,
 // LO IDEAL SERIA CREAR NUEVOS NODOS QUE HEREDEN DE DIALOGNODE O DEL RESTO DE NODOS BASICOS, Y MODIFICAR EL 
@@ -12,9 +12,7 @@ import ChoiceNode from "./basicNodes/choiceNode.js"
 
 
 export default class NodeReader {
-    constructor(localization) {
-        this.localization = localization
-    }
+    constructor() { }
 
     /**
     * Crea todos los nodos y luego se encarga de conectarlos
@@ -77,16 +75,16 @@ export default class NodeReader {
                 let node = null;
 
                 if (type === "condition") {
-                    node = new ConditionNode(scene, objectJson[id]);
+                    node = this.createConditionNode(scene, objectJson[id])
                 }
                 else if (type === "text") {
-                    node = new TextNode(scene, objectJson[id], fullId, namespace)
+                    node = this.createTextNode(scene, objectJson[id], fullId, namespace);
                 }
                 else if (type === "choice") {
-                    node = new ChoiceNode(scene, objectJson[id], fullId, namespace);
+                    node = this.createChoiceNode(scene, objectJson[id], fullId, namespace);
                 }
                 else if (type === "event") {
-                    node = new EventNode(scene, objectJson[id]);
+                    node = this.createEventNode(scene, objectJson[id]);
                 }
 
                 // Si se crea el nodo correctamente, se guarda el resto de parametros y se guarda en el mapa de nodos por su id
@@ -101,5 +99,24 @@ export default class NodeReader {
                 }
             }
         }
+    }
+
+
+    // Metodos factoria para crear los distintos tipos de nodos
+
+    createConditionNode(scene, objectJson) {
+        return new ConditionNode(scene, objectJson);
+    }
+
+    createTextNode(scene, objectJson, fullId, namespace) {
+        return new TextNode(scene, objectJson, fullId, namespace);
+    }
+
+    createChoiceNode(scene, objectJson, fullId, namespace) {
+        return new ChoiceNode(scene, objectJson, fullId, namespace);
+    }
+
+    createEventNode(scene, objectJson) {
+        return new EventNode(scene, objectJson);
     }
 }

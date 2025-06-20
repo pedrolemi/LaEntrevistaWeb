@@ -1,18 +1,26 @@
-import DialogBox from "../dialog/UI/dialogBox.js";
-import TextArea from "../dialog/UI/textArea.js";
+import BaseScene from "./gameLoop/baseScene.js";
 import DialogManager from "../managers/dialogManager.js";
+import LaEntrevistaNodeReader from "../dialog/laEntrevistaNodeReader.js";
 
-export default class UI extends Phaser.Scene {
+import DialogBox from "../UI/dialogBox.js";
+import CV from "../UI/cv.js";
+
+export default class UI extends BaseScene {
     /**
     * Escena en la que se crean los elementos para la interfaz
-    * @extends Phaser.Scene
+    * @extends BaseScene
     */
     constructor() {
-        super({ key: "UI" });
+        super("UI", "UI");
     }
 
-    create() {
-        // TOOD: Cambiar imagenes y configurar texto
+    create(params) {
+        super.create(params);
+
+        let dialogManager = DialogManager.create();
+        dialogManager.init(this, new LaEntrevistaNodeReader());
+
+        // TODO: Cambiar imagenes y configurar texto
         this.textboxConfig = {
             img: "textbox",
         }
@@ -20,21 +28,27 @@ export default class UI extends Phaser.Scene {
             img: "",
         }
         this.textConfig = {
-            fontFamily: "barlow-regular",
-            fontSize: 25,
+            fontFamily: "barlowCondensed-regular",
+            fontSize: 35,
             fontStyle: "bold"
         }
         this.nameTextConfig = {
             fontFamily: "leagueSpartan-variable",
-            fontSize: 35,
+            fontSize: 40,
             fontStyle: "bold"
         }
         this.optionBoxConfig = {
         }
-        
+
         this.textbox = new DialogBox(this, false, this.textboxConfig, this.nameBoxConfig, this.textConfig, this.nameTextConfig);
-        
-        let dialogManager = DialogManager.create();
-        dialogManager.init(this);
+        // this.textbox.activate(true);
+
+        this.cv = new CV(this);
+        this.cv.setDepth(10);
+
+        this.dispatcher.add("checkCV", this, () => {
+            this.cv.activate(true);
+        }, true);
     }
+
 }

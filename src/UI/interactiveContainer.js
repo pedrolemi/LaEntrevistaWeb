@@ -1,4 +1,6 @@
-export default class DialogObject extends Phaser.GameObjects.Container {
+import { getInteractiveConfig } from "../utils/misc.js";
+
+export default class InteractiveContainer extends Phaser.GameObjects.Container {
     /**
      * Clase base para los elementos de dialogo, con metodos para activar/desactivar el objeto y calcular su rectangulo de colision
      * @extends Phaser.GameObjects.Container
@@ -85,32 +87,21 @@ export default class DialogObject extends Phaser.GameObjects.Container {
 
 
     /**
-    * Calcula las dimensiones del rectangulo del container (en base a todos sus elementos hijos) para hacerlo interactivo
+    * Obtiene las dimensiones del rectangulo del container para hacerlo interactivo
     * @param {Boolean} debug - true para dibujar el area del rectangulo, false en caso contrario (opcional)
     * @param {String} objectName - nombre del objeto a imprimir en el debug (opcional)
     */
     calculateRectangleSize(debug = false, objectName = "") {
-        let left = Number.MAX_SAFE_INTEGER;
-        let top = Number.MAX_SAFE_INTEGER;
-        let width = Number.MIN_SAFE_INTEGER;;
-        let height = Number.MIN_SAFE_INTEGER;;
+        let dims = this.getBounds();
+        this.setSize(dims.width, dims.height);
 
-        // Recorre todos los hijos obteniendo la posicion mas a la izquierda, mas arriba, mas ancha y mas alta
-        this.iterate((child) => {
-            left = Math.min(left, child.x - child.displayWidth * child.originX);
-            top = Math.min(top, child.y - child.displayHeight * child.originY);
-            width = Math.max(width, child.displayWidth);
-            height = Math.max(height, child.displayHeight);
-        });
+        let rectangle = new Phaser.Geom.Rectangle(dims.x + dims.width / 2, dims.y + dims.height / 2, dims.width, dims.height);
 
-
-        this.setSize(width, height);
-        let rectangle = new Phaser.Geom.Rectangle(left + width / 2, top + height / 2, width, height);
-        this.setInteractive({
+        let interactiveConfig = {
             hitArea: rectangle,
-            hitAreaCallback: Phaser.Geom.Rectangle.Contains,
-            cursor: `url(${this.scene.registry.get("pointerOver")}), pointer`
-        });
+            hitAreaCallback: Phaser.Geom.Rectangle.Contains
+        }
+        this.setInteractive(getInteractiveConfig(this, interactiveConfig));
 
         if (debug) {
             this.add(this.scene.add.rectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x000, 0.4));

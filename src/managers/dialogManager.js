@@ -1,5 +1,4 @@
-import Localization from "../dialog/localization.js";
-import NodeReader from "../dialog/nodeReader.js";
+import Localization from "../dialog/baseClasses/localization.js";
 import Singleton from "../utils/singleton.js";
 
 export default class DialogManager extends Singleton {
@@ -11,10 +10,10 @@ export default class DialogManager extends Singleton {
         this.currNode = null;
     }
 
-    init(scene) {
+    init(scene, nodeReader) {
         this.scene = scene;
         this.localization = new Localization(this.scene.plugins.get("rextexttranslationplugin"));
-        this.nodeReader = new NodeReader(this.localization);
+        this.nodeReader = nodeReader;
     }
 
     setNode(node) {

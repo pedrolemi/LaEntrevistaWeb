@@ -1,4 +1,4 @@
-export default class Singleton { 
+export default class Singleton {
     /**
     * Clase base para los singletons 
     * @extends Phaser.Scene
@@ -9,11 +9,11 @@ export default class Singleton {
             this.constructor.instance = this;
         }
         else {
-            console.warn(className,"is a Singleton class!");
+            console.warn(className, "is a Singleton class!");
         }
         return this.constructor.instance;
     }
-    
+
     /**
     * Crear y obtener la instancia
     * @returns {Singleton} - instancia unica de la clase
@@ -31,5 +31,5 @@ export default class Singleton {
     */
     static getInstance() {
         return this.create();
-    }   
+    }
 }

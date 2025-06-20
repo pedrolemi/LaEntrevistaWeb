@@ -6,13 +6,14 @@
     "age": "24 años",
     
     "skills": "aptitudes",
+    "bulletPoint": "·  ",
     "skill1": "Inglés nivel C1",
     "skill2": "Análisis de datos y cálculo",
     "skill3": "Trabajo bajo presión",
     "skill4": "Nociones de programación",
     "skill5": "Trabajo en equipo",
 
-    "data": "Datos de interés sobre mí",
+    "data": "Datos de interés",
     "data1Title": "Dato 1: Viajes",
     "data1Description": "Me gusta viajar y conocer nuevos sitios. Podría desplazarme si el trabajo lo requiere.",
     "data2Title": "Dato 2: Futuro",
@@ -24,6 +25,7 @@
 
     "educationReviewedProgramming": "Grado en informática",
     "educationReviewedData": "Grado en matemáticas",
+
     "skill2Reviewed": "Manejo de bases de datos",
 
     "skill3ReviewedProgramming": "Programación con C++, Java y JavaScript",
@@ -31,6 +33,4 @@
 
     "skill4ReviewedProgramming": "Sistemas de control de versiones",
     "skill4ReviewedData": "Minería de datos y Machine Learning"
-
-
 }

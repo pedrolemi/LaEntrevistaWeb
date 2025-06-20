@@ -1,7 +1,7 @@
 // Configuracion de texto por defecto
 export let DEFAULT_TEXT_CONFIG = {
     fontFamily: "Arial",        // Fuente (tiene que estar precargada en el html o el css)
-    fontSize: "25px",        // Tamano de la fuente del dialogo
+    fontSize: 25,        // Tamano de la fuente del dialogo
     fontStyle: "normal",        // Estilo de la fuente
     backgroundColor: null,      // Color del fondo del texto
     color: "#ffffff",           // Color del texto
@@ -12,7 +12,7 @@ export let DEFAULT_TEXT_CONFIG = {
     padding: null               // Separacion con el fondo (en el caso de que haya fondo)
 }
 
-export function  componentToHex(component) {
+export function componentToHex(component) {
     // Se convierte en un numero de base 16, en string
     let hex = component.toString(16);
     // Si el numero es menor que 16, solo tiene un digito, por lo que hay que anadir un 0 delante

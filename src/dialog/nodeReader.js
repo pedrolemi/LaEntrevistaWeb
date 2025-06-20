@@ -88,7 +88,7 @@ export default class NodeReader {
                 else if (type === "event") {
                     node = new EventNode(scene, objectJson[id]);
                 }
-                
+
                 // Si se crea el nodo correctamente, se guarda el resto de parametros y se guarda en el mapa de nodos por su id
                 if (node != null) {
                     node.id = id;

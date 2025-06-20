@@ -41,7 +41,7 @@ export default class DialogManager extends Singleton {
     * @param {Boolean} getObjs - si se quiere devolver el nodo leido como un objeto 
     * @returns {DialogNode} - nodo raiz de los nodos leidos
     */
-    readNodes(scene, file, namespace, objectName = "", getObjs = true) { 
+    readNodes(scene, file, namespace, objectName = "", getObjs = true) {
         return this.nodeReader.readNodes(scene, file, namespace, objectName, getObjs);
     }
 

@@ -18,7 +18,7 @@ export default class SceneManager extends Singleton {
 
     init(scene) {
         this.currentScene = scene;
-    } 
+    }
 
 
     /**
@@ -56,7 +56,7 @@ export default class SceneManager extends Singleton {
                     fadeInTime = params.fadeInTime;
                 }
             }
-            
+
             // Reproduce un fade out al cambiar de escena
             this.fadeOut(fadeOutTime);
         }

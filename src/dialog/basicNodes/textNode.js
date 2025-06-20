@@ -1,5 +1,4 @@
 import DialogNode from "./dialogNode.js";
-import ChoiceNode from "./choiceNode.js";
 
 export default class TextNode extends DialogNode {
     /**
@@ -55,6 +54,71 @@ export default class TextNode extends DialogNode {
         // console.log(this.dialogs)
     }
 
+
+    /**
+    * Divide el texto por si alguno es demasiado largo y se sale de la caja de texto
+    * @param {StreamPipeOptions} text - texto a dividir
+    */
+    split(text, autoAdjustFontSize = true) {
+        // Se divide el texto por palabras
+        // TODO: Comprobar que soporta multiples idiomas
+        const noSpaces = text.replace(/[\r\n]/g, " ");
+        const splitText = noSpaces.split(" ").filter(x => x);
+
+        // console.log(splitted)
+
+        if (!this.dialogBox.textFits(text[0][0]) && autoAdjustFontSize) {
+            this.dialogBox.adjustFontSize(text[0][0]);
+        }
+
+        let newText = "";
+        // Mientras queden palabras en el array y al menos la primera letra de la palabra quepa en la caja
+        while (splitText.length > 0 && this.dialogBox.textFits(text[0][0])) {
+            // Saca la siguiente palabra de la lista de palabras
+            let nextWord = splitText.shift();
+
+            // Si no caben porque la palabra entera no cabe en la caja de texto
+            // IMPORTANTE: ESTE METODO VA RECONSTRUYENDO EL TEXTO CON CADA LETRA NUEVA Y COMPROBANDO SI CABE DENTRO DE LOS LIMITES
+            // DE LA CAJA, POR LO QUE SI LA PALABRA ES LARGUISIMA O LA FUENTE ES ENORME, TARDARA MUCHO TIEMPO EN TERMINAR
+            if (!this.dialogBox.textFits(nextWord)) {
+                newText += " ";
+
+                // Mientras quepa el texto con cada caracter de la palabra que no cabe y no se acabe dicha palabra
+                while (this.dialogBox.textFits(newText + nextWord[0]) && nextWord.length > 0) {
+                    // Se anade al texto actual el primer caracter de la palabra que no cabe y se elimina de dicha palabra
+                    newText += nextWord[0];
+                    nextWord = nextWord.slice(1);
+                }
+                if (newText != "") {
+                    this.dialogs.push(newText);
+                }
+                this.dialogs.push(newText);
+                newText = "";
+                // Se mete el resto de la palabra al principio de la lista
+                splitText.unshift(nextWord);
+            }
+            // Si el texto actual mas la palabra caben, se mantiene en el texto a guardar
+            else if (this.dialogBox.textFits(newText + " " + nextWord)) {
+                newText += " " + nextWord;
+            }
+            // Guarda en la lista de dialogos el dialogo leido
+            else {
+                this.dialogs.push(newText);
+                newText = "";
+
+                splitText.unshift(nextWord);
+            }
+
+            // console.log(newText);
+            // console.log(splitText);
+        }
+        if (newText != "") {
+            this.dialogs.push(newText);
+        }
+        // console.log(this.dialogs);
+    }
+
+
     processNode() {
         // Al hacer click en la caja de texto, se procesara de nuevo el nodo
         this.dialogBox.on("pointerdown", () => {
@@ -62,7 +126,12 @@ export default class TextNode extends DialogNode {
         });
 
         this.currDialog = 0;
-        this.nextFragment();
+        if (this.dialogs.length > 0) {
+            this.nextFragment();
+        }
+        else {
+            this.nextNode();
+        }
     }
 
     nextNode() {
@@ -92,87 +161,9 @@ export default class TextNode extends DialogNode {
 
 
     /**
-    * Divide el texto por si alguno es demasiado largo y se sale de la caja de texto
-    * @param {StreamPipeOptions} text - texto a dividir
-    */
-    split(text, autoAdjustFontSize = false) {
-        // Se divide el texto por palabras
-        // TODO: Comprobar que soporta multiples idiomas
-        const noSpaces = text.replace(/[\r\n]/g, " ");
-        const splitText = noSpaces.split(" ").filter(x => x);
-
-        // console.log(splitted)
-
-        if (autoAdjustFontSize) {
-            this.adjustFontSize(text);
-        }
-        
-        // Mientras queden palabras en el array
-        while (splitText.length > 0 && this.dialogBox.textFits(text[0][0])) {
-            let newText = "";
-            let nextWord = "";
-
-            // Mientras queden palabras en el array y el texto actual 
-            // mas la siguiente palabra quepan en la caja de texto
-            while (this.dialogBox.textFits(newText + " " + nextWord) && splitText.length > 0) {
-                // Saca la siguiente palabra de la lista de palabras
-                nextWord = splitText.shift();
-
-                // Si el texto actual mas la palabra caben, se mantiene en el texto a guardar
-                if (this.dialogBox.textFits(newText + " " + nextWord)) {
-                    newText += " " + nextWord;
-                }
-                // Si no caben porque la palabra entera no cabe en la caja de texto
-                // IMPORTANTE: ESTE METODO VA RECONSTRUYENDO EL TEXTO CON CADA LETRA NUEVA Y COMPROBANDO SI CABE DENTRO DE LOS LIMITES
-                //  DE LA CAJA, POR LO QUE SI LA PALABRA ES LARGUISIMA O LA FUENTE ES ENORME, TARDARA MUCHO TIEMPO EN TERMINAR
-                else if (!this.dialogBox.textFits(nextWord)) {
-                    newText += " ";
-
-                    // Mientras quepa el texto con cada caracter de la palabra que no cabe y no se acabe dicha palabra
-                    while (this.dialogBox.textFits(newText + nextWord[0]) && nextWord.length > 0) {
-                        // Se anade al texto actual el primer caracter de la palabra que no cabe y se elimina de dicha palabra
-                        newText += nextWord[0];
-                        nextWord = nextWord.slice(1);
-                    }
-                    // Se mete el resto de la palabra al principio de la lista
-                    splitText.unshift(nextWord);
-                }
-                // Si no caben porque la palabra ya no entra en la caja, se vuelve a meter al principio de la lista
-                else {
-                    splitText.unshift(nextWord);
-                }
-            }
-            // Guarda en la lista de dialogos el dialogo leido
-            this.dialogs.push(newText);
-        }
-        // console.log(this.dialogs)
-    }
-
-    /**
-    * Ajusta automaticamente el tamano de la fuente hasta que quepa al menos 1 caracter 
-    * @param {String} text - texto a mostrar 
-    * 
-    * IMPORTANTE: ESTE METODO VA RECONSTRUYENDO EL TEXTO CON UN TAMANO DE FUENTE CADA VEZ
-    * MENOR Y COMPROBANDO SI CABE DENTRO DE LOS LIMITES DE LA CAJA, POR LO QUE SI EL TAMANO
-    * DEL TEXTO ES ENORME O LA REDUCCION ES MUY PEQUENA, TARDARA MUCHO TIEMPO EN TERMINAR
-    */
-    adjustFontSize(text, reduction = 5) {
-        while (!this.dialogBox.textFits(text[0][0])) {
-            let textConfig = this.dialogBox.textConfig;
-            
-            let fontSize = textConfig.fontSize.replace("px", "");
-            fontSize -= reduction;
-            textConfig.fontSize = fontSize + "px";
-
-            this.dialogBox.textObj.setStyle(textConfig);
-        }
-    }
-
-
-    /**
     * Pone en la caja de texto el dialogo actual
     */
-    setDialog() {
+    updateCurrDialog() {
         // console.log(this.dialogs[this.currDialog]);
         this.dialogBox.setDialog(this.name, this.dialogs[this.currDialog]);
     }
@@ -197,17 +188,17 @@ export default class TextNode extends DialogNode {
     */
     nextFragment() {
         // Si la caja de texto no esta activa
-        if (!this.dialogBox.visible) {
+        if (!this.dialogBox.visible && this.dialogs.length > 0) {
             // Se cambia el nombre antes de la animacion
             this.dialogBox.setName(this.name);
 
             // Se activa la caja de texto y una vez activada, se pone el primer dialogo
             this.dialogBox.activate(true, () => {
-                this.setDialog();
+                this.updateCurrDialog();
             });
         }
         // Si la caja de texto ya esta activa
-        else {            
+        else {
             // Si el personaje que habla no es el mismo que antes, oculta la caja y vuelve a llamar a la funcoin
             if (this.dialogBox.lastCharacter != this.name) {
                 this.dialogBox.activate(false, () => {
@@ -218,7 +209,7 @@ export default class TextNode extends DialogNode {
             else {
                 // Si sigue habiendo mas dialogos, se cambia en la caja de texto
                 if (this.currDialog < this.dialogs.length) {
-                    this.setDialog();
+                    this.updateCurrDialog();
                 }
                 // Si no, se pasa al siguiente nodo
                 else {

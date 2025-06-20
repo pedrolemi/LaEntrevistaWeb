@@ -25,7 +25,7 @@ export default class EventNode extends DialogNode {
         super();
         this.events = [];                       // eventos que se llamaran al procesar el nodo (nombre del evento y el retardo con el que se llama)
         this.dispatcher = scene.dispatcher;
-         
+
         let evts = node.events;
 
         // Recorre todos los eventos del array de eventos y se guardan en la lista de eventos
@@ -35,14 +35,14 @@ export default class EventNode extends DialogNode {
                 // Determina en que blackboard modificar la variable. Si no se ha definido si es global, o si se
                 // ha definido que si lo es, se guarda en la del gameManager. Si no, se guarda en la de la escena
                 let blackboard = (evt.global == null || evt.global === true) ? scene.gameManager.blackboard : scene.blackboard;
-                
+
                 // Se guarda en la condicion en que blackboard comprobar su valor
                 evt.blackboard = blackboard;
             }
             this.events.push(evt);
         });
 
-        
+
         // Si hay un nodo despues de este, se guarda su id en la lista de nodos siguientes
         if (node.next != null) {
             this.next.push(node.next);

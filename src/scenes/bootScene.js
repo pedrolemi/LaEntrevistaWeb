@@ -24,7 +24,7 @@ export default class BootScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("computerScreen", "assets/computer/computerScreen.png");
+        this.load.image("blankScreen", "assets/computer/blankScreen.png");
     }
 
     create() {
@@ -33,7 +33,7 @@ export default class BootScene extends Phaser.Scene {
 
         let sceneManager = SceneManager.create();
         sceneManager.init(this);
-        sceneManager.fadeIn();
+        // sceneManager.fadeIn();
 
         this.events.once("start", () => {
             let gameManager = GameManager.create();
@@ -47,7 +47,7 @@ export default class BootScene extends Phaser.Scene {
         let height = this.cameras.main.height;
 
         // Fondo escalado en cuanto al canvas
-        let bg = this.add.image(width / 2, height / 2, "computerScreen");
+        let bg = this.add.image(width / 2, height / 2, "blankScreen");
         let scale = width / bg.width;
         bg.setScale(scale);
 
@@ -69,8 +69,8 @@ export default class BootScene extends Phaser.Scene {
             .lineStyle(borderThickness, borderCol, 1).strokeRoundedRect(width / 2 - BAR_W / 2, height / 2 - BAR_H / 2 - BAR_OFFSET, BAR_W, BAR_H, radius)
 
         let textStyle = {
-            fontFamily: "roboto-regular",
-            fontSize: "30px",
+            // fontFamily: "roboto-regular",
+            fontSize: 30,
             fill: "#FFFFFF",
             fontStyle: "bold"
         }
@@ -84,8 +84,8 @@ export default class BootScene extends Phaser.Scene {
         loadingText.setOrigin(0.5, 0.5);
 
         // Texto con el porcentaje de los assets cargados
-        textStyle.fontSize = "20px";
-        textStyle.fill = "#ffffff";
+        textStyle.fontSize =  20;
+        textStyle.fill = "#FFFFFF";
         let percentText = this.make.text({
             x: width / 2,
             y: height / 2 - BAR_OFFSET,
@@ -165,7 +165,7 @@ export default class BootScene extends Phaser.Scene {
         this.load.video("creditsAnimation", "animacioncreditos.mp4", true);
         this.load.video("startAnimation", "animacionmenu.mp4", true);
 
-        this.load.image("computerScreen", "computerScreen.png");
+        // this.load.image("blankScreen", "blankScreen.png");
         this.load.image("desktop", "desktop.png");
         this.load.image("browser", "browser.png");
         this.load.image("portalLogo", "portalLogo.png");
@@ -179,9 +179,9 @@ export default class BootScene extends Phaser.Scene {
         this.load.image("hall", "hall.png");
         this.load.image("counter", "counter.png");
 
-        this.load.image("corridor", "corridor.png");
+        this.load.image("corridor", "corridorTextless.png");
 
-        this.load.image("waitingRoom", "waitingRoom.png");
+        this.load.image("waitingRoom", "waitingRoomTextless.png");
 
         this.load.image("cafeteria", "cafeteria.png");
         this.load.image("chairs", "chairs.png");
@@ -209,17 +209,18 @@ export default class BootScene extends Phaser.Scene {
 
     loadCharacters() {
         this.load.setPath("assets/characters");
-        this.loadCharacterAtlas("Jesus")
-        this.loadCharacterAtlas("Pedro")
-        this.loadCharacterAtlas("Carlos")
-        this.loadCharacterAtlas("Monica")
-        this.loadCharacterAtlas("Rebeca")
-        this.loadCharacterAtlas("Antonio")
-        this.loadCharacterAtlas("Luis")
-        this.loadCharacterAtlas("Andres")
-        this.loadCharacterAtlas("Luisa")
-        this.loadCharacterAtlas("Jaime")
-        this.loadCharacterAtlas("Alex")
+        
+        this.loadCharacterAtlas("Jesus");
+        this.loadCharacterAtlas("Pedro");
+        this.loadCharacterAtlas("Carlos");
+        this.loadCharacterAtlas("Monica");
+        this.loadCharacterAtlas("Rebeca");
+        this.loadCharacterAtlas("Antonio");
+        this.loadCharacterAtlas("Luis");
+        this.loadCharacterAtlas("Andres");
+        this.loadCharacterAtlas("Luisa");
+        this.loadCharacterAtlas("Jaime");
+        this.loadCharacterAtlas("Alex");
     }
 
     loadUI() {

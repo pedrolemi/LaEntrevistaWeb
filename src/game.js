@@ -1,7 +1,8 @@
 import BootScene from "./scenes/bootScene.js";
 import UI from "./scenes/UI.js";
 
-import TestScene from "./scenes/gameLoop/testScene.js";
+import MainMenu from "./scenes/gameLoop/mainMenu.js";
+import House from "./scenes/gameLoop/house.js";
 
 const max_w = 1600, max_h = 900, min_w = 320, min_h = 240;
 const config = {
@@ -17,7 +18,8 @@ const config = {
         BootScene,
 
         //Test
-        TestScene,
+        MainMenu,
+        House,
 
         UI,
     ],

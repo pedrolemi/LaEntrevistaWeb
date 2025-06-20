@@ -1,9 +1,10 @@
 import DialogObject from "./dialogObject.js";
 import { completeMissingProperties } from "../../utils/misc.js"
 import { DEFAULT_TEXT_CONFIG } from "../../utils/graphics.js"
+import TextArea from "./textArea.js";
 
 export default class DialogBox extends DialogObject {
-   /**
+    /**
     * Caja de texto para los dialogos
     * @extends DialogObject
     * @param {Phaser.Scene} scene - escena en la que se crea (idealmente la escena de UI)
@@ -74,7 +75,7 @@ export default class DialogBox extends DialogObject {
         // Crear la imagen y el texto de la caja de texto
         this.box = scene.add.image(this.textboxConfig.imgX, this.textboxConfig.imgY, this.textboxConfig.img)
             .setOrigin(this.textboxConfig.imgOriginX, this.textboxConfig.imgOriginY).setScale(this.textboxConfig.scaleX, this.textboxConfig.scaleY);
-        this.textObj = scene.add.text(this.textboxConfig.textX, this.textboxConfig.textY, "", this.textConfig)
+        this.textObj = new TextArea(scene, this.textboxConfig.textX, this.textboxConfig.textY, this.textboxConfig.realWidth, this.textboxConfig.realHeight, "", this.textConfig, debug)
             .setOrigin(this.textboxConfig.textOriginX, this.textboxConfig.textOriginY).setScale(this.textboxConfig.scaleX, this.textboxConfig.scaleY);
 
         // Crear la imagen y el texto de la caja de nombre
@@ -82,7 +83,7 @@ export default class DialogBox extends DialogObject {
             this.nameBox = scene.add.image(this.nameBoxConfig.imgX, this.nameBoxConfig.imgY, this.nameBoxConfig.img)
                 .setOrigin(this.nameBoxConfig.imgOriginX, this.nameBoxConfig.imgOriginY).setScale(this.nameBoxConfig.scaleX, this.nameBoxConfig.scaleY);
         }
-        this.nameTextObj = scene.add.text(this.nameBoxConfig.textX, this.nameBoxConfig.textY, "", this.nameTextConfig)
+        this.nameTextObj = new TextArea(scene, this.nameBoxConfig.textX, this.nameBoxConfig.textY, this.nameBoxConfig.realWidth, this.nameBoxConfig.realHeight, "", this.nameTextConfig)
             .setOrigin(this.nameBoxConfig.textOriginX, this.nameBoxConfig.textOriginY).setScale(this.nameBoxConfig.scaleX, this.nameBoxConfig.scaleY);
 
 
@@ -123,7 +124,7 @@ export default class DialogBox extends DialogObject {
 
         this.calculateRectangleSize(debug, "dialogBox");
 
-        this.visible = false;
+        this.setVisible(false);
     }
 
 
@@ -215,26 +216,13 @@ export default class DialogBox extends DialogObject {
         this.setDelayedFinish()
         this.setText(this.fullText);
     }
-    
+
     setDelayedFinish() {
         this.finished = true;
         setTimeout(() => {
             this.canSkip = true;
         }, this.skipDelay);
 
-    }
-
-    /**
-    * Comprueba si el texto indicado cabe en la caja de texto
-    * @param {String} text - texto a mostrar
-    * @returns {Boolean} - true si el texto cabe, false en caso contrario
-    */
-    textFits(text) {
-        this.setText(text);
-        let fits = this.textObj.getBounds().height <= this.textboxConfig.realHeight;
-        this.setText("");
-
-        return fits;
     }
 
 
@@ -248,4 +236,21 @@ export default class DialogBox extends DialogObject {
         });
     }
 
+
+    /**
+    * Comprueba si el texto indicado cabe en la caja de texto
+    * @param {String} text - texto a mostrar
+    * @returns {Boolean} - true si el texto cabe, false en caso contrario
+    */
+    textFits(text) {
+        return this.textObj.fits(text);
+    }
+
+    /**
+    * Ajusta automaticamente el tamano de la fuente hasta que quepa al menos 1 caracter 
+    * @param {String} text - primer caracter del texto a mostrar
+    */
+    adjustFontSize(text) {
+        this.textObj.adjustFontSize(text);
+    }
 }

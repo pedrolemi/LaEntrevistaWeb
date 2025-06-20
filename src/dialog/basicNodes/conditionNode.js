@@ -39,11 +39,11 @@ export default class ConditionNode extends DialogNode {
     constructor(scene, node) {
         super();
         this.conditions = [];           // condiciones con su nombre/identificador y sus atributos
-        
+
         let nodeConditions = node.conditions;
 
         // Recorre todas las condiciones generales del nodo (cada condicion lleva a un nodo distinto)
-        for(let i = 0; i < nodeConditions.length; i++) {      
+        for (let i = 0; i < nodeConditions.length; i++) {
             // Obtiene el nombre de las variables a comprobar (todas las claves del objeto menos "next")
             let vars = Object.keys(nodeConditions[i]);
             vars = vars.filter(key => key !== "next");
@@ -93,12 +93,12 @@ export default class ConditionNode extends DialogNode {
         while (i < this.conditions.length && !conditionMet) {
             let allConditionsMet = true;
             let j = 0;
-            
+
             // Si no hay variables en la condicion, se cumple automaticamente
             if (this.conditions[i].length == 0) {
                 conditionMet = true;
             }
-            
+
             // Se recorren todas las variables de la condicion mientras se cumplan todas
             while (j < this.conditions[i].length && allConditionsMet) {
                 // Coge el nombre de la variable, el operador y el valor esperado 
@@ -136,7 +136,7 @@ export default class ConditionNode extends DialogNode {
             // Si no se ha cumplido ninguna condicion, pasa a la siguiente
             if (!conditionMet) i++;
         }
-        
+
         this.nextIndex = i;
         this.nextNode();
     }

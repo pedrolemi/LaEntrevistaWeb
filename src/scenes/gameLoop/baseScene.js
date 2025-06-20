@@ -19,13 +19,13 @@ export default class BaseScene extends Phaser.Scene {
     create(params) {
         this.CANVAS_WIDTH = this.sys.game.canvas.width;
         this.CANVAS_HEIGHT = this.sys.game.canvas.height;
-        
+
         this.blackboard = new Blackboard();
         this.gameManager = GameManager.getInstance();
         this.dialogManager = DialogManager.getInstance();
         this.dispatcher = EventDispatcher.getInstance();
 
-        this.scale = 1;
+        this.bgScale = 1;
 
         // Funciones adicionales a las que se llamara al crear y reactivar la escena
         this.events.once("create", () => {

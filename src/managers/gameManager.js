@@ -14,11 +14,15 @@ export default class GameManager extends Singleton {
 
     // PARA PRUEBAS
     startGame() {
-        this.startTitleScene();
+        this.startMainMenu();
     }
-    
-    startTitleScene() {
+
+    startMainMenu() {
         this.sceneManager.currentScene.scene.run("UI");
-        this.sceneManager.changeScene("TestScene", null, true);
+        this.sceneManager.changeScene("MainMenu", null, true);
+    }
+
+    startHouseScene() {
+        this.sceneManager.changeScene("House", null, false);
     }
 }

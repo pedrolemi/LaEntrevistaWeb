@@ -13,6 +13,10 @@ body {
 Fuentes que se usan en Phaser
 */
 @font-face {
-    font-family: "roboto-regular";
-    src: url("assets/fonts/Roboto-Regular.ttf");
+    font-family: "barlow-regular";
+    src: url("assets/fonts/Barlow-Regular.ttf");
+}
+@font-face {
+    font-family: "leagueSpartan-variable";
+    src: url("assets/fonts/LeagueSpartan-VariableFont_wght.ttf");
 }

@@ -1,9 +1,10 @@
 import DialogObject from "./dialogObject.js";
 import { completeMissingProperties } from "../../utils/misc.js"
 import { DEFAULT_TEXT_CONFIG } from "../../utils/graphics.js"
+import TextArea from "./textArea.js";
 
 export default class OptionBox extends DialogObject {
-   /**
+    /**
     * Caja de texto para los dialogos
     * @extends DialogObject
     * @param {Phaser.Scene} scene - escena en la que se crea (idealmente la escena de UI)
@@ -33,6 +34,9 @@ export default class OptionBox extends DialogObject {
             textOriginX: 0,
             textOriginY: 0.5,
 
+            realWidth: 0,
+            realHeight: 0,
+
             noTintColor: "#ffffff",
             pointerOverColor: "#d9d9d9"
         }
@@ -52,11 +56,19 @@ export default class OptionBox extends DialogObject {
         let textX = this.box.x - (this.box.displayWidth * this.boxConfig.imgOriginX) + this.boxConfig.marginX;
         let textY = this.box.y - (this.box.displayHeight * this.boxConfig.imgOriginY) + this.boxConfig.marginY;
 
+        if (boxConfig.realWidth == null) {
+            this.boxConfig.realWidth = this.box.displayWidth;
+        }
+        if (boxConfig.realHeight == null) {
+            this.boxConfig.realHeight = this.box.displayHeight;
+        }
+
         // Crear el texto
-        this.textObj = scene.add.text(textX, textY, text, this.textConfig)
+        this.textObj = this.textObj = new TextArea(scene, textX, textY, this.boxConfig.realWidth, this.boxConfig.realHeight, text, this.textConfig)
             .setOrigin(this.boxConfig.textOriginX, this.boxConfig.textOriginY).setScale(this.boxConfig.scaleX, this.boxConfig.scaleY);
 
-        
+        this.textObj.adjustFontSize(text);
+
         // Anadir los elementos al container
         this.add(this.box);
         this.add(this.textObj);
@@ -64,7 +76,7 @@ export default class OptionBox extends DialogObject {
         this.calculateRectangleSize(debug, "dialogBox");
         this.addAnimations(onClick);
 
-        this.visible = false;
+        this.setVisible(false);
     }
 
     addAnimations(onClick) {

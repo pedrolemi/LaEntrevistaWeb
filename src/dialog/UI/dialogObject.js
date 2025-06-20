@@ -52,10 +52,10 @@ export default class DialogObject  extends Phaser.GameObjects.Container {
             duration = 0;
         }
 
-        this.visible = true;
+        this.setVisible(true);
 
         // Fuerza la opacidad a la inicial
-        this.alpha = initAlpha
+        this.setAlpha(initAlpha);
         
         // Hace la animacion
         this.fadeAnim = this.scene.tweens.add({
@@ -72,7 +72,7 @@ export default class DialogObject  extends Phaser.GameObjects.Container {
                 this.setInteractive();
             }
             else {
-                this.visible = false;
+                this.setVisible(false);
             }
             
             if (onComplete != null && typeof onComplete == "function") {

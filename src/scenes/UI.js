@@ -1,5 +1,5 @@
 import DialogBox from "../dialog/UI/dialogBox.js";
-import OptionBox from "../dialog/UI/optionBox.js";
+import TextArea from "../dialog/UI/textArea.js";
 import DialogManager from "../managers/dialogManager.js";
 
 export default class UI extends Phaser.Scene {
@@ -20,22 +20,21 @@ export default class UI extends Phaser.Scene {
             img: "",
         }
         this.textConfig = {
-            fontSize: "25px",
+            fontFamily: "barlow-regular",
+            fontSize: 25,
             fontStyle: "bold"
         }
         this.nameTextConfig = {
-            fontSize: "35px",
+            fontFamily: "leagueSpartan-variable",
+            fontSize: 35,
             fontStyle: "bold"
         }
         this.optionBoxConfig = {
-
         }
-
+        
         this.textbox = new DialogBox(this, false, this.textboxConfig, this.nameBoxConfig, this.textConfig, this.nameTextConfig);
-
+        
         let dialogManager = DialogManager.create();
         dialogManager.init(this);
-
-        // TODO: Hacer el bloqueo de fondo
     }
 }

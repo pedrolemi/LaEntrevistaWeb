@@ -1,5 +1,5 @@
 import BaseScene from "./baseScene.js";
-
+import Character from "../../character.js";
 
 export default class House extends BaseScene {
     /**
@@ -26,8 +26,10 @@ export default class House extends BaseScene {
             this.blackboard.setValue("errors", errors);
         });
 
-        let character = this.add.sprite(200, 200, "Alex", "Alex_idle_0001").setScale(0.5)
-        character.play("AlexIdle")
+        let character = new Character(this, 200, 200, 0.5, "Antonio", 0.3, () => {
+            console.log("Hola");
+        });
+        character.moveTowards({ x: 500, y: 500 })
     }
 
     onCreate() {

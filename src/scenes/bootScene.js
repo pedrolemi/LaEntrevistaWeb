@@ -16,7 +16,6 @@ export default class BootScene extends Phaser.Scene {
                     key: "rextexttranslationplugin",
                     url: "https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexttranslationplugin.min.js",
                     start: true,
-                    // Add text-translation plugin to `scene.translation`
                     mapping: "translation"
                 }]
             }
@@ -30,6 +29,7 @@ export default class BootScene extends Phaser.Scene {
     create() {
         this.createLoadingBar();
         this.loadAssets();
+        this.loadPointers();
 
         let sceneManager = SceneManager.create();
         sceneManager.init(this);
@@ -40,6 +40,12 @@ export default class BootScene extends Phaser.Scene {
 
             gameManager.startGame();
         })
+    }
+
+    loadPointers() {
+        let defaultPath = "assets/UI/pointers/"
+        this.input.setDefaultCursor(`url(${defaultPath}default.png), pointer`);
+        this.scene.scene.registry.set("pointerOver", `${defaultPath}over.png`)
     }
 
     createLoadingBar() {
@@ -84,7 +90,7 @@ export default class BootScene extends Phaser.Scene {
         loadingText.setOrigin(0.5, 0.5);
 
         // Texto con el porcentaje de los assets cargados
-        textStyle.fontSize =  20;
+        textStyle.fontSize = 20;
         textStyle.fill = "#FFFFFF";
         let percentText = this.make.text({
             x: width / 2,
@@ -209,7 +215,7 @@ export default class BootScene extends Phaser.Scene {
 
     loadCharacters() {
         this.load.setPath("assets/characters");
-        
+
         this.loadCharacterAtlas("Jesus");
         this.loadCharacterAtlas("Pedro");
         this.loadCharacterAtlas("Carlos");

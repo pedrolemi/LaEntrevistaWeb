@@ -1,12 +1,12 @@
-export default class DialogObject  extends Phaser.GameObjects.Container {
-   /**
-    * Clase base para los elementos de dialogo, con metodos para activar/desactivar el objeto y calcular su rectangulo de colision
-    * @extends Phaser.GameObjects.Container
-    * @param {Phaser.Scene} scene - escena a la que pertenece
-    * @param {*} scene 
-    * @param {*} x 
-    * @param {*} y 
-    */
+export default class DialogObject extends Phaser.GameObjects.Container {
+    /**
+     * Clase base para los elementos de dialogo, con metodos para activar/desactivar el objeto y calcular su rectangulo de colision
+     * @extends Phaser.GameObjects.Container
+     * @param {Phaser.Scene} scene - escena a la que pertenece
+     * @param {*} scene 
+     * @param {*} x 
+     * @param {*} y 
+     */
     constructor(scene, x = 0, y = 0) {
         super(scene, x, y);
         this.scene = scene;
@@ -40,7 +40,7 @@ export default class DialogObject  extends Phaser.GameObjects.Container {
             endAlpha = 0;
             this.disableInteractive();
         }
-        
+
         if (!active && !this.visible) {
             initAlpha = 0;
             endAlpha = 0;
@@ -56,7 +56,7 @@ export default class DialogObject  extends Phaser.GameObjects.Container {
 
         // Fuerza la opacidad a la inicial
         this.setAlpha(initAlpha);
-        
+
         // Hace la animacion
         this.fadeAnim = this.scene.tweens.add({
             targets: this,
@@ -74,7 +74,7 @@ export default class DialogObject  extends Phaser.GameObjects.Container {
             else {
                 this.setVisible(false);
             }
-            
+
             if (onComplete != null && typeof onComplete == "function") {
                 setTimeout(() => {
                     onComplete();
@@ -96,26 +96,26 @@ export default class DialogObject  extends Phaser.GameObjects.Container {
         let height = Number.MIN_SAFE_INTEGER;;
 
         // Recorre todos los hijos obteniendo la posicion mas a la izquierda, mas arriba, mas ancha y mas alta
-        this.iterate((child)=> {
+        this.iterate((child) => {
             left = Math.min(left, child.x - child.displayWidth * child.originX);
             top = Math.min(top, child.y - child.displayHeight * child.originY);
             width = Math.max(width, child.displayWidth);
             height = Math.max(height, child.displayHeight);
         });
-        
+
 
         this.setSize(width, height);
         let rectangle = new Phaser.Geom.Rectangle(left + width / 2, top + height / 2, width, height);
         this.setInteractive({
             hitArea: rectangle,
             hitAreaCallback: Phaser.Geom.Rectangle.Contains,
-            useHandCursor: true
+            cursor: `url(${this.scene.registry.get("pointerOver")}), pointer`
         });
-        
+
         if (debug) {
             this.add(this.scene.add.rectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x000, 0.4));
             this.on("pointerdown", () => {
-                console.log("clicking",objectName);
+                console.log("clicking", objectName);
             });
         }
         this.disableInteractive();

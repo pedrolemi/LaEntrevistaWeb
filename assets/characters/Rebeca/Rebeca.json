@@ -14,20 +14,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -35,20 +35,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 720,
+                        "x": 288,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -56,20 +56,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 1440,
+                        "x": 576,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -77,20 +77,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2160,
+                        "x": 864,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -98,20 +98,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2880,
+                        "x": 1152,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -119,20 +119,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 862,
-                        "w": 720,
-                        "h": 862
+                        "x": 1440,
+                        "y": 0,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -140,20 +140,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 720,
-                        "y": 862,
-                        "w": 720,
-                        "h": 862
+                        "x": 1728,
+                        "y": 0,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -161,20 +161,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 1440,
-                        "y": 862,
-                        "w": 720,
-                        "h": 862
+                        "x": 2016,
+                        "y": 0,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -182,20 +182,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2160,
-                        "y": 862,
-                        "w": 720,
-                        "h": 862
+                        "x": 0,
+                        "y": 731,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -203,20 +203,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2880,
-                        "y": 862,
-                        "w": 720,
-                        "h": 862
+                        "x": 288,
+                        "y": 731,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -224,188 +224,188 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 1724,
-                        "w": 720,
-                        "h": 862
+                        "x": 576,
+                        "y": 731,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
-                    "filename": "Rebeca_talking_0001",
+                    "filename": "Rebeca_talking_0000",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 720,
-                        "y": 1724,
-                        "w": 720,
-                        "h": 862
+                        "x": 864,
+                        "y": 731,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
-                    "filename": "Rebeca_talking_0008",
+                    "filename": "Rebeca_talking_0007",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
+                    },
+                    "frame": {
+                        "x": 1152,
+                        "y": 731,
+                        "w": 288,
+                        "h": 731
+                    }
+                },
+                {
+                    "filename": "Rebeca_talking_0014",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 288,
+                        "h": 731
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
                         "x": 1440,
-                        "y": 1724,
-                        "w": 720,
-                        "h": 862
+                        "y": 731,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
-                    "filename": "Rebeca_talking_0015",
+                    "filename": "Rebeca_talking_0021",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2160,
-                        "y": 1724,
-                        "w": 720,
-                        "h": 862
+                        "x": 1728,
+                        "y": 731,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
-                    "filename": "Rebeca_talking_0022",
+                    "filename": "Rebeca_talking_0028",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2880,
-                        "y": 1724,
-                        "w": 720,
-                        "h": 862
+                        "x": 2016,
+                        "y": 731,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
-                    "filename": "Rebeca_talking_0029",
+                    "filename": "Rebeca_talking_0035",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
                         "x": 0,
-                        "y": 2586,
-                        "w": 720,
-                        "h": 862
+                        "y": 1462,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
-                    "filename": "Rebeca_talking_0036",
+                    "filename": "Rebeca_talking_0042",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 720,
-                        "y": 2586,
-                        "w": 720,
-                        "h": 862
+                        "x": 288,
+                        "y": 1462,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
-                    "filename": "Rebeca_talking_0043",
+                    "filename": "Rebeca_talking_0048",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 1440,
-                        "y": 2586,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Rebeca_talking_0049",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 2160,
-                        "y": 2586,
-                        "w": 720,
-                        "h": 862
+                        "x": 576,
+                        "y": 1462,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -413,20 +413,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2880,
-                        "y": 2586,
-                        "w": 720,
-                        "h": 862
+                        "x": 864,
+                        "y": 1462,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -434,20 +434,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 3448,
-                        "w": 720,
-                        "h": 862
+                        "x": 1152,
+                        "y": 1462,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -455,20 +455,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 720,
-                        "y": 3448,
-                        "w": 720,
-                        "h": 862
+                        "x": 1440,
+                        "y": 1462,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -476,20 +476,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 1440,
-                        "y": 3448,
-                        "w": 720,
-                        "h": 862
+                        "x": 1728,
+                        "y": 1462,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -497,20 +497,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2160,
-                        "y": 3448,
-                        "w": 720,
-                        "h": 862
+                        "x": 2016,
+                        "y": 1462,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -518,20 +518,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 2880,
-                        "y": 3448,
-                        "w": 720,
-                        "h": 862
+                        "x": 0,
+                        "y": 2193,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -539,20 +539,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 4310,
-                        "w": 720,
-                        "h": 862
+                        "x": 288,
+                        "y": 2193,
+                        "w": 288,
+                        "h": 731
                     }
                 },
                 {
@@ -560,20 +560,20 @@
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 720,
-                        "h": 862
+                        "w": 288,
+                        "h": 731
                     },
                     "frame": {
-                        "x": 720,
-                        "y": 4310,
-                        "w": 720,
-                        "h": 862
+                        "x": 576,
+                        "y": 2193,
+                        "w": 288,
+                        "h": 731
                     }
                 }
             ]

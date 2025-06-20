@@ -1,0 +1,88 @@
+{
+    "anims": [
+        {
+            "key": "IvanIdle",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Ivan_idle_0001"
+                },
+                {
+                    "frame": "Ivan_idle_0006"
+                },
+                {
+                    "frame": "Ivan_idle_0011"
+                },
+                {
+                    "frame": "Ivan_idle_0016"
+                },
+                {
+                    "frame": "Ivan_idle_0021"
+                },
+                {
+                    "frame": "Ivan_idle_0026"
+                },
+                {
+                    "frame": "Ivan_idle_0031"
+                },
+                {
+                    "frame": "Ivan_idle_0036"
+                },
+                {
+                    "frame": "Ivan_idle_0041"
+                },
+                {
+                    "frame": "Ivan_idle_0046"
+                },
+                {
+                    "frame": "Ivan_idle_0050"
+                }
+            ],
+            "defaultTextureKey": "Ivan",
+            "frameRate": 6,
+            "repeat": -1
+        },
+        {
+            "key": "IvanTalking",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Ivan_talking_0001"
+                },
+                {
+                    "frame": "Ivan_talking_0006"
+                },
+                {
+                    "frame": "Ivan_talking_0011"
+                },
+                {
+                    "frame": "Ivan_talking_0016"
+                },
+                {
+                    "frame": "Ivan_talking_0021"
+                },
+                {
+                    "frame": "Ivan_talking_0026"
+                },
+                {
+                    "frame": "Ivan_talking_0031"
+                },
+                {
+                    "frame": "Ivan_talking_0036"
+                },
+                {
+                    "frame": "Ivan_talking_0041"
+                },
+                {
+                    "frame": "Ivan_talking_0046"
+                },
+                {
+                    "frame": "Ivan_talking_0050"
+                }
+            ],
+            "defaultTextureKey": "Ivan",
+            "frameRate": 6,
+            "repeat": -1
+        }
+    ]
+}

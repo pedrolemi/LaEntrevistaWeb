@@ -47,28 +47,28 @@
             "type": "frame",
             "frames": [
                 {
-                    "frame": "Rebeca_talking_0001"
+                    "frame": "Rebeca_talking_0000"
                 },
                 {
-                    "frame": "Rebeca_talking_0008"
+                    "frame": "Rebeca_talking_0007"
                 },
                 {
-                    "frame": "Rebeca_talking_0015"
+                    "frame": "Rebeca_talking_0014"
                 },
                 {
-                    "frame": "Rebeca_talking_0022"
+                    "frame": "Rebeca_talking_0021"
                 },
                 {
-                    "frame": "Rebeca_talking_0029"
+                    "frame": "Rebeca_talking_0028"
                 },
                 {
-                    "frame": "Rebeca_talking_0036"
+                    "frame": "Rebeca_talking_0035"
                 },
                 {
-                    "frame": "Rebeca_talking_0043"
+                    "frame": "Rebeca_talking_0042"
                 },
                 {
-                    "frame": "Rebeca_talking_0049"
+                    "frame": "Rebeca_talking_0048"
                 }
             ],
             "defaultTextureKey": "Rebeca",

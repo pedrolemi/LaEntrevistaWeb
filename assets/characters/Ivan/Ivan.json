@@ -10,465 +10,465 @@
             "scale": 1,
             "frames": [
                 {
-                    "filename": "Luisa_sitting_0001",
+                    "filename": "Ivan_idle_0001",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0006",
+                    "filename": "Ivan_idle_0006",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 458,
+                        "x": 365,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0011",
+                    "filename": "Ivan_idle_0011",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 916,
+                        "x": 730,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0016",
+                    "filename": "Ivan_idle_0016",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 1374,
+                        "x": 1095,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0021",
+                    "filename": "Ivan_idle_0021",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 1832,
+                        "x": 1460,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0026",
+                    "filename": "Ivan_idle_0026",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 2290,
+                        "x": 1825,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0031",
+                    "filename": "Ivan_idle_0031",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 859,
-                        "w": 458,
-                        "h": 859
+                        "x": 2190,
+                        "y": 0,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0036",
+                    "filename": "Ivan_idle_0036",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 458,
-                        "y": 859,
-                        "w": 458,
-                        "h": 859
+                        "x": 2555,
+                        "y": 0,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0041",
+                    "filename": "Ivan_idle_0041",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 916,
-                        "y": 859,
-                        "w": 458,
-                        "h": 859
+                        "x": 0,
+                        "y": 985,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0046",
+                    "filename": "Ivan_idle_0046",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 1374,
-                        "y": 859,
-                        "w": 458,
-                        "h": 859
+                        "x": 365,
+                        "y": 985,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_sitting_0050",
+                    "filename": "Ivan_idle_0050",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 1832,
-                        "y": 859,
-                        "w": 458,
-                        "h": 859
+                        "x": 730,
+                        "y": 985,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0000",
+                    "filename": "Ivan_talking_0001",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 2290,
-                        "y": 859,
-                        "w": 458,
-                        "h": 859
+                        "x": 1095,
+                        "y": 985,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0005",
+                    "filename": "Ivan_talking_0006",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 1718,
-                        "w": 458,
-                        "h": 859
+                        "x": 1460,
+                        "y": 985,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0010",
+                    "filename": "Ivan_talking_0011",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 458,
-                        "y": 1718,
-                        "w": 458,
-                        "h": 859
+                        "x": 1825,
+                        "y": 985,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0015",
+                    "filename": "Ivan_talking_0016",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 916,
-                        "y": 1718,
-                        "w": 458,
-                        "h": 859
+                        "x": 2190,
+                        "y": 985,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0020",
+                    "filename": "Ivan_talking_0021",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 1374,
-                        "y": 1718,
-                        "w": 458,
-                        "h": 859
+                        "x": 2555,
+                        "y": 985,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0025",
+                    "filename": "Ivan_talking_0026",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 1832,
-                        "y": 1718,
-                        "w": 458,
-                        "h": 859
+                        "x": 0,
+                        "y": 1970,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0030",
+                    "filename": "Ivan_talking_0031",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 2290,
-                        "y": 1718,
-                        "w": 458,
-                        "h": 859
+                        "x": 365,
+                        "y": 1970,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0035",
+                    "filename": "Ivan_talking_0036",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 2577,
-                        "w": 458,
-                        "h": 859
+                        "x": 730,
+                        "y": 1970,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0040",
+                    "filename": "Ivan_talking_0041",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 458,
-                        "y": 2577,
-                        "w": 458,
-                        "h": 859
+                        "x": 1095,
+                        "y": 1970,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0045",
+                    "filename": "Ivan_talking_0046",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 916,
-                        "y": 2577,
-                        "w": 458,
-                        "h": 859
+                        "x": 1460,
+                        "y": 1970,
+                        "w": 365,
+                        "h": 985
                     }
                 },
                 {
-                    "filename": "Luisa_talking_0049",
+                    "filename": "Ivan_talking_0050",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
-                        "w": 458,
-                        "h": 859
+                        "w": 365,
+                        "h": 985
                     },
                     "frame": {
-                        "x": 1374,
-                        "y": 2577,
-                        "w": 458,
-                        "h": 859
+                        "x": 1825,
+                        "y": 1970,
+                        "w": 365,
+                        "h": 985
                     }
                 }
             ]

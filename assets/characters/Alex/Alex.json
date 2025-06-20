@@ -1,225 +1,216 @@
 {
-    "textures": [
-        {
-            "image": "texture",
-            "format": "RGBA8888",
-            "size": {
-                "w": 0,
-                "h": 0
-            },
-            "scale": 1,
-            "frames": [
-                {
-                    "filename": "Alex_idle_0001",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0009",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 720,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0017",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 1440,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0025",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 862,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0033",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 720,
-                        "y": 862,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0041",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 1440,
-                        "y": 862,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0049",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 1724,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0057",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 720,
-                        "y": 1724,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0065",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 1440,
-                        "y": 1724,
-                        "w": 720,
-                        "h": 862
-                    }
-                },
-                {
-                    "filename": "Alex_idle_0070",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 720,
-                        "h": 862
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 720,
-                        "h": 862
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 2586,
-                        "w": 720,
-                        "h": 862
-                    }
-                }
-            ]
-        }
-    ]
+	"frames": {
+		"Alex_idle_0001": {
+			"frame": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0009": {
+			"frame": {
+				"x": 188,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0017": {
+			"frame": {
+				"x": 376,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0025": {
+			"frame": {
+				"x": 564,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0033": {
+			"frame": {
+				"x": 752,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0041": {
+			"frame": {
+				"x": 940,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0049": {
+			"frame": {
+				"x": 1128,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0057": {
+			"frame": {
+				"x": 1316,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0065": {
+			"frame": {
+				"x": 1504,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		},
+		"Alex_idle_0070": {
+			"frame": {
+				"x": 1692,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 188,
+				"h": 693
+			},
+			"sourceSize": {
+				"w": 188,
+				"h": 693
+			}
+		}
+	},
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "Alex.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1880,
+			"h": 693
+		},
+		"scale": "1",
+		"smartupdate": "$TexturePacker:SmartUpdate:10771387894cad1711d53b2c4ffdfaea:495b3e8dfa23f9cfa95710a1b9d609c9:9a8f86e0417dbca0d2ac6123ccf84ac3$"
+	}
 }

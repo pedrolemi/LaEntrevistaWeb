@@ -1,17 +1,18 @@
-import { moveTowards, getInteractiveConfig } from "./utils/misc.js";
+import { moveTowards, setInteractive } from "./utils/misc.js";
 
 export default class Character extends Phaser.GameObjects.Sprite {
     /**
      * Personaje del juego
-     * @param {Phaser.scene} scene - Escena donde se anade el personaje 
+     * @param {Phaser.scene} scene - escena donde se anade el personaje 
      * @param {number} x - posicion inicial en X
      * @param {number} y - posicion inicial en Y
      * @param {number} scale - escala del sprite
      * @param {number} name - nombre del personaje
-     * @param {number} speed - velocdiad de movimiento
+     * @param {number} speed - velocidad de movimiento
      * @param {function} callback - funcion a ejecutar al hacer click sobre el personaje
+     * @param {boolean} lookingRight - indica si el personaje inicialmente mira hacia la derecha (true) o no (false)
      */
-    constructor(scene, x, y, scale, name, speed, callback) {
+    constructor(scene, x, y, scale, name, speed, callback, lookingRight = false) {
         super(scene, x, y, name)
 
         this.scene = scene;
@@ -30,17 +31,14 @@ export default class Character extends Phaser.GameObjects.Sprite {
         this.speed = speed;
         this.target = null;
         this.callback = callback;
+        this.lookingRight = lookingRight;
 
-        this.setInteractive();
+        setInteractive(this);
         this.on("pointerdown", () => {
             if (this.callback) {
                 this.callback();
             }
         });
-    }
-
-    setInteractive() {
-        super.setInteractive(getInteractiveConfig(this, {}));
     }
 
     preUpdate(time, deltaTime) {
@@ -61,8 +59,9 @@ export default class Character extends Phaser.GameObjects.Sprite {
                 this.x = this.target.x;
                 this.y = this.target.y;
                 this.target = null;
-                this.setInteractive();
+                setInteractive(this);
                 this.stopAnimation();
+                this.emit("targetReached");
             }
         }
     }
@@ -126,6 +125,13 @@ export default class Character extends Phaser.GameObjects.Sprite {
             this.disableInteractive();
             this.playWalkingAnimation();
             this.target = target;
+
+            if (this.target.x > this.x && !this.lookingRight) {
+                this.flipX = true;
+            }
+            else if (this.target.x <= this.x && this.lookingRight) {
+                this.flipX = false;
+            }
         }
     }
 }

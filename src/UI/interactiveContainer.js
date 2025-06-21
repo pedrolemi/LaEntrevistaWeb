@@ -1,4 +1,4 @@
-import { getInteractiveConfig } from "../utils/misc.js";
+import { setInteractive } from "../utils/misc.js";
 
 export default class InteractiveContainer extends Phaser.GameObjects.Container {
     /**
@@ -101,7 +101,7 @@ export default class InteractiveContainer extends Phaser.GameObjects.Container {
             hitArea: rectangle,
             hitAreaCallback: Phaser.Geom.Rectangle.Contains
         }
-        this.setInteractive(getInteractiveConfig(this, interactiveConfig));
+        setInteractive(this, interactiveConfig);
 
         if (debug) {
             this.add(this.scene.add.rectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x000, 0.4));

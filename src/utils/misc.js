@@ -45,17 +45,16 @@ export function moveTowards(current, target, maxDistanceDelta) {
 
 
 /**
- * Configura los parametros que pasarle al setInteractive de un objeto para coger el cursor correspondiente
- * @param {Phaser.GameObject} gameObject - objeto que se va a hacer interactivo 
- * @param {Object} prevConfig - configuracion a la que agregar el paraametro del cursor 
- * @returns {Object} - configuracion con el parametro del cursor a utilizar
- */
-export function getInteractiveConfig(gameObject, prevConfig) {
+* Configura un objeto para que sea interactivo y le asigna un cursor personalizado si está disponible
+* @param {Phaser.GameObject} gameObject - objeto que se va a hacer interactivo 
+* @param {Object} prevConfig - configuracion a la que agregar el parametro del cursor 
+*/
+export function setInteractive(gameObject, config = {}) {
     if (gameObject.scene.registry.get("pointerOver") != null) {
-        prevConfig.cursor = `url(${gameObject.scene.registry.get("pointerOver")}), pointer`;
+        config.cursor = `url(${gameObject.scene.registry.get("pointerOver")}), pointer`;
     }
     else {
-        prevConfig.useHandCursor = true;
+        config.useHandCursor = true;
     }
-    return prevConfig;
+    gameObject.setInteractive(config);
 }

@@ -1,7 +1,6 @@
 import BaseScene from "./baseScene.js";
-import Character from "../../character.js";
 import TextArea from "../../UI/textArea.js";
-import { getInteractiveConfig } from "../../utils/misc.js";
+import { setInteractive } from "../../utils/misc.js";
 
 export default class House extends BaseScene {
     /**
@@ -14,7 +13,7 @@ export default class House extends BaseScene {
 
     create() {
         super.create();
-        
+
         this.nodes = this.cache.json.get("house");
         this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "start");
 
@@ -24,28 +23,15 @@ export default class House extends BaseScene {
         this.createBrowser();
         this.createDesktop();
 
-        let img = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
+        // let img = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
-        
         let errors = 0;
         this.dispatcher.add("wrongAnswer", this, () => {
             errors++;
             this.blackboard.setValue("errors", errors);
         });
 
-        
-
         this.dispatcher.dispatch("offersFound");
-        
-        
-        let character = new Character(this, 200, 200, 0.5, "Antonio", 0.3, () => {
-            console.log("Hola");
-        });
-        character.moveTowards({ x: 500, y: 500 })
-
-        // character.on("pointerdown", () => {
-        //     console.log("aaa")
-        // })
     }
 
     onCreate() {
@@ -54,12 +40,11 @@ export default class House extends BaseScene {
         }, 500);
     }
 
-
     createBrowser() {
         let browser = this.add.image(this.BGS_X, this.BGS_Y, "browser");
 
         let portalLogo = this.add.image(565, this.BGS_Y, "portalLogo").setScale(0.55);
-        
+
         let maxWidth = 450;
         let textConfig = {
             fontFamily: "Arial",
@@ -89,24 +74,24 @@ export default class House extends BaseScene {
             textConfig.fontStyle = "normal";
 
             let programmingIcon = this.add.image(600, ICONS_Y, "programming");
-            let programmingText = new TextArea(this, programmingIcon.x, TEXT_Y, programmingIcon.displayWidth, programmingIcon.displayHeight, 
+            let programmingText = new TextArea(this, programmingIcon.x, TEXT_Y, programmingIcon.displayWidth, programmingIcon.displayHeight,
                 this.dialogManager.translate("programming", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
             programmingText.adjustFontSize();
-            
-            programmingIcon.setInteractive(getInteractiveConfig(programmingIcon, {}));
+
+            setInteractive(programmingIcon);
             programmingIcon.on("pointerdown", () => {
-                
+
             });
 
 
             let dataIcon = this.add.image(1005, ICONS_Y, "data");
-            let dataText = new TextArea(this, dataIcon.x, TEXT_Y, dataIcon.displayWidth, dataIcon.displayHeight, 
+            let dataText = new TextArea(this, dataIcon.x, TEXT_Y, dataIcon.displayWidth, dataIcon.displayHeight,
                 this.dialogManager.translate("data", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
             dataText.adjustFontSize();
 
-            dataIcon.setInteractive(getInteractiveConfig(dataIcon, {}));
+            setInteractive(dataIcon);
             dataIcon.on("pointerdown", () => {
-                
+
             });
         });
     }
@@ -114,9 +99,9 @@ export default class House extends BaseScene {
 
     createDesktop() {
         let desktop = this.add.image(this.BGS_X, this.BGS_Y, "desktop");
-        
+
         this.dispatcher.add("startSearch", this, () => {
-            desktop.setInteractive(getInteractiveConfig(desktop, {}));
+            setInteractive(desktop);
             desktop.on("pointerdown", () => {
                 desktop.setVisible(false);
                 desktop.disableInteractive();

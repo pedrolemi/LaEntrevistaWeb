@@ -1,4 +1,5 @@
 import BaseScene from "./baseScene.js";
+import { setInteractive } from "../../utils/misc.js";
 
 export default class MainMenu extends BaseScene {
     /**
@@ -14,7 +15,7 @@ export default class MainMenu extends BaseScene {
 
         let img = this.add.image(0, 0, "mainMenu").setOrigin(0, 0);
 
-        img.setInteractive();
+        setInteractive(img);
         img.on("pointerdown", () => {
             img.disableInteractive();
 

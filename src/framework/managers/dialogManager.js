@@ -1,4 +1,3 @@
-import Localization from "../dialog/localization.js";
 import Singleton from "../utils/singleton.js";
 
 export default class DialogManager extends Singleton {
@@ -13,7 +12,6 @@ export default class DialogManager extends Singleton {
 
     init(scene, nodeReader) {
         this.scene = scene;
-        this.localization = new Localization(this.scene.plugins.get("rextexttranslationplugin"));
         this.nodeReader = nodeReader;
     }
 
@@ -27,16 +25,7 @@ export default class DialogManager extends Singleton {
         }
     }
 
-    /**
-    * @param {String} fullId - nombre del elemento a traducir dentro del namespace 
-    * @param {String} namespace - nombre del archivo (namespace) en el que esta el texto a traducir
-    * @param {Boolean} returnObjects - true para que i18next devuelva los objetos que lee al localizar, false en caso contrario (opcional)
-    * @returns {String} - texto traducido
-    */
-    translate(fullId, namespace, returnObjects = true) {
-        return this.localization.translate(fullId, { ns: namespace, returnObjects: returnObjects });
-    }
-
+    
     /**
     * @param {Phaser.Scene} scene - escena en la que se crea el nodo
     * @param {Object} fullJson - objeto json donde estan los nodos 

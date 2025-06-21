@@ -63,7 +63,7 @@ export default class House extends BaseScene {
                 useAdvancedWrap: true
             }
         }
-        let portalText = new TextArea(this, 800, portalLogo.y, maxWidth, portalLogo.displayHeight, this.dialogManager.translate("platform", "scenes"), textConfig)
+        let portalText = new TextArea(this, 800, portalLogo.y, maxWidth, portalLogo.displayHeight, this.localizationManager.translate("platform", "scenes"), textConfig)
             .setOrigin(0, 0.5);
         portalText.adjustFontSize();
 
@@ -81,7 +81,7 @@ export default class House extends BaseScene {
 
             let programmingIcon = this.add.image(600, ICONS_Y, "programming");
             let programmingText = new TextArea(this, programmingIcon.x, TEXT_Y, programmingIcon.displayWidth, programmingIcon.displayHeight,
-                this.dialogManager.translate("programming", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
+                this.localizationManager.translate("programming", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
             programmingText.adjustFontSize();
 
             this.setInteractive(programmingIcon);
@@ -92,7 +92,7 @@ export default class House extends BaseScene {
 
             let dataIcon = this.add.image(1005, ICONS_Y, "data");
             let dataText = new TextArea(this, dataIcon.x, TEXT_Y, dataIcon.displayWidth, dataIcon.displayHeight,
-                this.dialogManager.translate("data", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
+                this.localizationManager.translate("data", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
             dataText.adjustFontSize();
 
             this.setInteractive(dataIcon);

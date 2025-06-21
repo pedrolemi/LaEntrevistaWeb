@@ -18,7 +18,7 @@ export default class UI extends BaseScene {
         super.create(params);
 
 
-        let dialogManager = DialogManager.create();
+        let dialogManager = DialogManager.getInstance();
         dialogManager.init(this, new LaEntrevistaNodeReader());
 
         // TODO: Cambiar imagenes y configurar texto
@@ -44,11 +44,11 @@ export default class UI extends BaseScene {
         this.textbox = new DialogBox(this, false, this.textboxConfig, this.nameBoxConfig, this.textConfig, this.nameTextConfig);
         // this.textbox.activate(true);
 
-        this.cv = new CV(this);
-        this.cv.setDepth(10);
+        // this.cv = new CV(this);
+        // this.cv.setDepth(10);
 
         this.dispatcher.add("checkCV", this, () => {
-            this.cv.activate(true);
+            // this.cv.activate(true);
         }, true);
     }
 

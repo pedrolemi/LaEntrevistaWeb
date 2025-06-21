@@ -1,6 +1,7 @@
 import DialogNode from "../dialogNode.js";
 import OptionBox from "../../UI/optionBox.js";
 import InteractiveContainer from "../../UI/interactiveContainer.js";
+import LocalizationManager from "../../managers/localizationManager.js";
 
 export default class ChoiceNode extends DialogNode {
     /**
@@ -29,7 +30,7 @@ export default class ChoiceNode extends DialogNode {
         this.options = [];              // Lista de OptionBox creadas
 
         // Obtiene el texto traducido de las opciones y lo guarda en la lista
-        this.choices = scene.dialogManager.translate(fullId, namespace, true);
+        this.choices = LocalizationManager.getInstance().translate(fullId, namespace, true);
 
         // Recorre cada opcion del nodo y guarda el nodo siguiente a cada opcion
         node.choices.forEach((choice) => {

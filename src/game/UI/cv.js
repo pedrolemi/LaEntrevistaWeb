@@ -55,7 +55,7 @@ export default class CV extends InteractiveContainer {
     
 
     translate(section) {
-        return this.scene.dialogManager.translate(section, "CVs").toUpperCase();
+        return this.scene.localizationManager.translate(section, "CVs").toUpperCase();
     }
 
     createAboutSection() {

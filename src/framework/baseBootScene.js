@@ -1,3 +1,9 @@
+import SceneManager from "./managers/sceneManager.js";
+import DialogManager from "./managers/dialogManager.js";
+import NodeReader from "./dialog/nodeReader.js";
+import LocalizationManager from "./managers/localizationManager.js";
+import EventDispatcher from "./managers/eventDispatcher.js";
+
 export default class BaseBootScene extends Phaser.Scene {
     /**
     * Clase base para la escena inicial en la que se cargan todos los recursos
@@ -85,6 +91,18 @@ export default class BaseBootScene extends Phaser.Scene {
         this.loadi18next();
         this.loadDialogs();
         loadAssets();
+
+        let sceneManager = SceneManager.create();
+        sceneManager.init(this);
+        // sceneManager.fadeIn();
+
+        let dialogManager = DialogManager.create();
+        dialogManager.init(this, new NodeReader());
+
+        let localizationManager = LocalizationManager.create();
+        localizationManager.init(this);
+
+        let eventDispatcher = EventDispatcher.create();
 
         // Indicar a LoaderPlugin que hay que cargar los assets que se encuentran en la cola
         // Nota: despues del preload este metodo se llama automaticamente, pero si se quieren

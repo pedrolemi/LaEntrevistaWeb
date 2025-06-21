@@ -1,8 +1,5 @@
 import BaseBootScene from "../../framework/baseBootScene.js";
-
-import SceneManager from "../../framework/managers/sceneManager.js";
 import GameManager from "../gameManager.js";
-
 
 export default class BootScene extends BaseBootScene {
     preload() {
@@ -37,12 +34,7 @@ export default class BootScene extends BaseBootScene {
         let bg = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
         super.create(loadAssets);
-
-
-        let sceneManager = SceneManager.create();
-        sceneManager.init(this);
-        // sceneManager.fadeIn();
-
+        
         this.events.once("start", () => {
             let gameManager = GameManager.create();
 

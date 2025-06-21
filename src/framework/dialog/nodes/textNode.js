@@ -1,3 +1,4 @@
+import LocalizationManager from "../../managers/localizationManager.js";
 import DialogNode from "../dialogNode.js";
 import ChoiceNode from "./choiceNode.js";
 
@@ -21,10 +22,11 @@ export default class TextNode extends DialogNode {
 
     constructor(scene, node, fullId, namespace) {
         super(scene);
+        let localizationManager = LocalizationManager.getInstance();
 
         // Se obtiene la id y nombre traducido del personaje
         this.character = node.character;                                            // id del personaje que habla
-        this.name = scene.dialogManager.translate(this.character, "names");         // nombre traducido del personaje que habla
+        this.name = localizationManager.translate(this.character, "names");         // nombre traducido del personaje que habla
 
         this.dialogs = [];                                                          // serie de dialogos que se van a mostrar
         this.currDialog = 0;                                                        // indice del dialogo que se esta mostrando
@@ -34,7 +36,7 @@ export default class TextNode extends DialogNode {
         // Se obtiene el dialogo traducido
         let ui = scene.dialogManager.scene;
         this.dialogBox = ui.textbox;
-        let translation = scene.dialogManager.translate(fullId, namespace, true);
+        let translation = localizationManager.translate(fullId, namespace, true);
 
         // Si el texto no esta dividido en fragmentos, se guarda en el array de fragmentos
         // si no, el array de fragmentos es directamente el obtenido al traducir el nodo
@@ -45,24 +47,12 @@ export default class TextNode extends DialogNode {
         else if (Array.isArray(translation) && translation.length > 0) {
             textFragments = translation;
         }
-
-        // Recorre todos los fragmentos obtenidos y los divide (por si
-        // el texto es demasiado largo y no cabe en la caja de texto)
-        textFragments.forEach((text) => {
-            this.split(text);
-        })
-
-        // Guarda el siguiente nodo en la lista de siguientes
-        if (node.next != null && node.next != "") {
-            this.next.push(node.next);
-        }
-        // console.log(this.dialogs)
     }
 
 
     /**
     * Divide el texto por si alguno es demasiado largo y se sale de la caja de texto
-    * @param {StreamPipeOptions} text - texto a dividir
+    * @param {String} text - texto a dividir
     */
     split(text) {
         // Se divide el texto por palabras

@@ -1,18 +1,32 @@
-export default class Localization {
-    /**
-    * Gestiona la carga de los nodos de dialogo
-    */
-    constructor(i18n) {
-        this.i18next = i18n;
+import Singleton from "../utils/singleton.js";
+
+export default class LocalizationManager extends Singleton {
+    constructor() {
+        super("LocalizationManager");
+
+        this.i18next = null;
     }
 
+    init(scene) {
+        this.i18next = scene.plugins.get("rextexttranslationplugin");
+    }
+
+    
     /**
     * Obtiene el texto traducido
     * @param {String} translationId - id completa del nodo en el que mirar
     * @param {Object} options - parametros que pasarle a i18n
     * @returns 
     */
-    translate(translationId, options) {
+    translate(translationId, namespace, returnObjects = true, otherOptions = {}) {
+        let options = otherOptions;
+        if (options.ns == null) {
+            options.ns = namespace;
+        }
+        if (options.returnObjects == null) {
+            options.returnObjects = returnObjects;
+        }
+
         let str = this.i18next.t(translationId, options);
 
         // Si se ha obtenido algo

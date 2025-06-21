@@ -4,6 +4,8 @@ import Blackboard from "../framework/utils/blackboard.js";
 import EventDispatcher from "../framework/managers/eventDispatcher.js";
 
 import { setInteractive } from "../framework/utils/misc.js";
+import SceneManager from "../framework/managers/sceneManager.js";
+import LocalizationManager from "../framework/managers/localizationManager.js";
 
 export default class BaseScene extends Phaser.Scene {
     /**
@@ -24,13 +26,16 @@ export default class BaseScene extends Phaser.Scene {
         this.CANVAS_HEIGHT = this.sys.game.canvas.height;
 
         this.blackboard = new Blackboard();
-        this.gameManager = GameManager.getInstance();
-        this.dialogManager = DialogManager.getInstance();
-        this.dispatcher = EventDispatcher.getInstance();
-        this.characters = new Map();
 
-        // TODO
+        this.sceneManager = SceneManager.getInstance();
+        this.dialogManager = DialogManager.getInstance();
+        this.localizationManager = LocalizationManager.getInstance();
+        this.dispatcher = EventDispatcher.getInstance();
+        this.gameManager = GameManager.getInstance();
+
         this.bgScale = 1;
+
+        this.characters = new Map();
 
         // Funciones adicionales a las que se llamara al crear y reactivar la escena
         this.events.once("create", () => {

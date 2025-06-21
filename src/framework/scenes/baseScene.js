@@ -1,11 +1,8 @@
-import GameManager from "./gameManager.js";
-import DialogManager from "../framework/managers/dialogManager.js";
-import Blackboard from "../framework/utils/blackboard.js";
-import EventDispatcher from "../framework/managers/eventDispatcher.js";
-
-import { setInteractive } from "../framework/utils/misc.js";
-import SceneManager from "../framework/managers/sceneManager.js";
-import LocalizationManager from "../framework/managers/localizationManager.js";
+import Blackboard from "../utils/blackboard.js";
+import SceneManager from "../managers/sceneManager.js";
+import DialogManager from "../managers/dialogManager.js";
+import LocalizationManager from "../managers/localizationManager.js";
+import EventDispatcher from "../managers/eventDispatcher.js";
 
 export default class BaseScene extends Phaser.Scene {
     /**
@@ -16,8 +13,6 @@ export default class BaseScene extends Phaser.Scene {
     */
     constructor(name, atlasName) {
         super({ key: name });
-
-        // TODO
         this.atlasName = atlasName;
     }
 
@@ -31,11 +26,8 @@ export default class BaseScene extends Phaser.Scene {
         this.dialogManager = DialogManager.getInstance();
         this.localizationManager = LocalizationManager.getInstance();
         this.dispatcher = EventDispatcher.getInstance();
-        this.gameManager = GameManager.getInstance();
 
         this.bgScale = 1;
-
-        this.characters = new Map();
 
         // Funciones adicionales a las que se llamara al crear y reactivar la escena
         this.events.once("create", () => {
@@ -76,21 +68,5 @@ export default class BaseScene extends Phaser.Scene {
     * Se encarga de configurar la escena con los parametros iniciales y
     * @param {Object} params - parametros que se le pasan a la configuracion inicial 
     */
-    initialSetup(params) {
-        this.dialogManager.setCharacters(this.characters);
-    }
-
-    /**
-    * Agrega un personaje al conjunto de personajes que hay en la escena
-    * @param {Character} character - personaje que se desea agregar
-    */
-    addCharacter(character) {
-        if (!this.characters.has(character.name)) {
-            this.characters.set(character.name, character);
-        }
-    }
-
-    setInteractive(gameObject, config = {}) {
-        setInteractive(gameObject, config);
-    }
+    initialSetup(params) { }
 }

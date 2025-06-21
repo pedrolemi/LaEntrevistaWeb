@@ -1,25 +1,9 @@
-import BaseScene from "../baseScene.js";
-import DialogManager from "../../framework/managers/dialogManager.js";
-import LaEntrevistaNodeReader from "../dialog/laEntrevistaNodeReader.js";
+import BaseUI from "../../framework/scenes/baseUI.js";
+import CV from "../UI/cv.js"
 
-import DialogBox from "../../framework/UI/dialogBox.js";
-import CV from "./cv.js";
-
-export default class UI extends BaseScene {
-    /**
-    * Escena en la que se crean los elementos para la interfaz
-    * @extends BaseScene
-    */
+export default class UI extends BaseUI {
     constructor() {
         super("UI", "UI");
-    }
-
-    create(params) {
-        super.create(params);
-
-
-        let dialogManager = DialogManager.getInstance();
-        dialogManager.init(this, new LaEntrevistaNodeReader());
 
         // TODO: Cambiar imagenes y configurar texto
         this.textboxConfig = {
@@ -40,15 +24,16 @@ export default class UI extends BaseScene {
         }
         this.optionBoxConfig = {
         }
+    }
 
-        this.textbox = new DialogBox(this, false, this.textboxConfig, this.nameBoxConfig, this.textConfig, this.nameTextConfig);
-        // this.textbox.activate(true);
+    create(params) {
+        super.create(params);
 
-        // this.cv = new CV(this);
-        // this.cv.setDepth(10);
+        this.cv = new CV(this);
+        this.cv.setDepth(10);
 
         this.dispatcher.add("checkCV", this, () => {
-            // this.cv.activate(true);
+            this.cv.activate(true);
         }, true);
     }
 

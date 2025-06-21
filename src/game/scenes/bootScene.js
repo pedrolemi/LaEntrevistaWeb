@@ -1,4 +1,4 @@
-import BaseBootScene from "../../framework/baseBootScene.js";
+import BaseBootScene from "../../framework/scenes/baseBootScene.js";
 import GameManager from "../gameManager.js";
 
 export default class BootScene extends BaseBootScene {

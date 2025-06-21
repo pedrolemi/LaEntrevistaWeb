@@ -1,8 +1,8 @@
-import BaseScene from "../baseScene.js";
+import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 import TextArea from "../../framework/UI/textArea.js";
 import Character from "../character.js";
 
-export default class House extends BaseScene {
+export default class House extends LaEntrevistaBaseScene {
     /**
     * Escena de la casa
     * @extends BaseScene

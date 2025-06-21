@@ -1,6 +1,6 @@
-import BaseScene from "../baseScene.js";
+import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 
-export default class MainMenu extends BaseScene {
+export default class MainMenu extends LaEntrevistaBaseScene {
     /**
     * Menu principal
     * @extends BaseScene

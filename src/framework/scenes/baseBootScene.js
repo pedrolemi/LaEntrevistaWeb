@@ -1,8 +1,8 @@
-import SceneManager from "./managers/sceneManager.js";
-import DialogManager from "./managers/dialogManager.js";
-import NodeReader from "./dialog/nodeReader.js";
-import LocalizationManager from "./managers/localizationManager.js";
-import EventDispatcher from "./managers/eventDispatcher.js";
+import SceneManager from "../managers/sceneManager.js";
+import DialogManager from "../managers/dialogManager.js";
+import NodeReader from "../dialog/nodeReader.js";
+import LocalizationManager from "../managers/localizationManager.js";
+import EventDispatcher from "../managers/eventDispatcher.js";
 
 export default class BaseBootScene extends Phaser.Scene {
     /**

@@ -17,6 +17,7 @@ export default class UI extends BaseScene {
     create(params) {
         super.create(params);
 
+
         let dialogManager = DialogManager.create();
         dialogManager.init(this, new LaEntrevistaNodeReader());
 
@@ -49,6 +50,7 @@ export default class UI extends BaseScene {
         this.dispatcher.add("checkCV", this, () => {
             this.cv.activate(true);
         }, true);
+
     }
 
 }

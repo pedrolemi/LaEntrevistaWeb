@@ -14,24 +14,14 @@ export default class LaEntrevistaTextNode extends TextNode {
         if (this.cv.visible && !this.functionSet) {
             this.functionSet = true;
 
-            this.cv.on("pointerdown", () => {
+            let fn = () => {
                 this.processNode();
-                this.cv.resetOnPointerDown();
-            });
+                this.cv.off("pointerdown", fn);
+            }
+            this.cv.on("pointerdown", fn);
         }
         else {
-            // Al hacer click en la caja de texto, se procesara de nuevo el nodo
-            this.dialogBox.on("pointerdown", () => {
-                this.skipDialog();
-            });
-
-            this.currDialog = 0;
-            if (this.dialogs.length > 0) {
-                this.nextFragment();
-            }
-            else {
-                this.nextNode();
-            }
+            super.processNode();
         }
     }
 

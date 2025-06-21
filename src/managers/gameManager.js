@@ -16,8 +16,8 @@ export default class GameManager extends Singleton {
     startGame() {
         this.sceneManager.currentScene.scene.run("UI");
 
-        this.startCafeteriaScene();
-        // this.startHouseScene();
+        // this.startCafeteriaScene();
+        this.startHouseScene();
         // this.startMainMenu();
     }
 

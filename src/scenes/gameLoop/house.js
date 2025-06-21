@@ -1,6 +1,6 @@
 import BaseScene from "./baseScene.js";
 import TextArea from "../../UI/textArea.js";
-import { setInteractive } from "../../utils/misc.js";
+import Character from "../../character.js";
 
 export default class House extends BaseScene {
     /**
@@ -23,7 +23,7 @@ export default class House extends BaseScene {
         this.createBrowser();
         this.createDesktop();
 
-        // let img = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
+        let img = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
         let errors = 0;
         this.dispatcher.add("wrongAnswer", this, () => {
@@ -31,7 +31,12 @@ export default class House extends BaseScene {
             this.blackboard.setValue("errors", errors);
         });
 
-        this.dispatcher.dispatch("offersFound");
+        // this.dispatcher.dispatch("offersFound");
+
+        let character = new Character(this, 200, 200, 0.5, "Antonio", 0.3, () => {
+            console.log("Hola");
+        });
+        
     }
 
     onCreate() {
@@ -44,7 +49,8 @@ export default class House extends BaseScene {
         let browser = this.add.image(this.BGS_X, this.BGS_Y, "browser");
 
         let portalLogo = this.add.image(565, this.BGS_Y, "portalLogo").setScale(0.55);
-
+        portalLogo.setInteractive();
+        portalLogo.on("pointerdown", () => { console.log("hello")})
         let maxWidth = 450;
         let textConfig = {
             fontFamily: "Arial",
@@ -78,7 +84,7 @@ export default class House extends BaseScene {
                 this.dialogManager.translate("programming", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
             programmingText.adjustFontSize();
 
-            setInteractive(programmingIcon);
+            this.setInteractive(programmingIcon);
             programmingIcon.on("pointerdown", () => {
 
             });
@@ -89,7 +95,7 @@ export default class House extends BaseScene {
                 this.dialogManager.translate("data", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
             dataText.adjustFontSize();
 
-            setInteractive(dataIcon);
+            this.setInteractive(dataIcon);
             dataIcon.on("pointerdown", () => {
 
             });
@@ -101,7 +107,7 @@ export default class House extends BaseScene {
         let desktop = this.add.image(this.BGS_X, this.BGS_Y, "desktop");
 
         this.dispatcher.add("startSearch", this, () => {
-            setInteractive(desktop);
+            this.setInteractive(desktop);
             desktop.on("pointerdown", () => {
                 desktop.setVisible(false);
                 desktop.disableInteractive();

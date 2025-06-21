@@ -32,8 +32,9 @@ export default class TextNode extends DialogNode {
         this.centered = (node.centered == null) ? false : node.centered;            // indica si el texto esta centrado o no (en caso de que no se especifique aparece alineado arriba a la izquierda)
 
         // Se obtiene el dialogo traducido
+        let ui = scene.dialogManager.scene;
+        this.dialogBox = ui.textbox;
         let translation = scene.dialogManager.translate(fullId, namespace, true);
-        this.dialogBox = scene.dialogManager.scene.textbox;
 
         // Si el texto no esta dividido en fragmentos, se guarda en el array de fragmentos
         // si no, el array de fragmentos es directamente el obtenido al traducir el nodo
@@ -127,9 +128,10 @@ export default class TextNode extends DialogNode {
 
     processNode() {
         // Al hacer click en la caja de texto, se procesara de nuevo el nodo
-        this.dialogBox.on("pointerdown", () => {
+        this.onClick = () => {
             this.skipDialog();
-        });
+        }
+        this.dialogBox.on("pointerdown", this.onClick);
 
         this.currDialog = 0;
         if (this.dialogs.length > 0) {
@@ -141,8 +143,8 @@ export default class TextNode extends DialogNode {
     }
 
     nextNode() {
-        // Elimina los eventos de pulsar la caja de texto (ya que la comparten todos los nodos de texto)
-        this.dialogBox.off("pointerdown");
+        // Elimina el evento de pulsar la caja de texto (ya que la comparten todos los nodos de texto)
+        this.dialogBox.off("pointerdown", this.onClick);
 
         if (this.next.length > this.nextIndex) {
             // Si el siguiente nodo es de opcion multiple, se oculta la caja de texto y se pasa al siguiente nodo

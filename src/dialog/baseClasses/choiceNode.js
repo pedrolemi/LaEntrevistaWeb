@@ -1,5 +1,6 @@
 import DialogNode from "./dialogNode.js";
 import OptionBox from "../../UI/optionBox.js";
+import InteractiveContainer from "../../UI/interactiveContainer.js";
 
 export default class ChoiceNode extends DialogNode {
     /**
@@ -39,44 +40,36 @@ export default class ChoiceNode extends DialogNode {
         this.ui = scene.dialogManager.scene;
         this.textConfig = this.ui.textConfig;
         this.optionBoxConfig = this.ui.optionBoxConfig;
+
+        this.bgBlock = null;
+        this.onHideOptions = () => { };
     }
 
     processNode() {
         this.createOptions();
     }
 
-
-    /**
-    * Elimina las opciones
-    */
-    removeOptions() {
-        let processed = false;
-
-        // Recorre cada opcion del array de OptionBox
-        this.options.forEach((option) => {
-            // Oculta la opcion y cuando la termina de ocultar, destruye el objeto
-            option.activate(false, () => {
-                option.destroy();
-
-                // Si no se habia eliminado antes ninguna opcion, se marca 
-                // que se ha eliminado alguna y se pasa al siguiente nodo
-                if (!processed) {
-                    processed = true;
-                    this.nextNode();
-                }
-            });
-        });
-
-        // Limpia la lista de OptionBox
-        this.options = [];
+    nextNode() {
+        super.nextNode();
+        
+        this.onHideOptions = () => {
+            // this.bgBlock.destroy();
+        };
+        this.removeOptions();
     }
+
 
     /**
     * Crea las opciones 
     */
     createOptions() {
-        // Limpia las opciones que hubiera anteriormente
-        this.removeOptions();
+        this.bgBlock = new InteractiveContainer(this.ui, 0, 0);
+        this.bgBlockRect = this.ui.add.rectangle(0, 0, this.ui.CANVAS_WIDTH, this.ui.CANVAS_HEIGHT, 0x000, 0).setOrigin(0, 0);
+        this.bgBlock.add(this.bgBlockRect);
+        this.bgBlock.calculateRectangleSize();
+        this.bgBlock.setVisible(false);
+
+        this.bgBlock.activate(true);
 
         // Recorre todos los textos de las opciones
         for (let i = 0; i < this.choices.length; i++) {
@@ -84,7 +77,7 @@ export default class ChoiceNode extends DialogNode {
             // al indice de la opcion elegida y elimina el resto de opciones
             let opt = new OptionBox(this.ui, i, this.choices.length, this.choices[i], () => {
                 this.nextIndex = i;
-                this.removeOptions();
+                this.nextNode();
             }, false, this.optionBoxConfig, this.textConfig);
 
             // Muestra la opcion
@@ -95,5 +88,25 @@ export default class ChoiceNode extends DialogNode {
         }
     }
 
+    /**
+    * Elimina las opciones
+    */
+    removeOptions() {
+        let onHideCalled = false;
+
+        // Recorre cada opcion del array de OptionBox
+        this.options.forEach((option) => {
+            // Oculta la opcion y cuando la termina de ocultar, destruye el objeto
+            option.activate(false, () => {
+                option.destroy();
+            });
+        });
+
+        this.bgBlock.activate(false, () => {
+            this.onHideOptions();
+        })
+        // Limpia la lista de OptionBox
+        this.options = [];
+    }
 
 }

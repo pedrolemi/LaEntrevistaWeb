@@ -47,15 +47,12 @@ export default class CV extends InteractiveContainer {
 
         this.calculateRectangleSize();
         this.setVisible(false);
-        this.resetOnPointerDown();
-    }
-    
-    resetOnPointerDown() {
-        this.off("pointerdown");
+
         this.on("pointerdown", () => {
             this.activate(false);
-        })
+        });
     }
+    
 
     translate(section) {
         return this.scene.dialogManager.translate(section, "CVs").toUpperCase();

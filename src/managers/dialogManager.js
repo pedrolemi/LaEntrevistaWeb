@@ -8,12 +8,17 @@ export default class DialogManager extends Singleton {
         this.scene = null;
         this.textbox = null;
         this.currNode = null;
+        this.characters = new Map();
     }
 
     init(scene, nodeReader) {
         this.scene = scene;
         this.localization = new Localization(this.scene.plugins.get("rextexttranslationplugin"));
         this.nodeReader = nodeReader;
+    }
+
+    setCharacters(characters) {
+        this.characters = characters;
     }
 
     setNode(node) {
@@ -44,4 +49,28 @@ export default class DialogManager extends Singleton {
         return this.nodeReader.readNodes(scene, file, namespace, objectName, getObjs);
     }
 
+    /**
+    * Reproduce la animacion hablando del personaje.
+    * Si no existe dicha animacion, reproduce la animacion por defecto
+    * @param {String} character - nombre del personaje.
+    */
+    playTalkingAnimation(character) {
+        if (this.characters.has(character)) {
+            let characterObj = this.scene.dialogManager.characters.get(character);
+            if (!characterObj.playTalkingAnimation()) {
+                characterObj.playDefaultAnimation();
+            }
+        }
+    }
+
+    /**
+    * Reproduce la animacion por defecto del personaje
+    * @param {String} character - nombre del personaje.
+    */
+    playDefaultAnimation(character) {
+        if (this.characters.has(character)) {
+            let characterObj = this.scene.dialogManager.characters.get(character);
+            characterObj.playDefaultAnimation();
+        }
+    }
 }

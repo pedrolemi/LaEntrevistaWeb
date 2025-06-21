@@ -1,3 +1,4 @@
+import ChoiceNode from "./choiceNode.js";
 import DialogNode from "./dialogNode.js";
 
 export default class TextNode extends DialogNode {
@@ -15,6 +16,9 @@ export default class TextNode extends DialogNode {
             "centered": "true"
         }
     */
+
+    static type = "text";
+
     constructor(scene, node, fullId, namespace) {
         super(scene);
 
@@ -139,10 +143,10 @@ export default class TextNode extends DialogNode {
     nextNode() {
         // Elimina los eventos de pulsar la caja de texto (ya que la comparten todos los nodos de texto)
         this.dialogBox.off("pointerdown");
-        
+
         if (this.next.length > this.nextIndex) {
             // Si el siguiente nodo es de opcion multiple, se oculta la caja de texto y se pasa al siguiente nodo
-            if (this.next[this.nextIndex].choices != null) {
+            if (this.next[this.nextIndex] instanceof ChoiceNode) {
                 this.dialogBox.activate(false, () => {
                     setTimeout(() => {
                         this.next[this.nextIndex].processNode();

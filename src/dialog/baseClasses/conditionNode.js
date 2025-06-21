@@ -37,6 +37,9 @@ export default class ConditionNode extends DialogNode {
             ]
         }
     */
+
+    static type = "condition";
+    
     constructor(scene, node) {
         super(scene);
         this.conditions = [];           // condiciones con su nombre/identificador y sus atributos

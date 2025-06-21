@@ -1,10 +1,11 @@
 export default class DialogNode {
     /**
-* Clase base para la informacion de los nodos de dialogo. Inicialmente esta todo vacio
-*/
+    * Clase base para la informacion de los nodos de dialogo. Inicialmente esta todo vacio
+    */
+    
     constructor(scene) {
         this.scene = scene;
-        
+
         this.id = "";                   // id del nodo dentro del objeto en el que se encuentra
         this.fullId = "";               // id completa del nodo en el archivo en general
         this.globalId = "";             // id completa del nodo de entre todos los nodos

@@ -22,6 +22,9 @@ export default class EventNode extends DialogNode {
             "next": "checkTalked"
         }
     */
+
+    static type = "event";
+
     constructor(scene, node) {
         super(scene);
         this.events = [];                       // eventos que se llamaran al procesar el nodo (nombre del evento y el retardo con el que se llama)

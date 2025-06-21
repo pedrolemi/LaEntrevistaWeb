@@ -18,8 +18,8 @@ export default class SceneManager extends Singleton {
 
     init(scene) {
         this.currentScene = scene;
+        this.runningScenes.add(this.currentScene);
     }
-
 
     /**
     * Detener y borrar todas las escenas activas
@@ -37,12 +37,12 @@ export default class SceneManager extends Singleton {
 
     /**
     * Cambiar de escena
-    * @param {String} scene - key de la escena a la que se va a pasar
+    * @param {String} sceneKey - key de la escena a la que se va a pasar
     * @param {Object} params - informacion que pasar a la escena (opcional)
     * @param {Boolean} anim - true si se va a cambiar de escena con un fade in/out, false en caso contrario (oocional)
     * @param {Boolean} canReturn - true si se puede regresar a la escena anterior, false en caso contrario (opcional)
     */
-    changeScene(scene, params = null, anim = false, canReturn = false) {
+    changeScene(sceneKey, params = null, anim = false, canReturn = false) {
         this.fading = false;
         let fadeOutTime = this.DEFAULT_FADE_OUT_TIME;
         let fadeInTime = this.DEFAULT_FADE_IN_TIME;
@@ -66,28 +66,29 @@ export default class SceneManager extends Singleton {
             // escenas que ya estaban creadas porque ya no van a hacer falta 
             if (!canReturn) {
                 this.clearRunningScenes();
+                // Se inicia la escena completamente (eliminando la anterior)
+                this.currentScene.scene.start(sceneKey, params);
             }
             // Si no, se se duerme la escena actual en vez de destruirla ya que
             // habria que mantener su estado por si se quiere volver a ella
             else {
+                // Dormir la escena actual
                 this.currentScene.scene.sleep();
+                // Se ejecuta la escena (sin reiniciarla si ya existia)
+                this.currentScene.scene.run(sceneKey, params);
             }
 
-            // Se inicia y actualiza la escena actual
-            this.currentScene.scene.run(scene, params);
-            this.currentScene = this.currentScene.scene.get(scene);
-
             // Se anade la escena a las escenas que estan ejecutandose
+            this.currentScene = this.currentScene.scene.get(sceneKey);
             this.runningScenes.add(this.currentScene);
 
             if (anim) {
+                let fadeIn = () => {
+                    this.fadeIn(fadeInTime);
+                }
                 // Cuando se termina de crear la escena, se reproduce el fade in
-                this.currentScene.events.on("create", () => {
-                    this.fadeIn(fadeInTime);
-                });
-                this.currentScene.events.on("wake", () => {
-                    this.fadeIn(fadeInTime);
-                });
+                this.currentScene.events.on("create", fadeIn);
+                this.currentScene.events.on("wake", fadeIn);
             }
         }
 

@@ -18,6 +18,9 @@ export default class ChoiceNode extends DialogNode {
             ]
         }
     */
+
+    static type = "choice";
+
     constructor(scene, node, fullId, namespace) {
         super(scene);
 

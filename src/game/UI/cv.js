@@ -1,5 +1,5 @@
-import InteractiveContainer from "./interactiveContainer.js";
-import TextArea from "./textArea.js";
+import InteractiveContainer from "../../framework/UI/interactiveContainer.js";
+import TextArea from "../../framework/UI/textArea.js";
 
 export default class CV extends InteractiveContainer {
     constructor(scene) {

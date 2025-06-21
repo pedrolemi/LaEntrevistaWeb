@@ -1,4 +1,4 @@
-import Localization from "../dialog/baseClasses/localization.js";
+import Localization from "../dialog/localization.js";
 import Singleton from "../utils/singleton.js";
 
 export default class DialogManager extends Singleton {

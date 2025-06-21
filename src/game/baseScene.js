@@ -1,9 +1,9 @@
-import GameManager from "../../managers/gameManager.js";
-import DialogManager from "../../managers/dialogManager.js";
-import Blackboard from "../../utils/blackboard.js";
-import EventDispatcher from "../../managers/eventDispatcher.js";
+import GameManager from "./gameManager.js";
+import DialogManager from "../framework/managers/dialogManager.js";
+import Blackboard from "../framework/utils/blackboard.js";
+import EventDispatcher from "../framework/managers/eventDispatcher.js";
 
-import { setInteractive } from "../../utils/misc.js";
+import { setInteractive } from "../framework/utils/misc.js";
 
 export default class BaseScene extends Phaser.Scene {
     /**

@@ -1,4 +1,4 @@
-import DialogNode from "./dialogNode.js";
+import DialogNode from "../dialogNode.js";
 import OptionBox from "../../UI/optionBox.js";
 import InteractiveContainer from "../../UI/interactiveContainer.js";
 

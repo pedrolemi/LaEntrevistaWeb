@@ -1,17 +1,17 @@
-import { moveTowards, setInteractive } from "./utils/misc.js";
+import { moveTowards, setInteractive } from "../framework/utils/misc.js";
 
 export default class Character extends Phaser.GameObjects.Sprite {
     /**
-     * Personaje del juego
-     * @param {Phaser.scene} scene - escena donde se anade el personaje 
-     * @param {number} x - posicion inicial en X
-     * @param {number} y - posicion inicial en Y
-     * @param {number} scale - escala del sprite
-     * @param {number} name - nombre del personaje
-     * @param {number} speed - velocidad de movimiento
-     * @param {function} callback - funcion a ejecutar al hacer click sobre el personaje
-     * @param {boolean} lookingRight - indica si el personaje inicialmente mira hacia la derecha (true) o no (false)
-     */
+    * Personaje del juego
+    * @param {Phaser.scene} scene - escena donde se anade el personaje 
+    * @param {number} x - posicion inicial en X
+    * @param {number} y - posicion inicial en Y
+    * @param {number} scale - escala del sprite
+    * @param {number} name - nombre del personaje
+    * @param {number} speed - velocidad de movimiento
+    * @param {function} callback - funcion a ejecutar al hacer click sobre el personaje
+    * @param {boolean} lookingRight - indica si el personaje inicialmente mira hacia la derecha (true) o no (false)
+    */
     constructor(scene, x, y, scale, name, speed, callback, lookingRight = false) {
         super(scene, x, y, name)
 

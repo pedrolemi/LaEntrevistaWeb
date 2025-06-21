@@ -1,4 +1,4 @@
-import DialogNode from "./dialogNode.js";
+import DialogNode from "../dialogNode.js";
 import TextNode from "./textNode.js";
 
 export default class EventNode extends DialogNode {

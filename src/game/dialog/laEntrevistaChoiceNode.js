@@ -1,4 +1,4 @@
-import ChoiceNode from "./baseClasses/choiceNode.js";
+import ChoiceNode from "../../framework/dialog/nodes/choiceNode.js";
 
 // TODO
 export default class LaEntrevistaChoiceNode extends ChoiceNode {

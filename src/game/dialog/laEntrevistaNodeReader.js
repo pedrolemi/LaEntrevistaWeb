@@ -1,4 +1,4 @@
-import NodeReader from "./baseClasses/nodeReader.js";
+import NodeReader from "../../framework/dialog/nodeReader.js";
 import LaEntrevistaTextNode from "./laEntrevistaTextNode.js";
 import LaEntrevistaChoiceNode from "./laEntrevistaChoiceNode.js";
 

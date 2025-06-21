@@ -1,5 +1,5 @@
+import DialogNode from "../dialogNode.js";
 import ChoiceNode from "./choiceNode.js";
-import DialogNode from "./dialogNode.js";
 
 export default class TextNode extends DialogNode {
     /**

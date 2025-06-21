@@ -1,6 +1,6 @@
-import BaseScene from "./baseScene.js";
-import TextArea from "../../UI/textArea.js";
-import Character from "../../character.js";
+import BaseScene from "../baseScene.js";
+import TextArea from "../../framework/UI/textArea.js";
+import Character from "../character.js";
 
 export default class House extends BaseScene {
     /**

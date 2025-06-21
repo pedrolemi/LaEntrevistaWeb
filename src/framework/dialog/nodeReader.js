@@ -1,7 +1,7 @@
-import ConditionNode from "./conditionNode.js";
-import EventNode from "./eventNode.js";
-import TextNode from "./textNode.js";
-import ChoiceNode from "./choiceNode.js"
+import ConditionNode from "./nodes/conditionNode.js";
+import EventNode from "./nodes/eventNode.js";
+import TextNode from "./nodes/textNode.js";
+import ChoiceNode from "./nodes/choiceNode.js";
 
 // IMPORTANTE: SI SE QUIEREN ANADIR NUEVOS NODOS O MODIFICAR LA FUNCIONALIDAD DE LOS TIPOS DE NODOS EXISTENTES,
 // LO IDEAL SERIA CREAR NUEVOS NODOS QUE HEREDEN DE DIALOGNODE O DEL RESTO DE NODOS BASICOS, Y MODIFICAR EL 

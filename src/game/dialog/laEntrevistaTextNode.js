@@ -1,5 +1,5 @@
-import ChoiceNode from "./baseClasses/choiceNode.js";
-import TextNode from "./baseClasses/textNode.js";
+import TextNode from "../../framework/dialog/nodes/textNode.js";
+import ChoiceNode from "../../framework/dialog/nodes/choiceNode.js";
 
 export default class LaEntrevistaTextNode extends TextNode {
     constructor(scene, node, fullId, namespace) {

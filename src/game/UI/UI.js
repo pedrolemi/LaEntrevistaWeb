@@ -1,9 +1,9 @@
-import BaseScene from "./gameLoop/baseScene.js";
-import DialogManager from "../managers/dialogManager.js";
+import BaseScene from "../baseScene.js";
+import DialogManager from "../../framework/managers/dialogManager.js";
 import LaEntrevistaNodeReader from "../dialog/laEntrevistaNodeReader.js";
 
-import DialogBox from "../UI/dialogBox.js";
-import CV from "../UI/cv.js";
+import DialogBox from "../../framework/UI/dialogBox.js";
+import CV from "./cv.js";
 
 export default class UI extends BaseScene {
     /**
@@ -50,7 +50,7 @@ export default class UI extends BaseScene {
         this.dispatcher.add("checkCV", this, () => {
             this.cv.activate(true);
         }, true);
-
     }
+
 
 }

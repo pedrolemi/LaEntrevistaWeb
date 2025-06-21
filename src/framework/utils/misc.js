@@ -56,5 +56,18 @@ export function setInteractive(gameObject, config = {}) {
     else {
         config.useHandCursor = true;
     }
+
+    // let defaultDisableInteractive = gameObject.disableInteractive();
+    // gameObject.disableInteractive = () => {
+    //     console.log("disabled");
+
+    //     gameObject.emit("pointerout");
+    // }
+
+    // gameObject.on("pointerout", () => {
+    //     console.log("pointerout");
+    //     console.log(gameObject)
+    // });
+
     gameObject.setInteractive(config);
 }

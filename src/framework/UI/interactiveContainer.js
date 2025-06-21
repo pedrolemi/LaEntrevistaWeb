@@ -2,13 +2,13 @@ import { setInteractive } from "../utils/misc.js";
 
 export default class InteractiveContainer extends Phaser.GameObjects.Container {
     /**
-     * Clase base para los elementos de dialogo, con metodos para activar/desactivar el objeto y calcular su rectangulo de colision
-     * @extends Phaser.GameObjects.Container
-     * @param {Phaser.Scene} scene - escena a la que pertenece
-     * @param {*} scene 
-     * @param {*} x 
-     * @param {*} y 
-     */
+    * Clase base para los elementos de dialogo, con metodos para activar/desactivar el objeto y calcular su rectangulo de colision
+    * @extends Phaser.GameObjects.Container
+    * @param {Phaser.Scene} scene - escena a la que pertenece
+    * @param {*} scene 
+    * @param {*} x 
+    * @param {*} y 
+    */
     constructor(scene, x = 0, y = 0) {
         super(scene, x, y);
         this.scene = scene;

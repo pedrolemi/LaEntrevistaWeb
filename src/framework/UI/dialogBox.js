@@ -105,7 +105,7 @@ export default class DialogBox extends InteractiveContainer {
             let nameBoxDebug = scene.add.rectangle(this.nameBoxConfig.textX, this.nameBoxConfig.textY, this.nameBoxConfig.realWidth, this.nameBoxConfig.realHeight, 0x000, 0.5)
                 .setOrigin(this.nameBoxConfig.textOriginX, this.nameBoxConfig.textOriginY).setScale(this.nameBoxConfig.scaleX, this.nameBoxConfig.scaleY);
             this.setText("Lorem Ipsum");
-            this.setName("NameNameNameName");
+            this.setName("NameNameNameName", "defaultCharacter");
 
             this.add(textboxDebug);
             this.add(nameBoxDebug);
@@ -134,12 +134,13 @@ export default class DialogBox extends InteractiveContainer {
     /**
     * Cambia el texto del nombre del personaje hablando
     * @param {String} name - nombre del personaje
+    * @param {String} character - id del personaje
     */
-    setName(name) {
+    setName(name, character) {
         this.nameTextObj.setFontSize(this.nameTextConfig.fontSize);
 
         this.nameTextObj.setText(name);
-        this.lastCharacter = name;
+        this.lastCharacter = character;
 
         this.nameTextObj.adjustFontSize();
     }
@@ -154,13 +155,14 @@ export default class DialogBox extends InteractiveContainer {
 
     /**
     * Cambia el texto de la caja de nombre y la caja de texto
-    * @param {String} character - nombre del personaje
+    * @param {String} name - nombre del personaje
+    * @param {String} character - id del personaje
     * @param {String} text - texto a escribir
     * @param {Boolean} animate - true si se quiere mostrar el texto letra a letra, false en caso contrario
     */
-    setDialog(character, text, animate = true) {
+    setDialog(name, character, text, animate = true) {
         // Cambia el nombre
-        this.setName(character);
+        this.setName(name, character);
 
         // Si no se va a animar, cambia todo el texto directamente
         if (!animate) {
@@ -236,11 +238,12 @@ export default class DialogBox extends InteractiveContainer {
     activate(active, onComplete = {}, delay = 0) {
         super.activate(active, onComplete, delay);
 
-        this.fadeAnim.on("complete", () => {
-            if (!active) {
+        if (!active) {
+            this.fadeAnim.on("complete", () => {
+
                 this.setDialog("", "", false);
-            }
-        });
+            });
+        }
     }
 
 

@@ -3,25 +3,21 @@ import EventNode from "./nodes/eventNode.js";
 import TextNode from "./nodes/textNode.js";
 import ChoiceNode from "./nodes/choiceNode.js";
 
-// IMPORTANTE: SI SE QUIEREN ANADIR NUEVOS NODOS O MODIFICAR LA FUNCIONALIDAD DE LOS TIPOS DE NODOS EXISTENTES,
-// LO IDEAL SERIA CREAR NUEVOS NODOS QUE HEREDEN DE DIALOGNODE O DEL RESTO DE NODOS BASICOS, Y MODIFICAR EL 
-// NODEREADER PARA QUE GESTIONE *SOLO* LA CREACION DE NUEVOS TIPOS DE NODOS, PERO NO MODIFICAR NOTABLEMENTE EL
-// COMPORTAMIENTO DE OTRAS CLASES COMO EL DIALOGMANAGER. LA IDEA TAMBIEN ES QUE LOS NODOS DEPENDAN DE ELEMENTOS
-// DEL SISTEMA DE DIALOGOS COMO LA CAJA DE TEXTO, LAS DE OPCIONES, O EL PROPIO DIALOGMANAGER Y LA ESCENA DE LA UI,
-// EN LUGAR DE SER AL REVES.
-
-
 export default class NodeReader {
     constructor() { }
 
     /**
     * Crea todos los nodos y luego se encarga de conectarlos
+    * 
+    * SI SE QUIEREN ANADIR NUEVOS NODOS, LO IDEAL SERIA HACER UNA CLASE QUE HEREDE DE 
+    * NODEREADER PARA QUE GESTIONE *SOLO* LA CREACION DE NUEVOS TIPOS DE NODOS. 
+    * 
     * @param {Phaser.Scene} scene - escena en la que se crea el nodo
     * @param {Object} fullJson - objeto json donde estan los nodos 
     * @param {String} namespace - nombre del archivo de localizacion del que se va a leer 
     * @param {String} objectName - nombre del objeto en el que esta el dialogo, si es que el json contiene varios dialogos de distintos objetos
     * @param {Boolean} getObjs - si se quiere devolver el nodo leido como un objeto 
-    * @returns 
+    * @returns {DialogNode} - nodo raiz de los nodos leidos
     */
     readNodes(scene, file, namespace, objectName, getObjs) {
         let nodesMap = new Map();
@@ -78,10 +74,10 @@ export default class NodeReader {
                     node = this.createConditionNode(scene, objectJson[id])
                 }
                 else if (type === TextNode.TYPE) {
-                    node = this.createTextNode(scene, objectJson[id], fullId, namespace);
+                    node = this.createTextNode(objectJson[id], fullId, namespace);
                 }
                 else if (type === ChoiceNode.TYPE) {
-                    node = this.createChoiceNode(scene, objectJson[id], fullId, namespace);
+                    node = this.createChoiceNode(objectJson[id], fullId, namespace);
                 }
                 else if (type === EventNode.TYPE) {
                     node = this.createEventNode(scene, objectJson[id]);
@@ -108,12 +104,12 @@ export default class NodeReader {
         return new ConditionNode(scene, objectJson);
     }
 
-    createTextNode(scene, objectJson, fullId, namespace) {
-        return new TextNode(scene, objectJson, fullId, namespace);
+    createTextNode(objectJson, fullId, namespace) {
+        return new TextNode(objectJson, fullId, namespace);
     }
 
-    createChoiceNode(scene, objectJson, fullId, namespace) {
-        return new ChoiceNode(scene, objectJson, fullId, namespace);
+    createChoiceNode(objectJson, fullId, namespace) {
+        return new ChoiceNode(objectJson, fullId, namespace);
     }
 
     createEventNode(scene, objectJson) {

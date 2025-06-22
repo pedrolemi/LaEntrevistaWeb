@@ -106,7 +106,7 @@ export default class InteractiveContainer extends Phaser.GameObjects.Container {
         if (debug) {
             this.add(this.scene.add.rectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x000, 0.4));
             this.on("pointerdown", () => {
-                console.log("clicking", objectName);
+                console.log("clicking",objectName);
             });
         }
         this.disableInteractive();

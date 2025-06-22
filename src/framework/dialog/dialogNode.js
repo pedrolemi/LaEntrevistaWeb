@@ -1,10 +1,17 @@
+import EventDispatcher from "../managers/eventDispatcher.js";
+
 export default class DialogNode {
     /**
     * Clase base para la informacion de los nodos de dialogo. Inicialmente esta todo vacio
+    * 
+    * SI SE QUIEREN ANADIR NUEVOS NODOS QUE NO SEAN LOS 4 TIPOS BASICOS, LO IDEAL SERIA CREAR CLASES
+    * NUEVAS QUE HEREDEN DE DIALOGNODE. PARA MODIFICAR EL COMPORTAMIENTO BASICO DE LOS NODOS YA 
+    * EXISTENTES, LO MEJOR SERIA MODIFICAR LA GESTION DE LOS EVENTOS EN LAS CLASES CORRESPONDIENTES,
+    * PERO NO MODIFICAR LOS NODOS DIRECTAMENTE
     */
-    
-    constructor(scene) {
-        this.scene = scene;
+
+    constructor() {
+        this.dispatcher = EventDispatcher.getInstance();
 
         this.id = "";                   // id del nodo dentro del objeto en el que se encuentra
         this.fullId = "";               // id completa del nodo en el archivo en general
@@ -18,12 +25,19 @@ export default class DialogNode {
     processNode() { }
 
     nextNode() {
+        // Se dejan de escuchar los eventos para que no afecten a los nodos siguientes 
+        // (ya que los nodos no se eliminan hasta que se elimine la escena en la que estan)
+        this.dispatcher.removeByOwner(this);
+
         if (this.next.length > this.nextIndex) {
             // console.log(this.next[this.nextIndex]);
 
             setTimeout(() => {
                 this.next[this.nextIndex].processNode();
             }, this.nextDelay);
+        }
+        else {
+            this.dispatcher.dispatch("endNodes");
         }
     }
 }

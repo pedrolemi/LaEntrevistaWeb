@@ -25,10 +25,10 @@ export default class House extends LaEntrevistaBaseScene {
 
         let img = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
-        let errors = 0;
+        this.blackboard.setValue("errors", 0);
         this.dispatcher.add("wrongAnswer", this, () => {
-            errors++;
-            this.blackboard.setValue("errors", errors);
+            let errors = this.blackboard.getValue("errors");
+            this.blackboard.setValue("errors", errors + 1);
         });
 
         // this.dispatcher.dispatch("offersFound");
@@ -36,7 +36,7 @@ export default class House extends LaEntrevistaBaseScene {
         let character = new Character(this, 200, 200, 0.5, "Antonio", 0.3, () => {
             console.log("Hola");
         });
-        
+
     }
 
     onCreate() {
@@ -50,7 +50,6 @@ export default class House extends LaEntrevistaBaseScene {
 
         let portalLogo = this.add.image(565, this.BGS_Y, "portalLogo").setScale(0.55);
         portalLogo.setInteractive();
-        portalLogo.on("pointerdown", () => { console.log("hello")})
         let maxWidth = 450;
         let textConfig = {
             fontFamily: "Arial",
@@ -109,11 +108,14 @@ export default class House extends LaEntrevistaBaseScene {
         this.dispatcher.add("startSearch", this, () => {
             this.setInteractive(desktop);
             desktop.on("pointerdown", () => {
-                desktop.setVisible(false);
-                desktop.disableInteractive();
+                if (this.dialogManager.currNode == null) {
+                    desktop.setVisible(false);
+                    desktop.disableInteractive();
 
-                this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "search");
-                this.dialogManager.setNode(this.node);
+                    this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "search");
+                    this.dialogManager.setNode(this.node);
+                }
+
             });
         });
 

@@ -1,5 +1,4 @@
 import DialogNode from "../dialogNode.js";
-import TextNode from "./textNode.js";
 
 export default class EventNode extends DialogNode {
     /**
@@ -27,8 +26,7 @@ export default class EventNode extends DialogNode {
 
     constructor(scene, node) {
         super(scene);
-        this.events = [];                       // eventos que se llamaran al procesar el nodo (nombre del evento y el retardo con el que se llama)
-        this.dispatcher = scene.dispatcher;
+        this.events = [];       // eventos que se llamaran al procesar el nodo (nombre del evento y el retardo con el que se llama)
 
         let evts = node.events;
 
@@ -38,14 +36,16 @@ export default class EventNode extends DialogNode {
             if (evt.variable != null) {
                 // Determina en que blackboard modificar la variable. Si no se ha definido si es global, o si se
                 // ha definido que si lo es, se guarda en la del gameManager. Si no, se guarda en la de la escena
-                let blackboard = (evt.global == null || evt.global === true) ? scene.gameManager.blackboard : scene.blackboard;
+                let blackboard = scene.blackboard;
+                if (scene.gameManager == null && (condition.global == null || condition.global === true)) {
+                    blackboard = scene.gameManager.blackboard;
+                }
 
                 // Se guarda en la condicion en que blackboard comprobar su valor
                 evt.blackboard = blackboard;
             }
             this.events.push(evt);
         });
-
 
         // Si hay un nodo despues de este, se guarda su id en la lista de nodos siguientes
         if (node.next != null) {
@@ -72,14 +72,5 @@ export default class EventNode extends DialogNode {
             }, delay);
         }
         this.nextNode();
-    }
-
-    nextNode() {
-        // Si no hay nodos despues, se crea un nodo de texto vacio para quitar la caja de texto
-        if (this.next.length <= 0) {
-            this.next.push(new TextNode(this.scene, {}, "", ""));
-            this.nextIndex = 0;
-        }
-        super.nextNode();
     }
 }

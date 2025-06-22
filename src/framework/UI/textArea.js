@@ -2,7 +2,7 @@ export default class TextArea extends Phaser.GameObjects.Text {
     /**
     * Texto que tiene que estar contenido en un area especifica
     * @extends DialogObject
-    * @param {Phaser.GameObjects.Text} scene - escena en la que se crea (idealmente la escena de UI)
+    * @param {Phaser.GameObjects.Scene} scene - escena en la que se crea (idealmente la escena de UI)
     * @param {Number} x - posicion x del texto (opcional)
     * @param {Number} y - posicion y del texto (opcional)
     * @param {Number} maxWidth - ancho maximo que puede ocupar el texto (opcional)
@@ -27,11 +27,19 @@ export default class TextArea extends Phaser.GameObjects.Text {
     fits(text) {
         let prevText = this.text;
         this.setText(text);
-        let fits = this.displayWidth <= this.maxWidth && this.displayHeight <= this.maxHeight;
-        // console.log(text, this.displayWidth, this.displayHeight, this.maxWidth, this.maxHeight);
+        let fits = true;
+
+        if (this.style.wordWrapWidth == null) {
+            fits = this.displayWidth <= this.maxWidth && this.displayHeight <= this.maxHeight;
+        }
+        else {
+            fits = this.displayHeight <= this.maxHeight;
+        }
         this.setText(prevText);
 
-        // console.log(fits);
+        // if (!fits) {
+        //     console.log(text, this.displayWidth, this.displayHeight, this.maxWidth, this.maxHeight);
+        // }
         return fits;
     }
 

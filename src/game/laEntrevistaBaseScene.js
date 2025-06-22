@@ -1,6 +1,6 @@
 import BaseScene from "../framework/scenes/baseScene.js"
-import GameManager from "./gameManager.js";
-import { setInteractive } from "../framework/utils/misc.js"
+import DialogManager from "./managers/dialogManager.js";
+import GameManager from "./managers/gameManager.js";
 
 export default class LaEntrevistaBaseScene extends BaseScene {
     constructor(name, atlasName) {
@@ -9,10 +9,9 @@ export default class LaEntrevistaBaseScene extends BaseScene {
 
     create(params) {
         super.create();
+
         this.gameManager = GameManager.getInstance();
-
-        this.bgScale = 1;
-
+        this.dialogManager = DialogManager.getInstance();
         this.characters = new Map();
     }
 
@@ -35,7 +34,5 @@ export default class LaEntrevistaBaseScene extends BaseScene {
         }
     }
 
-    setInteractive(gameObject, config = {}) {
-        setInteractive(gameObject, config);
-    }
+
 }

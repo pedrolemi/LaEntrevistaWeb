@@ -1,6 +1,6 @@
-import Blackboard from "../framework/utils/blackboard.js";
-import Singleton from "../framework/utils/singleton.js";
-import SceneManager from "../framework/managers/sceneManager.js";
+import Blackboard from "../../framework/utils/blackboard.js";
+import Singleton from "../../framework/utils/singleton.js";
+import SceneManager from "../../framework/managers/sceneManager.js";
 
 export default class GameManager extends Singleton {
     constructor() {

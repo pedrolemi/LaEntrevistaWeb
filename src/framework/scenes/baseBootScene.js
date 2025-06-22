@@ -1,6 +1,4 @@
 import SceneManager from "../managers/sceneManager.js";
-import DialogManager from "../managers/dialogManager.js";
-import NodeReader from "../dialog/nodeReader.js";
 import LocalizationManager from "../managers/localizationManager.js";
 import EventDispatcher from "../managers/eventDispatcher.js";
 
@@ -88,7 +86,7 @@ export default class BaseBootScene extends Phaser.Scene {
     * @param {Function} loadAssets - funcion con la carga del resto de assets
     * @param {Boolean} makeLoadingBar - true para mostrar la barra de carga al empezar, false en caso contrario
     */
-    create(loadAssets = null, makeLoadingBar = true, nodeReader = new NodeReader()) {
+    create(loadAssets = null, makeLoadingBar = true) {
         if (makeLoadingBar) {
             this.createLoadingBar();
         }
@@ -101,9 +99,6 @@ export default class BaseBootScene extends Phaser.Scene {
         let sceneManager = SceneManager.create();
         sceneManager.init(this);
         // sceneManager.fadeIn();
-
-        let dialogManager = DialogManager.create();
-        dialogManager.init(this, nodeReader);
 
         let localizationManager = LocalizationManager.create();
         localizationManager.init(this.plugins.get(BaseBootScene.REX_TEXT_TRANSLATION_PLUGIN_KEY));
@@ -200,11 +195,11 @@ export default class BaseBootScene extends Phaser.Scene {
         }
 
         /*
-        * i18next es un framework ampliamente utilizado para internacionalizacion en Javascript.
-        * Mas informacion y descarga:
-        *   - Pagina del plugin para Phaser3: https://rexrainbow.github.io/phaser3-rex-notes/docs/site/i18next/
-        *   - Documentacion oficial: https://www.i18next.com/
-        */
+       * i18next es un framework ampliamente utilizado para internacionalizacion en Javascript.
+       * Mas informacion y descarga:
+       *   - Pagina del plugin para Phaser3: https://rexrainbow.github.io/phaser3-rex-notes/docs/site/i18next/
+       *   - Documentacion oficial: https://www.i18next.com/
+       */
 
         // Se inicializa el plugin de traduccion con la configuracion especificada
         this.plugins.get(BaseBootScene.REX_TEXT_TRANSLATION_PLUGIN_KEY).initI18Next(this, {

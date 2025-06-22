@@ -52,7 +52,7 @@ export default class CV extends InteractiveContainer {
             this.activate(false);
         });
     }
-    
+
 
     translate(section) {
         return this.scene.localizationManager.translate(section, "CVs").toUpperCase();

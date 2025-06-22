@@ -1,5 +1,4 @@
 import DialogNode from "../dialogNode.js"
-import TextNode from "./textNode.js";
 
 export default class ConditionNode extends DialogNode {
     /**
@@ -39,7 +38,7 @@ export default class ConditionNode extends DialogNode {
     */
 
     static TYPE = "condition";
-    
+
     constructor(scene, node) {
         super(scene);
         this.conditions = [];           // condiciones con su nombre/identificador y sus atributos
@@ -64,7 +63,11 @@ export default class ConditionNode extends DialogNode {
 
                 // Determina en que blackboard guardar la variable. Si no se ha definido si es global, o si se
                 // ha definido que si lo es, se guarda en la del gameManager. Si no, se guarda en la de la escena
-                let blackboard = (condition.global == null || condition.global === true) ? scene.gameManager.blackboard : scene.blackboard;
+                let blackboard = scene.blackboard;
+                if (scene.gameManager == null && (condition.global == null || condition.global === true)) {
+                    blackboard = scene.gameManager.blackboard;
+                }
+
                 if (!blackboard.hasValue(key)) {
                     blackboard.setValue(key, defaultValue);
                 }
@@ -143,14 +146,5 @@ export default class ConditionNode extends DialogNode {
 
         this.nextIndex = i;
         this.nextNode();
-    }
-
-    nextNode() {
-        // Si no hay nodos despues, se crea un nodo de texto vacio para quitar la caja de texto
-        if (this.next.length <= 0) {
-            this.next.push(new TextNode(this.scene, {}, "", ""));
-            this.nextIndex = 0;
-        }
-        super.nextNode();
     }
 }

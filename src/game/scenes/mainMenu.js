@@ -18,7 +18,7 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         img.on("pointerdown", () => {
             img.disableInteractive();
 
-            let video = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT /2, "startAnimation")
+            let video = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, "startAnimation")
             video.play();
 
             video.on("created", () => {
@@ -36,6 +36,6 @@ export default class MainMenu extends LaEntrevistaBaseScene {
                 })
             });
         })
-        
+
     }
 }

@@ -1,6 +1,7 @@
 import BaseBootScene from "../../framework/scenes/baseBootScene.js";
-import GameManager from "../gameManager.js";
-import LaEntrevistaNodeReader from '../dialog/laEntrevistaNodeReader.js'
+
+import DialogManager from "../managers/dialogManager.js";
+import GameManager from "../managers/gameManager.js";
 
 export default class BootScene extends BaseBootScene {
     preload() {
@@ -35,7 +36,10 @@ export default class BootScene extends BaseBootScene {
 
         let bg = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
-        super.create(loadAssets, true, new LaEntrevistaNodeReader());
+        super.create(loadAssets, true);
+
+        let dialogManager = DialogManager.create();
+        dialogManager.init();
 
         this.events.once("start", () => {
             let gameManager = GameManager.create();

@@ -1,8 +1,10 @@
 import Blackboard from "../utils/blackboard.js";
 import SceneManager from "../managers/sceneManager.js";
-import DialogManager from "../managers/dialogManager.js";
 import LocalizationManager from "../managers/localizationManager.js";
 import EventDispatcher from "../managers/eventDispatcher.js";
+
+
+import { setInteractive } from "../utils/misc.js";
 
 export default class BaseScene extends Phaser.Scene {
     /**
@@ -24,7 +26,6 @@ export default class BaseScene extends Phaser.Scene {
         this.blackboard = new Blackboard();
 
         this.sceneManager = SceneManager.getInstance();
-        this.dialogManager = DialogManager.getInstance();
         this.localizationManager = LocalizationManager.getInstance();
         this.dispatcher = EventDispatcher.getInstance();
 
@@ -71,4 +72,8 @@ export default class BaseScene extends Phaser.Scene {
     * @param {Object} params - parametros que se le pasan a la configuracion inicial 
     */
     initialSetup(params) { }
+
+    setInteractive(gameObject, config = {}) {
+        setInteractive(gameObject, config);
+    }
 }

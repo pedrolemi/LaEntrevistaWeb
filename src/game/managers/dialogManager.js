@@ -1,31 +1,33 @@
-import Singleton from "../utils/singleton.js";
+import Singleton from "../../framework/utils/singleton.js";
+import NodeReader from "../../framework/dialog/nodeReader.js";
 
 export default class DialogManager extends Singleton {
     constructor() {
         super("DialogManager");
 
-        this.scene = null;
-        this.textbox = null;
-        this.currNode = null;
         this.characters = new Map();
+        this.currNode = null;
+        this.nodeReader = new NodeReader();
     }
 
-    init(scene, nodeReader) {
-        this.scene = scene;
-        this.nodeReader = nodeReader;
-    }
+    init() { }
 
     setCharacters(characters) {
         this.characters = characters;
     }
 
     setNode(node) {
-        if (this.currNode == null) {
-            node.processNode();
+        if (this.currNode == null && node != null) {
+            this.currNode = node;
+            this.currNode.processNode();
         }
     }
 
-    
+    clearNodes() {
+        this.currNode = null;
+    }
+
+
     /**
     * @param {Phaser.Scene} scene - escena en la que se crea el nodo
     * @param {Object} fullJson - objeto json donde estan los nodos 
@@ -45,7 +47,7 @@ export default class DialogManager extends Singleton {
     */
     playTalkingAnimation(character) {
         if (this.characters.has(character)) {
-            let characterObj = this.scene.dialogManager.characters.get(character);
+            let characterObj = this.characters.get(character);
             if (!characterObj.playTalkingAnimation()) {
                 characterObj.playDefaultAnimation();
             }
@@ -58,7 +60,7 @@ export default class DialogManager extends Singleton {
     */
     playDefaultAnimation(character) {
         if (this.characters.has(character)) {
-            let characterObj = this.scene.dialogManager.characters.get(character);
+            let characterObj = this.characters.get(character);
             characterObj.playDefaultAnimation();
         }
     }

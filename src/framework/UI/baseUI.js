@@ -72,7 +72,7 @@ export default class BaseUI extends BaseScene {
 
         // Si llega un evento de actualizar el texto, lo cambia en la caja de texto
         this.dispatcher.add("updateTextNode", this, (node) => {
-            this.textbox.setDialog(node.name, node.dialogs[node.currDialog]);
+            this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
         });
     }
 
@@ -83,7 +83,7 @@ export default class BaseUI extends BaseScene {
             this.textbox.activate(false, () => {
                 this.textbox.setName(node.name, node.character);
                 this.textbox.activate(true, () => {
-                    this.textbox.setDialog(node.name, node.dialogs[node.currDialog]);
+                    this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
                 });
             })
         }
@@ -92,7 +92,7 @@ export default class BaseUI extends BaseScene {
         else {
             this.textbox.setName(node.name, node.character);
             this.textbox.activate(true, () => {
-                this.textbox.setDialog(node.name, node.dialogs[node.currDialog]);
+                this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
             });
         }
     }

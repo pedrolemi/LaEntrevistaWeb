@@ -95,7 +95,7 @@ export default class UI extends BaseUI {
             else {
                 this.textbox.setName(node.name, node.character);
                 this.textbox.activate(true, () => {
-                    this.textbox.setDialog(node.name, node.dialogs[node.currDialog]);
+                    this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
                 });
             }
         }

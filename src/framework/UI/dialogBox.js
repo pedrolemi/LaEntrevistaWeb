@@ -241,7 +241,7 @@ export default class DialogBox extends InteractiveContainer {
         if (!active) {
             this.fadeAnim.on("complete", () => {
 
-                this.setDialog("", "", false);
+                this.setDialog("", "", "", false);
             });
         }
     }

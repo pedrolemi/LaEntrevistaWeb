@@ -9,6 +9,9 @@ export default class BaseBootScene extends Phaser.Scene {
     * Clase base para la escena inicial en la que se cargan todos los recursos
     * @extends Phaser.Scene
     */
+
+    static REX_TEXT_TRANSLATION_PLUGIN_KEY = "rextexttranslationplugin";
+
     constructor(key = "BootScene") {
         super({
             key: key,
@@ -16,7 +19,7 @@ export default class BaseBootScene extends Phaser.Scene {
             pack: {
                 files: [{
                     type: "plugin",
-                    key: "rextexttranslationplugin",
+                    key: BaseBootScene.REX_TEXT_TRANSLATION_PLUGIN_KEY,
                     url: "https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexttranslationplugin.min.js",
                     start: true,
                     mapping: "translation"
@@ -26,10 +29,9 @@ export default class BaseBootScene extends Phaser.Scene {
     }
 
     /**
-    * Aqui se deben cargar SOLO los assets para la PANTALLA DE CARGA
-    * Tambien se usa para crear la configuracion por defecto de la pantalla
+    * Inicializa las configuraciones basicas de la escena antes de cargar recursos
     */
-    preload() {
+    init() {
         this.CANVAS_WIDTH = this.sys.game.canvas.width;
         this.CANVAS_HEIGHT = this.sys.game.canvas.height;
 
@@ -63,52 +65,57 @@ export default class BaseBootScene extends Phaser.Scene {
             }
         }
 
-
-        this.localizationPath = "assets/localization";
+        this.LOCALIZATION_PATH = "assets/localization";
         this.i18nConfig = {
             defaultLanguage: "es",
             supportedLanguages: ["es"],
-            debug: false
         }
         this.dialogsAndNamespaces = [];
         this.onlyNamespaces = [];
     }
 
+    /**
+    * Aqui se deben cargar SOLO los assets para la PANTALLA DE CARGA
+    */
+    preload() { }
 
     /**
     * Aqui se deben cargar el resto de assets como imagenes, videos o los archivos de localizacion
     * 
     * IMPORTANTE: para configurar la barra de carga y los archivos de localizacion, es necesario modificar
-    * los atributos de la clase correspondientes antes de llamar a este metodo con super.create();
+    * los atributos de la clase corresopondiente antes de llamar a este metodo con super.create();
     * 
     * @param {Function} loadAssets - funcion con la carga del resto de assets
     * @param {Boolean} makeLoadingBar - true para mostrar la barra de carga al empezar, false en caso contrario
     */
-    create(loadAssets = () => { }, makeLoadingBar = true) {
+    create(loadAssets = null, makeLoadingBar = true, nodeReader = new NodeReader()) {
         if (makeLoadingBar) {
             this.createLoadingBar();
         }
         this.loadi18next();
         this.loadDialogs();
-        loadAssets();
+        if (loadAssets != null && typeof loadAssets == "function") {
+            loadAssets();
+        }
 
         let sceneManager = SceneManager.create();
         sceneManager.init(this);
         // sceneManager.fadeIn();
 
         let dialogManager = DialogManager.create();
-        dialogManager.init(this, new NodeReader());
+        dialogManager.init(this, nodeReader);
 
         let localizationManager = LocalizationManager.create();
-        localizationManager.init(this);
+        localizationManager.init(this.plugins.get(BaseBootScene.REX_TEXT_TRANSLATION_PLUGIN_KEY));
 
         let eventDispatcher = EventDispatcher.create();
 
-        // Indicar a LoaderPlugin que hay que cargar los assets que se encuentran en la cola
-        // Nota: despues del preload este metodo se llama automaticamente, pero si se quieren
-        // cargar assets en otra parte hay que llamarlo manualmente
+        // Iniciar la carga de todos los assets en la cola
+        // Nota: despues del preload, load.start() se llama automaticamente,
+        // pero si cargas assets en otras partes hay que llamarlo manualmente
         this.load.start();
 
+        // Al completar la carga, emitir el evento start para avisar que se puede continuar
         this.load.once("complete", () => {
             this.events.emit("start");
         });
@@ -163,63 +170,62 @@ export default class BaseBootScene extends Phaser.Scene {
 
 
     /**
-    * Carga los jsons de los dialogos
+    * Se cargan los estructura de los dialogos a partir de los archivos JSON
     */
     loadDialogs() {
-        // Archivos de dialogos (estructura)
-        this.load.setPath(this.localizationPath + "/structure");
+        // Ruta basa para la estructura de los archivos de dialogos
+        this.load.setPath(this.LOCALIZATION_PATH + "/structure");
 
         this.dialogsAndNamespaces.forEach((dialog) => {
-            // Quedarse con la ultima parte del path, que corresponde con el id del archivo
+            // Se obtiene el nombre del archivo (ultima parte del path)
             let subPaths = dialog.split("/");
             let name = subPaths[subPaths.length - 1];
-            // Ruta completa (dentro de la carpeta structure y con el extension .json)
+
+            // Ruta completa del archivo JSON dentro del directorio structure
             let wholePath = dialog + ".json";
             this.load.json(name, wholePath);
         });
     }
 
     /**
-    * Carga y configura el plugin de i18n
+    * Se inicializa y configura el plugin de i18next para la internacionalizacion 
     */
     loadi18next() {
+        // Se unen todos los namespaces que se usaran
         let namespaces = this.dialogsAndNamespaces.concat(this.onlyNamespaces);
 
+        // Converetir "/" a "\\" para rutas en i18next (requisito del plugin)
         for (let i = 0; i < namespaces.length; ++i) {
-            // IMPORTANTE: EN EL PLUGIN I18NEXT PARA LAS RUTAS HAY QUE USAR "\\" EN VEZ DE "/"
             namespaces[i] = namespaces[i].replace(/\//g, "\\");
         }
 
-        // i18next es un framework de internalizacion ampiamente usado en javascript
-        // PAGINA DONDE DESCARGARLO -> https://rexrainbow.github.io/phaser3-rex-notes/docs/site/i18next/
-        // DOCUMENTACION OFICIAL -> https://www.i18next.com/
+        /*
+        * i18next es un framework ampliamente utilizado para internacionalizacion en Javascript.
+        * Mas informacion y descarga:
+        *   - Pagina del plugin para Phaser3: https://rexrainbow.github.io/phaser3-rex-notes/docs/site/i18next/
+        *   - Documentacion oficial: https://www.i18next.com/
+        */
 
-        // Se inicializa el plugin
-        // Inicialmente solo se carga el idioma inicial y los de respaldo
-        // Luego, conforme se usan tambien se cargan el resto
-        this.plugins.get("rextexttranslationplugin").initI18Next(this, {
-            // Idioma inicial
+        // Se inicializa el plugin de traduccion con la configuracion especificada
+        this.plugins.get(BaseBootScene.REX_TEXT_TRANSLATION_PLUGIN_KEY).initI18Next(this, {
+            // Idioma inicial por defecto
             lng: this.i18nConfig.defaultLanguage,
-            // en caso de que no se encuentra una key en otro idioma se comprueba en los siguientes en orden
+            // Idioma de resplado
             fallbackLng: this.i18nConfig.defaultLanguage,
-            // Idiomas permitidos
-            // Sin esta propiedad a la hora de buscar las traducciones se podria buscar
-            // en cualquier idioma (aunque no existiese)
+            // Lista de idiomas soportados
             supportedLngs: this.i18nConfig.supportedLanguages,
-            // IMPORTANTE: hay que precargar los namespaces de todos los idiomas porque sino a la hora
-            // de usar un namespace por primera vez no le da tiempo a encontrar la traduccion
-            // y termina usando la del idioma de respaldo
+            // Se precargan todos los idiomas soportados. En caso contrario, al usar un idioma por
+            // primera vez, este no ha cargado todavia y se usa el por defecto
             preload: this.i18nConfig.supportedLanguages,
-            // Namespaces que se cargan para cada uno de los idiomas
+            // Namespaces a cargar (archivos de traduccion)
             ns: namespaces,
-            // Mostrar informacion de ayuda por consola
-            debug: this.i18nConfig.debug,
-            // Cargar las traducciones de un servidor especificado en vez de ponerlas directamente
+            // Modo debug (logs por consola)
+            debug: this.sys.game.debug.enable,
+            // Ruta base para cargar los archivos de traduccion en formato JSON
             backend: {
-                // La ruta desde donde cargamos las traducciones
-                // {{lng}} --> nombre carpeta de cada uno de los idiomas
-                // {{ns}} --> nombre carpeta de cada uno de los namespaces
-                loadPath: this.localizationPath + "/{{lng}}/{{ns}}.json"
+                // {{lng}} --> nombre de las carpetas de idiomas
+                // {{ns}} --> nombre de los archivos JSON namespaces
+                loadPath: this.LOCALIZATION_PATH + "/{{lng}}/{{ns}}.json"
             }
         })
     }

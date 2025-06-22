@@ -1,5 +1,6 @@
 import BaseBootScene from "../../framework/scenes/baseBootScene.js";
 import GameManager from "../gameManager.js";
+import LaEntrevistaNodeReader from '../dialog/laEntrevistaNodeReader.js'
 
 export default class BootScene extends BaseBootScene {
     preload() {
@@ -7,22 +8,23 @@ export default class BootScene extends BaseBootScene {
 
         this.load.image("blankScreen", "assets/computer/blankScreen.png");
     }
-    
+
     create() {
         this.DEFAULT_LOADING_BAR_CONFIG.y = this.CANVAS_HEIGHT * 0.4;
         this.DEFAULT_LOADING_BAR_CONFIG.bgColor = 0xab3d32;
         this.DEFAULT_LOADING_BAR_CONFIG.fillColor = 0xe06d61;
-        
+
         this.dialogsAndNamespaces = [
             "scenes/house",
-            "scenes/test"
+            "scenes/test",
+            "scenes/cafeteria"
         ];
         this.onlyNamespaces = [
             "names",
             "CVs",
             "scenes"
         ]
-        
+
         let loadAssets = () => {
             this.loadComputer();
             this.loadBackgrounds();
@@ -33,8 +35,8 @@ export default class BootScene extends BaseBootScene {
 
         let bg = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
-        super.create(loadAssets);
-        
+        super.create(loadAssets, true, new LaEntrevistaNodeReader());
+
         this.events.once("start", () => {
             let gameManager = GameManager.create();
 

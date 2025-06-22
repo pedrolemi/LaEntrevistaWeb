@@ -38,7 +38,7 @@ export default class ConditionNode extends DialogNode {
         }
     */
 
-    static type = "condition";
+    static TYPE = "condition";
     
     constructor(scene, node) {
         super(scene);

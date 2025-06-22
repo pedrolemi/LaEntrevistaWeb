@@ -23,7 +23,7 @@ export default class EventNode extends DialogNode {
         }
     */
 
-    static type = "event";
+    static TYPE = "event";
 
     constructor(scene, node) {
         super(scene);

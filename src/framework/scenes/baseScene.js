@@ -13,6 +13,7 @@ export default class BaseScene extends Phaser.Scene {
     */
     constructor(name, atlasName) {
         super({ key: name });
+        // TODO
         this.atlasName = atlasName;
     }
 
@@ -27,6 +28,7 @@ export default class BaseScene extends Phaser.Scene {
         this.localizationManager = LocalizationManager.getInstance();
         this.dispatcher = EventDispatcher.getInstance();
 
+        // TODO
         this.bgScale = 1;
 
         // Funciones adicionales a las que se llamara al crear y reactivar la escena

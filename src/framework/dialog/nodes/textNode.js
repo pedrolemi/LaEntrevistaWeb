@@ -18,7 +18,7 @@ export default class TextNode extends DialogNode {
         }
     */
 
-    static type = "text";
+    static TYPE = "text";
 
     constructor(scene, node, fullId, namespace) {
         super(scene);

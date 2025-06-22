@@ -3,11 +3,12 @@ import UI from "./game/UI/UI.js";
 
 import MainMenu from "./game/scenes/mainMenu.js";
 import House from "./game/scenes/house.js";
+import Cafeteria from "./game/scenes/cafeteria.js";
 
-const max_w = 1600, max_h = 900, min_w = 320, min_h = 240;
-const config = {
-    width: max_w,
-    height: max_h,
+const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
+const CONFIG = {
+    width: MAX_W,
+    height: MAX_H,
     backgroundColor: "#000000",
     version: "1.0",
 
@@ -17,9 +18,10 @@ const config = {
         // Carga de assets
         BootScene,
 
-        //Test
+        // Test,
         MainMenu,
         House,
+        // Cafeteria,
 
         UI,
     ],
@@ -33,21 +35,20 @@ const config = {
         autoCenter: Phaser.Scale.CENTER_BOTH,   // CENTER_BOTH, CENTER_HORIZONTALLY, CENTER_VERTICALLY
         mode: Phaser.Scale.FIT,                 // ENVELOP, FIT, HEIGHT_CONTROLS_WIDTH, NONE, RESIZE, WIDTH_CONTROLS_HEIGHT
         min: {
-            width: min_w,
-            height: min_h
+            width: MIN_W,
+            height: MIN_H
         },
         max: {
-            width: max_w,
-            height: max_h,
+            width: MAX_W,
+            height: MAX_H,
         },
         zoom: 1,
         parent: "game",
     },
 }
 
-const game = new Phaser.Game(config);
-// Propiedad debug
-game.debug = {
-    enable: true,
+const GAME = new Phaser.Game(CONFIG);
+GAME.debug = {
+    enable: false,
     color: "0x00ff00"
 }

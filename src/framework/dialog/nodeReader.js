@@ -74,16 +74,16 @@ export default class NodeReader {
                 let type = objectJson[id].type;
                 let node = null;
 
-                if (type === ConditionNode.type) {
+                if (type === ConditionNode.TYPE) {
                     node = this.createConditionNode(scene, objectJson[id])
                 }
-                else if (type === TextNode.type) {
+                else if (type === TextNode.TYPE) {
                     node = this.createTextNode(scene, objectJson[id], fullId, namespace);
                 }
-                else if (type === ChoiceNode.type) {
+                else if (type === ChoiceNode.TYPE) {
                     node = this.createChoiceNode(scene, objectJson[id], fullId, namespace);
                 }
-                else if (type === EventNode.type) {
+                else if (type === EventNode.TYPE) {
                     node = this.createEventNode(scene, objectJson[id]);
                 }
 

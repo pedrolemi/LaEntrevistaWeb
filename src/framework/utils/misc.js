@@ -50,8 +50,10 @@ export function moveTowards(current, target, maxDistanceDelta) {
 * @param {Object} prevConfig - configuracion a la que agregar el parametro del cursor 
 */
 export function setInteractive(gameObject, config = {}) {
-    if (gameObject.scene.registry.get("pointerOver") != null) {
-        config.cursor = `url(${gameObject.scene.registry.get("pointerOver")}), pointer`;
+    let scene = gameObject.scene;
+
+    if (scene.registry.get("pointerOver") != null) {
+        config.cursor = `url(${scene.registry.get("pointerOver")}), pointer`;
     }
     else {
         config.useHandCursor = true;
@@ -70,4 +72,9 @@ export function setInteractive(gameObject, config = {}) {
     // });
 
     gameObject.setInteractive(config);
+
+    let debug = scene.sys.game.debug;
+    if (debug.enable) {
+        scene.input.enableDebug(gameObject, debug.color);
+    }
 }

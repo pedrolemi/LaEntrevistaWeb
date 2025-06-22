@@ -7,11 +7,10 @@ export default class LocalizationManager extends Singleton {
         this.i18next = null;
     }
 
-    init(scene) {
-        this.i18next = scene.plugins.get("rextexttranslationplugin");
+    init(i18n) {
+        this.i18next = i18n;
     }
 
-    
     /**
     * Obtiene el texto traducido
     * @param {String} translationId - id completa del nodo en el que mirar

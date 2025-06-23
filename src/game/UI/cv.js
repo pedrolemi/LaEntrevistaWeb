@@ -13,8 +13,8 @@ export default class CV extends InteractiveContainer {
 
 
         this.TITLES_TEXT_CONFIG = {
-            fontFamily: "barlowCondensed-regular",
-            fontSize: 25,
+            fontFamily: "leagueSpartan-variable",
+            fontSize: 23,
             fontStyle: "bold",
             color: "#000000",
             align: "center",

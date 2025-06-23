@@ -59,19 +59,28 @@ export function setInteractive(gameObject, config = {}) {
         config.useHandCursor = true;
     }
 
-    // let defaultDisableInteractive = gameObject.disableInteractive();
-    // gameObject.disableInteractive = () => {
-    //     console.log("disabled");
-
-    //     gameObject.emit("pointerout");
-    // }
-
-    // gameObject.on("pointerout", () => {
-    //     console.log("pointerout");
-    //     console.log(gameObject)
-    // });
-
     gameObject.setInteractive(config);
+
+
+    // Si existe un cursor por defecto
+    if (scene.registry.get("default") != null) {
+        // Guarda la llamada original al disableInteractive del objeto
+        let defaultDisableInteractive = gameObject.disableInteractive.bind(gameObject);
+
+        // Cambia la funcionalidad del disableInteractive
+        gameObject.disableInteractive = () => {
+            // console.log("disabled");
+
+            // Llama al disableInteractive original
+            defaultDisableInteractive();
+
+            // Fuerza el cambio de cursor al por defecto
+            gameObject.scene.input.setDefaultCursor(`url(${scene.registry.get("default")}), pointer`);
+
+            // Restaura el disableInteractive por la llamada original
+            gameObject.disableInteractive = defaultDisableInteractive;
+        }
+    }
 
     let debug = scene.sys.game.debug;
     if (debug.enable) {

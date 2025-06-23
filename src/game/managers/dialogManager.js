@@ -1,5 +1,7 @@
 import Singleton from "../../framework/utils/singleton.js";
 import NodeReader from "../../framework/dialog/nodeReader.js";
+import EventDispatcher from "../../framework/managers/eventDispatcher.js";
+import DefaultEventNames from "../../framework/utils/eventNames.js";
 
 export default class DialogManager extends Singleton {
     constructor() {
@@ -8,6 +10,11 @@ export default class DialogManager extends Singleton {
         this.characters = new Map();
         this.currNode = null;
         this.nodeReader = new NodeReader();
+        this.dispatcher = EventDispatcher.getInstance();
+        this.dispatcher.add(DefaultEventNames.clearNodes, this, () => {
+            console.log("hasdsa")
+            this.currNode = null;
+        }, true);
     }
 
     init() { }
@@ -21,10 +28,9 @@ export default class DialogManager extends Singleton {
             this.currNode = node;
             this.currNode.processNode();
         }
-    }
-
-    clearNodes() {
-        this.currNode = null;
+        else {
+            console.log(node)
+        }
     }
 
 

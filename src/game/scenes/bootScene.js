@@ -50,8 +50,11 @@ export default class BootScene extends BaseBootScene {
 
     loadPointers() {
         let defaultPath = "assets/UI/pointers/"
-        this.input.setDefaultCursor(`url(${defaultPath}default.png), pointer`);
+
+        this.scene.scene.registry.set("default", `${defaultPath}default.png`);
         this.scene.scene.registry.set("pointerOver", `${defaultPath}over.png`);
+
+        this.input.setDefaultCursor(`url(${this.scene.scene.registry.get("default")}), pointer`);
     }
 
     loadComputer() {
@@ -82,7 +85,7 @@ export default class BootScene extends BaseBootScene {
 
     loadBackgrounds() {
         this.loadCafeteria();
-        
+
         this.load.setPath("assets/backgrounds");
 
         this.load.image("hall", "hall.png");

@@ -1,5 +1,6 @@
 import DialogNode from "../dialogNode.js";
 import LocalizationManager from "../../managers/localizationManager.js";
+import DefaultEventNames from "../../utils/eventNames.js";
 
 export default class ChoiceNode extends DialogNode {
     /**
@@ -46,7 +47,7 @@ export default class ChoiceNode extends DialogNode {
 
     processNode() {
         if (this.choices.length > 0) {
-            this.dispatcher.dispatch("startChoiceNode", this);
+            this.dispatcher.dispatch(DefaultEventNames.startChoiceNode, this);
         }
         else {
             this.nextNode();

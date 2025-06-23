@@ -233,13 +233,13 @@
         "root": {
             "type": "text",
             "character": "player",
-            "next": "confirmSelection"
+            "next": "askConfirmation"
         },
-        "confirmSelection": {
+        "askConfirmation": {
             "type": "event",
             "events": [
                 {
-                    "name": "confirmSelection"
+                    "name": "askConfirmation"
                 }
             ]
         }
@@ -265,7 +265,7 @@
             "type": "choice",
             "choices":[
                 { "next": "confirm" },
-                { "next": "cancel" }
+                {  }
             ]
         },
         "confirm": {

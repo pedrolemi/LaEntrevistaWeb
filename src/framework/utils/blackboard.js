@@ -1,16 +1,12 @@
-export default class Blackboard {
-    constructor() {
-        this.blackboard = new Map();
-    }
-
+export default class Blackboard extends Map {
     /**
     * Devuelve el valor buscado en la blackboard
     * @param {String} key - valor buscado
     * @returns {object} - el objeto buscado en caso de que exista. null en caso contrario
     */
     getValue(key) {
-        if (this.blackboard.has(key)) {
-            return this.blackboard.get(key);
+        if (super.has(key)) {
+            return super.get(key);
         }
         return null;
     }
@@ -23,10 +19,10 @@ export default class Blackboard {
     */
     setValue(key, value) {
         let exists = false;
-        if (this.blackboard.has(key)) {
+        if (super.has(key)) {
             exists = true;
         }
-        this.blackboard.set(key, value);
+        super.set(key, value);
         return exists;
     }
 
@@ -36,6 +32,6 @@ export default class Blackboard {
     * @returns {boolean} - true si existe el valor. false en caso contrario
     */
     hasValue(key) {
-        return this.blackboard.has(key);
+        return super.has(key);
     }
 }

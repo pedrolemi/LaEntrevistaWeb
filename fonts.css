@@ -20,3 +20,7 @@ Fuentes que se usan en Phaser
     font-family: "leagueSpartan-variable";
     src: url("assets/fonts/LeagueSpartan-VariableFont_wght.ttf");
 }
+@font-face {
+    font-family: "lexend-variable";
+    src: url("assets/fonts/Lexend-VariableFont_wght.ttf");
+}

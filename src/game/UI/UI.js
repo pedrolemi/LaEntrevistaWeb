@@ -1,7 +1,8 @@
 import BaseUI from "../../framework/UI/baseUI.js";
-import TextArea from "../../framework/UI/textArea.js";
 import DialogManager from "../managers/dialogManager.js";
+import TextArea from "../../framework/UI/textArea.js";
 import CV from "../UI/cv.js"
+import DefaultEventNames from "../../framework/utils/eventNames.js";
 
 export default class UI extends BaseUI {
     constructor() {
@@ -28,21 +29,32 @@ export default class UI extends BaseUI {
             realHeight: 60,
         }
         this.textConfig = {
-            fontFamily: "barlowCondensed-regular",
-            fontSize: 35,
+            fontFamily: "lexend-variable",
+            fontSize: 30,
             fontStyle: "bold"
         }
         this.nameTextConfig = {
-            fontFamily: "leagueSpartan-variable",
+            fontFamily: "lexend-variable",
             fontSize: 40,
             fontStyle: "bold",
             align: "center"
         }
         this.optionBoxConfig = {
             boxSpacing: 10,
+            textHorizontalPadding: 10,
+            textVerticalPadding: 10,
         }
         this.optionsTextConfig = { ... this.textConfig };
+        this.optionsTextConfig.fontSize = 35;
 
+        this.QUESTION_TEXT_DEFAULT_SIZE = 50;
+        let QUESTION_TEXT_MARGIN = 10;
+        this.optionsQuestionTextConfig = { ...this.textConfig };
+        this.optionsQuestionTextConfig.fontSize = this.QUESTION_TEXT_DEFAULT_SIZE;
+        this.optionsQuestionTextConfig.wordWrap = {
+            width: this.CANVAS_WIDTH - QUESTION_TEXT_MARGIN * 2,
+            useAdvancedWrap: true
+        }
     }
 
     create(params) {
@@ -54,10 +66,8 @@ export default class UI extends BaseUI {
 
         this.dispatcher.add("checkCV", this, () => {
             this.cv.activate(true);
-        });
+        }, true);
 
-        let QUESTION_TEXT_MARGIN = 10;
-        this.QUESTION_TEXT_DEFAULT_SIZE = 50;
 
         let questionTextConfig = { ...this.textConfig };
         questionTextConfig.align = "center";
@@ -65,20 +75,11 @@ export default class UI extends BaseUI {
         questionTextConfig.stroke = "#000000";
 
         this.questionText = new TextArea(this, this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2,
-            this.CANVAS_WIDTH - QUESTION_TEXT_MARGIN * 2, this.CANVAS_HEIGHT / 2, "", questionTextConfig).setOrigin(0.5, 0.5);
+            this.optionsQuestionTextConfig.wordWrap.width, this.CANVAS_HEIGHT / 2, "", this.optionsQuestionTextConfig).setOrigin(0.5, 0.5);
         this.questionText.setVisible(false);
-        this.questionText.setFontSize(this.QUESTION_TEXT_DEFAULT_SIZE);
 
         this.bgElements.add(this.questionText);
 
-
-        // Si llega un evento de que se han acabado los nodos, desactiva la caja y quita el nodo
-        this.dispatcher.remove(this, "endNodes");
-        this.dispatcher.add("endNodes", this, () => {
-            this.textbox.activate(false, () => {
-                this.dialogManager.clearNodes();
-            });
-        });
     }
 
 
@@ -95,19 +96,15 @@ export default class UI extends BaseUI {
             // se desactiva la caja y se vuelve a activar con el nombre nuevo
             if (this.textbox.visible && this.textbox.lastCharacter != node.character) {
                 this.textbox.activate(false, () => {
-                    this.textbox.setName(node.name, node.character);
-                    this.textbox.activate(true, () => {
-                        this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
-                    });
+                    this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
+                    this.textbox.activate(true);
                 })
             }
             // Si no, si la caja no era visible o el personaje es el mismo, se activa
             // directamente con el nombre nuevo (si ya estaba activa, no hara la animacion)
             else {
-                this.textbox.setName(node.name, node.character);
-                this.textbox.activate(true, () => {
-                    this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
-                });
+                this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
+                this.textbox.activate(true);
             }
         }
     }
@@ -119,7 +116,7 @@ export default class UI extends BaseUI {
         }
         // Si se ha pasado el retardo para poder saltar el dialogo, se pasa al siguiente
         else if (this.textbox.canSkip) {
-            this.dispatcher.dispatch("nextDialog");
+            this.dispatcher.dispatch(DefaultEventNames.nextDialog);
         }
     }
 
@@ -128,8 +125,9 @@ export default class UI extends BaseUI {
         super.createOptions(node);
 
         this.questionText.setVisible(true);
+        // console.log(this.textbox.textObj.text)
         if (this.textbox.textObj.text != "") {
-            this.questionText.setText(this.textbox.textObj.text);
+            this.questionText.setText(this.textbox.fullText);
             this.questionText.setFontSize(this.QUESTION_TEXT_DEFAULT_SIZE);
 
             this.questionText.adjustFontSize();

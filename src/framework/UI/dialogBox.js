@@ -242,18 +242,6 @@ export default class DialogBox extends InteractiveContainer {
     }
 
 
-    activate(active, onComplete = {}, delay = 0) {
-        super.activate(active, onComplete, delay);
-
-        if (!active) {
-            this.fadeAnim.on("complete", () => {
-
-                this.setDialog("", "", "", false);
-            });
-        }
-    }
-
-
     /**
     * Comprueba si el texto indicado cabe en la caja de texto
     * @param {String} text - texto a mostrar

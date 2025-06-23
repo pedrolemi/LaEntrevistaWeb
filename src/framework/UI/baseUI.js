@@ -3,6 +3,8 @@ import DialogBox from "../UI/dialogBox.js"
 import OptionBox from "../UI/optionBox.js";
 import InteractiveContainer from "../UI/interactiveContainer.js";
 
+import DefaultEventNames from "../utils/eventNames.js";
+
 export default class BaseUI extends BaseScene {
     /**
     * Clase base para la escena en la que se crean los elementos para la interfaz
@@ -42,18 +44,29 @@ export default class BaseUI extends BaseScene {
         this.configureTextboxEvents();
         this.configureChoicesEvents();
 
-        // Si llega un evento de que se han acabado los nodos, desactiva la caja y quita el nodo del 
-        this.dispatcher.add("endNodes", this, () => {
-            this.textbox.activate(false);
-        });
+        // Si llega un evento de que se han acabado los nodos, desactiva la caja y 
+        // envia el evento de eliminar el nodo actual cuando termina la animacion
+        this.dispatcher.add(DefaultEventNames.endNodes, this, () => {
+            this.textbox.activate(false, () => {
+                this.dispatcher.dispatch(DefaultEventNames.clearNodes);
+            });
+        }, true);
     }
 
+    shutdown() {
+        super.shutdown();
+        if (this.dispatcher != null) {
+            this.textbox.activate(false, () => {
+                this.dispatcher.dispatch(DefaultEventNames.clearNodes);
+            });
+        }
+    }
 
     configureTextboxEvents() {
         this.textbox.on("pointerdown", () => { this.skipDialog(); });
 
         // Si llega un evento de empezar nodo de texto, comienza a procesarlo
-        this.dispatcher.add("startTextNode", this, (node) => {
+        this.dispatcher.add(DefaultEventNames.startTextNode, this, (node) => {
             // console.log(node);
 
             // Recorre todos los fragmentos obtenidos y los divide (por si
@@ -71,12 +84,12 @@ export default class BaseUI extends BaseScene {
             // console.log(dialogs);
 
             this.startTextNode(node);
-        });
+        }, true);
 
         // Si llega un evento de actualizar el texto, lo cambia en la caja de texto
-        this.dispatcher.add("updateTextNode", this, (node) => {
+        this.dispatcher.add(DefaultEventNames.updateTextNode, this, (node) => {
             this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
-        });
+        }, true);
     }
 
     startTextNode(node) {
@@ -84,19 +97,15 @@ export default class BaseUI extends BaseScene {
         // se desactiva la caja y se vuelve a activar con el nombre nuevo
         if (this.textbox.visible && this.textbox.lastCharacter != node.character) {
             this.textbox.activate(false, () => {
-                this.textbox.setName(node.name, node.character);
-                this.textbox.activate(true, () => {
-                    this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
-                });
+                this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
+                this.textbox.activate(true);
             })
         }
         // Si no, si la caja no era visible o el personaje es el mismo, se activa
         // directamente con el nombre nuevo (si ya estaba activa, no hara la animacion)
         else {
-            this.textbox.setName(node.name, node.character);
-            this.textbox.activate(true, () => {
-                this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
-            });
+            this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
+            this.textbox.activate(true);
         }
     }
 
@@ -111,7 +120,7 @@ export default class BaseUI extends BaseScene {
         }
         // Si se ha pasado el retardo para poder saltar el dialogo, se pasa al siguiente
         else if (this.textbox.canSkip) {
-            this.dispatcher.dispatch("nextDialog");
+            this.dispatcher.dispatch(DefaultEventNames.nextDialog);
         }
     }
 
@@ -182,10 +191,10 @@ export default class BaseUI extends BaseScene {
 
 
     configureChoicesEvents() {
-        this.dispatcher.add("startChoiceNode", this, (node) => {
+        this.dispatcher.add(DefaultEventNames.startChoiceNode, this, (node) => {
             this.textbox.activate(false);
             this.createOptions(node);
-        });
+        }, true);
     }
 
     /**

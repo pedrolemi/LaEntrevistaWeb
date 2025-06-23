@@ -1,5 +1,6 @@
-import LocalizationManager from "../../managers/localizationManager.js";
 import DialogNode from "../dialogNode.js";
+import LocalizationManager from "../../managers/localizationManager.js";
+import DefaultEventNames from "../../utils/eventNames.js";
 
 export default class TextNode extends DialogNode {
     /**
@@ -72,16 +73,16 @@ export default class TextNode extends DialogNode {
         // Si hay dialogos
         if (this.dialogs.length > 0) {
             // Se lanza el evento de empezar nodo de texto
-            this.dispatcher.dispatch("startTextNode", this);
+            this.dispatcher.dispatch(DefaultEventNames.startTextNode, this);
 
             // Se escucha el evento de siguiente dialogo
-            this.dispatcher.add("nextDialog", this, () => {
+            this.dispatcher.add(DefaultEventNames.nextDialog, this, () => {
                 // Se actualiza el dialogo
                 this.currDialog++;
 
                 // Si sigue habiendo mas dialogos, se lanza el evento de pasar al siguiente dialogo
                 if (this.currDialog < this.dialogs.length) {
-                    this.dispatcher.dispatch("updateTextNode", this);
+                    this.dispatcher.dispatch(DefaultEventNames.updateTextNode, this);
                 }
                 // Si no, pasa al siguiente nodo
                 else {

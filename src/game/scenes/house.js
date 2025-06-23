@@ -1,6 +1,6 @@
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 import TextArea from "../../framework/UI/textArea.js";
-import Character from "../character.js";
+import DefaultEventNames from "../../framework/utils/eventNames.js";
 
 export default class House extends LaEntrevistaBaseScene {
     /**
@@ -32,11 +32,6 @@ export default class House extends LaEntrevistaBaseScene {
         });
 
         // this.dispatcher.dispatch("offersFound");
-
-        let character = new Character(this, 200, 200, 0.5, "Antonio", 0.3, () => {
-            console.log("Hola");
-        });
-
     }
 
     onCreate() {
@@ -68,39 +63,62 @@ export default class House extends LaEntrevistaBaseScene {
 
 
         this.dispatcher.add("offersFound", this, () => {
-            portalLogo.setVisible(false);
-            portalText.setVisible(false);
-
-            let ICONS_Y = 300;
-            let TEXT_Y = 450;
-            textConfig.fontSize = 40;
-            textConfig.fontFamily = 40;
-            textConfig.fontFamily = "barlowCondensed-regular";
-            textConfig.fontStyle = "normal";
-
-            let programmingIcon = this.add.image(600, ICONS_Y, "programming");
-            let programmingText = new TextArea(this, programmingIcon.x, TEXT_Y, programmingIcon.displayWidth, programmingIcon.displayHeight,
-                this.localizationManager.translate("programming", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
-            programmingText.adjustFontSize();
-
-            this.setInteractive(programmingIcon);
-            programmingIcon.on("pointerdown", () => {
-
-            });
-
-
-            let dataIcon = this.add.image(1005, ICONS_Y, "data");
-            let dataText = new TextArea(this, dataIcon.x, TEXT_Y, dataIcon.displayWidth, dataIcon.displayHeight,
-                this.localizationManager.translate("data", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
-            dataText.adjustFontSize();
-
-            this.setInteractive(dataIcon);
-            dataIcon.on("pointerdown", () => {
-
-            });
+            this.createOffers(portalLogo, portalText, textConfig);
         });
     }
 
+    createOffers(portalLogo, portalText, textConfig) {
+        portalLogo.setVisible(false);
+        portalText.setVisible(false);
+
+        let ICONS_Y = 300;
+        let TEXT_Y = 450;
+        textConfig.fontSize = 40;
+        textConfig.fontFamily = 40;
+        textConfig.fontFamily = "barlowCondensed-regular";
+        textConfig.fontStyle = "normal";
+
+        let programmingIcon = this.add.image(600, ICONS_Y, "programming");
+        let programmingText = new TextArea(this, programmingIcon.x, TEXT_Y, programmingIcon.displayWidth, programmingIcon.displayHeight,
+            this.localizationManager.translate("programming", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
+        programmingText.adjustFontSize();
+        this.setInteractive(programmingIcon);
+
+        let dataIcon = this.add.image(1005, ICONS_Y, "data");
+        let dataText = new TextArea(this, dataIcon.x, TEXT_Y, dataIcon.displayWidth, dataIcon.displayHeight,
+            this.localizationManager.translate("data", "scenes").toUpperCase(), textConfig).setOrigin(0.5, 0.5);
+        dataText.adjustFontSize();
+        this.setInteractive(dataIcon);
+
+        let position = "";
+        programmingIcon.on("pointerdown", () => {
+            position = "programming";
+
+            this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "selectProgrammingOffer");
+            this.dialogManager.setNode(this.node);
+        });
+
+        dataIcon.on("pointerdown", () => {
+            position = "dataScience";
+
+            this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "selectDataOffer");
+            this.dialogManager.setNode(this.node);
+        });
+
+        this.dispatcher.add("askConfirmation", this, () => {
+            this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "askConfirmation");
+            this.dispatcher.add(DefaultEventNames.clearNodes, this, () => {
+                this.dispatcher.remove(DefaultEventNames.clearNodes, this);
+                this.dialogManager.setNode(this.node);
+            });
+        });
+
+        this.dispatcher.add("end", this, () => {
+            this.gameManager.blackboard.setValue("position", position);
+
+            this.gameManager.startCafeteriaScene();
+        });
+    }
 
     createDesktop() {
         let desktop = this.add.image(this.BGS_X, this.BGS_Y, "desktop");
@@ -108,14 +126,15 @@ export default class House extends LaEntrevistaBaseScene {
         this.dispatcher.add("startSearch", this, () => {
             this.setInteractive(desktop);
             desktop.on("pointerdown", () => {
-                if (this.dialogManager.currNode == null) {
-                    desktop.setVisible(false);
-                    desktop.disableInteractive();
+                // if (this.dialogManager.currNode == null) {
+                //     desktop.setVisible(false);
+                //     desktop.disableInteractive();
 
-                    this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "search");
-                    this.dialogManager.setNode(this.node);
-                }
+                //     this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "search");
+                //     this.dialogManager.setNode(this.node);
+                // }
 
+                this.gameManager.startGame();
             });
         });
 

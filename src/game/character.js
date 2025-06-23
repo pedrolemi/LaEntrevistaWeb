@@ -1,4 +1,5 @@
 import { moveTowards } from "../framework/utils/misc.js";
+import DefaultEventNames from "../framework/utils/eventNames.js";
 
 export default class Character extends Phaser.GameObjects.Sprite {
     /**
@@ -45,19 +46,19 @@ export default class Character extends Phaser.GameObjects.Sprite {
         });
 
         // Se reproduce la animacion por defecto cuando termina una dialogo
-        this.scene.dispatcher.add("endNodes", this, () => {
+        this.scene.dispatcher.add(DefaultEventNames.endNodes, this, () => {
             this.playDefaultAnimation();
         });
 
         // Se reproduce la animacion por defecto cuando comienza un nodo de eleccion
-        this.scene.dispatcher.add("startChoiceNode", this, (node) => {
+        this.scene.dispatcher.add(DefaultEventNames.startChoiceNode, this, (node) => {
             this.playDefaultAnimation();
         });
 
         // Cuando comienza un nodo de texto, se comprueba que personaje esta activo para comenzar la animacion:
         // - Si no es este personaje y esta hablando, se vuelve a la animacion por defecto
         // - Si es este personaje, intenta reproducir la animacion de hablar
-        this.scene.dispatcher.add("startTextNode", this, (node) => {
+        this.scene.dispatcher.add(DefaultEventNames.startTextNode, this, (node) => {
             if (this.name != node.character &&
                 this.anims.isPlaying &&
                 this.anims.currentAnim.key == this.types.talking) {

@@ -28,7 +28,7 @@ export default class MainMenu extends LaEntrevistaBaseScene {
                 let scale = Math.max(scaleX, scaleY);
 
                 video.setScale(scale * 1.15);
-                video.setPlaybackRate(10);
+                video.setPlaybackRate(3);
 
                 video.on("complete", () => {
                     this.gameManager.startHouseScene();

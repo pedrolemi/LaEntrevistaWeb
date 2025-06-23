@@ -1,4 +1,5 @@
 import EventDispatcher from "../managers/eventDispatcher.js";
+import DefaultEventNames from "../utils/eventNames.js";
 
 export default class DialogNode {
     /**
@@ -29,7 +30,7 @@ export default class DialogNode {
         // (ya que los nodos no se eliminan hasta que se elimine la escena en la que estan)
         this.dispatcher.removeByOwner(this);
 
-        if (this.next.length > this.nextIndex) {
+        if (this.next.length > this.nextIndex && this.next[this.nextIndex] != null) {
             // console.log(this.next[this.nextIndex]);
 
             setTimeout(() => {
@@ -37,7 +38,7 @@ export default class DialogNode {
             }, this.nextDelay);
         }
         else {
-            this.dispatcher.dispatch("endNodes");
+            this.dispatcher.dispatch(DefaultEventNames.endNodes);
         }
     }
 }

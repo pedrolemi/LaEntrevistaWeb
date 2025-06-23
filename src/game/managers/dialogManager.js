@@ -39,29 +39,4 @@ export default class DialogManager extends Singleton {
     readNodes(scene, file, namespace, objectName = "", getObjs = true) {
         return this.nodeReader.readNodes(scene, file, namespace, objectName, getObjs);
     }
-
-    /**
-    * Reproduce la animacion hablando del personaje.
-    * Si no existe dicha animacion, reproduce la animacion por defecto
-    * @param {String} character - nombre del personaje.
-    */
-    playTalkingAnimation(character) {
-        if (this.characters.has(character)) {
-            let characterObj = this.characters.get(character);
-            if (!characterObj.playTalkingAnimation()) {
-                characterObj.playDefaultAnimation();
-            }
-        }
-    }
-
-    /**
-    * Reproduce la animacion por defecto del personaje
-    * @param {String} character - nombre del personaje.
-    */
-    playDefaultAnimation(character) {
-        if (this.characters.has(character)) {
-            let characterObj = this.characters.get(character);
-            characterObj.playDefaultAnimation();
-        }
-    }
 }

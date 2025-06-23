@@ -2,9 +2,9 @@ import Singleton from "../utils/singleton.js";
 
 export default class EventDispatcher extends Singleton {
     /**
-    * Clase para tratar los mensajes sin tener en cuenta el ambito.
-    * De este modo cualquier objeto puede emitir un mensaje y otro que se 
-    * encuentre en otro lugar distinto puede suscribirse sin preocuparse del ambito
+    * Clase que centraliza la gestion de eventos entre objeticos,
+    * permitiendo que cualquier objeto emita o escuche eventos sin
+    * necesidad de compartir contexto directo 
     */
     constructor() {
         super("EventDispatcher");
@@ -12,39 +12,53 @@ export default class EventDispatcher extends Singleton {
         // Emisor de eventos
         this.emitter = new Phaser.Events.EventEmitter();
 
+        // ========================
+        // Mapas para eventos TEMPORALES
+        // ========================
 
-        // Mapas para conseguir un mejor manejo de los eventos y poder eliminar los eventos segun propietario
-
-        // EVENTOS TEMPORALES
-        // Se usa para poder borrar por evento facilmente
-        // Estructura: evento-propietario -> map<string, set<object>>
+        /**
+        * Map<string, Set<object>>
+        * Mapea un nombre de evento a los objetos que lo escuchan.
+        * Facilita la eliminación por nombre de evento
+        */
         this.eventsMap = new Map();
-        // Se usa para poder borrar por propietario facilmente
-        // Estructura: propietario-evento-funciones -> map<object, map<string, set<fn>>>
+
+        /**
+        * Map<object, Map<string, Set<Function>>>
+        * Mapea un objeto (owner) a sus eventos y funciones asociadas.
+        * Facilita la eliminación de eventos por objeto.
+        */
         this.ownersMap = new Map();
 
-        // EVENTOS PERMANENTES
-        // Guardar eventos permanentemente
-        // Estructura: propietario-evento-funciones -> map<object, map<string, set<fn>>>
+        // ========================
+        // Mapeos para eventos PERMANENTES
+        // ========================
+
+        /**
+         * Map<object, Map<string, Set<Function>>>
+         * Igual que ownersMap pero para eventos que persisten
+         * incluso después de un cambio de escena o reinicio.
+        */
         this.ownersPermanentMap = new Map();
     }
 
 
     /**
-    * Emitir un evento
+    * Se emite un evento
     * @param {String} event - nombre del evento
-    * @param {Object} obj - objeto que reciben los objetos suscritos al evento (opcional)
+    * @param {Object} obj - parametros del evento (opcional)
     */
     dispatch(event, obj) {
         this.emitter.emit(event, obj);
     }
 
     /**
-    * Comprobar si un evento TEMPORAL o PERMANENTE ya existe
+    * Comprobar si un evento ya existe
     * @param {String} event - nombre del evento 
     * @param {Object} owner - objeto que se suscribe al evento
     * @param {Function} fn - funcion que se ejecuta al producirse el evento
-    * @param {Map} ownersMap - mapa de propietarios en el que buscar el evento (TEMPORAL O PERMANENTE)
+    * @param {Map} ownersMap - mapa de propietarios en el que buscar el evento (temporal o permanente)
+    * @returns {Boolean} - true si ya existe, false si no
     */
     alreadyExists(event, owner, fn, ownersMap) {
         // Existe el propietario...
@@ -65,23 +79,20 @@ export default class EventDispatcher extends Singleton {
 
 
     /**
-    * PUBLICO
-    * Suscribir un objeto a un evento TEMPORAL o PERMANENTE
+    * Suscribir un objeto a un evento
     * @param {String} event - nombre del evento
-    * @param {Object} owner - objeto que se suscribe al evento (contexto/scope)
+    * @param {Object} owner - objeto que se suscribe al evento
     * @param {Fn} fn - funcion que se ejecuta cuando se produce el evento
-    * @param {Boolean} permanent - indica si la suscripcion es permanente (true) o temporal (false)
+    * @param {Boolean} permanent - true si la suscripcion es peramnente, false si es temporal
     */
     add(event, owner, fn, permanent) {
-        let exists = false;
+        let exists = this.alreadyExists(event, owner, fn, this.ownersPermanentMap);
 
-        // Si no existe como permanente...
-        exists = this.alreadyExists(event, owner, fn, this.ownersPermanentMap);
+        // Si no existia...
         if (!exists) {
             // Se quiere anadir como permanente...
             if (permanent) {
                 // Se anade como permanente
-                // exists -> false
                 this.addAsPermanent(event, owner, fn);
 
                 // Si existia como temporal...
@@ -96,7 +107,6 @@ export default class EventDispatcher extends Singleton {
                 exists = this.alreadyExists(event, owner, fn, this.ownersMap);
                 if (!exists) {
                     // Se anade como temporal
-                    // exists -> false
                     this.addAsTemporary(event, owner, fn);
                 }
             }
@@ -104,8 +114,6 @@ export default class EventDispatcher extends Singleton {
 
         // Si no existe, se emite...
         if (!exists) {
-            // Nota: aunque se ha tratado en la propia clase, EventEmitter hace que si ya se esta suscrito
-            // al evento, no se vuelve a suscribir
             this.emitter.on(event, fn, owner);
         }
     }
@@ -117,7 +125,6 @@ export default class EventDispatcher extends Singleton {
     * @param {Function} fn - funcion que se ejecuta al producirse el evento
     */
     addAsTemporary(event, owner, fn) {
-        // EVENTOS
         if (!this.eventsMap.has(event)) {
             // El evento no existe...
             // Se crea el evento en el mapa de eventos
@@ -135,7 +142,7 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Almacenar en los mapas un evento PERMANENTE
+    * Almacenar en los mapas un evento permanente
     * @param {String} event - nombre del evento 
     * @param {Object} owner - objeto que se suscribe al evento
     * @param {Function} fn - funcion que se ejecuta al producirse el evento
@@ -152,7 +159,6 @@ export default class EventDispatcher extends Singleton {
     * @param {Map} ownersMap - mapa de propietarios en el que se va a guardar el evento
     */
     addToOwnersMap(event, owner, fn, ownersMap) {
-        // PROPIETARIOS
         if (!ownersMap.has(owner)) {
             // El propietario no existe...
             // Se crea el propietario en el mapa de propietarios correspondiente
@@ -166,12 +172,10 @@ export default class EventDispatcher extends Singleton {
         }
         let ownerEventAux = ownerAux.get(event);
         // Se anade la funcion de ese evento para ese propietario en el mapa de propietarios correspondiente
-        // Nota: si se ha llegado a este punto esta funcion no esta registrada porque si lo estuviera habria salido que ya existe esa suscripcion
         ownerEventAux.add(fn);
     }
 
     /**
-    * PUBLICO
     * Suscribir un objeto a un evento una sola vez
     * @param {String} event - nombre del evento
     * @param {Object} owner - objeto que se suscribe al event (contexto)
@@ -182,10 +186,9 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * PUBLICO
     * @param {String} event - nombre del evento 
     * @param {String} owner - objeto suscrito al evento 
-    * @param {Function} fn - funcion que ejecuta al producirse el evento
+    * @param {Function} fn - funcion que se ejecuta al producirse el evento
     */
     deepRemove(event, owner, fn) {
         // Si existe el propietario... 
@@ -206,12 +209,11 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * PUBLICO
-    * Desuscribir a todos los objetos de un evento concreto TEMPORAL
+    * Desuscribir a todos los objetos de un evento temporal
     * @param {String} event - nombre del evento
     */
     removeByEvent(event) {
-        // Existe el evento...
+        // Si existe el evento...
         if (this.eventsMap.has(event)) {
             let owners = this.eventsMap.get(event);
             // Se actualiza el mapa de propietarios
@@ -228,14 +230,13 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * PUBLICO
-    * Desuscribir a un objeto de todos sus eventos TEMPORALES
+    * Desuscribir a un objeto de todos sus eventos temporales
     * @param {Object} owner - objeto suscrito al evento
     */
     removeByOwner(owner) {
         // Si existe el propietario...
         if (this.ownersMap.has(owner)) {
-            // Se obtienen todos los eventos del propietario (map)
+            // Se obtienen todos los eventos del propietario
             let events = this.ownersMap.get(owner);
             // Se recorre cada evento
             events.forEach((functions, eventName) => {
@@ -256,22 +257,20 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * PUBLICO
     * Desuscribir a un objeto de un evento concreto TEMPORAL
     * @param {String} event - nombre del evento
     * @param {Object} owner - objeto suscrito al evento
     */
     remove(event, owner) {
-        // Existe el evento...
+        // Si existe el evento...
         if (this.eventsMap.has(event)) {
-            // Existe el propietario...
+            // Si existe el propietario...
             let eventAux = this.eventsMap.get(event);
             if (eventAux.has(owner)) {
                 // Se actualiza el mapa de eventos
                 eventAux.delete(owner);
 
                 // Se desuscriben todas las funciones del propietarios que estan suscritas a ese evento
-                // (a partir del mapa de propietarios)
                 let ownerEventAux = this.ownersMap.get(owner).get(event);
                 ownerEventAux.forEach(fn => {
                     this.emitter.off(event, fn, owner);
@@ -284,7 +283,7 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Eliminar todos los eventos TEMPORALES
+    * Eliminar todos los eventos temporales
     * Nota: si no hay comunicacion entre escenas, es recomendable 
     * llamarlo por cada cambio de escenas para mejorar el rendimiento
     */
@@ -307,7 +306,8 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Limpiar por completo el emisor, por lo tanto, se eliminan tanto eventos TEMPORALES como PERMANENTES
+    * Limpiar por completo el emisor.
+    * Se eliminan tanto los eventos temporales como permanentes
     */
     clear() {
         this.emitter.shutdown();

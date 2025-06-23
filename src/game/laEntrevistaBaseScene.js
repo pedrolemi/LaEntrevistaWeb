@@ -1,6 +1,7 @@
 import BaseScene from "../framework/scenes/baseScene.js"
 import DialogManager from "./managers/dialogManager.js";
 import GameManager from "./managers/gameManager.js";
+import { setInteractive } from "../framework/utils/misc.js";
 
 export default class LaEntrevistaBaseScene extends BaseScene {
     constructor(name, atlasName) {
@@ -12,7 +13,9 @@ export default class LaEntrevistaBaseScene extends BaseScene {
 
         this.gameManager = GameManager.getInstance();
         this.dialogManager = DialogManager.getInstance();
-        this.characters = new Map();
+        this.characters = new Set();
+
+        this.interactableObjects = new Set();
     }
 
     /**
@@ -25,14 +28,58 @@ export default class LaEntrevistaBaseScene extends BaseScene {
     }
 
     /**
-    * Agrega un personaje al conjunto de personajes que hay en la escena
-    * @param {Character} character - personaje que se desea agregar
+    * Maneja la salida de los personajes de la sala tras un evento.
+    * Desactiva la interracion con los objetos mientras los personajes se mueven hacia la salida,
+    * y la vuelve a activar una vez que todos hayan salido
+    * @param {string} event - nombre del evento
+    * @param {Array} characters - array con los personajes que deben salir
+    * @param {Object} exitPoint - punto destino con propiedades {x, y}
     */
-    addCharacter(character) {
-        if (!this.characters.has(character.name)) {
-            this.characters.set(character.name, character);
-        }
+    leaveRoom(event, characters, exitPoint) {
+        let nCharactersExited = 0;
+        let nCharacters = characters.length;
+
+        this.dispatcher.addOnce(event, this, () => {
+            // Desactiva la interaccion con todos los objetos mientras los personajes abandonan la sala
+            this.interactableObjects.forEach(obj => {
+                obj.disableInteractive();
+            });
+
+            characters.forEach((character) => {
+                // El personaje se mueve hacia el punto de salida
+                character.moveTowards(exitPoint);
+
+                character.once("targetReached", () => {
+                    // Se incrementa el contador global de personajes con los que se ha interactuado
+                    this.gameManager.increaseInteractedCharacters();
+
+                    // Se elimina el personaje
+                    this.interactableObjects.delete(character);
+                    character.destroy();
+
+                    ++nCharactersExited;
+
+                    // Cuando todos los personajes han salido, se vuelve a activar la interaccion con los objetos
+                    if (nCharactersExited >= nCharacters) {
+                        this.interactableObjects.forEach((obj) => {
+                            this.setInteractive(obj);
+                        });
+                    }
+                });
+            });
+        });
     }
 
+    /**
+    * Configura un objeto para que sea interactivo y lo agrega al conjunto de objetos interactuables
+    * @param {Phaser.GameObject} gameObject - objeto que se va a hacer interactivo 
+    * @param {Object} prevConfig - configuracion a la que agregar el parametro del cursor 
+    */
+    setInteractive(gameObject, config = {}) {
+        setInteractive(gameObject, config);
 
+        if (!this.interactableObjects.has(gameObject)) {
+            this.interactableObjects.add(gameObject);
+        }
+    }
 }

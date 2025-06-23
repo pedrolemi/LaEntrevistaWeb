@@ -55,15 +55,11 @@ export default class UI extends BaseUI {
         this.bgElements.add(this.questionText);
 
 
-        // Si llega un evento de que se han acabado los nodos, desactiva la caja y quita el nodo del 
+        // Si llega un evento de que se han acabado los nodos, desactiva la caja y quita el nodo
         this.dispatcher.remove(this, "endNodes");
         this.dispatcher.add("endNodes", this, () => {
             this.textbox.activate(false, () => {
                 this.dialogManager.clearNodes();
-
-                this.dialogManager.characters.forEach((character) => {
-                    this.dialogManager.playDefaultAnimation(character);
-                });
             });
         });
     }
@@ -84,9 +80,7 @@ export default class UI extends BaseUI {
                 this.textbox.activate(false, () => {
                     this.textbox.setName(node.name, node.character);
                     this.textbox.activate(true, () => {
-                        // Se para la animacion del personaje 
-                        this.dialogManager.playDefaultAnimation(node.character);
-                        this.textbox.setDialog(node.name, node.dialogs[node.currDialog]);
+                        this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
                     });
                 })
             }

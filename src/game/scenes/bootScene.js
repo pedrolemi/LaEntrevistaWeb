@@ -71,7 +71,18 @@ export default class BootScene extends BaseBootScene {
         this.load.image("programming", "programming.jpg");
     }
 
+    loadCafeteria() {
+        this.load.setPath("assets/backgrounds/cafeteria");
+
+        this.load.image("cafeteria", "cafeteria.png");
+        this.load.image("chairs", "chairs.png");
+        this.load.image("tableLegs", "tableLegs.png");
+        this.load.image("tableTop", "tableTop.png");
+    }
+
     loadBackgrounds() {
+        this.loadCafeteria();
+        
         this.load.setPath("assets/backgrounds");
 
         this.load.image("hall", "hall.png");
@@ -80,11 +91,6 @@ export default class BootScene extends BaseBootScene {
         this.load.image("corridor", "corridorTextless.png");
 
         this.load.image("waitingRoom", "waitingRoomTextless.png");
-
-        this.load.image("cafeteria", "cafeteria.png");
-        this.load.image("chairs", "chairs.png");
-        this.load.image("tableLegs", "tableLegs.png");
-        this.load.image("tableTop", "tableTop.png");
 
         this.load.image("office", "office.png");
         this.load.image("officeTable", "officeTable.png");

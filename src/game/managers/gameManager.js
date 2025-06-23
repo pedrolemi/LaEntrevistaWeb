@@ -10,6 +10,15 @@ export default class GameManager extends Singleton {
 
         // Blackboard de variables de todo el juego
         this.blackboard = new Blackboard();
+
+        this.nInteractedCharacters = 0;
+    }
+
+    /**
+    * Incrementar el numero de personajes con los que se ha hablado
+    */
+    increaseInteractedCharacters() {
+        ++this.nInteractedCharacters;
     }
 
     // PARA PRUEBAS

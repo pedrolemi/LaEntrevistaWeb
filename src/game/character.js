@@ -1,4 +1,4 @@
-import { moveTowards, setInteractive } from "../framework/utils/misc.js";
+import { moveTowards } from "../framework/utils/misc.js";
 
 export default class Character extends Phaser.GameObjects.Sprite {
     /**
@@ -18,14 +18,6 @@ export default class Character extends Phaser.GameObjects.Sprite {
         this.scene = scene;
         this.scene.add.existing(this);
 
-        // Tipos de animaciones que puede reproducir el personaje
-        this.types = {
-            idle: "Idle",
-            sitting: "Sitting",
-            talking: "Talking",
-            walking: "Walking"
-        }
-
         this.setScale(scale);
         this.name = name;
         this.speed = speed;
@@ -33,10 +25,48 @@ export default class Character extends Phaser.GameObjects.Sprite {
         this.callback = callback;
         this.lookingRight = lookingRight;
 
-        setInteractive(this);
+        let getAnimationKey = (type) => {
+            return this.name + type;
+        }
+
+        // Tipos de animaciones que el personaje puede reproducir
+        this.types = {
+            idle: getAnimationKey("Idle"),
+            sitting: getAnimationKey("Sitting"),
+            talking: getAnimationKey("Talking"),
+            walking: getAnimationKey("Walking")
+        }
+
+        this.scene.setInteractive(this);
         this.on("pointerdown", () => {
             if (this.callback) {
                 this.callback();
+            }
+        });
+
+        // Se reproduce la animacion por defecto cuando termina una dialogo
+        this.scene.dispatcher.add("endNodes", this, () => {
+            this.playDefaultAnimation();
+        });
+
+        // Se reproduce la animacion por defecto cuando comienza un nodo de eleccion
+        this.scene.dispatcher.add("startChoiceNode", this, (node) => {
+            this.playDefaultAnimation();
+        });
+
+        // Cuando comienza un nodo de texto, se comprueba que personaje esta activo para comenzar la animacion:
+        // - Si no es este personaje y esta hablando, se vuelve a la animacion por defecto
+        // - Si es este personaje, intenta reproducir la animacion de hablar
+        this.scene.dispatcher.add("startTextNode", this, (node) => {
+            if (this.name != node.character &&
+                this.anims.isPlaying &&
+                this.anims.currentAnim.key == this.types.talking) {
+                this.playDefaultAnimation();
+            }
+            else if (this.name == node.character) {
+                if (!this.playTalkingAnimation()) {
+                    this.playDefaultAnimation();
+                }
             }
         });
     }
@@ -59,20 +89,11 @@ export default class Character extends Phaser.GameObjects.Sprite {
                 this.x = this.target.x;
                 this.y = this.target.y;
                 this.target = null;
-                setInteractive(this);
+                this.scene.setInteractive(this);
                 this.stopAnimation();
                 this.emit("targetReached");
             }
         }
-    }
-
-    /**
-    * Construye la clave de animaciones para un tipo (ejemplo: CharacterNameIdle)
-    * @param {string} type - tipo de animacion (idle, walking...)
-    * @returns {string} - clave de la animacion completa
-    */
-    getAnimationKey(type) {
-        return this.name + type;
     }
 
     /**
@@ -81,11 +102,9 @@ export default class Character extends Phaser.GameObjects.Sprite {
     * @returns {boolean} - true si la animacion existe o si se esta reproduciendo
     */
     playAnimation(type) {
-        let key = this.getAnimationKey(type)
-
-        if (this.scene.anims.exists(key)) {
-            if (!this.anims.isPlaying || this.anims.currentAnim.key != key) {
-                this.play(key)
+        if (this.scene.anims.exists(type)) {
+            if (!this.anims.isPlaying || this.anims.currentAnim.key != type) {
+                this.play(type)
             }
             return true;
         }
@@ -133,5 +152,10 @@ export default class Character extends Phaser.GameObjects.Sprite {
                 this.flipX = false;
             }
         }
+    }
+
+    destroy() {
+        this.scene.dispatcher.removeByOwner(this);
+        super.destroy();
     }
 }

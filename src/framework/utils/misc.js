@@ -45,7 +45,7 @@ export function moveTowards(current, target, maxDistanceDelta) {
 
 
 /**
-* Configura un objeto para que sea interactivo y le asigna un cursor personalizado si está disponible
+* Configura un objeto para que sea interactivo y le asigna un cursor personalizado si esta disponible
 * @param {Phaser.GameObject} gameObject - objeto que se va a hacer interactivo 
 * @param {Object} prevConfig - configuracion a la que agregar el parametro del cursor 
 */

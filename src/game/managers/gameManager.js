@@ -9,11 +9,12 @@ export default class GameManager extends Singleton {
 
         this.sceneManager = SceneManager.getInstance();
         this.dispatcher = EventDispatcher.getInstance();
-        
+
         // Blackboard de variables de todo el juego
         this.blackboard = new Blackboard();
 
         this.nInteractedCharacters = 0;
+        this.N_REQUIRED_INTERACTIONS = 7;
     }
 
     init() {
@@ -21,13 +22,13 @@ export default class GameManager extends Singleton {
 
         this.startGame();
     }
-    
+
     startGame() {
         this.blackboard.clear();
-        
-        this.startMainMenu();
+
+        // this.startMainMenu();
         // this.startHouseScene();
-        // this.startCafeteriaScene();
+        this.startCafeteriaScene();
     }
 
     startMainMenu() {
@@ -42,12 +43,18 @@ export default class GameManager extends Singleton {
         this.sceneManager.changeScene("Cafeteria", null, true);
     }
 
-
     /**
     * Incrementar el numero de personajes con los que se ha hablado
     */
     increaseInteractedCharacters() {
         ++this.nInteractedCharacters;
     }
-    
+
+    /**
+    * Comprobar si se ha interactuado con todos los personajes necesarios 
+    * @returns {Boolean} - true si alcanza el minimo requerido o false en caso contrario
+    */
+    hasMetInteractionRequirement() {
+        return this.nInteractedCharacters >= this.N_REQUIRED_INTERACTIONS;
+    }
 }

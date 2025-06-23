@@ -1,0 +1,159 @@
+{
+    "menConversation": {
+        "root": {
+            "type": "text",
+            "character": "Jesus",
+            "next": "line1"
+        },
+        "line1": {
+            "type": "text",
+            "character": "Pedro",
+            "next": "line2"
+        },
+        "line2": {
+            "type": "text",
+            "character": "Jesus",
+            "next": "line3"
+        },
+        "line3": {
+            "type": "text",
+            "character": "Pedro",
+            "next": "line4"
+        },
+        "line4": {
+            "type": "text",
+            "character": "Jesus",
+            "next": "line5"
+        },
+        "line5": {
+            "type": "text",
+            "character": "Pedro",
+            "next": "line6"
+        },
+        "line6": {
+            "type": "text",
+            "character": "Jesus",
+            "next": "line7"
+        },
+        "line7": {
+            "type": "text",
+            "character": "Pedro",
+            "next": "line8"
+        },
+        "line8": {
+            "type": "text",
+            "character": "Jesus",
+            "next": "line9"
+        },
+        "line9": {
+            "type": "text",
+            "character": "Pedro",
+            "next": "menExit"
+        },
+        "menExit": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "menExit"
+                }
+            ]
+        }
+    },
+    "womenConversation": {
+        "root": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "manArrive"
+                }
+            ],
+            "next": "line1"
+        },
+        "line1": {
+            "type": "text",
+            "character": "Rebeca",
+            "next": "line2"
+        },
+        "line2": {
+            "type": "text",
+            "character": "Monica",
+            "next": "line3"
+        },
+        "line3": {
+            "type": "text",
+            "character": "Rebeca",
+            "next": "line4"
+        },
+        "line4": {
+            "type": "text",
+            "character": "Monica",
+            "next": "womenConversationEnded"
+        },
+        "womenConversationEnded": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "womenConversationEnded",
+                    "variable": "womenConversationEnded",
+                    "global": false,
+                    "value": true
+                }
+            ]
+        }
+    },
+    "trioConversation": {
+        "root": {
+            "type": "text",
+            "character": "Carlos",
+            "next": "line1"
+        },
+        "line1": {
+            "type": "text",
+            "character": "Monica",
+            "next": "line2"
+        },
+        "line2": {
+            "type": "text",
+            "character": "Carlos",
+            "next": "line3"
+        },
+        "line3": {
+            "type": "text",
+            "character": "Rebeca",
+            "next": "line4"
+        },
+        "line4": {
+            "type": "text",
+            "character": "Monica",
+            "next": "line5"
+        },
+        "line5": {
+            "type": "text",
+            "character": "Carlos",
+            "next": "line6"
+        },
+        "line6": {
+            "type": "text",
+            "character": "Monica",
+            "next": "line7"
+        },
+        "line7": {
+            "type": "text",
+            "character": "Carlos",
+            "next": "line8"
+        },
+        "line8": {
+            "type": "text",
+            "character": "Rebeca",
+            "next": "trioExit"
+        },
+        "trioExit": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "trioExit"
+                }
+            ]
+        }
+    }
+}

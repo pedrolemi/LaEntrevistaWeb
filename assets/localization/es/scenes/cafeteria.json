@@ -1,0 +1,87 @@
+{
+    "menConversation": {
+        "root": {
+            "text": "¿Has visto cómo está hoy la sala de reuniones?"
+        },
+        "line1": {
+            "text": "La verdad es que con la oferta para programador junior se ha llenado esto de gente."
+        },
+        "line2": {
+            "text": "Y no hay ni una tía."
+        },
+        "line3": {
+            "text": "Normal. ¿Cuántas conoces que sepan programar?"
+        },
+        "line4": {
+            "text": "Alguna habrá, digo yo."
+        },
+        "line5": {
+            "text": "Además, casi mejor así, que luego te distraes y no trabajas igual."
+        },
+        "line6": {
+            "text": "Qué bruto eres, tío. Mejor, calláte."
+        },
+        "line7": {
+            "text": "Sabes que tengo razón."
+        },
+        "line8": {
+            "text": "Anda, volvamos a trabajar antes de que me plantee por qué somos amigos."
+        },
+        "line9": {
+            "text": "No tienes sentido del humor, ¿eh?"
+        }
+    },
+    "womenConversation": {
+        "line1": {
+            "text": "¿Cómo llevas el proyecto?"
+        },
+        "line2": {
+            "text": "La verdad es que estoy teniendo algunos problemas para encontrar todos los núemros primos en una lista."
+        },
+        "line3": {
+            "text": "Lo primero que se me ocurre es que puedes utilizar la criba de Eratóstenes. No es el proceso más rápido, pero te aseguro que funciona."
+        },
+        "line4": [
+            {
+                "text": "Supongo que sí, pero es verdad que puede llegar a ser demasiado lento. Seguiré pensando en otras soluciones, porque no creo que esa me valga."
+            },
+            {
+                "text": "¡Ah! Mira, por ahí anda Carlos. ¡Hola, Carlos!"
+            }
+        ]
+    },
+    "trioConversation": {
+        "root": {
+            "text": "¡Hey! ¿Qué tal, chicas? Casi no os veo. ¿De qué estabais hablando?"
+        },
+        "line1": {
+            "text": "Pues le estaba comentando a Rebeca que no sé cómo encontrar todos los números primos en una lista."
+        },
+        "line2": [
+            {
+                "text": "¡Ah! ¡Qué interesante! ¿Conoces la criba de Eratóstenes?"
+            },
+            {
+                "text": "Para que tú lo entiendas, con ese algortimo vas descartando todos los números que no son primos y te quedan los primos."
+            }
+        ],
+        "line3": {
+            "text": "Eso le estaba comentando, pero parece que no es la solución que buscaba."
+        },
+        "line4": {
+            "text": "Bueno, estaba buscando una segunda opción."
+        },
+        "line5": {
+            "text": "Pues parece que hemos pensado en lo mismo. Si lo que quieres es otra solución, a lo mejor Roberto te puede ayudar. Si quieres le pregunto y te comento lo que me diga."
+        },
+        "line6": {
+            "text": "No, no hace falta. Voy a probar tu solución, Carlos. Solo quería asegurarme de que la solución era válida."
+        },
+        "line7": {
+            "text": "Si Rebeca te da una solución seguramente sea mejor que la mía. Con todos los años que lleva trabajando aquí, sabe más que ninguno de nosotros."
+        },
+        "line8": {
+            "text": "En fin, nos vemos en otro momento. Ya me contarás si te ha servido mi consejo."
+        }
+    }
+}

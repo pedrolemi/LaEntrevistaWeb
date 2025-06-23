@@ -10,10 +10,10 @@ export default class Character extends Phaser.GameObjects.Sprite {
     * @param {number} scale - escala del sprite
     * @param {number} name - nombre del personaje
     * @param {number} speed - velocidad de movimiento
+    * @param {boolean} facingRight - indica si el personaje inicialmente mira hacia la derecha (true) o no (false)
     * @param {function} callback - funcion a ejecutar al hacer click sobre el personaje
-    * @param {boolean} lookingRight - indica si el personaje inicialmente mira hacia la derecha (true) o no (false)
     */
-    constructor(scene, x, y, scale, name, speed, callback, lookingRight = false) {
+    constructor(scene, x, y, scale, name, speed, facingRight, callback) {
         super(scene, x, y, name)
 
         this.scene = scene;
@@ -23,8 +23,8 @@ export default class Character extends Phaser.GameObjects.Sprite {
         this.name = name;
         this.speed = speed;
         this.target = null;
+        this.facingRight = facingRight;
         this.callback = callback;
-        this.lookingRight = lookingRight;
 
         let getAnimationKey = (type) => {
             return this.name + type;
@@ -40,33 +40,39 @@ export default class Character extends Phaser.GameObjects.Sprite {
 
         this.scene.setInteractive(this);
         this.on("pointerdown", () => {
-            if (this.callback) {
+            if (this.callback !== null && typeof this.callback == "function") {
                 this.callback();
             }
         });
 
         // Se reproduce la animacion por defecto cuando termina una dialogo
         this.scene.dispatcher.add(DefaultEventNames.endNodes, this, () => {
-            this.playDefaultAnimation();
+            if (this.target === null) {
+                this.playDefaultAnimation();
+            }
         });
 
         // Se reproduce la animacion por defecto cuando comienza un nodo de eleccion
         this.scene.dispatcher.add(DefaultEventNames.startChoiceNode, this, (node) => {
-            this.playDefaultAnimation();
+            if (this.target === null) {
+                this.playDefaultAnimation();
+            }
         });
 
         // Cuando comienza un nodo de texto, se comprueba que personaje esta activo para comenzar la animacion:
         // - Si no es este personaje y esta hablando, se vuelve a la animacion por defecto
         // - Si es este personaje, intenta reproducir la animacion de hablar
         this.scene.dispatcher.add(DefaultEventNames.startTextNode, this, (node) => {
-            if (this.name != node.character &&
-                this.anims.isPlaying &&
-                this.anims.currentAnim.key == this.types.talking) {
-                this.playDefaultAnimation();
-            }
-            else if (this.name == node.character) {
-                if (!this.playTalkingAnimation()) {
+            if (this.target === null) {
+                if (this.name != node.character &&
+                    this.anims.isPlaying &&
+                    this.anims.currentAnim.key == this.types.talking) {
                     this.playDefaultAnimation();
+                }
+                else if (this.name == node.character) {
+                    if (!this.playTalkingAnimation()) {
+                        this.playDefaultAnimation();
+                    }
                 }
             }
         });
@@ -91,7 +97,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
                 this.y = this.target.y;
                 this.target = null;
                 this.scene.setInteractive(this);
-                this.stopAnimation();
+                this.playDefaultAnimation();
                 this.emit("targetReached");
             }
         }
@@ -132,8 +138,8 @@ export default class Character extends Phaser.GameObjects.Sprite {
         return this.playAnimation(this.types.walking);
     }
 
-    stopAnimation() {
-        this.stop();
+    setFacingDirection(right) {
+        this.flipX = this.facingRight !== right;
     }
 
     /**
@@ -146,11 +152,11 @@ export default class Character extends Phaser.GameObjects.Sprite {
             this.playWalkingAnimation();
             this.target = target;
 
-            if (this.target.x > this.x && !this.lookingRight) {
-                this.flipX = true;
+            if (this.target.x > this.x) {
+                this.setFacingDirection(true);
             }
-            else if (this.target.x <= this.x && this.lookingRight) {
-                this.flipX = false;
+            else if (this.target.x <= this.x) {
+                this.setFacingDirection(false);
             }
         }
     }

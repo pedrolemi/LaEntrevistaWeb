@@ -12,7 +12,7 @@ export default class DialogManager extends Singleton {
         this.nodeReader = new NodeReader();
         this.dispatcher = EventDispatcher.getInstance();
         this.dispatcher.add(DefaultEventNames.clearNodes, this, () => {
-            this.currNode = null;
+            this.clearNodes();
         }, true);
     }
 
@@ -32,6 +32,9 @@ export default class DialogManager extends Singleton {
         }
     }
 
+    clearNodes() {
+        this.currNode = null;
+    }
 
     /**
     * @param {Phaser.Scene} scene - escena en la que se crea el nodo

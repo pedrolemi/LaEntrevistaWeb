@@ -16,6 +16,10 @@ export default class LaEntrevistaBaseScene extends BaseScene {
         this.characters = new Set();
 
         this.interactableObjects = new Set();
+
+        this.characterConfig = {
+            speed: 0.2
+        };
     }
 
     /**
@@ -28,47 +32,46 @@ export default class LaEntrevistaBaseScene extends BaseScene {
     }
 
     /**
-    * Maneja la salida de los personajes de la sala tras un evento.
+    * Maneja la salida de los personajes de la sala.
     * Desactiva la interracion con los objetos mientras los personajes se mueven hacia la salida,
     * y la vuelve a activar una vez que todos hayan salido
-    * @param {string} event - nombre del evento
     * @param {Array} characters - array con los personajes que deben salir
     * @param {Object} exitPoint - punto destino con propiedades {x, y}
+    * @param {Number} depth - profundidad que se asigna los personajes al salir
     */
-    leaveRoom(event, characters, exitPoint) {
+    leaveRoom(characters, exitPoint, depth = 1) {
         let nCharactersExited = 0;
         let nCharacters = characters.length;
+        // Desactiva la interaccion con todos los objetos mientras los personajes abandonan la sala
+        this.interactableObjects.forEach(obj => {
+            obj.disableInteractive();
+        });
 
-        this.dispatcher.addOnce(event, this, () => {
-            // Desactiva la interaccion con todos los objetos mientras los personajes abandonan la sala
-            this.interactableObjects.forEach(obj => {
-                obj.disableInteractive();
-            });
+        characters.forEach((character) => {
+            // El personaje se mueve hacia el punto de salida
+            character.setDepth(depth);
+            character.moveTowards(exitPoint);
 
-            characters.forEach((character) => {
-                // El personaje se mueve hacia el punto de salida
-                character.moveTowards(exitPoint);
+            character.once("targetReached", () => {
+                // Se incrementa el contador global de personajes con los que se ha interactuado
+                this.gameManager.increaseInteractedCharacters();
 
-                character.once("targetReached", () => {
-                    // Se incrementa el contador global de personajes con los que se ha interactuado
-                    this.gameManager.increaseInteractedCharacters();
+                // Se elimina el personaje
+                this.interactableObjects.delete(character);
+                character.destroy();
 
-                    // Se elimina el personaje
-                    this.interactableObjects.delete(character);
-                    character.destroy();
+                ++nCharactersExited;
 
-                    ++nCharactersExited;
-
-                    // Cuando todos los personajes han salido, se vuelve a activar la interaccion con los objetos
-                    if (nCharactersExited >= nCharacters) {
-                        this.interactableObjects.forEach((obj) => {
-                            this.setInteractive(obj);
-                        });
-                    }
-                });
+                // Cuando todos los personajes han salido, se vuelve a activar la interaccion con los objetos
+                if (nCharactersExited >= nCharacters) {
+                    this.interactableObjects.forEach((obj) => {
+                        this.setInteractive(obj);
+                    });
+                }
             });
         });
-    }
+    };
+
 
     /**
     * Configura un objeto para que sea interactivo y lo agrega al conjunto de objetos interactuables

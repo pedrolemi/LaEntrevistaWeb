@@ -116,7 +116,9 @@ export default class House extends LaEntrevistaBaseScene {
         this.dispatcher.add("end", this, () => {
             this.gameManager.blackboard.setValue("position", position);
 
-            this.gameManager.startCafeteriaScene();
+            // TODO
+            this.gameManager.startGame();
+            // this.gameManager.startCafeteriaScene();
         });
     }
 
@@ -126,15 +128,13 @@ export default class House extends LaEntrevistaBaseScene {
         this.dispatcher.add("startSearch", this, () => {
             this.setInteractive(desktop);
             desktop.on("pointerdown", () => {
-                // if (this.dialogManager.currNode == null) {
-                //     desktop.setVisible(false);
-                //     desktop.disableInteractive();
+                if (this.dialogManager.currNode == null) {
+                    desktop.setVisible(false);
+                    desktop.disableInteractive();
 
-                //     this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "search");
-                //     this.dialogManager.setNode(this.node);
-                // }
-
-                this.gameManager.startGame();
+                    this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "search");
+                    this.dialogManager.setNode(this.node);
+                }
             });
         });
 

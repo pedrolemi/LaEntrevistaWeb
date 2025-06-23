@@ -55,6 +55,8 @@ export default class UI extends BaseUI {
             width: this.CANVAS_WIDTH - QUESTION_TEXT_MARGIN * 2,
             useAdvancedWrap: true
         }
+        this.optionsQuestionTextConfig.stroke = "#000";
+        this.optionsQuestionTextConfig.strokeThickness = 7;
     }
 
     create(params) {

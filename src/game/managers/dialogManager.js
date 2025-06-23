@@ -12,7 +12,6 @@ export default class DialogManager extends Singleton {
         this.nodeReader = new NodeReader();
         this.dispatcher = EventDispatcher.getInstance();
         this.dispatcher.add(DefaultEventNames.clearNodes, this, () => {
-            console.log("hasdsa")
             this.currNode = null;
         }, true);
     }

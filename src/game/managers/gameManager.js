@@ -8,7 +8,7 @@ export default class GameManager extends Singleton {
         super("GameManager");
 
         this.sceneManager = SceneManager.getInstance();
-        this.eventDispatcher = EventDispatcher.getInstance();
+        this.dispatcher = EventDispatcher.getInstance();
         
         // Blackboard de variables de todo el juego
         this.blackboard = new Blackboard();
@@ -16,24 +16,15 @@ export default class GameManager extends Singleton {
         this.nInteractedCharacters = 0;
     }
 
-    /**
-    * Incrementar el numero de personajes con los que se ha hablado
-    */
-    increaseInteractedCharacters() {
-        ++this.nInteractedCharacters;
+    init() {
+        this.sceneManager.currentScene.scene.run("UI");
+
+        this.startGame();
     }
-
-    // PARA PRUEBAS
+    
     startGame() {
-        // this.sceneManager.clearRunningScenes();
-        let uiSceneName = "UI";
         this.blackboard.clear();
-        this.sceneManager.currentScene.scene.run(uiSceneName);
         
-        
-
-
-
         this.startMainMenu();
         // this.startHouseScene();
         // this.startCafeteriaScene();
@@ -50,4 +41,13 @@ export default class GameManager extends Singleton {
     startCafeteriaScene() {
         this.sceneManager.changeScene("Cafeteria", null, true);
     }
+
+
+    /**
+    * Incrementar el numero de personajes con los que se ha hablado
+    */
+    increaseInteractedCharacters() {
+        ++this.nInteractedCharacters;
+    }
+    
 }

@@ -43,8 +43,7 @@ export default class BootScene extends BaseBootScene {
 
         this.events.once("start", () => {
             let gameManager = GameManager.create();
-
-            gameManager.startGame();
+            gameManager.init();
         })
     }
 

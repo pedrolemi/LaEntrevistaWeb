@@ -10,20 +10,23 @@ export default class BaseUI extends BaseScene {
     */
     constructor(key = "UI") {
         super(key);
+    }
+
+    init(params) {
+        super.init(params);
 
         this.textboxConfig = {}
         this.nameBoxConfig = {}
         this.textConfig = {}
         this.nameTextConfig = {}
-        this.optionBoxConfig = {}
 
+        this.optionBoxConfig = {}
+        this.optionsTextConfig = {}
         this.optionBoxes = [];
     }
 
-
     create(params) {
         super.create(params);
-
 
         this.bgBlock = this.add.rectangle(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT, 0x000, 0).setOrigin(0, 0);
         this.bgBlock.setInteractive();
@@ -34,7 +37,7 @@ export default class BaseUI extends BaseScene {
         this.bgElements.activate(false, () => { }, 0);
 
 
-        this.textbox = new DialogBox(this, false, this.textboxConfig, this.nameBoxConfig, this.textConfig, this.nameTextConfig);
+        this.textbox = new DialogBox(this, this.textboxConfig, this.nameBoxConfig, this.textConfig, this.nameTextConfig);
 
         this.configureTextboxEvents();
         this.configureChoicesEvents();
@@ -200,7 +203,7 @@ export default class BaseUI extends BaseScene {
                 node.nextIndex = i;
                 node.nextNode();
                 this.removeOptions();
-            }, false, this.optionBoxConfig, this.textConfig);
+            }, this.optionBoxConfig, this.optionsTextConfig);
 
             // Muestra la opcion
             opt.activate(true);

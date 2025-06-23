@@ -12,27 +12,36 @@ export default class OptionBox extends InteractiveContainer {
     * @param {Number} totalOpts - numero total de opciones
     * @param {String} text - texto a mostrar en la opcion
     * @param {Function} onClick - funcion a ejecutar al pulsar la opcion (opcional)
-    * @param {Boolean} debug - true para mostrar la caja de colision, false en caso contrario (opcional)
     * @param {Object} boxConfig - configuracion de la caja de opcion (opcional)
     * @param {Object} textConfig - configuracion del texto de la caja (opcional)
     */
-    constructor(scene, index, totalOpts, text, onClick = {}, debug = false, boxConfig = {}, textConfig = {}) {
+    constructor(scene, index, totalOpts, text, onClick = {}, boxConfig = {}, textConfig = {}) {
         super(scene);
+        let debug = false;
 
         let DEFAULT_BOX_CONFIG = {
+            collectiveAlignY: 1,
+            collectiveTopMargin: 0,
+
             imgX: this.CANVAS_WIDTH / 2,
             img: "optionBox",
             imgOriginX: 0.5,
             imgOriginY: 0.5,
+            imgAlpha: 1,
+
             scaleX: 1,
             scaleY: 1,
 
-            boxSpacing: 3,
+            boxSpacing: 10,
+
+            textOriginX: 0.5,
+            textOriginY: 0.5,
+
+            textAlignX: 0.5,
+            textAlignY: 0.5,
 
             marginX: 70,
             marginY: 42,
-            textOriginX: 0,
-            textOriginY: 0.5,
 
             realWidth: 0,
             realHeight: 0,
@@ -49,14 +58,7 @@ export default class OptionBox extends InteractiveContainer {
 
         // Crear la imagen de la caja de opciones
         this.box = scene.add.image(this.boxConfig.imgX, 0, this.boxConfig.img)
-            .setOrigin(this.boxConfig.imgOriginX, this.boxConfig.imgOriginY).setScale(this.boxConfig.scaleX, this.boxConfig.scaleY);
-
-        // Calcular la posicion de la caja
-        this.box.y = this.CANVAS_HEIGHT - (this.box.displayHeight * this.boxConfig.imgOriginY) - this.box.displayHeight * (totalOpts - index - 1) - this.boxConfig.boxSpacing;
-
-        // Calcular la posicion del texto
-        let textX = this.box.x - (this.box.displayWidth * this.boxConfig.imgOriginX) + this.boxConfig.marginX;
-        let textY = this.box.y - (this.box.displayHeight * this.boxConfig.imgOriginY) + this.boxConfig.marginY;
+            .setOrigin(this.boxConfig.imgOriginX, this.boxConfig.imgOriginY).setScale(this.boxConfig.scaleX, this.boxConfig.scaleY).setAlpha(this.boxConfig.imgAlpha);
 
         if (boxConfig.realWidth == null) {
             this.boxConfig.realWidth = this.box.displayWidth - this.boxConfig.textHorizontalPadding * 2;
@@ -65,9 +67,29 @@ export default class OptionBox extends InteractiveContainer {
             this.boxConfig.realHeight = this.box.displayHeight - this.boxConfig.textVerticalPadding * 2;
         }
 
+        // Calcular la posicion de la caja dependiendo del numero total de cajas y su alineacion vertical total
+        let totalHeight = (this.box.displayHeight + this.boxConfig.boxSpacing);
+        let startY = (this.CANVAS_HEIGHT - totalHeight * totalOpts) * this.boxConfig.collectiveAlignY
+            + this.box.displayHeight * this.boxConfig.imgOriginY
+            + (0.5 - this.boxConfig.collectiveAlignY) * this.boxConfig.boxSpacing;
+        let boxY = startY + (totalHeight * index) + this.boxConfig.collectiveTopMargin;
+        this.box.y = boxY;
+
+
         // Crear el texto
-        this.textObj = this.textObj = new TextArea(scene, textX, textY, this.boxConfig.realWidth, this.boxConfig.realHeight, text, this.textConfig)
+        this.textObj = this.textObj = new TextArea(scene, 0, 0, this.boxConfig.realWidth, this.boxConfig.realHeight, text, this.textConfig)
             .setOrigin(this.boxConfig.textOriginX, this.boxConfig.textOriginY).setScale(this.boxConfig.scaleX, this.boxConfig.scaleY);
+
+        // Calcular la posicion del texto segun la alineacion horizontal y vertical
+        let textX = this.box.x
+            - this.box.displayWidth * (0.5 - this.boxConfig.textAlignX)
+            + this.boxConfig.marginX * (0.5 - this.boxConfig.textAlignX) * 2;
+
+        let textY = this.box.y
+            - this.box.displayHeight * (0.5 - this.boxConfig.textAlignY)
+            + this.boxConfig.marginY * (0.5 - this.boxConfig.textAlignY) * 2;
+
+        this.textObj.setPosition(textX, textY);
 
         this.textObj.adjustFontSize();
 

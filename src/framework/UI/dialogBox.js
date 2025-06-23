@@ -8,7 +8,6 @@ export default class DialogBox extends InteractiveContainer {
     * Caja de texto para los dialogos
     * @extends InteractiveContainer
     * @param {Phaser.Scene} scene - escena en la que se crea (idealmente la escena de UI)
-    * @param {Boolean} debug - true para mostrar la caja de colision, false en caso contrario (opcional)
     * @param {Object} textboxConfig - configuracion de la caja de texto (opcional)
     * @param {Object} nameBoxConfig - configuracion de la caja de nombre (opcional)
     * @param {Object} textConfig - configuracion del texto de la caja de texto (opcional)
@@ -16,8 +15,10 @@ export default class DialogBox extends InteractiveContainer {
     * @param {Number} textAnimDelay - tiempo en milisegundos que tarda cada caracter en aparecer (opcional)
     * @param {Number} skipDelay - tiempo en milisegundos que se tarda en poder saltar el dialogo tras mostrar todo el texto (opcional)
     */
-    constructor(scene, debug = false, textboxConfig = {}, nameBoxConfig = {}, textConfig = {}, nameTextConfig = {}, textAnimDelay = 30, skipDelay = 200) {
+    constructor(scene, textboxConfig = {}, nameBoxConfig = {}, textConfig = {}, nameTextConfig = {}, textAnimDelay = 30, skipDelay = 200) {
         super(scene);
+
+        let debug = false;
 
         this.bgBlock = scene.add.rectangle(0, 0, scene.CANVAS_WIDTH, scene.CANVAS_HEIGHT, 0x000, 0).setOrigin(0, 0);
         this.add(this.bgBlock);
@@ -28,6 +29,8 @@ export default class DialogBox extends InteractiveContainer {
             img: "textbox",
             imgOriginX: 0.5,
             imgOriginY: 0.5,
+            imgAlpha: 1,
+
             scaleX: 1,
             scaleY: 1,
 
@@ -49,6 +52,8 @@ export default class DialogBox extends InteractiveContainer {
             img: "nameBox",
             imgOriginX: 0.5,
             imgOriginY: 0.5,
+            imgAlpha: 1,
+
             scaleX: 1,
             scaleY: 1,
 
@@ -77,14 +82,16 @@ export default class DialogBox extends InteractiveContainer {
 
         // Crear la imagen y el texto de la caja de texto
         this.box = scene.add.image(this.textboxConfig.imgX, this.textboxConfig.imgY, this.textboxConfig.img)
-            .setOrigin(this.textboxConfig.imgOriginX, this.textboxConfig.imgOriginY).setScale(this.textboxConfig.scaleX, this.textboxConfig.scaleY);
+            .setOrigin(this.textboxConfig.imgOriginX, this.textboxConfig.imgOriginY).setScale(this.textboxConfig.scaleX, this.textboxConfig.scaleY)
+            .setAlpha(this.textboxConfig.imgAlpha);
         this.textObj = new TextArea(scene, this.textboxConfig.textX, this.textboxConfig.textY, this.textboxConfig.realWidth, this.textboxConfig.realHeight, "", this.textConfig, debug)
             .setOrigin(this.textboxConfig.textOriginX, this.textboxConfig.textOriginY).setScale(this.textboxConfig.scaleX, this.textboxConfig.scaleY);
 
         // Crear la imagen y el texto de la caja de nombre
         if (this.nameBoxConfig.img) {
             this.nameBox = scene.add.image(this.nameBoxConfig.imgX, this.nameBoxConfig.imgY, this.nameBoxConfig.img)
-                .setOrigin(this.nameBoxConfig.imgOriginX, this.nameBoxConfig.imgOriginY).setScale(this.nameBoxConfig.scaleX, this.nameBoxConfig.scaleY);
+                .setOrigin(this.nameBoxConfig.imgOriginX, this.nameBoxConfig.imgOriginY).setScale(this.nameBoxConfig.scaleX, this.nameBoxConfig.scaleY)
+                .setAlpha(this.textboxConfig.imgAlpha);
         }
         this.nameTextObj = new TextArea(scene, this.nameBoxConfig.textX, this.nameBoxConfig.textY, this.nameBoxConfig.realWidth, this.nameBoxConfig.realHeight, "", this.nameTextConfig)
             .setOrigin(this.nameBoxConfig.textOriginX, this.nameBoxConfig.textOriginY).setScale(this.nameBoxConfig.scaleX, this.nameBoxConfig.scaleY);

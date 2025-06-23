@@ -6,13 +6,26 @@ import CV from "../UI/cv.js"
 export default class UI extends BaseUI {
     constructor() {
         super("UI", "UI");
+    }
 
-        // TODO: Cambiar imagenes y configurar texto
+    init(params) {
+        super.init(params);
+
         this.textboxConfig = {
             img: "textbox",
+            imgX: this.CANVAS_WIDTH * 0.49,
+            imgY: this.CANVAS_HEIGHT * 0.83,
+            textX: 180,
+            textY: 705,
+            realWidth: 1250,
+            realHeight: 180,
         }
         this.nameBoxConfig = {
             img: "",
+            textX: 385,
+            textY: 634,
+            realWidth: 320,
+            realHeight: 60,
         }
         this.textConfig = {
             fontFamily: "barlowCondensed-regular",
@@ -22,10 +35,14 @@ export default class UI extends BaseUI {
         this.nameTextConfig = {
             fontFamily: "leagueSpartan-variable",
             fontSize: 40,
-            fontStyle: "bold"
+            fontStyle: "bold",
+            align: "center"
         }
         this.optionBoxConfig = {
+            boxSpacing: 10,
         }
+        this.optionsTextConfig = { ... this.textConfig };
+
     }
 
     create(params) {

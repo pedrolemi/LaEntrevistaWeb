@@ -19,10 +19,12 @@ export default class BaseScene extends Phaser.Scene {
         this.atlasName = atlasName;
     }
 
-    create(params) {
+    init(params) {
         this.CANVAS_WIDTH = this.sys.game.canvas.width;
         this.CANVAS_HEIGHT = this.sys.game.canvas.height;
+    }
 
+    create(params) {
         this.blackboard = new Blackboard();
 
         this.sceneManager = SceneManager.getInstance();

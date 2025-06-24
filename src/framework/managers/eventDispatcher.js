@@ -17,17 +17,17 @@ export default class EventDispatcher extends Singleton {
         // ========================
 
         /**
-        * Map<string, Set<object>>
-        * Mapea un nombre de evento a los objetos que lo escuchan.
-        * Facilita la eliminación por nombre de evento
-        */
+       * Map<string, Set<object>>
+       * Mapea un nombre de evento a los objetos que lo escuchan.
+       * Facilita la eliminación por nombre de evento
+       */
         this.eventsMap = new Map();
 
         /**
-        * Map<object, Map<string, Set<Function>>>
-        * Mapea un objeto (owner) a sus eventos y funciones asociadas.
-        * Facilita la eliminación de eventos por objeto.
-        */
+       * Map<object, Map<string, Set<Function>>>
+       * Mapea un objeto (owner) a sus eventos y funciones asociadas.
+       * Facilita la eliminación de eventos por objeto.
+       */
         this.ownersMap = new Map();
 
         // ========================
@@ -35,10 +35,10 @@ export default class EventDispatcher extends Singleton {
         // ========================
 
         /**
-         * Map<object, Map<string, Set<Function>>>
-         * Igual que ownersMap pero para eventos que persisten
-         * incluso después de un cambio de escena o reinicio.
-        */
+        * Map<object, Map<string, Set<Function>>>
+        * Igual que ownersMap pero para eventos que persisten
+        * incluso después de un cambio de escena o reinicio.
+       */
         this.ownersPermanentMap = new Map();
     }
 

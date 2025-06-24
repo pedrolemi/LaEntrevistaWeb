@@ -225,22 +225,7 @@
         }
     },
 
-    "selectProgrammingOffer": {
-        "root": {
-            "type": "text",
-            "character": "player",
-            "next": "askConfirmation"
-        },
-        "askConfirmation": {
-            "type": "event",
-            "events": [
-                {
-                    "name": "askConfirmation"
-                }
-            ]
-        }
-    },
-    "selectDataOffer": {
+    "selectOffer": {
         "root": {
             "type": "text",
             "character": "player",
@@ -267,13 +252,13 @@
         "confirm": {
             "type": "text",
             "character": "player",
-            "next": "end"
+            "next": "updateCV"
         },
-        "end": {
+        "updateCV": {
             "type": "event",
             "events": [
                 {
-                    "name": "end"
+                    "name": "updateCV"
                 }
             ]
         }

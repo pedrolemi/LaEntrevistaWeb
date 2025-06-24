@@ -1,4 +1,5 @@
 import Singleton from "../utils/singleton.js";
+import { splitByWord } from "../utils/misc.js";
 
 export default class LocalizationManager extends Singleton {
     constructor() {
@@ -15,7 +16,7 @@ export default class LocalizationManager extends Singleton {
     * Obtiene el texto traducido
     * @param {String} translationId - id completa del nodo en el que mirar
     * @param {Object} options - parametros que pasarle a i18n
-    * @returns 
+    * @returns {String / Array } - texto o array con los textos traducidos
     */
     translate(translationId, namespace, returnObjects = true, otherOptions = {}) {
         let options = otherOptions;
@@ -30,33 +31,24 @@ export default class LocalizationManager extends Singleton {
 
         // Si se ha obtenido algo
         if (str != null) {
-            // Si el objeto obtenido no es un array, devuelve el texto con las expresiones <> reemplazadas
+
+            // Si el objeto obtenido no es un array,
             if (!Array.isArray(str)) {
+                // Si el objeto tiene la propiedad text, se guarda
                 if (str.text != null) {
-                    return str.text;
-
-                    // TODO: Arreglar para soportar reemplazo de expresiones regulares
-                    // return this.replaceGender(str.text);
+                    str = str.text;
                 }
-                else {
-                    return str;
-
-                    // TODO: Arreglar para soportar reemplazo de expresiones regulares
-                    // return this.replaceGender(str)
-                }
+                // Si no, el objeto es un string directamente
             }
             // Si es un array
             else {
-                // Recorre todos los elementos
+                // Recorre todos los elementos guardando el texto
                 for (let i = 0; i < str.length; i++) {
-                    // Si el elemento tiene la propiedad text, modifica el
-                    // objeto original para reemplazar su contenido por el
-                    // texto con las expresiones <> reemplazadas
                     if (str[i].text != null) {
                         str[i] = str[i].text;
-
-                        // TODO: Arreglar para soportar reemplazo de expresiones regulares
-                        // str[i] = this.replaceGender(str[i].text);
+                    }
+                    else {
+                        str[i] = str;
                     }
                 }
             }
@@ -66,47 +58,93 @@ export default class LocalizationManager extends Singleton {
 
 
     /**
-    * Reemplaza en el string indicado todos los contenidos que haya entre <>
-    * con el formato: <player, male expression, female expression >, en el que 
-    * la primera variable es el contexto a comprobar y las otras dos expresiones
-    * son el texto por el que sustituir todo lo que hay entre <>
+    * Reemplaza todas las expresiones regulares encontradas por el texto correspondiente
+    * 
+    * Ejemplo:
+    *   "Es <gender | male:un | female:una | ... > joven con <studies | fp: un grado superior de reposteria | uni: una licenciatura en derecho | ...>."
+    * 
+    * De esta manera, si el valor de gender es male y el de studies es fp, el texto resultante seria:
+    *   Es un joven con un grado superior de reposteria.
+    * 
+    * En caso de que el nombre de la variable no se encuentre o que su valor no coincida con ninguno
+    * de los valores a sustituir, la expresion se sustituira por el nombre de la variable entre { }
+    * 
+    * Antes y despues de los caracteres separadores ("|" y ":") pueden ir cualquier numero de espacios
+    * (0 incluido), pero no se tendran en cuenta a la hora de reemplazar el texto y se omitiran
+    * 
+    * 
     * @param {String} inputText - texto en el que reemplazar las expresiones <>
+    * @param {Array[Map]} contextMaps - array de mapas en los que buscar el valor de la expresion a sustituir
+    * (si alguna clave coincide, se guardara el valor que tenga dicha clave en el ultimo mapa del array)
     * @returns {String} - texto con las expresiones <> reemplazadas
     */
-    replaceGender(inputText) {
+    replaceRegularExpressions(inputText, contextMaps) {
+        // Se unen los mapas del array en otro mapa
+        const mergedContext = contextMaps.reduce((merged, current) => {
+            for (const [key, value] of current) {
+                merged.set(key, value);
+            }
+            return merged;
+        }, new Map());
+
+
         // Expresion a sustituir (todo lo que haya entre <>)
         let regex = /<([^>]+)>/g;
 
         // Encuentra todos los elementos entre <>
         let matches = [...inputText.matchAll(regex)];
 
-        let result = '';
+        let result = "";
         let lastEndIndex = 0;
+
         // Por cada <>
         matches.forEach((match, index) => {
-            // Obtiene todo el contenido entre <> y lo separa en un array
+            // match devuelve un objeto en el que el primer elemento es toda la expresion 
+            // regular incluidos <> y el segundo elemento es el texto contenido entre <>
             let [fullMatch, content] = match;
-            let variable = content.split(", ");
 
-            // Elige que variable se usara para comprobar el contexto
-            let useContext = null;
-            if (variable[0] === "player") {
-                useContext = this.userInfo.gender;
-            }
-            else if (variable[0] === "harasser") {
-                useContext = this.userInfo.harasser;
-            }
+            // Se separa el texto por | ignorando los espacios para obtener todas las variaciones que tiene el texto
+            let components = content.split("|").map(word => word.trim());
 
-            // Elige el texto por el que reemplazar la expresion dependiendo del contexto
-            let replacement = "";
-            if (useContext != null) {
-                if (useContext === "male") {
-                    replacement = variable[1];
+            // Se obtiene el nombre de la variable (el elemento anterior al primer "|") y se elimina de las variaciones
+            let variableName = components[0];
+            components.shift();
+
+            // El texto por defecto con el que se reemplazara es el nombre de la variable entre {}
+            let replacement = "{" + variableName + "}";
+            let found = false;
+
+            // Recorre cada variacion
+            components.forEach((variation) => {
+                // Mientras no se haya encontrado el texto con el que reemplazar la expresion
+                if (!found) {
+                    // console.log(variation);
+
+                    // Se eliminan ls espacios antes y despues de los : para dividir el texto usandolos como separador
+                    const noSpaces = variation.replace(/\s*:\s*/g, ':');
+                    const parts = noSpaces.split(':');
+
+                    // Si hay mas de 1 elemento en las partes es que hay valor para
+                    // la variable y texto con el que reemplazar la expresion
+                    if (parts.length > 1) {
+                        // El valor de la variable es el elemento anterior al primer ":"
+                        let variableValue = parts[0];
+
+                        // console.log(mergedContext, variableName, variableValue)
+
+                        // Si el valor de la variable en el mapa es el mismo que el que se esta comprobando
+                        if (mergedContext.get(variableName) == variableValue) {
+                            // Se guarda todo el texto posterior al primer ":" y se eliminan los espacios iniciales
+                            replacement = variation.substring(variation.indexOf(":") + 1);
+                            replacement = replacement.trimStart();
+
+                            found = true;
+                        }
+                    }
                 }
-                else if (useContext === "female") {
-                    replacement = variable[2];
-                }
-            }
+            });
+
+            // console.log(replacement)
 
             // Anade el texto reemplazado al texto completo
             result += inputText.slice(lastEndIndex, match.index) + replacement;

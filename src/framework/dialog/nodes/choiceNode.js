@@ -31,8 +31,14 @@ export default class ChoiceNode extends DialogNode {
 
     static TYPE = "choice";
 
-    constructor(node, fullId, namespace) {
-        super();
+    /**
+    * @param {BaseScene} scene - escena en la que se crea el nodo
+    * @param {Object} node - objeto json con la informacion del nodo
+    * @param {String} fullId - id completa del nodo en el archivo
+    * @param {String} namespace - nombre del archivo de localizacion del que se va a leer 
+    */
+    constructor(scene, node, fullId, namespace) {
+        super(scene);
 
         this.choices = [];              // Lista con el texto traducido de cada opcion
 

@@ -91,18 +91,17 @@ export default class House extends LaEntrevistaBaseScene {
         dataText.adjustFontSize();
         this.setInteractive(dataIcon);
 
-        let position = "";
         programmingIcon.on("pointerdown", () => {
-            position = "programming";
-
-            this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "selectProgrammingOffer");
+            this.gameManager.blackboard.set("position", "programming");
+            
+            this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "selectOffer");
             this.dialogManager.setNode(this.node);
         });
 
         dataIcon.on("pointerdown", () => {
-            position = "dataScience";
+            this.gameManager.blackboard.set("position", "dataScience");
 
-            this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "selectDataOffer");
+            this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "selectOffer");
             this.dialogManager.setNode(this.node);
         });
 
@@ -114,22 +113,23 @@ export default class House extends LaEntrevistaBaseScene {
             });
         });
 
-        this.dispatcher.add("end", this, () => {
-            this.gameManager.blackboard.set("position", position);
+        this.dispatcher.add("updateCV", this, () => {
+            programmingIcon.off("pointerdown");
+            dataIcon.off("pointerdown");
 
             this.gameManager.startHallScene();
         });
     }
 
     createDesktop() {
-        let desktop = this.add.image(this.BGS_X, this.BGS_Y, "desktop");
+        this.desktop = this.add.image(this.BGS_X, this.BGS_Y, "desktop");
 
         this.dispatcher.add("startSearch", this, () => {
-            this.setInteractive(desktop);
-            desktop.on("pointerdown", () => {
+            this.setInteractive(this.desktop);
+            this.desktop.on("pointerdown", () => {
                 if (this.dialogManager.currNode == null) {
-                    desktop.setVisible(false);
-                    desktop.disableInteractive();
+                    this.desktop.setVisible(false);
+                    this.desktop.disableInteractive();
 
                     this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "search");
                     this.dialogManager.setNode(this.node);

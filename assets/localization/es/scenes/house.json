@@ -99,14 +99,9 @@
             "text": "Parece que hay dos ofertas. Una es para desarrollar software y la otra como analista de datos. ¿A cuál me presento?"
         }
     },
-    "selectProgrammingOffer": {
+    "selectOffer": {
         "root": {
-            "text": "Creo que la idea de desarrollar software me gusta más."
-        }
-    },
-    "selectDataOffer": {
-        "root": {
-            "text": "Creo que encajo mejor en el perfil de analista de datos."
+            "text": "<position | programming: Creo que la idea de desarrollar software me gusta más. | dataScience: Creo que encajo mejor en el perfil de analista de datos.>"
         }
     },
     "askConfirmation": {

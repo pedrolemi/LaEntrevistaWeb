@@ -99,7 +99,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
         let manArrive = false;
         let continueConversation = () => {
             let value = "womenConversationEnded";
-            if (manArrive && this.blackboard.hasValue(value) && this.blackboard.get(value)) {
+            if (manArrive && this.blackboard.has(value) && this.blackboard.get(value)) {
                 this.dialogManager.clearNodes();
                 this.dialogManager.setNode(trioNode);
             }

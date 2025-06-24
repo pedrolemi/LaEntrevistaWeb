@@ -35,8 +35,14 @@ export default class TextNode extends DialogNode {
 
     static TYPE = "text";
 
-    constructor(node, fullId, namespace) {
-        super();
+    /**
+    * @param {BaseScene} scene - escena en la que se crea el nodo
+    * @param {Object} node - objeto json con la informacion del nodo
+    * @param {String} fullId - id completa del nodo en el archivo
+    * @param {String} namespace - nombre del archivo de localizacion del que se va a leer 
+    */
+    constructor(scene, node, fullId, namespace) {
+        super(scene);
         let localizationManager = LocalizationManager.getInstance();
 
         // Se obtiene la id y nombre traducido del personaje

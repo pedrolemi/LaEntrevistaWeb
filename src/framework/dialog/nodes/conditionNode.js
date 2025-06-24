@@ -39,6 +39,10 @@ export default class ConditionNode extends DialogNode {
 
     static TYPE = "condition";
 
+    /**
+    * @param {BaseScene} scene - escena en la que se crea el nodo
+    * @param {Object} node - objeto json con la informacion del nodo
+    */
     constructor(scene, node) {
         super(scene);
         this.conditions = [];           // condiciones con su nombre/identificador y sus atributos
@@ -64,7 +68,7 @@ export default class ConditionNode extends DialogNode {
                 // Determina en que blackboard guardar la variable. Si no se ha definido si es global, o si se
                 // ha definido que si lo es, se guarda en la del gameManager. Si no, se guarda en la de la escena
                 let blackboard = scene.blackboard;
-                if (scene.gameManager == null && (condition.global == null || condition.global === true)) {
+                if (scene.gameManager != null && (condition.global == null || condition.global === true)) {
                     blackboard = scene.gameManager.blackboard;
                 }
 

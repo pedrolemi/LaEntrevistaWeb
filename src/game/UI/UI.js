@@ -3,6 +3,7 @@ import DialogManager from "../managers/dialogManager.js";
 import TextArea from "../../framework/UI/textArea.js";
 import CV from "../UI/cv.js"
 import DefaultEventNames from "../../framework/utils/eventNames.js";
+import GameManager from "../managers/gameManager.js";
 
 export default class UI extends BaseUI {
     constructor() {
@@ -63,14 +64,17 @@ export default class UI extends BaseUI {
     create(params) {
         super.create(params);
         this.dialogManager = DialogManager.getInstance();
+        this.gameManager = GameManager.getInstance();
 
         this.cv = new CV(this);
         this.cv.setDepth(10);
 
         this.dispatcher.add("checkCV", this, () => {
             this.cv.activate(true);
-        }, true);
-
+        });
+        this.dispatcher.add("updateCV", this, () => {
+            this.cv.updateInfo();
+        });
 
         let questionTextConfig = { ...this.textConfig };
         questionTextConfig.align = "center";
@@ -82,7 +86,6 @@ export default class UI extends BaseUI {
         this.questionText.setVisible(false);
 
         this.bgElements.add(this.questionText);
-
     }
 
 
@@ -123,6 +126,9 @@ export default class UI extends BaseUI {
         }
     }
 
+    replaceRegularExpressions(text, node) {
+        return this.localizationManager.replaceRegularExpressions(text, [node.scene.blackboard, node.scene.gameManager.blackboard]);
+    }
 
     createOptions(node) {
         super.createOptions(node);

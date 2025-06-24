@@ -4,6 +4,7 @@ import OptionBox from "../UI/optionBox.js";
 import InteractiveContainer from "../UI/interactiveContainer.js";
 
 import DefaultEventNames from "../utils/eventNames.js";
+import { splitByWord } from "../utils/misc.js";
 
 export default class BaseUI extends BaseScene {
     /**
@@ -54,12 +55,12 @@ export default class BaseUI extends BaseScene {
     }
 
     shutdown() {
-        super.shutdown();
         if (this.dispatcher != null) {
             this.textbox.activate(false, () => {
                 this.dispatcher.dispatch(DefaultEventNames.clearNodes);
             });
         }
+        super.shutdown();
     }
 
     configureTextboxEvents() {
@@ -75,7 +76,7 @@ export default class BaseUI extends BaseScene {
                 let dialogs = [];
 
                 node.dialogs.forEach((dialog) => {
-                    this.splitDialog(dialogs, dialog);
+                    this.splitDialog(dialogs, this.replaceRegularExpressions(dialog, node));
                 })
                 node.dialogs = dialogs;
                 node.textAdjusted = true;
@@ -124,6 +125,11 @@ export default class BaseUI extends BaseScene {
         }
     }
 
+
+    replaceRegularExpressions(text, node) {
+        return this.localizationManager.replaceRegularExpressions(text, [node.scene.blackboard]);
+    }
+
     /**
     * Divide el texto por si alguno es demasiado largo y se sale de la caja de texto
     * @param {String} text - texto a dividir
@@ -131,8 +137,7 @@ export default class BaseUI extends BaseScene {
     splitDialog(dialogs, text) {
         // Se divide el texto por palabras
         // TODO: Confirmar que soporta multiples idiomas
-        const noSpaces = text.replace(/[\r\n]/g, " ");
-        const splitText = noSpaces.split(" ").filter(x => x);
+        let splitText = splitByWord(text);
 
         // console.log(splitted)
 
@@ -208,7 +213,7 @@ export default class BaseUI extends BaseScene {
         for (let i = 0; i < node.choices.length; i++) {
             // Crea una OptionBox cuyo onClick establece como siguiente nodo el correspondiente 
             // al indice de la opcion elegida y elimina el resto de opciones
-            let opt = new OptionBox(this, i, node.choices.length, node.choices[i], () => {
+            let opt = new OptionBox(this, i, node.choices.length, this.replaceRegularExpressions(node.choices[i], node), () => {
                 node.nextIndex = i;
                 node.nextNode();
                 this.removeOptions();

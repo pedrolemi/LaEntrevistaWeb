@@ -33,22 +33,18 @@
     "data4Description": "Aunque no he trabajado en ninguna empresa antes, durante la carrera he trabajado mucho. Tengo ganas de demostrar todo lo que he aprendido estos años.",
 
 
-    "educationReviewedProgramming": "Grado en informática",
-    "educationReviewedData": "Grado en matemáticas",
+    "educationReviewed": "<position | programming: Grado en informática | dataScience: Grado en matemáticas>",
 
     "skill2Reviewed": "Manejo de bases de datos",
 
-    "skill3ReviewedProgramming": "Programación con C++, Java y JavaScript",
-    "skill3ReviewedData": "Nociones de programación con Python",
+    "skill3Reviewed": "<position | programming: Programación con C++, Java y JavaScript | dataScience: Nociones de programación con Python>",
 
-    "skill4ReviewedProgramming": "Sistemas de control de versiones",
-    "skill4ReviewedData": "Minería de datos y Machine Learning",
+    "skill4Reviewed": "<position | programming: Sistemas de control de versiones | dataScience: Minería de datos y Machine Learning>",
 
 
     "data1DescriptionReviewed": "Me gusta viajar y conocer nuevos sitios, pero tengo un miedo atroz a los aviones.",
 
     "data2DescriptionReviewed": "En un futuro me gustaría tener hijos, pero ahora quiero centrarme en trabajar y desarrollarme como profesional.",
     
-    "data4DescriptionReviewedProgramming": "Aunque no he trabajado en ninguna empresa antes, durante la carrera he desarrollado muchos programas. Tengo ganas de demostrar todo lo que he aprendido estos años.",
-    "data4DescriptionReviewedData": "Aunque no he trabajado en ninguna empresa antes, durante la carrera he llevado a cabo varios estudios. Tengo ganas de demostrar todo lo que he aprendido estos años."
+    "data4DescriptionReviewed": "Aunque no he trabajado en ninguna empresa antes, durante la carrera he <position | programming: desarrollado muchos programas | dataScience: llevado a cabo varios estudios>. Tengo ganas de demostrar todo lo que he aprendido estos años."
 }

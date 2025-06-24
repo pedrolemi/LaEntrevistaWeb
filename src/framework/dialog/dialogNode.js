@@ -11,7 +11,11 @@ export default class DialogNode {
     * PERO NO MODIFICAR LOS NODOS DIRECTAMENTE
     */
 
-    constructor() {
+    /**
+    * @param {BaseScene} scene - escena en la que se crea el nodo
+    */
+    constructor(scene) {
+        this.scene = scene;
         this.dispatcher = EventDispatcher.getInstance();
 
         this.id = "";                   // id del nodo dentro del objeto en el que se encuentra

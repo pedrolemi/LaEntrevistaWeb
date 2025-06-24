@@ -55,7 +55,9 @@ export default class CV extends InteractiveContainer {
 
 
     translate(section) {
-        return this.scene.localizationManager.translate(section, "CVs").toUpperCase();
+        let text = this.scene.localizationManager.translate(section, "CVs")
+        text = this.scene.localizationManager.replaceRegularExpressions(text, [this.scene.gameManager.blackboard]);
+        return text.toUpperCase();
     }
 
     createAboutSection() {
@@ -239,49 +241,35 @@ export default class CV extends InteractiveContainer {
         this.add(this.data4Description);
     }
 
-
+    
     updateInfo(programming = true) {
-        // this.skill1.setText()
-
-        let educationReviewed = programming ? "educationReviewedProgramming" : "educationReviewedData";
-
-        let skill2Reviewed = "skill2Reviewed";
-        let skill3Reviewed = programming ? "skill3ReviewedProgramming" : "skill3ReviewedData";
-        let skill4Reviewed = programming ? "skill4ReviewedProgramming" : "skill4ReviewedData";
-
-        let data1Reviewed = "data1DescriptionReviewed";
-        let data2Reviewed = "data2DescriptionReviewed";
-        let data4Reviewed = programming ? "data4DescriptionReviewedProgramming" : "data4DescriptionReviewedData";
-
-        this.education.setText(this.translate(educationReviewed));
+        let text = this.translate("educationReviewed");
+        this.education.setText(text);
         this.education.adjustFontSize();
 
-
         let y = this.skill2.y;
-        this.skill2.setText(this.translate(skill2Reviewed));
+        this.skill2.setText(this.translate("skill2Reviewed"));
 
         y = this.skill2.y + this.skill2.displayHeight + this.BULLET_POINT_SPACING;
-        this.skill3.setText(this.translate(skill3Reviewed));
+        this.skill3.setText(this.translate("skill3Reviewed"));
         this.skill3Bullet.setPosition(this.skill3Bullet.x, y);
         this.skill3.setPosition(this.skill3.x, y);
 
         y = this.skill3.y + this.skill3.displayHeight + this.BULLET_POINT_SPACING;
-        this.skill4.setText(this.translate(skill4Reviewed));
+        this.skill4.setText(this.translate("skill4Reviewed"));
         this.skill4Bullet.setPosition(this.skill4Bullet.x, y);
         this.skill4.setPosition(this.skill4.x, y);
-
 
         this.skill5.destroy();
         this.skill5Bullet.destroy();
 
-
-        this.data1Description.setText(this.translate(data1Reviewed));
+        this.data1Description.setText(this.translate("data1DescriptionReviewed"));
         this.data1Description.adjustFontSize();
 
-        this.data2Description.setText(this.translate(data2Reviewed));
+        this.data2Description.setText(this.translate("data2DescriptionReviewed"));
         this.data2Description.adjustFontSize();
 
-        this.data4Description.setText(this.translate(data4Reviewed));
+        this.data4Description.setText(this.translate("data4DescriptionReviewed"));
         this.data4Description.adjustFontSize();
     }
 }

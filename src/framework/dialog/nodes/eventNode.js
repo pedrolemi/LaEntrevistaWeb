@@ -24,6 +24,10 @@ export default class EventNode extends DialogNode {
 
     static TYPE = "event";
 
+    /**
+    * @param {BaseScene} scene - escena en la que se crea el nodo
+    * @param {Object} node - objeto json con la informacion del nodo
+    */
     constructor(scene, node) {
         super(scene);
         this.events = [];       // eventos que se llamaran al procesar el nodo (nombre del evento y el retardo con el que se llama)
@@ -37,7 +41,7 @@ export default class EventNode extends DialogNode {
                 // Determina en que blackboard modificar la variable. Si no se ha definido si es global, o si se
                 // ha definido que si lo es, se guarda en la del gameManager. Si no, se guarda en la de la escena
                 let blackboard = scene.blackboard;
-                if (scene.gameManager == null && (condition.global == null || condition.global === true)) {
+                if (scene.gameManager != null && (node.global == null || node.global === true)) {
                     blackboard = scene.gameManager.blackboard;
                 }
 
@@ -70,6 +74,7 @@ export default class EventNode extends DialogNode {
                 }
 
                 this.dispatcher.dispatch(evt.name, evt);
+                // console.log("dispatching",evt.name);
             }, delay);
         }
         this.nextNode();

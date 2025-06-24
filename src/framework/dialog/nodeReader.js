@@ -74,10 +74,10 @@ export default class NodeReader {
                     node = this.createConditionNode(scene, objectJson[id])
                 }
                 else if (type === TextNode.TYPE) {
-                    node = this.createTextNode(objectJson[id], fullId, namespace);
+                    node = this.createTextNode(scene, objectJson[id], fullId, namespace);
                 }
                 else if (type === ChoiceNode.TYPE) {
-                    node = this.createChoiceNode(objectJson[id], fullId, namespace);
+                    node = this.createChoiceNode(scene, objectJson[id], fullId, namespace);
                 }
                 else if (type === EventNode.TYPE) {
                     node = this.createEventNode(scene, objectJson[id]);
@@ -104,12 +104,12 @@ export default class NodeReader {
         return new ConditionNode(scene, objectJson);
     }
 
-    createTextNode(objectJson, fullId, namespace) {
-        return new TextNode(objectJson, fullId, namespace);
+    createTextNode(scene, objectJson, fullId, namespace) {
+        return new TextNode(scene, objectJson, fullId, namespace);
     }
 
-    createChoiceNode(objectJson, fullId, namespace) {
-        return new ChoiceNode(objectJson, fullId, namespace);
+    createChoiceNode(scene, objectJson, fullId, namespace) {
+        return new ChoiceNode(scene, objectJson, fullId, namespace);
     }
 
     createEventNode(scene, objectJson) {

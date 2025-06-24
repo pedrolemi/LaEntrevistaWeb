@@ -40,21 +40,21 @@ export default class Character extends Phaser.GameObjects.Sprite {
 
         this.scene.setInteractive(this);
         this.on("pointerdown", () => {
-            if (this.callback !== null && typeof this.callback == "function") {
+            if (this.callback != null && typeof this.callback == "function") {
                 this.callback();
             }
         });
 
         // Se reproduce la animacion por defecto cuando termina una dialogo
         this.scene.dispatcher.add(DefaultEventNames.endNodes, this, () => {
-            if (this.target === null) {
+            if (this.target == null) {
                 this.playDefaultAnimation();
             }
         });
 
         // Se reproduce la animacion por defecto cuando comienza un nodo de eleccion
         this.scene.dispatcher.add(DefaultEventNames.startChoiceNode, this, (node) => {
-            if (this.target === null) {
+            if (this.target == null) {
                 this.playDefaultAnimation();
             }
         });
@@ -63,10 +63,8 @@ export default class Character extends Phaser.GameObjects.Sprite {
         // - Si no es este personaje y esta hablando, se vuelve a la animacion por defecto
         // - Si es este personaje, intenta reproducir la animacion de hablar
         this.scene.dispatcher.add(DefaultEventNames.startTextNode, this, (node) => {
-            if (this.target === null) {
-                if (this.name != node.character &&
-                    this.anims.isPlaying &&
-                    this.anims.currentAnim.key == this.types.talking) {
+            if (this.target == null) {
+                if (this.name != node.character && this.anims.isPlaying && this.anims.currentAnim.key == this.types.talking) {
                     this.playDefaultAnimation();
                 }
                 else if (this.name == node.character) {
@@ -83,7 +81,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
     preUpdate(time, deltaTime) {
         super.preUpdate(time, deltaTime);
 
-        if (this.target !== null) {
+        if (this.target != null) {
             let step = this.speed * deltaTime;
 
             // Calcula la nueva posicion moviendo hacia target con limite step
@@ -149,7 +147,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
     * @param {Object} target - punto destino con propiedades {x, y}
     */
     moveTowards(target) {
-        if (this.target === null && target.hasOwnProperty("x") && target.hasOwnProperty("y")) {
+        if (this.target == null && target.hasOwnProperty("x") && target.hasOwnProperty("y")) {
             this.disableInteractive();
             this.playWalkingAnimation();
             this.target = target;

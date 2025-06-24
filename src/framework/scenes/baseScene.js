@@ -10,9 +10,12 @@ export default class BaseScene extends Phaser.Scene {
     * Escena base para las escenas del juego. Guarda parametros como las dimensiones del canvas o los managers
     * @extends Phaser.Scene
     * @param {String} name - id de la escena
+    * @param {String} atlasName - nombre del atlas que se utiliza en esta escena (opcional)
     */
-    constructor(name) {
+    constructor(name, atlasName = "") {
         super({ key: name });
+
+        this.atlasName = atlasName;
     }
 
     init(params) {
@@ -27,6 +30,8 @@ export default class BaseScene extends Phaser.Scene {
         this.localizationManager = LocalizationManager.getInstance();
         this.dispatcher = EventDispatcher.getInstance();
 
+        this.bgScale = 1;
+        
         // Funciones adicionales a las que se llamara al crear y reactivar la escena
         this.events.once("create", () => {
             this.onCreate(params);

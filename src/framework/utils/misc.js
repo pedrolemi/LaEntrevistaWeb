@@ -18,6 +18,15 @@ export function completeMissingProperties(targetObj, defaultObj) {
     return completedObj;
 }
 
+export function splitByWord(text) {
+    // Sustituit los espacios provocados por caracteres especiales por espacios regulares
+    const regularSpaces = text.replace(/[\r\n]/g, " ");
+
+    // Separar el texto por espacios
+    const splitText = regularSpaces.split(" ").filter(x => x);
+    return splitText;
+}
+
 /**
 * Mueve un punto current hacia un punto target una distancia maxima maxDistanceDelta.
 * Si la distancia entre current y target es menor o igual a maxDistanceDelta, 

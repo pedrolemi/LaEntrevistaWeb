@@ -76,6 +76,8 @@ export default class Character extends Phaser.GameObjects.Sprite {
                 }
             }
         });
+
+        this.playDefaultAnimation();
     }
 
     preUpdate(time, deltaTime) {
@@ -161,8 +163,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
         }
     }
 
-    destroy() {
+    clearEvents() {
         this.scene.dispatcher.removeByOwner(this);
-        super.destroy();
     }
 }

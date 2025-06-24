@@ -5,6 +5,7 @@ import MainMenu from "./game/scenes/mainMenu.js";
 import House from "./game/scenes/house.js";
 import Hall from "./game/scenes/hall.js"
 import Cafeteria from "./game/scenes/cafeteria.js";
+import Corridor from "./game/scenes/corridor.js";
 
 const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
 const CONFIG = {
@@ -24,6 +25,7 @@ const CONFIG = {
         House,
         Hall,
         Cafeteria,
+        Corridor,
 
         UI,
     ],
@@ -51,6 +53,6 @@ const CONFIG = {
 
 const GAME = new Phaser.Game(CONFIG);
 GAME.debug = {
-    enable: false,
+    enable: true,
     color: "0x00ff00"
 }

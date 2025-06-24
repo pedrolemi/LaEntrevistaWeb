@@ -1,0 +1,10 @@
+{
+    "locationInquiry": {
+        "root": {
+            "text": "Hola, vengo por una entrevista de trabajo. ¿Sabría decirme dónde ir?"
+        },
+        "staffResponse": {
+            "text": "Claro, por el pasillo del fondo. Si tienes que esperar, puedes pasarte por la cafetería mientras tanto. ¡Suerte!"
+        }
+    }
+}

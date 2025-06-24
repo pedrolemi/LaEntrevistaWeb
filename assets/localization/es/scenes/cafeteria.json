@@ -36,7 +36,7 @@
             "text": "¿Cómo llevas el proyecto?"
         },
         "line2": {
-            "text": "La verdad es que estoy teniendo algunos problemas para encontrar todos los núemros primos en una lista."
+            "text": "La verdad es que estoy teniendo algunos problemas para encontrar todos los números primos en una lista."
         },
         "line3": {
             "text": "Lo primero que se me ocurre es que puedes utilizar la criba de Eratóstenes. No es el proceso más rápido, pero te aseguro que funciona."

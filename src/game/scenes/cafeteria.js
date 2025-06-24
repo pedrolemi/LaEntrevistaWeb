@@ -7,7 +7,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
     * @extends LaEntrevistaBaseScene
     */
     constructor() {
-        super("Cafeteria", "Cafeteria");
+        super("Cafeteria");
     }
 
     create() {
@@ -15,10 +15,10 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
 
         let bg = this.add.image(0, 0, "cafeteria").setOrigin(0, 0);
 
-        this.nodes = this.cache.json.get("cafeteria");
+        let nodes = this.cache.json.get("cafeteria");
         let namespace = "scenes\\cafeteria";
 
-        let menNode = this.dialogManager.readNodes(this, this.nodes, namespace, "menConversation");
+        let menNode = this.dialogManager.readNodes(this, nodes, namespace, "menConversation");
 
         let exitPoint = {
             x: 1700,
@@ -26,49 +26,76 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
         };
 
         // Pedro
-        let pedroChar = new Character(this, 1382, 504, 0.66, "Pedro", this.characterConfig.speed, false, () => {
+        let pedroConfig = {
+            x: 1382,
+            y: 504,
+            scale: 0.66
+        };
+        let pedroChar = new Character(this, pedroConfig.x, pedroConfig.y, pedroConfig.scale, "Pedro", this.characterConfig.speed, false, () => {
             this.dialogManager.setNode(menNode);
         });
-        pedroChar.setOrigin(0.5, 0.5);
-        pedroChar.playDefaultAnimation();
+        pedroChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
 
         this.add.sprite(0, 0, "tableTop").setOrigin(0, 0);
         this.add.sprite(0, 0, "tableLegs").setOrigin(0, 0);
+
         // Jesus
-        let jesusChar = new Character(this, 1032, 506, 0.62, "Jesus", this.characterConfig.speed, true, () => {
+        let jesusConfig = {
+            x: 1032,
+            y: 506,
+            scale: 0.62
+        }
+        let jesusChar = new Character(this, jesusConfig.x, jesusConfig.y, jesusConfig.scale, "Jesus", this.characterConfig.speed, true, () => {
             this.dialogManager.setNode(menNode);
         });
 
-        jesusChar.setOrigin(0.5, 0.5);
-        jesusChar.playDefaultAnimation();
+        jesusChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
 
         this.dispatcher.addOnce("menExit", this, () => {
             this.leaveRoom([jesusChar, pedroChar], exitPoint);
         })
 
-        let womenNode = this.dialogManager.readNodes(this, this.nodes, namespace, "womenConversation");
-        let trioNode = this.dialogManager.readNodes(this, this.nodes, namespace, "trioConversation");
+        let womenNode = this.dialogManager.readNodes(this, nodes, namespace, "womenConversation");
+        let trioNode = this.dialogManager.readNodes(this, nodes, namespace, "trioConversation");
 
-        let monicaChar = new Character(this, 265, 640, 0.87, "Monica", this.characterConfig.speed, true, () => {
+        // Monica
+        let monicaConfig = {
+            x: 265,
+            y: 640,
+            scale: 0.87
+        }
+        let monicaChar = new Character(this, monicaConfig.x, monicaConfig.y, monicaConfig.scale, "Monica", this.characterConfig.speed, true, () => {
             this.dialogManager.setNode(womenNode);
         });
-        monicaChar.setOrigin(0.5, 0.5);
+        monicaChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
 
-        let rebecaChar = new Character(this, 440, 620, 0.9, "Rebeca", this.characterConfig.speed, false, () => {
+        // Rebeca
+        let rebecaConfig = {
+            x: 440,
+            y: 620,
+            scale: 0.9
+        }
+        let rebecaChar = new Character(this, rebecaConfig.x, rebecaConfig.y, rebecaConfig.scale, "Rebeca", this.characterConfig.speed, false, () => {
             this.dialogManager.setNode(womenNode);
         });
         rebecaChar.setOrigin(0.5, 0.5);
 
-        let trioPoint = {
-            x: 640,
-            y: 610
+        // Carlos
+        let carlosConfig = {
+            target: {
+                x: 640,
+                y: 610
+            },
+            scale: 0.96
         }
-        let carlosChar = new Character(this, exitPoint.x, exitPoint.y, 0.96, "Carlos", this.characterConfig.speed, false, null);
-        carlosChar.setOrigin(0.5, 0.5);
+        let carlosChar = new Character(this, exitPoint.x, exitPoint.y, carlosConfig.scale, "Carlos", this.characterConfig.speed, false, null);
+        carlosChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
         this.dispatcher.addOnce("trioExit", this, () => {
             this.leaveRoom([monicaChar, rebecaChar, carlosChar], exitPoint);
         })
 
+        // Gestionar el fin de la conversacion entre Monica y Rebeca y la llegada de Carlos, 
+        // para comenzar la conversacion entre los tres
         let manArrive = false;
         let continueConversation = () => {
             let value = "womenConversationEnded";
@@ -79,7 +106,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
         }
 
         this.dispatcher.addOnce("manArrive", this, () => {
-            carlosChar.moveTowards(trioPoint);
+            carlosChar.moveTowards(carlosConfig.target);
             carlosChar.once("targetReached", () => {
                 manArrive = true;
                 continueConversation();

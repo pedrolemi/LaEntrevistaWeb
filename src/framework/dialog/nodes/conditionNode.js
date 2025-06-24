@@ -68,8 +68,8 @@ export default class ConditionNode extends DialogNode {
                     blackboard = scene.gameManager.blackboard;
                 }
 
-                if (!blackboard.hasValue(key)) {
-                    blackboard.setValue(key, defaultValue);
+                if (!blackboard.has(key)) {
+                    blackboard.set(key, defaultValue);
                 }
 
                 // Se guarda en la condicion en que blackboard comprobar su valor
@@ -116,7 +116,7 @@ export default class ConditionNode extends DialogNode {
 
                 // Busca el valor de la variable en la blackboard indicada. 
                 // Si no es valida, buscara por defecto en el gameManager
-                let variableValue = blackboard.getValue(variable);
+                let variableValue = blackboard.get(variable);
                 // console.log(variable + " " + variableValue);
 
                 if (operator === "equal") {

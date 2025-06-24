@@ -66,7 +66,7 @@ export default class EventNode extends DialogNode {
                 // Si el evento establece el valor de una variable, lo cambia en la 
                 // blackboard correspondiente (la de la escena o la del gameManager)
                 if (evt.blackboard != null) {
-                    evt.blackboard.setValue(evt.variable, evt.value);
+                    evt.blackboard.set(evt.variable, evt.value);
                 }
 
                 this.dispatcher.dispatch(evt.name, evt);

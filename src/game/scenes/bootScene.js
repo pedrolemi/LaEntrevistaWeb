@@ -15,16 +15,21 @@ export default class BootScene extends BaseBootScene {
         this.DEFAULT_LOADING_BAR_CONFIG.bgColor = 0xab3d32;
         this.DEFAULT_LOADING_BAR_CONFIG.fillColor = 0xe06d61;
 
-        this.dialogsAndNamespaces = [
-            "scenes/house",
-            "scenes/test",
-            "scenes/cafeteria",
-            "scenes/hall"
+        let getSceneDialogPath = (scene) => {
+            return `scenes/${scene}`
+        }
+
+        let dialogNamespaces = [
+            getSceneDialogPath("house"),
+            getSceneDialogPath("test"),
+            getSceneDialogPath("cafeteria"),
+            getSceneDialogPath("corridor"),
+            getSceneDialogPath("hall")
         ];
-        this.onlyNamespaces = [
+        let namespaces = [
             "names",
             "CVs",
-            "scenes"
+            "scenes",
         ]
 
         let loadAssets = () => {
@@ -37,7 +42,7 @@ export default class BootScene extends BaseBootScene {
 
         let bg = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
-        super.create(loadAssets, true);
+        super.create(loadAssets, true, dialogNamespaces, namespaces);
 
         let dialogManager = DialogManager.create();
         dialogManager.init();
@@ -83,15 +88,20 @@ export default class BootScene extends BaseBootScene {
         this.load.image("tableTop", "tableTop.png");
     }
 
+    loadCorridor() {
+        this.load.setPath("assets/backgrounds/corridor");
+
+        this.load.image("corridor", "corridorTextless.png");
+    }
+
     loadBackgrounds() {
         this.loadCafeteria();
+        this.loadCorridor();
 
         this.load.setPath("assets/backgrounds");
 
         this.load.image("hall", "hall.png");
         this.load.image("counter", "counter.png");
-
-        this.load.image("corridor", "corridorTextless.png");
 
         this.load.image("waitingRoom", "waitingRoomTextless.png");
 
@@ -139,6 +149,4 @@ export default class BootScene extends BaseBootScene {
 
         this.load.image("cvSheet", "cvSheet.png");
     }
-
-
 }

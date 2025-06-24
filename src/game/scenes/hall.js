@@ -7,7 +7,7 @@ export default class Hall extends LaEntrevistaBaseScene {
     * @extends LaEntrevistaBaseScene
     */
     constructor() {
-        super("Hall", "Hall");
+        super("Hall");
     }
 
     create() {

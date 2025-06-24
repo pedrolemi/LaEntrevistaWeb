@@ -30,6 +30,7 @@ export default class GameManager extends Singleton {
         // this.startHouseScene();
         this.startHallScene();
         // this.startCafeteriaScene();
+        // this.startCorridorScene();
     }
 
     startMainMenu() {
@@ -45,7 +46,7 @@ export default class GameManager extends Singleton {
     }
 
     startCorridorScene() {
-        this.startMainMenu();
+        this.sceneManager.changeScene("Corridor", null, true, false);
     }
     
     startCafeteriaScene() {

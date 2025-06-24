@@ -1,0 +1,22 @@
+{
+    "locationInquiry": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "staffResponse"
+        },
+        "staffResponse": {
+            "type": "text",
+            "character": "Luis",
+            "next": "manLeave"
+        },
+        "manLeave": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "manLeave"
+                }
+            ]
+        }
+    }
+}

@@ -6,7 +6,7 @@ export default class MainMenu extends LaEntrevistaBaseScene {
     * @extends BaseScene
     */
     constructor() {
-        super("MainMenu", "MainMenu");
+        super("MainMenu");
     }
 
     create() {

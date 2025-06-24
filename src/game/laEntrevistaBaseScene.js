@@ -3,8 +3,8 @@ import DialogManager from "./managers/dialogManager.js";
 import GameManager from "./managers/gameManager.js";
 
 export default class LaEntrevistaBaseScene extends BaseScene {
-    constructor(name, atlasName) {
-        super(name, atlasName);
+    constructor(name) {
+        super(name);
     }
 
     create(params) {
@@ -17,7 +17,9 @@ export default class LaEntrevistaBaseScene extends BaseScene {
         this.interactableObjects = new Set();
 
         this.characterConfig = {
-            speed: 0.2
+            speed: 0.27,
+            originX: 0.5,
+            originY: 0.5
         };
     }
 
@@ -57,6 +59,7 @@ export default class LaEntrevistaBaseScene extends BaseScene {
 
                 // Se elimina el personaje
                 this.interactableObjects.delete(character);
+                character.clearEvents();
                 character.destroy();
 
                 ++nCharactersExited;

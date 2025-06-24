@@ -8,7 +8,7 @@ export default class House extends LaEntrevistaBaseScene {
     * @extends BaseScene
     */
     constructor() {
-        super("House", "House");
+        super("House");
     }
 
     create() {
@@ -115,7 +115,7 @@ export default class House extends LaEntrevistaBaseScene {
         });
 
         this.dispatcher.add("end", this, () => {
-            this.gameManager.blackboard.setValue("position", position);
+            this.gameManager.blackboard.set("position", position);
 
             this.gameManager.startHallScene();
         });

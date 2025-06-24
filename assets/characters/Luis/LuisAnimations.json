@@ -114,7 +114,7 @@
                 }
             ],
             "defaultTextureKey": "Luis",
-            "frameRate": 10,
+            "frameRate": 8,
             "repeat": -1
         }
     ]

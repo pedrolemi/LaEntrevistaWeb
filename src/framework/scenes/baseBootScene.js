@@ -68,8 +68,6 @@ export default class BaseBootScene extends Phaser.Scene {
             defaultLanguage: "es",
             supportedLanguages: ["es"],
         }
-        this.dialogsAndNamespaces = [];
-        this.onlyNamespaces = [];
     }
 
     /**
@@ -86,12 +84,12 @@ export default class BaseBootScene extends Phaser.Scene {
     * @param {Function} loadAssets - funcion con la carga del resto de assets
     * @param {Boolean} makeLoadingBar - true para mostrar la barra de carga al empezar, false en caso contrario
     */
-    create(loadAssets = null, makeLoadingBar = true) {
+    create(loadAssets = null, makeLoadingBar = true, dialogNamespaces = [], namespaces = []) {
         if (makeLoadingBar) {
             this.createLoadingBar();
         }
-        this.loadi18next();
-        this.loadDialogs();
+        this.loadi18next(dialogNamespaces, namespaces);
+        this.loadDialogs(dialogNamespaces);
         if (loadAssets != null && typeof loadAssets == "function") {
             loadAssets();
         }
@@ -167,32 +165,32 @@ export default class BaseBootScene extends Phaser.Scene {
     /**
     * Se cargan los estructura de los dialogos a partir de los archivos JSON
     */
-    loadDialogs() {
+    loadDialogs(dialogNamespaces) {
         // Ruta basa para la estructura de los archivos de dialogos
         this.load.setPath(this.LOCALIZATION_PATH + "/structure");
 
-        this.dialogsAndNamespaces.forEach((dialog) => {
+        dialogNamespaces.forEach((dialogPath) => {
             // Se obtiene el nombre del archivo (ultima parte del path)
-            let subPaths = dialog.split("/");
-            let name = subPaths[subPaths.length - 1];
+            let pathSegments = dialogPath.split("/");
+            let filename = pathSegments[pathSegments.length - 1];
 
             // Ruta completa del archivo JSON dentro del directorio structure
-            let wholePath = dialog + ".json";
-            this.load.json(name, wholePath);
+            let jsonFilePath = dialogPath + ".json";
+            this.load.json(filename, jsonFilePath);
         });
     }
 
     /**
     * Se inicializa y configura el plugin de i18next para la internacionalizacion 
     */
-    loadi18next() {
+    loadi18next(dialogNamespaces, namespaces) {
         // Se unen todos los namespaces que se usaran
-        let namespaces = this.dialogsAndNamespaces.concat(this.onlyNamespaces);
+        let allNamespaces = dialogNamespaces.concat(namespaces);
 
-        // Converetir "/" a "\\" para rutas en i18next (requisito del plugin)
-        for (let i = 0; i < namespaces.length; ++i) {
-            namespaces[i] = namespaces[i].replace(/\//g, "\\");
-        }
+        // Convertir "/" a "\\" para rutas en i18next (requisito del plugin)
+        allNamespaces.forEach((namespace, index) => {
+            allNamespaces[index] = namespace.replace(/\//g, "\\");
+        });
 
         /*
        * i18next es un framework ampliamente utilizado para internacionalizacion en Javascript.
@@ -213,7 +211,7 @@ export default class BaseBootScene extends Phaser.Scene {
             // primera vez, este no ha cargado todavia y se usa el por defecto
             preload: this.i18nConfig.supportedLanguages,
             // Namespaces a cargar (archivos de traduccion)
-            ns: namespaces,
+            ns: allNamespaces,
             // Modo debug (logs por consola)
             debug: this.sys.game.debug.enable,
             // Ruta base para cargar los archivos de traduccion en formato JSON

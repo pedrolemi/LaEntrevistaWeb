@@ -51,7 +51,7 @@ export default class BaseUI extends BaseScene {
             this.textbox.activate(false, () => {
                 this.dispatcher.dispatch(DefaultEventNames.clearNodes);
             });
-        }, true);
+        }/*, true*/);
     }
 
     shutdown() {
@@ -85,12 +85,12 @@ export default class BaseUI extends BaseScene {
             // console.log(dialogs);
 
             this.startTextNode(node);
-        }, true);
+        }/*, true*/);
 
         // Si llega un evento de actualizar el texto, lo cambia en la caja de texto
         this.dispatcher.add(DefaultEventNames.updateTextNode, this, (node) => {
             this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
-        }, true);
+        }/*, true*/);
     }
 
     startTextNode(node) {
@@ -199,7 +199,7 @@ export default class BaseUI extends BaseScene {
         this.dispatcher.add(DefaultEventNames.startChoiceNode, this, (node) => {
             this.textbox.activate(false);
             this.createOptions(node);
-        }, true);
+        }/*, true*/);
     }
 
     /**

@@ -41,7 +41,7 @@ export default class EventNode extends DialogNode {
                 // Determina en que blackboard modificar la variable. Si no se ha definido si es global, o si se
                 // ha definido que si lo es, se guarda en la del gameManager. Si no, se guarda en la de la escena
                 let blackboard = scene.blackboard;
-                if (scene.gameManager != null && (node.global == null || node.global === true)) {
+                if (scene.gameManager != null && (evt.global == null || evt.global === true)) {
                     blackboard = scene.gameManager.blackboard;
                 }
 
@@ -70,7 +70,8 @@ export default class EventNode extends DialogNode {
                 // Si el evento establece el valor de una variable, lo cambia en la 
                 // blackboard correspondiente (la de la escena o la del gameManager)
                 if (evt.blackboard != null) {
-                    evt.blackboard.set(evt.variable, evt.value);
+                    console.log(evt.blackboard, evt.variable, evt.value)
+                    // evt.blackboard.set(evt.variable, evt.value);
                 }
 
                 this.dispatcher.dispatch(evt.name, evt);

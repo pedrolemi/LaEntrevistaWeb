@@ -121,7 +121,7 @@ export default class ConditionNode extends DialogNode {
                 // Busca el valor de la variable en la blackboard indicada. 
                 // Si no es valida, buscara por defecto en el gameManager
                 let variableValue = blackboard.get(variable);
-                // console.log(variable + " " + variableValue);
+                // console.log(blackboard, variableValue, operator, variable, );
 
                 if (operator === "equal") {
                     conditionMet = variableValue === expectedValue;

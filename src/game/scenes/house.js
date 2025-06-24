@@ -31,8 +31,6 @@ export default class House extends LaEntrevistaBaseScene {
             let errors = this.blackboard.get("errors");
             this.blackboard.set("errors", errors + 1);
         });
-
-        // this.dispatcher.dispatch("offersFound");
     }
 
     onCreate() {
@@ -93,7 +91,7 @@ export default class House extends LaEntrevistaBaseScene {
 
         programmingIcon.on("pointerdown", () => {
             this.gameManager.blackboard.set("position", "programming");
-            
+
             this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "selectOffer");
             this.dialogManager.setNode(this.node);
         });

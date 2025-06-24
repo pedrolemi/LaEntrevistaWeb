@@ -12,6 +12,8 @@ export default class GameManager extends Singleton {
 
         // Blackboard de variables de todo el juego
         this.blackboard = new Blackboard();
+        
+        this.ui = null;
 
         this.nInteractedCharacters = 0;
         this.N_REQUIRED_INTERACTIONS = 7;
@@ -19,22 +21,29 @@ export default class GameManager extends Singleton {
 
     init() {
         this.sceneManager.currentScene.scene.run("UI");
-
         this.startGame();
     }
 
     startGame() {
         this.blackboard.clear();
+        
+        if (this.ui == null) {
+            this.ui = this.sceneManager.currentScene.scene.get("UI");
+        }
+        else {
+            this.ui.shutdown();
+            this.ui.scene.restart();
+        }       
 
-        // this.startMainMenu();
+        this.startMainMenu();
         // this.startHouseScene();
-        this.startHallScene();
+        // this.startHallScene();
         // this.startCafeteriaScene();
         // this.startCorridorScene();
     }
 
     startMainMenu() {
-        this.sceneManager.changeScene("MainMenu", null, false);
+        this.sceneManager.changeScene("MainMenu", null, true);
     }
 
     startHouseScene() {
@@ -42,15 +51,18 @@ export default class GameManager extends Singleton {
     }
 
     startHallScene() {
-        this.sceneManager.changeScene("Hall", null, false);
+        this.sceneManager.changeScene("Hall", {
+            fadeOutTime: 500,
+            fadeInTime: 500,
+        }, true);
     }
 
     startCorridorScene() {
-        this.sceneManager.changeScene("Corridor", null, true, false);
+        this.sceneManager.changeScene("Corridor", null, true, true);
     }
     
     startCafeteriaScene() {
-        this.sceneManager.changeScene("Cafeteria", null, true);
+        this.sceneManager.changeScene("Cafeteria", null, true, true);
     }
 
     /**

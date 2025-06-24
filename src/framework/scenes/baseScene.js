@@ -4,7 +4,6 @@ import LocalizationManager from "../managers/localizationManager.js";
 import EventDispatcher from "../managers/eventDispatcher.js";
 
 import { setInteractive } from "../utils/misc.js";
-import DefaultEventNames from "../utils/eventNames.js";
 
 export default class BaseScene extends Phaser.Scene {
     /**

@@ -17,9 +17,9 @@ export default class UI extends BaseUI {
             imgX: this.CANVAS_WIDTH * 0.49,
             imgY: this.CANVAS_HEIGHT * 0.83,
             textX: 180,
-            textY: 705,
-            realWidth: 1250,
-            realHeight: 180,
+            textY: 715,
+            realWidth: 1240,
+            realHeight: 160,
         }
         this.nameBoxConfig = {
             img: "",
@@ -30,13 +30,13 @@ export default class UI extends BaseUI {
         }
         this.textConfig = {
             fontFamily: "lexend-variable",
-            fontSize: 30,
-            fontStyle: "bold"
+            fontSize: 27,
+            fontStyle: 600
         }
         this.nameTextConfig = {
             fontFamily: "lexend-variable",
             fontSize: 40,
-            fontStyle: "bold",
+            fontStyle: 600,
             align: "center"
         }
         this.optionBoxConfig = {
@@ -51,6 +51,7 @@ export default class UI extends BaseUI {
         let QUESTION_TEXT_MARGIN = 10;
         this.optionsQuestionTextConfig = { ...this.textConfig };
         this.optionsQuestionTextConfig.fontSize = this.QUESTION_TEXT_DEFAULT_SIZE;
+        this.optionsQuestionTextConfig.align = "center";
         this.optionsQuestionTextConfig.wordWrap = {
             width: this.CANVAS_WIDTH - QUESTION_TEXT_MARGIN * 2,
             useAdvancedWrap: true

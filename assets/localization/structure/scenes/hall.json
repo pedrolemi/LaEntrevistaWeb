@@ -1,0 +1,72 @@
+{
+    "start": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "greetings"
+        },
+        "greetings": {
+            "type": "text",
+            "character": "Ivan",
+            "next": "choices"
+        },
+        "choices": {
+            "type": "choice",
+            "choices":[
+                { "next": "fakeAssThanks" },
+                { "next": "ask" },
+                { "next": "clarify" }
+            ]
+        },
+
+        "fakeAssThanks": {
+            "type": "text",
+            "character": "player",
+            "next": "end"
+        },
+        
+        "ask": {
+            "type": "text",
+            "character": "Ivan",
+            "next": "choices"
+        },
+
+        "clarify": {
+            "type": "text",
+            "character": "Ivan",
+            "next": "point"
+        },
+        "point": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "end"
+                }
+            ],
+            "next": "realThanks"
+        },
+        "realThanks": {
+            "type": "text",
+            "character": "player",
+            "next": "end"
+        },
+        
+        
+        
+        "end": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "end"
+                }
+            ]
+        }
+    },
+
+    "repeat": {
+        "root": {
+            "type": "text",
+            "character": "Ivan"
+        }
+    }
+}

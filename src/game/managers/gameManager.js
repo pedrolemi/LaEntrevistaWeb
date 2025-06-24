@@ -28,17 +28,26 @@ export default class GameManager extends Singleton {
 
         // this.startMainMenu();
         // this.startHouseScene();
-        this.startCafeteriaScene();
+        this.startHallScene();
+        // this.startCafeteriaScene();
     }
 
     startMainMenu() {
-        this.sceneManager.changeScene("MainMenu", null, true);
+        this.sceneManager.changeScene("MainMenu", null, false);
     }
 
     startHouseScene() {
         this.sceneManager.changeScene("House", null, false);
     }
 
+    startHallScene() {
+        this.sceneManager.changeScene("Hall", null, false);
+    }
+
+    startCorridorScene() {
+        this.startMainMenu();
+    }
+    
     startCafeteriaScene() {
         this.sceneManager.changeScene("Cafeteria", null, true);
     }

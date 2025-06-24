@@ -12,10 +12,6 @@
                     "name": "startSearch"
                 }
             ]
-        },
-        "test": {
-            "type": "text",
-            "character": "player"
         }
     },
 

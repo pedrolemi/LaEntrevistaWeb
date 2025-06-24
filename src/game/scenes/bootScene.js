@@ -18,7 +18,8 @@ export default class BootScene extends BaseBootScene {
         this.dialogsAndNamespaces = [
             "scenes/house",
             "scenes/test",
-            "scenes/cafeteria"
+            "scenes/cafeteria",
+            "scenes/hall"
         ];
         this.onlyNamespaces = [
             "names",

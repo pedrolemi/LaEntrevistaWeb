@@ -14,8 +14,9 @@ export default class House extends LaEntrevistaBaseScene {
     create() {
         super.create();
 
+        this.namespace = "scenes\\house";
         this.nodes = this.cache.json.get("house");
-        this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "start");
+        this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "start");
 
         this.BGS_X = 801;
         this.BGS_Y = 352;
@@ -25,10 +26,10 @@ export default class House extends LaEntrevistaBaseScene {
 
         let img = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
-        this.blackboard.setValue("errors", 0);
+        this.blackboard.set("errors", 0);
         this.dispatcher.add("wrongAnswer", this, () => {
-            let errors = this.blackboard.getValue("errors");
-            this.blackboard.setValue("errors", errors + 1);
+            let errors = this.blackboard.get("errors");
+            this.blackboard.set("errors", errors + 1);
         });
 
         // this.dispatcher.dispatch("offersFound");
@@ -94,19 +95,19 @@ export default class House extends LaEntrevistaBaseScene {
         programmingIcon.on("pointerdown", () => {
             position = "programming";
 
-            this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "selectProgrammingOffer");
+            this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "selectProgrammingOffer");
             this.dialogManager.setNode(this.node);
         });
 
         dataIcon.on("pointerdown", () => {
             position = "dataScience";
 
-            this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "selectDataOffer");
+            this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "selectDataOffer");
             this.dialogManager.setNode(this.node);
         });
 
         this.dispatcher.add("askConfirmation", this, () => {
-            this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "askConfirmation");
+            this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "askConfirmation");
             this.dispatcher.add(DefaultEventNames.clearNodes, this, () => {
                 this.dispatcher.remove(DefaultEventNames.clearNodes, this);
                 this.dialogManager.setNode(this.node);
@@ -116,9 +117,7 @@ export default class House extends LaEntrevistaBaseScene {
         this.dispatcher.add("end", this, () => {
             this.gameManager.blackboard.setValue("position", position);
 
-            // TODO
-            this.gameManager.startGame();
-            // this.gameManager.startCafeteriaScene();
+            this.gameManager.startHallScene();
         });
     }
 
@@ -132,7 +131,7 @@ export default class House extends LaEntrevistaBaseScene {
                     desktop.setVisible(false);
                     desktop.disableInteractive();
 
-                    this.node = this.dialogManager.readNodes(this, this.nodes, "scenes\\house", "search");
+                    this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "search");
                     this.dialogManager.setNode(this.node);
                 }
             });

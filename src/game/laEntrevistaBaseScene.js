@@ -1,7 +1,6 @@
 import BaseScene from "../framework/scenes/baseScene.js"
 import DialogManager from "./managers/dialogManager.js";
 import GameManager from "./managers/gameManager.js";
-import { setInteractive } from "../framework/utils/misc.js";
 
 export default class LaEntrevistaBaseScene extends BaseScene {
     constructor(name, atlasName) {
@@ -79,7 +78,7 @@ export default class LaEntrevistaBaseScene extends BaseScene {
     * @param {Object} prevConfig - configuracion a la que agregar el parametro del cursor 
     */
     setInteractive(gameObject, config = {}) {
-        setInteractive(gameObject, config);
+        super.setInteractive(gameObject, config);
 
         if (!this.interactableObjects.has(gameObject)) {
             this.interactableObjects.add(gameObject);

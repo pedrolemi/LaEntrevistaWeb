@@ -1,21 +1,13 @@
 {
     "start": {
         "root": {
-            "text": "Acabo de terminar la carrera, y estoy buscando ofertas de empleo. Tengo muchas ganas de empezar a trabajar, y demostrar lo que valgo. Seguro que en internet encuentro alguna cosa interesante."
-        },
-        "test": [
-            {
-                "text": "¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?¿Quéformacióntengo?"
-            },
-            {
-                "text": "¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué formación tengo? ¿Qué"
-            }
-        ]
+            "text": "Acabo de terminar la carrera y estoy buscando ofertas de empleo. Tengo muchas ganas de empezar a trabajar y demostrar lo que valgo. Seguro que en internet encuentro alguna cosa interesante."
+        }
     },
     "search": {
         "root": [
             {
-                "text": "Me han recomendado este portal de empleo varias veces. Puedes meter tus aptitudes, y te recomienda ofertas que se ajustan a tu curriculum. Veamos..."
+                "text": "Me han recomendado este portal de empleo varias veces. Puedes meter tus aptitudes y te recomienda ofertas que se ajustan a tu curriculum. Veamos..."
             },
             {
                 "text": "Parece que hay que responder varias preguntas. Menos mal que he preparado todo lo que puedo necesitar. Me he hecho este currículum por si necesito usarlo. Por ejemplo..."
@@ -30,7 +22,7 @@
             }
         ],
         "educationComplete": {
-            "text": "¡Ahí está! Grado en STEM. Esta pregunta era fácil, pero puede que esto se complique. Siempre que lo necesite, puedo mirar mi CV. ¡No quiero liarla!"
+            "text": "¡Ahí está! Grado en STEM. Esta pregunta era fácil, pero puede que esto se complique. Siempre que lo necesite puedo mirar mi CV. ¡No quiero liarla!"
         },
         "restartPoint": {
             "text": "¿Qué idiomas hablo? Además del español, claro."
@@ -104,7 +96,7 @@
             "text": "Vaya, parece que no encuentra ninguna oferta. Voy a revisar la información, a lo mejor he hecho algo mal..."
         },
         "findOffers": {
-            "text": "Parece que hay dos ofertas. Una es para desarrollar software, y la otra como analista de datos. ¿A cuál me presento?"
+            "text": "Parece que hay dos ofertas. Una es para desarrollar software y la otra como analista de datos. ¿A cuál me presento?"
         }
     },
     "selectProgrammingOffer": {
@@ -131,7 +123,7 @@
                 "text": "Voy a retocar un poco el currículum para que se ajuste mejor a la oferta, y... ¡listo! Ya lo he enviado."
             },
             {
-                "text": "Parece que las entrevistas son esta misma semana. Espero que todo vaya bien. Llevo preparándome mucho tiempo, y nada me puede estropear esta oportunidad."
+                "text": "Parece que las entrevistas son esta misma semana. Espero que todo vaya bien. Llevo preparándome mucho tiempo y nada me puede estropear esta oportunidad."
             }
         ]
     }

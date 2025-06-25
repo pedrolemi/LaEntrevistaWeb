@@ -3,7 +3,7 @@ import Character from "../character.js";
 
 export default class Cafeteria extends LaEntrevistaBaseScene {
     /**
-    * Escena de la casa
+    * Escena de la cafeteria
     * @extends LaEntrevistaBaseScene
     */
     constructor() {
@@ -13,6 +13,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
     create() {
         super.create();
 
+        
         let bg = this.add.image(0, 0, "cafeteria").setOrigin(0, 0);
 
         let nodes = this.cache.json.get("cafeteria");
@@ -58,6 +59,8 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
         let womenNode = this.dialogManager.readNodes(this, nodes, namespace, "womenConversation");
         let trioNode = this.dialogManager.readNodes(this, nodes, namespace, "trioConversation");
 
+        let setWomenNode = () => { }
+
         // Monica
         let monicaConfig = {
             x: 265,
@@ -65,7 +68,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
             scale: 0.87
         }
         let monicaChar = new Character(this, monicaConfig.x, monicaConfig.y, monicaConfig.scale, "Monica", this.characterConfig.speed, true, () => {
-            this.dialogManager.setNode(womenNode);
+            setWomenNode();
         });
         monicaChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
 
@@ -76,9 +79,15 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
             scale: 0.9
         }
         let rebecaChar = new Character(this, rebecaConfig.x, rebecaConfig.y, rebecaConfig.scale, "Rebeca", this.characterConfig.speed, false, () => {
-            this.dialogManager.setNode(womenNode);
+            setWomenNode();
         });
         rebecaChar.setOrigin(0.5, 0.5);
+
+        setWomenNode = () => {
+            this.dialogManager.setNode(womenNode);
+            monicaChar.disableInteractive();
+            rebecaChar.disableInteractive();
+        }
 
         // Carlos
         let carlosConfig = {
@@ -115,6 +124,13 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
 
         this.dispatcher.addOnce("womenConversationEnded", this, () => {
             continueConversation();
+        });
+
+        
+        let corridor = this.add.rectangle(this.CANVAS_WIDTH, 0, 160, this.CANVAS_HEIGHT, 0x000, 0).setOrigin(1, 0);
+        this.setInteractive(corridor);
+        corridor.on("pointerdown", () => {
+            this.gameManager.startCorridorScene();
         });
     }
 }

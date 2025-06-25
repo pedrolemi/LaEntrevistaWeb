@@ -34,8 +34,8 @@ export default class MainMenu extends LaEntrevistaBaseScene {
             video.setPlaybackRate(3);
         });
         video.on("complete", () => {
-            // this.gameManager.startHouseScene();
-            this.gameManager.startHallScene();
+            this.gameManager.startHouseScene();
+            // this.gameManager.startHallScene();
             video.destroy();
         });
 

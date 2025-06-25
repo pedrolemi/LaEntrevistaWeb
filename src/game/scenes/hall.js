@@ -3,7 +3,7 @@ import Character from "../character.js";
 
 export default class Hall extends LaEntrevistaBaseScene {
     /**
-    * Escena de la casa
+    * Escena de la recepcion
     * @extends LaEntrevistaBaseScene
     */
     constructor() {
@@ -44,11 +44,8 @@ export default class Hall extends LaEntrevistaBaseScene {
             this.setInteractive(stairs);
             stairs.on("pointerdown", () => {
                 stairs.disableInteractive();
-                // this.gameManager.startCorridorScene();
-
-                this.gameManager.startGame();
-            })
-
+                this.gameManager.startCorridorScene();
+            });
         });
     }
 }

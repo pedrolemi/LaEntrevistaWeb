@@ -37,7 +37,7 @@ export default class BaseUI extends BaseScene {
         this.bgElements = new InteractiveContainer(this, 0, 0);
         this.bgElements.setSize(1, 1);
         this.bgElements.add(this.bgBlock);
-        this.bgElements.activate(false, () => { }, 0);
+        this.bgElements.activate(false, null, 0);
 
 
         this.textbox = new DialogBox(this, this.textboxConfig, this.nameBoxConfig, this.textConfig, this.nameTextConfig);
@@ -48,6 +48,7 @@ export default class BaseUI extends BaseScene {
         // Si llega un evento de que se han acabado los nodos, desactiva la caja y 
         // envia el evento de eliminar el nodo actual cuando termina la animacion
         this.dispatcher.add(DefaultEventNames.endNodes, this, () => {
+            this.bgElements.activate(false);
             this.textbox.activate(false, () => {
                 this.dispatcher.dispatch(DefaultEventNames.clearNodes);
             });
@@ -68,6 +69,7 @@ export default class BaseUI extends BaseScene {
 
         // Si llega un evento de empezar nodo de texto, comienza a procesarlo
         this.dispatcher.add(DefaultEventNames.startTextNode, this, (node) => {
+            this.bgElements.activate(true);
             // console.log(node);
 
             // Recorre todos los fragmentos obtenidos y los divide (por si

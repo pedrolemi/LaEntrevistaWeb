@@ -36,11 +36,13 @@ export default class GameManager extends Singleton {
             this.ui.scene.restart();
         }
 
+        this.blackboard.set("position", "programming");
+
         // this.startMainMenu();
         // this.startHouseScene();
-        this.startCorridorScene();
         // this.startHallScene();
-        // this.startCafeteriaScene();
+        // this.startCorridorScene();
+        this.startCafeteriaScene();
     }
 
     startMainMenu() {
@@ -66,6 +68,7 @@ export default class GameManager extends Singleton {
         this.sceneManager.changeScene("Cafeteria", null, true, true);
     }
 
+    
     /**
     * Incrementar el numero de personajes con los que se ha hablado
     */

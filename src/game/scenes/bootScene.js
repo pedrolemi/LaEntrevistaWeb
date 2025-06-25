@@ -65,9 +65,6 @@ export default class BootScene extends BaseBootScene {
     loadComputer() {
         this.load.setPath("assets/computer");
 
-        this.load.image("mainMenu", "mainMenu.png");
-        this.load.image("credits", "credits.png");
-
         this.load.video("creditsAnimation", "animacioncreditos.mp4", true);
         this.load.video("startAnimation", "animacionmenu.mp4", true);
 
@@ -99,6 +96,10 @@ export default class BootScene extends BaseBootScene {
         this.loadCorridor();
 
         this.load.setPath("assets/backgrounds");
+
+        this.load.image("mainMenu", "mainMenu.png");
+        this.load.image("mainMenuBlank", "mainMenuBlank.png");
+        this.load.image("credits", "credits.png");
 
         this.load.image("hall", "hall.png");
         this.load.image("counter", "counter.png");

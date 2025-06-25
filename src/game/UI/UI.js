@@ -149,6 +149,7 @@ export default class UI extends BaseUI {
     onOptionRemoval() {
         if (this.optionBoxes.length <= 0) {
             this.questionText.setVisible(false);
+            this.bgBlock.fillAlpha = 0;
         }
         super.onOptionRemoval();
     }

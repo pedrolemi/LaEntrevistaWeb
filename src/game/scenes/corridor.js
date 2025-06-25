@@ -4,7 +4,7 @@ import TextArea from "../../framework/UI/textArea.js";
 
 export default class Corridor extends LaEntrevistaBaseScene {
     /**
-    * Escena de la casa
+    * Escena del pasillo
     * @extends LaEntrevistaBaseScene
     */
     constructor() {
@@ -21,7 +21,7 @@ export default class Corridor extends LaEntrevistaBaseScene {
         this.nodes = this.cache.json.get("corridor");
         this.DIALOGS_NAMESPACE = "scenes\\corridor";
 
-        let locationNode = this.dialogManager.readNodes(this, this.nodes, this.dialogsNamespace, "locationInquiry");
+        let locationNode = this.dialogManager.readNodes(this, this.nodes, this.DIALOGS_NAMESPACE, "locationInquiry");
 
         this.TEXT_CONFIG = {
             fontFamily: "lexend-variable",
@@ -33,7 +33,7 @@ export default class Corridor extends LaEntrevistaBaseScene {
             strokeThickness: 5
         }
 
-        this.POSTER_CONFIG = {
+        this.SIGN_CONFIG = {
             text: {
                 x: 575,
                 width: 325,
@@ -51,19 +51,19 @@ export default class Corridor extends LaEntrevistaBaseScene {
         }
 
         const NAMESPACE = "scenes";
-        let posters = [
+        let signs = [
             {
                 y: 216,
-                id: "meetingRoomPoster"
+                id: "meetingRoomSign"
             },
             {
                 y: 333,
-                id: "cafeteriaPoster"
+                id: "cafeteriaSign"
             }
         ];
 
-        posters.forEach(({ y, id }) => {
-            this.createPoster(y, this.localizationManager.translate(id, NAMESPACE), id);
+        signs.forEach(({ y, id }) => {
+            this.createSign(y, this.localizationManager.translate(id, NAMESPACE), id);
         });
 
         // Luis
@@ -76,30 +76,46 @@ export default class Corridor extends LaEntrevistaBaseScene {
         this.dispatcher.addOnce("manLeave", this, () => {
             this.leaveRoom([luisChar], exitPoint);
         });
+        
 
-        this.dialogManager.setNode(locationNode);
+        setTimeout(() => {
+            this.dialogManager.setNode(locationNode);
+
+            let cafeteria = this.add.rectangle(0, 0, 160, this.CANVAS_HEIGHT, 0x000, 0).setOrigin(0, 0);
+            this.setInteractive(cafeteria);
+            cafeteria.on("pointerdown", () => {
+                this.gameManager.startCafeteriaScene();
+            });
+
+            let waitingRoom = this.add.rectangle(955, 475, 240, 370, 0x000, 0);
+            this.setInteractive(waitingRoom);
+            waitingRoom.on("pointerdown", () => {
+                // TODO
+                // this.gameManager.startWaitingRoomScene();
+            });
+        }, 200);
     }
 
-    createPoster(y, text, objectNodeName) {
+    createSign(y, text, objectNodeName) {
         if (this.debug) {
-            let debugRect = this.add.rectangle(this.POSTER_CONFIG.text.x, y,
-                this.POSTER_CONFIG.text.width, this.POSTER_CONFIG.text.height, 0x000000);
-            debugRect.setOrigin(this.POSTER_CONFIG.text.originX, this.POSTER_CONFIG.text.originY);
+            let debugRect = this.add.rectangle(this.SIGN_CONFIG.text.x, y,
+                this.SIGN_CONFIG.text.width, this.SIGN_CONFIG.text.height, 0x000000);
+            debugRect.setOrigin(this.SIGN_CONFIG.text.originX, this.SIGN_CONFIG.text.originY);
         }
-        let posterText = new TextArea(this, this.POSTER_CONFIG.text.x, y,
-            this.POSTER_CONFIG.text.width, this.POSTER_CONFIG.text.height, text, this.TEXT_CONFIG)
-        posterText.setOrigin(this.POSTER_CONFIG.text.originX, this.POSTER_CONFIG.text.originY);
-        posterText.adjustFontSize();
+        let signText = new TextArea(this, this.SIGN_CONFIG.text.x, y,
+            this.SIGN_CONFIG.text.width, this.SIGN_CONFIG.text.height, text, this.TEXT_CONFIG)
+        signText.setOrigin(this.SIGN_CONFIG.text.originX, this.SIGN_CONFIG.text.originY);
+        signText.adjustFontSize();
 
-        let posterNode = this.dialogManager.readNodes(this, this.nodes, this.DIALOGS_NAMESPACE, objectNodeName);
+        let signNode = this.dialogManager.readNodes(this, this.nodes, this.DIALOGS_NAMESPACE, objectNodeName);
 
-        let posterRect = this.add.zone(this.POSTER_CONFIG.rect.x, y,
-            this.POSTER_CONFIG.rect.width, this.POSTER_CONFIG.rect.height);
-        posterRect.setOrigin(this.POSTER_CONFIG.rect.originX, this.POSTER_CONFIG.rect.originY);
+        let signRect = this.add.zone(this.SIGN_CONFIG.rect.x, y,
+            this.SIGN_CONFIG.rect.width, this.SIGN_CONFIG.rect.height);
+        signRect.setOrigin(this.SIGN_CONFIG.rect.originX, this.SIGN_CONFIG.rect.originY);
 
-        this.setInteractive(posterRect);
-        posterRect.on('pointerdown', () => {
-            this.dialogManager.setNode(posterNode);
+        this.setInteractive(signRect);
+        signRect.on('pointerdown', () => {
+            this.dialogManager.setNode(signNode);
         });
     }
 }

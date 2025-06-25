@@ -43,6 +43,10 @@ export default class SceneManager extends Singleton {
     * @param {Boolean} canReturn - true si se puede regresar a la escena anterior, false en caso contrario (opcional)
     */
     changeScene(sceneKey, params = null, anim = false, canReturn = false) {
+        if (this.fading) {
+            return;
+        }
+
         this.fading = false;
         let fadeOutTime = this.DEFAULT_FADE_OUT_TIME;
         let fadeInTime = this.DEFAULT_FADE_IN_TIME;

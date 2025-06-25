@@ -7,7 +7,7 @@
             "text": "Claro, por el pasillo del fondo. Si tienes que esperar, puedes pasarte por la cafetería mientras tanto. ¡Suerte!"
         }
     },
-    "meetingRoomPoster": {
+    "meetingRoomSign": {
         "root": [
             {
                 "text": "Al final del pasillo está la sala de reuniones."
@@ -17,7 +17,7 @@
             }
         ]
     },
-    "cafeteriaPoster": {
+    "cafeteriaSign": {
         "root": {
             "text": "La cafetería está por la izquierda... Podría investigar"
         }

@@ -19,13 +19,13 @@
             ]
         }
     },
-    "meetingRoomPoster": {
+    "meetingRoomSign": {
         "root": {
             "type": "text",
             "character": "player"
         }
     },
-    "cafeteriaPoster": {
+    "cafeteriaSign": {
         "root": {
             "type": "text",
             "character": "player"

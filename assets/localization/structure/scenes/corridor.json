@@ -18,5 +18,17 @@
                 }
             ]
         }
+    },
+    "meetingRoomPoster": {
+        "root": {
+            "type": "text",
+            "character": "player"
+        }
+    },
+    "cafeteriaPoster": {
+        "root": {
+            "type": "text",
+            "character": "player"
+        }
     }
 }

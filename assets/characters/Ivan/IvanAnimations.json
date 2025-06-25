@@ -83,6 +83,57 @@
             "defaultTextureKey": "Ivan",
             "frameRate": 6,
             "repeat": -1
+        },
+        {
+            "key": "IvanPointing",
+            "type": "frame",
+            "frames": [
+                {
+                    "frame": "Ivan_pointing_0001"
+                },
+                {
+                    "frame": "Ivan_pointing_0005"
+                },
+                {
+                    "frame": "Ivan_pointing_0009"
+                },
+                {
+                    "frame": "Ivan_pointing_0013"
+                },
+                {
+                    "frame": "Ivan_pointing_0017"
+                },
+                {
+                    "frame": "Ivan_pointing_0021"
+                },
+                {
+                    "frame": "Ivan_pointing_0025"
+                },
+                {
+                    "frame": "Ivan_pointing_0029"
+                },
+                {
+                    "frame": "Ivan_pointing_0033"
+                },
+                {
+                    "frame": "Ivan_pointing_0037"
+                },
+                {
+                    "frame": "Ivan_pointing_0041"
+                },
+                {
+                    "frame": "Ivan_pointing_0045"
+                },
+                {
+                    "frame": "Ivan_pointing_0049"
+                },
+                {
+                    "frame": "Ivan_pointing_0050"
+                }
+            ],
+            "defaultTextureKey": "Ivan",
+            "frameRate": 6,
+            "repeat": 0
         }
     ]
 }

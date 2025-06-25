@@ -19,16 +19,11 @@ export default class Corridor extends LaEntrevistaBaseScene {
         this.debug = false;
 
         this.nodes = this.cache.json.get("corridor");
-        let namespace = "scenes\\corridor";
+        this.DIALOGS_NAMESPACE = "scenes\\corridor";
 
-        let locationNode = this.dialogManager.readNodes(this, this.nodes, namespace, "locationInquiry");
+        let locationNode = this.dialogManager.readNodes(this, this.nodes, this.dialogsNamespace, "locationInquiry");
 
-        let exitPoint = {
-            x: -100,
-            y: 650
-        };
-
-        let textConfig = {
+        this.TEXT_CONFIG = {
             fontFamily: "lexend-variable",
             fontSize: 35,
             fontStyle: "normal",
@@ -38,25 +33,44 @@ export default class Corridor extends LaEntrevistaBaseScene {
             strokeThickness: 5
         }
 
-        let posterConfig = {
-            x: 575,
-            maxWidth: 325,
-            maxHeight: 90
-        };
-
-        let meetingRoomPosterConfig = {
-            y: 216
+        this.POSTER_CONFIG = {
+            text: {
+                x: 575,
+                width: 325,
+                height: 90,
+                originX: 1,
+                originY: 0.5
+            },
+            rect: {
+                x: 393,
+                width: 410,
+                height: 105,
+                originX: 0.5,
+                originY: 0.5
+            },
         }
-        this.createTextArea(posterConfig.x, meetingRoomPosterConfig.y, posterConfig.maxWidth, posterConfig.maxHeight,
-            this.localizationManager.translate("meetingRoomPoster", "scenes"), textConfig);
 
-        let cafeteriaPosterConfig = {
-            y: 333
-        }
-        this.createTextArea(posterConfig.x, cafeteriaPosterConfig.y, posterConfig.maxWidth, posterConfig.maxHeight,
-            this.localizationManager.translate("cafeteriaPoster", "scenes"), textConfig);
+        const NAMESPACE = "scenes";
+        let posters = [
+            {
+                y: 216,
+                id: "meetingRoomPoster"
+            },
+            {
+                y: 333,
+                id: "cafeteriaPoster"
+            }
+        ];
+
+        posters.forEach(({ y, id }) => {
+            this.createPoster(y, this.localizationManager.translate(id, NAMESPACE), id);
+        });
 
         // Luis
+        let exitPoint = {
+            x: -100,
+            y: 650
+        };
         let luisChar = new Character(this, 1200, 650, 1.5, "Luis", this.characterConfig.speed, false, null);
         luisChar.setOrigin(0.5, 0.5);
         this.dispatcher.addOnce("manLeave", this, () => {
@@ -66,12 +80,26 @@ export default class Corridor extends LaEntrevistaBaseScene {
         this.dialogManager.setNode(locationNode);
     }
 
-    createTextArea(x, y, maxWidth, maxHeight, text, style, originX = 1, originY = 0.5) {
+    createPoster(y, text, objectNodeName) {
         if (this.debug) {
-            let rect = this.add.rectangle(x, y, maxWidth, maxHeight, 0x000000);
-            rect.setOrigin(originX, originY);
+            let debugRect = this.add.rectangle(this.POSTER_CONFIG.text.x, y,
+                this.POSTER_CONFIG.text.width, this.POSTER_CONFIG.text.height, 0x000000);
+            debugRect.setOrigin(this.POSTER_CONFIG.text.originX, this.POSTER_CONFIG.text.originY);
         }
-        this.skill1 = new TextArea(this, x, y, maxWidth, maxHeight, text, style).setOrigin(originX, originY);
-        this.skill1.adjustFontSize();
+        let posterText = new TextArea(this, this.POSTER_CONFIG.text.x, y,
+            this.POSTER_CONFIG.text.width, this.POSTER_CONFIG.text.height, text, this.TEXT_CONFIG)
+        posterText.setOrigin(this.POSTER_CONFIG.text.originX, this.POSTER_CONFIG.text.originY);
+        posterText.adjustFontSize();
+
+        let posterNode = this.dialogManager.readNodes(this, this.nodes, this.DIALOGS_NAMESPACE, objectNodeName);
+
+        let posterRect = this.add.zone(this.POSTER_CONFIG.rect.x, y,
+            this.POSTER_CONFIG.rect.width, this.POSTER_CONFIG.rect.height);
+        posterRect.setOrigin(this.POSTER_CONFIG.rect.originX, this.POSTER_CONFIG.rect.originY);
+
+        this.setInteractive(posterRect);
+        posterRect.on('pointerdown', () => {
+            this.dialogManager.setNode(posterNode);
+        });
     }
 }

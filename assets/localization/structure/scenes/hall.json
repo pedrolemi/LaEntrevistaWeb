@@ -40,7 +40,7 @@
             "type": "event",
             "events": [
                 {
-                    "name": "end"
+                    "name": "point"
                 }
             ],
             "next": "realThanks"

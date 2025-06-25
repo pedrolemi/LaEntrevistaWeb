@@ -1,21 +1,27 @@
 import Singleton from "../utils/singleton.js";
 
 export class EventHandler {
+    /**
+    * Clase que maneja la suscripcion y emisiones de eventos
+    * @param {Phaser.Events.EventEmitter} emitter - emisor de eventos
+    */
     constructor(emitter) {
         // Emisor de eventos
         this.emitter = emitter;
 
         /**
-        * Map<string, Set<object>>
+        * Mapa de eventos a suscriptores 
+        * @type {Map<String, Set<Object>>}
         * Mapea un nombre de evento a los objetos que lo escuchan
         * Facilita la eliminación por nombre de evento
         */
         this.eventsMap = new Map();
 
         /**
-        * Map<object, Map<string, Set<function>>>
+        * Mapa de objetos a eventos y sus callbacks asociados 
+        * @type {Map<Object, Map<String, Set<Function>>>}
         * Mapea un objeto a sus eventos y funciones asociadas
-        * Facilita la eliminación de eventos por objeto
+        * Facilita la eliminación de eventos por objeto o eliminar un evento especifico
         */
         this.objectsMap = new Map();
     }
@@ -51,12 +57,12 @@ export class EventHandler {
     * @param {Function} callback - funcion que se ejecuta al producirse el evento
     */
     add(event, object, callback) {
-        // Si el evento no existe, se crea el set de objetos
+        // Si el evento no existe en el mapa de eventos, se crea el set de objetos
         if (!this.eventsMap.has(event)) {
             this.eventsMap.set(event, new Set());
         }
         let objectsSet = this.eventsMap.get(event);
-        // Si el evento no tiene registrado a ese objeto, se registra
+        // Si el objeto no esta registrado para el evento, se registra
         if (!objectsSet.has(object)) {
             objectsSet.add(object);
         }
@@ -79,10 +85,10 @@ export class EventHandler {
     }
 
     /**
-    * Eliminar un callback de un evento de un objeto
+    * Eliminar un callback especifico de un evento para un objeto
     * @param {String} event - nombre del evento 
     * @param {String} object - objeto suscrito al evento 
-    * @param {Function} callback - funcion que se ejecuta cuando se produce al evento
+    * @param {Function} callback - funcion que se ejecuta al producirse el evento
     */
     remove(event, object, callback) {
         // Si existe el objeto
@@ -111,8 +117,8 @@ export class EventHandler {
         // Si existe el evento
         if (this.eventsMap.has(event)) {
             let objectsSet = this.eventsMap.get(event);
-            // Se elimina el evento del mapa de objetos
             objectsSet.forEach(object => {
+                // Se elimina el evento del mapa de objetos
                 this.objectsMap.get(object).delete(event);
             });
 
@@ -125,7 +131,7 @@ export class EventHandler {
     }
 
     /**
-    * Eliminar todos los eventos de un objeto
+    * Eliminar todos los eventos suscritos a un objeto
     * @param {Object} object - objeto suscrito al evento
     */
     removeByObject(object) {
@@ -193,21 +199,24 @@ export class EventHandler {
 
 export default class EventDispatcher extends Singleton {
     /**
-    * Clase que centraliza la gestion de eventos entre objeticos,
+    * Clase que centraliza la gestion de eventos entre objetos,
     * permitiendo que cualquier objeto emita o escuche eventos sin
     * necesidad de compartir contexto directo 
     */
     constructor() {
         super("EventDispatcher");
 
+        // Emisor de eventos
         this.emitter = new Phaser.Events.EventEmitter();
 
+        // Manejador de eventos temporales
         this.temporaryHandler = new EventHandler(this.emitter);
+        // Manejador de eventos permanentes
         this.permanentHandler = new EventHandler(this.emitter);
     }
 
     /**
-    * Se emite un evento
+    * Emitir un evento
     * @param {String} event - nombre del evento
     * @param {Object} params - parametros del evento (opcional)
     */
@@ -261,7 +270,7 @@ export default class EventDispatcher extends Singleton {
     }
 
     /**
-    * Eliminar a todos los objetos de un evento temporal
+    * Eliminar todas las suscripcione temporales a un evento
     * @param {String} event - nombre del evento
     */
     removeByEvent(event) {

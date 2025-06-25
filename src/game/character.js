@@ -25,6 +25,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
         this.target = null;
         this.facingRight = facingRight;
         this.callback = callback;
+        this.dialogAnimationEnabled = true;
 
         let getAnimationKey = (type) => {
             return this.name + type;
@@ -35,7 +36,8 @@ export default class Character extends Phaser.GameObjects.Sprite {
             idle: getAnimationKey("Idle"),
             sitting: getAnimationKey("Sitting"),
             talking: getAnimationKey("Talking"),
-            walking: getAnimationKey("Walking")
+            walking: getAnimationKey("Walking"),
+            pointing: getAnimationKey("Pointing")
         }
 
         this.scene.setInteractive(this);
@@ -47,14 +49,14 @@ export default class Character extends Phaser.GameObjects.Sprite {
 
         // Se reproduce la animacion por defecto cuando termina una dialogo
         this.scene.dispatcher.add(DefaultEventNames.endNodes, this, () => {
-            if (this.target == null) {
+            if (this.dialogAnimationEnabled) {
                 this.playDefaultAnimation();
             }
         });
 
         // Se reproduce la animacion por defecto cuando comienza un nodo de eleccion
         this.scene.dispatcher.add(DefaultEventNames.startChoiceNode, this, (node) => {
-            if (this.target == null) {
+            if (this.dialogAnimationEnabled) {
                 this.playDefaultAnimation();
             }
         });
@@ -63,7 +65,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
         // - Si no es este personaje y esta hablando, se vuelve a la animacion por defecto
         // - Si es este personaje, intenta reproducir la animacion de hablar
         this.scene.dispatcher.add(DefaultEventNames.startTextNode, this, (node) => {
-            if (this.target == null) {
+            if (this.dialogAnimationEnabled) {
                 if (this.name != node.character && this.anims.isPlaying && this.anims.currentAnim.key == this.types.talking) {
                     this.playDefaultAnimation();
                 }
@@ -98,6 +100,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
                 this.target = null;
                 this.scene.setInteractive(this);
                 this.playDefaultAnimation();
+                this.setDialogAnimations(true);
                 this.emit("targetReached");
             }
         }
@@ -106,12 +109,14 @@ export default class Character extends Phaser.GameObjects.Sprite {
     /**
     * Reproduce la animacion del tipo dado si existe
     * @param {string} type - tipo de animacion (idle, walking...)
+    * @param {object} config - configuración adicional para la animación
     * @returns {boolean} - true si la animacion existe o si se esta reproduciendo
     */
-    playAnimation(type) {
+    playAnimation(type, config = {}) {
         if (this.scene.anims.exists(type)) {
             if (!this.anims.isPlaying || this.anims.currentAnim.key != type) {
-                this.play(type)
+                config.key = type;
+                this.play(config)
             }
             return true;
         }
@@ -120,22 +125,23 @@ export default class Character extends Phaser.GameObjects.Sprite {
 
     /**
     * Reproduce la animacion por defecto (idle o sitting)
+    * @param {object} config - configuración adicional para la animación
     * @returns {boolean} - true si alguna de las dos animaciones se reproduce correctamente
     */
-    playDefaultAnimation() {
-        let play = this.playAnimation(this.types.idle)
+    playDefaultAnimation(config = {}) {
+        let play = this.playAnimation(this.types.idle, config)
         if (!play) {
-            play = this.playAnimation(this.types.sitting);
+            play = this.playAnimation(this.types.sitting, config);
         }
         return play;
     }
 
-    playTalkingAnimation() {
-        return this.playAnimation(this.types.talking);
+    playTalkingAnimation(config = {}) {
+        return this.playAnimation(this.types.talking, config);
     }
 
-    playWalkingAnimation() {
-        return this.playAnimation(this.types.walking);
+    playWalkingAnimation(config = {}) {
+        return this.playAnimation(this.types.walking, config);
     }
 
     setFacingDirection(right) {
@@ -150,6 +156,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
         if (this.target == null && target.hasOwnProperty("x") && target.hasOwnProperty("y")) {
             this.disableInteractive();
             this.playWalkingAnimation();
+            this.setDialogAnimations(false);
             this.target = target;
 
             if (this.target.x > this.x) {
@@ -163,5 +170,9 @@ export default class Character extends Phaser.GameObjects.Sprite {
 
     removeEvents() {
         this.scene.dispatcher.removeByObject(this);
+    }
+
+    setDialogAnimations(enable) {
+        this.dialogAnimationEnabled = enable;
     }
 }

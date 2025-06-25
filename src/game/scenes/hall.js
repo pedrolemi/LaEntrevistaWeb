@@ -42,7 +42,7 @@ export default class Hall extends LaEntrevistaBaseScene {
             stairs.on("pointerdown", () => {
                 stairs.disableInteractive();
                 // this.gameManager.startCorridorScene();
-                
+
                 this.gameManager.startGame();
             })
 

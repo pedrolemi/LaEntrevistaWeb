@@ -1,5 +1,196 @@
 import Singleton from "../utils/singleton.js";
 
+export class EventHandler {
+    constructor(emitter) {
+        // Emisor de eventos
+        this.emitter = emitter;
+
+        /**
+        * Map<string, Set<object>>
+        * Mapea un nombre de evento a los objetos que lo escuchan
+        * Facilita la eliminación por nombre de evento
+        */
+        this.eventsMap = new Map();
+
+        /**
+        * Map<object, Map<string, Set<function>>>
+        * Mapea un objeto a sus eventos y funciones asociadas
+        * Facilita la eliminación de eventos por objeto
+        */
+        this.objectsMap = new Map();
+    }
+
+    /**
+    * Comprobar si un evento existe
+    * @param {String} event - nombre del evento 
+    * @param {Object} object - objeto suscrito al evento
+    * @param {Function} callback - funcion que se ejecuta al producirse el evento
+    * @param {Map} objectsMap - mapa de objetos en el que buscar el evento
+    * @returns {Boolean} - si existe (true) o no (false)
+    */
+    has(event, object, callback) {
+        // Si existe el objeto
+        if (this.objectsMap.has(object)) {
+            let eventsMap = this.objectsMap.get(object);
+            // Si el objeto esta suscrito a ese evento
+            if (eventsMap.has(event)) {
+                let callbacksSet = eventsMap.get(event);
+                // Si el evento tiene esa funcion asociada
+                if (callbacksSet.has(callback)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+    * Guardar en evento
+    * @param {String} event - nombre del evento 
+    * @param {Object} object - objeto suscrito al evento
+    * @param {Function} callback - funcion que se ejecuta al producirse el evento
+    */
+    add(event, object, callback) {
+        // Si el evento no existe, se crea el set de objetos
+        if (!this.eventsMap.has(event)) {
+            this.eventsMap.set(event, new Set());
+        }
+        let objectsSet = this.eventsMap.get(event);
+        // Si el evento no tiene registrado a ese objeto, se registra
+        if (!objectsSet.has(object)) {
+            objectsSet.add(object);
+        }
+
+        // Si el objeto no existe
+        if (!this.objectsMap.has(object)) {
+            // Se crea el mapa de eventos
+            this.objectsMap.set(object, new Map());
+        }
+        // Se obtiene el mapa de eventos
+        let eventsMap = this.objectsMap.get(object);
+        // Si no existe el set de funciones para ese evento
+        if (!eventsMap.has(event)) {
+            // Se crea el set de funciones
+            eventsMap.set(event, new Set());
+        }
+        let callbacksSet = eventsMap.get(event);
+        // Se anade la funcion
+        callbacksSet.add(callback);
+    }
+
+    /**
+    * Eliminar un callback de un evento de un objeto
+    * @param {String} event - nombre del evento 
+    * @param {String} object - objeto suscrito al evento 
+    * @param {Function} callback - funcion que se ejecuta cuando se produce al evento
+    */
+    remove(event, object, callback) {
+        // Si existe el objeto
+        if (this.objectsMap.has(object)) {
+            let eventsMap = this.objectsMap.get(object);
+            // Si existe el evento
+            if (eventsMap.has(event)) {
+                let callbacksSet = eventsMap.get(event);
+                // Si existe el callback
+                if (callbacksSet.has(callback)) {
+                    // Se elimna el callback
+                    callbacksSet.delete(callback);
+
+                    // Se desuscribe
+                    this.emitter.off(event, callback, object);
+                }
+            }
+        }
+    }
+
+    /**
+    * Eliminar un evento
+    * @param {String} event - nombre del evento
+    */
+    removeByEvent(event) {
+        // Si existe el evento
+        if (this.eventsMap.has(event)) {
+            let objectsSet = this.eventsMap.get(event);
+            // Se elimina el evento del mapa de objetos
+            objectsSet.forEach(object => {
+                this.objectsMap.get(object).delete(event);
+            });
+
+            // Se desuscribe el evento
+            this.emitter.off(event);
+
+            // Se elimina el evento del mapa de eventos
+            this.eventsMap.delete(event);
+        }
+    }
+
+    /**
+    * Eliminar todos los eventos de un objeto
+    * @param {Object} object - objeto suscrito al evento
+    */
+    removeByObject(object) {
+        // Si existe el objeto
+        if (this.objectsMap.has(object)) {
+            // Se obtienen todos los eventos
+            let events = this.objectsMap.get(object);
+            // Se recorre cada evento
+            events.forEach((callbacksSet, eventName) => {
+                // Se elimina en el mapa de eventos el objeto correspondiente 
+                this.eventsMap.get(eventName).delete(object);
+
+                // Se desuscribe el objeto de cada uno de sus callbacks
+                callbacksSet.forEach(callback => {
+                    this.emitter.off(eventName, callback, object);
+                });
+            });
+
+            // Se elimina el objeto del mapa de objetos
+            this.objectsMap.delete(object);
+        }
+    }
+
+    /**
+    * Eliminar todos los callbacks de un evento de un objeto
+    * @param {String} event - nombre del evento
+    * @param {Object} object - objeto suscrito al evento
+    */
+    removeAllCallbacks(event, object) {
+        // Si existe el evento
+        if (this.eventsMap.has(event)) {
+            let objectsSet = this.eventsMap.get(event);
+            // Si existe el objeto
+            if (objectsSet.has(object)) {
+                // Se elimina el objeto del evento correspondiente
+                objectsSet.delete(object);
+
+                // Se desuscriben todos los callbacks de ese evento para ese objeto
+                let callbacksSet = this.objectsMap.get(object).get(event);
+                callbacksSet.forEach(callback => {
+                    this.emitter.off(event, callback, object);
+                });
+
+                // Se elimina el evento del mapa de objetos
+                this.objectsMap.get(object).delete(event);
+            }
+        }
+    }
+
+    clear() {
+        this.eventsMap.clear();
+        this.objectsMap.clear();
+    }
+
+    /**
+    * Eliminar todos los eventos 
+    */
+    removeAll() {
+        this.eventsMap.forEach((objectsSet, eventName) => {
+            this.emitter.off(eventName);
+        });
+        this.clear();
+    }
+}
+
 export default class EventDispatcher extends Singleton {
     /**
     * Clase que centraliza la gestion de eventos entre objeticos,
@@ -9,310 +200,104 @@ export default class EventDispatcher extends Singleton {
     constructor() {
         super("EventDispatcher");
 
-        // Emisor de eventos
         this.emitter = new Phaser.Events.EventEmitter();
 
-        // ========================
-        // Mapas para eventos TEMPORALES
-        // ========================
-
-        /**
-       * Map<string, Set<object>>
-       * Mapea un nombre de evento a los objetos que lo escuchan.
-       * Facilita la eliminación por nombre de evento
-       */
-        this.eventsMap = new Map();
-
-        /**
-       * Map<object, Map<string, Set<Function>>>
-       * Mapea un objeto (owner) a sus eventos y funciones asociadas.
-       * Facilita la eliminación de eventos por objeto.
-       */
-        this.ownersMap = new Map();
-
-        // ========================
-        // Mapeos para eventos PERMANENTES
-        // ========================
-
-        /**
-        * Map<object, Map<string, Set<Function>>>
-        * Igual que ownersMap pero para eventos que persisten
-        * incluso después de un cambio de escena o reinicio.
-       */
-        this.ownersPermanentMap = new Map();
+        this.temporaryHandler = new EventHandler(this.emitter);
+        this.permanentHandler = new EventHandler(this.emitter);
     }
-
 
     /**
     * Se emite un evento
     * @param {String} event - nombre del evento
-    * @param {Object} obj - parametros del evento (opcional)
+    * @param {Object} params - parametros del evento (opcional)
     */
-    dispatch(event, obj) {
-        this.emitter.emit(event, obj);
+    dispatch(event, params) {
+        this.emitter.emit(event, params);
     }
-
-    /**
-    * Comprobar si un evento ya existe
-    * @param {String} event - nombre del evento 
-    * @param {Object} owner - objeto que se suscribe al evento
-    * @param {Function} fn - funcion que se ejecuta al producirse el evento
-    * @param {Map} ownersMap - mapa de propietarios en el que buscar el evento (temporal o permanente)
-    * @returns {Boolean} - true si ya existe, false si no
-    */
-    alreadyExists(event, owner, fn, ownersMap) {
-        // Existe el propietario...
-        if (ownersMap.has(owner)) {
-            // El propietario esta suscrito a ese evento...
-            let ownerAux = ownersMap.get(owner);
-            if (ownerAux.has(event)) {
-                // El propietario tiene esa funcion suscrita a ese evento...
-                let eventAux = ownerAux.get(event);
-                if (eventAux.has(fn)) {
-                    // Entonces, ya existe esa suscripcion
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
 
     /**
     * Suscribir un objeto a un evento
     * @param {String} event - nombre del evento
-    * @param {Object} owner - objeto que se suscribe al evento
-    * @param {Fn} fn - funcion que se ejecuta cuando se produce el evento
-    * @param {Boolean} permanent - true si la suscripcion es peramnente, false si es temporal
+    * @param {Object} object - objeto suscrito al evento
+    * @param {callback} callback - funcion que se ejecuta cuando se produce el evento
+    * @param {Boolean} permanent - si la suscripcion es permanente (true) o temporal (false) (opcional)
     */
-    add(event, owner, fn, permanent) {
-        let exists = this.alreadyExists(event, owner, fn, this.ownersPermanentMap);
-
-        // Si no existia...
-        if (!exists) {
-            // Se quiere anadir como permanente...
+    add(event, object, callback, permanent = false) {
+        if (!this.permanentHandler.has(event, object, callback)) {
             if (permanent) {
-                // Se anade como permanente
-                this.addAsPermanent(event, owner, fn);
-
-                // Si existia como temporal...
-                if (this.alreadyExists(event, owner, fn, this.ownersMap)) {
-                    // Se elimina porque ahora es permanente
-                    this.deepRemove(event, owner, fn);
+                if (this.temporaryHandler.has(event, object, callback)) {
+                    this.temporaryHandler.remove(event, object, callback);
                 }
+                this.permanentHandler.add(event, object, callback);
+                this.emitter.on(event, callback, object);
             }
-            // Se quiere anadir como temporal...
             else {
-                // Si no existe como temporal...
-                exists = this.alreadyExists(event, owner, fn, this.ownersMap);
-                if (!exists) {
-                    // Se anade como temporal
-                    this.addAsTemporary(event, owner, fn);
+                if (!this.temporaryHandler.has(event, object, callback)) {
+                    this.temporaryHandler.add(event, object, callback);
+                    this.emitter.on(event, callback, object);
                 }
             }
         }
-
-        // Si no existe, se emite...
-        if (!exists) {
-            this.emitter.on(event, fn, owner);
-        }
-    }
-
-    /**
-    * Almacenar en los mapas un evento TEMPORAL
-    * @param {String} event - nombre del evento 
-    * @param {Object} owner - objeto que se suscribe al evento
-    * @param {Function} fn - funcion que se ejecuta al producirse el evento
-    */
-    addAsTemporary(event, owner, fn) {
-        if (!this.eventsMap.has(event)) {
-            // El evento no existe...
-            // Se crea el evento en el mapa de eventos
-            this.eventsMap.set(event, new Set());
-        }
-        let eventAux = this.eventsMap.get(event);
-        if (!eventAux.has(owner)) {
-            // El evento no tiene registrado a ese propietario...
-            // Se anade ese propietario al evento en el mapa de eventos
-            eventAux.add(owner);
-        }
-
-        // PROPIETARIOS
-        this.addToOwnersMap(event, owner, fn, this.ownersMap);
-    }
-
-    /**
-    * Almacenar en los mapas un evento permanente
-    * @param {String} event - nombre del evento 
-    * @param {Object} owner - objeto que se suscribe al evento
-    * @param {Function} fn - funcion que se ejecuta al producirse el evento
-    */
-    addAsPermanent(event, owner, fn) {
-        this.addToOwnersMap(event, owner, fn, this.ownersPermanentMap);
-    }
-
-    /**
-    * Almacenar un evento en el mapa de propietarios
-    * @param {String} event - nombre del evento 
-    * @param {Object} owner - objeto que se suscribe al evento
-    * @param {Function} fn - funcion que se ejecuta al producirse el evento
-    * @param {Map} ownersMap - mapa de propietarios en el que se va a guardar el evento
-    */
-    addToOwnersMap(event, owner, fn, ownersMap) {
-        if (!ownersMap.has(owner)) {
-            // El propietario no existe...
-            // Se crea el propietario en el mapa de propietarios correspondiente
-            ownersMap.set(owner, new Map());
-        }
-        let ownerAux = ownersMap.get(owner);
-        if (!ownerAux.has(event)) {
-            // El propietario no esta suscrito a ese evento...
-            // Se crea el evento para ese propietario en el mapa de propietarios correspondiente
-            ownerAux.set(event, new Set());
-        }
-        let ownerEventAux = ownerAux.get(event);
-        // Se anade la funcion de ese evento para ese propietario en el mapa de propietarios correspondiente
-        ownerEventAux.add(fn);
     }
 
     /**
     * Suscribir un objeto a un evento una sola vez
     * @param {String} event - nombre del evento
-    * @param {Object} owner - objeto que se suscribe al event (contexto)
-    * @param {Fn} fn - funcion que se ejecuta cuando se produce el evento
+    * @param {Object} object - objeto suscrito al evento
+    * @param {callback} callback - funcion que se ejecuta cuando se produce el evento
     */
-    addOnce(event, owner, fn) {
-        this.emitter.once(event, fn, owner);
+    addOnce(event, object, callback) {
+        this.emitter.once(event, callback, object);
     }
 
     /**
+    * Eliminar un evento temporal 
     * @param {String} event - nombre del evento 
-    * @param {String} owner - objeto suscrito al evento 
-    * @param {Function} fn - funcion que se ejecuta al producirse el evento
+    * @param {String} object - objeto suscrito al evento 
+    * @param {Function} callback - funcion que se ejecuta cuando se produce al evento
     */
-    deepRemove(event, owner, fn) {
-        // Si existe el propietario... 
-        if (this.ownersMap.has(owner)) {
-            let ownersAux = this.ownersMap.get(owner);
-            // Si existe el evento...
-            if (ownersAux.has(event)) {
-                let ownerEventAux = ownersAux.get(event);
-                // Si existe la funcion...
-                if (ownerEventAux.has(fn)) {
-                    // Se desuscribe la funcion del evento que corresponde a cierto propietario
-                    ownerEventAux.delete(fn);
-
-                    this.emitter.off(event, fn, owner);
-                }
-            }
-        }
+    remove(event, object, callback) {
+        this.temporaryHandler.remove(event, object, callback);
     }
 
     /**
-    * Desuscribir a todos los objetos de un evento temporal
+    * Eliminar a todos los objetos de un evento temporal
     * @param {String} event - nombre del evento
     */
     removeByEvent(event) {
-        // Si existe el evento...
-        if (this.eventsMap.has(event)) {
-            let owners = this.eventsMap.get(event);
-            // Se actualiza el mapa de propietarios
-            owners.forEach(owner => {
-                this.ownersMap.get(owner).delete(event);
-            });
-
-            // Se elimina el evento
-            this.emitter.off(event);
-
-            // Se actualiza el mapa de eventos
-            this.eventsMap.delete(event);
-        }
+        this.temporaryHandler.removeByEvent(event);
     }
 
     /**
-    * Desuscribir a un objeto de todos sus eventos temporales
-    * @param {Object} owner - objeto suscrito al evento
+    * Eliminar todos los eventos temporales de un objeto
+    * @param {Object} object - objeto suscrito al evento
     */
-    removeByOwner(owner) {
-        // Si existe el propietario...
-        if (this.ownersMap.has(owner)) {
-            // Se obtienen todos los eventos del propietario
-            let events = this.ownersMap.get(owner);
-            // Se recorre cada evento
-            events.forEach((functions, eventName) => {
-                // Se elimina el propietario de ese evento en el mapa de eventos
-                this.eventsMap.get(eventName).delete(owner);
-
-                // Se desuscribe el propietario de cada evento por cada funcion que tenga suscrita
-                // (no es lo habitual, pero podria darse el caso que un
-                // mismo propietario estuviera suscrito a un mismo evento con varias funciones)
-                functions.forEach(fn => {
-                    this.emitter.off(eventName, fn, owner);
-                });
-            });
-
-            // Se actualiza el mapa de propietarios
-            this.ownersMap.delete(owner);
-        }
+    removeByObject(object) {
+        this.temporaryHandler.removeByObject(object);
     }
 
     /**
-    * Desuscribir a un objeto de un evento concreto TEMPORAL
+    * Eliminar todas las funciones de un evento de un objeto
     * @param {String} event - nombre del evento
-    * @param {Object} owner - objeto suscrito al evento
+    * @param {Object} object - objeto suscrito al evento
     */
-    remove(event, owner) {
-        // Si existe el evento...
-        if (this.eventsMap.has(event)) {
-            // Si existe el propietario...
-            let eventAux = this.eventsMap.get(event);
-            if (eventAux.has(owner)) {
-                // Se actualiza el mapa de eventos
-                eventAux.delete(owner);
-
-                // Se desuscriben todas las funciones del propietarios que estan suscritas a ese evento
-                let ownerEventAux = this.ownersMap.get(owner).get(event);
-                ownerEventAux.forEach(fn => {
-                    this.emitter.off(event, fn, owner);
-                });
-
-                // Se actualiza el mapa de propietarios
-                this.ownersMap.get(owner).delete(event);
-            }
-        }
+    removeAllCallbacks(event, object) {
+        this.temporaryHandler.removeAllCallbacks(event, object);
     }
 
     /**
     * Eliminar todos los eventos temporales
-    * Nota: si no hay comunicacion entre escenas, es recomendable 
-    * llamarlo por cada cambio de escenas para mejorar el rendimiento
     */
     removeAll() {
-        this.emitter.shutdown();
-        this.eventsMap.clear();
-        this.ownersMap.clear();
-
-        // Se recorre el mapa permanente de propietarios...
-        this.ownersPermanentMap.forEach((events, owner) => {
-            // Se recorren los eventos de ese propietario...
-            events.forEach((functions, eventName) => {
-                // Se recorre cada una de las funciones de ese evento...
-                functions.forEach((fn) => {
-                    // SE VUELVE A SUSCRIBIR PORQUE SON PERMANENTES
-                    this.emitter.on(eventName, fn, owner);
-                });
-            });
-        });
+        this.temporaryHandler.removeAll();
     }
 
     /**
-    * Limpiar por completo el emisor.
-    * Se eliminan tanto los eventos temporales como permanentes
+    * Eliminar tanto eventos temporales como permanentes 
     */
-    clear() {
+    shutdown() {
         this.emitter.shutdown();
-        this.eventsMap.clear();
-        this.ownersMap.clear();
-        this.ownersPermanentMap.clear();
+        this.temporaryHandler.clear();
+        this.permanentHandler.clear();
     }
 }

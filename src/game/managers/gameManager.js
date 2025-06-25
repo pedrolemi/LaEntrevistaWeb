@@ -12,7 +12,7 @@ export default class GameManager extends Singleton {
 
         // Blackboard de variables de todo el juego
         this.blackboard = new Blackboard();
-        
+
         this.ui = null;
 
         this.nInteractedCharacters = 0;
@@ -26,20 +26,21 @@ export default class GameManager extends Singleton {
 
     startGame() {
         this.blackboard.clear();
-        
+
         if (this.ui == null) {
             this.ui = this.sceneManager.currentScene.scene.get("UI");
         }
         else {
+            this.dispatcher.shutdown();
             this.ui.shutdown();
             this.ui.scene.restart();
-        }       
+        }
 
-        this.startMainMenu();
+        // this.startMainMenu();
         // this.startHouseScene();
-        // this.startHallScene();
-        // this.startCafeteriaScene();
         // this.startCorridorScene();
+        this.startHallScene();
+        // this.startCafeteriaScene();
     }
 
     startMainMenu() {
@@ -54,13 +55,13 @@ export default class GameManager extends Singleton {
         this.sceneManager.changeScene("Hall", {
             fadeOutTime: 500,
             fadeInTime: 500,
-        }, true);
+        }, true, false);
     }
 
     startCorridorScene() {
         this.sceneManager.changeScene("Corridor", null, true, true);
     }
-    
+
     startCafeteriaScene() {
         this.sceneManager.changeScene("Cafeteria", null, true, true);
     }

@@ -59,7 +59,7 @@ export default class LaEntrevistaBaseScene extends BaseScene {
 
                 // Se elimina el personaje
                 this.interactableObjects.delete(character);
-                character.clearEvents();
+                character.removeEvents();
                 character.destroy();
 
                 ++nCharactersExited;

@@ -106,7 +106,7 @@ export default class House extends LaEntrevistaBaseScene {
         this.dispatcher.add("askConfirmation", this, () => {
             this.node = this.dialogManager.readNodes(this, this.nodes, this.namespace, "askConfirmation");
             this.dispatcher.add(DefaultEventNames.clearNodes, this, () => {
-                this.dispatcher.remove(DefaultEventNames.clearNodes, this);
+                this.dispatcher.removeAllCallbacks(DefaultEventNames.clearNodes, this);
                 this.dialogManager.setNode(this.node);
             });
         });

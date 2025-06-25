@@ -32,7 +32,7 @@ export default class DialogNode {
     nextNode() {
         // Se dejan de escuchar los eventos para que no afecten a los nodos siguientes 
         // (ya que los nodos no se eliminan hasta que se elimine la escena en la que estan)
-        this.dispatcher.removeByOwner(this);
+        this.dispatcher.removeByObject(this);
 
         if (this.next.length > this.nextIndex && this.next[this.nextIndex] != null) {
             // console.log(this.next[this.nextIndex]);

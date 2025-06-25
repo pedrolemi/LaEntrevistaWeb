@@ -161,7 +161,7 @@ export default class Character extends Phaser.GameObjects.Sprite {
         }
     }
 
-    clearEvents() {
-        this.scene.dispatcher.removeByOwner(this);
+    removeEvents() {
+        this.scene.dispatcher.removeByObject(this);
     }
 }

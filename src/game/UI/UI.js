@@ -42,21 +42,22 @@ export default class UI extends BaseUI {
         }
         this.optionBoxConfig = {
             boxSpacing: 10,
-            textHorizontalPadding: 10,
+            textHorizontalPadding: 70,
             textVerticalPadding: 10,
         }
         this.optionsTextConfig = { ... this.textConfig };
         this.optionsTextConfig.fontSize = 35;
+        this.optionsTextConfig.align = "center";
+        this.optionsTextConfig.wordWrap = {
+            width: 1,
+            useAdvancedWrap: true
+        }
 
         this.QUESTION_TEXT_DEFAULT_SIZE = 50;
         let QUESTION_TEXT_MARGIN = 10;
-        this.optionsQuestionTextConfig = { ...this.textConfig };
+        this.optionsQuestionTextConfig = { ...this.optionsTextConfig };
         this.optionsQuestionTextConfig.fontSize = this.QUESTION_TEXT_DEFAULT_SIZE;
-        this.optionsQuestionTextConfig.align = "center";
-        this.optionsQuestionTextConfig.wordWrap = {
-            width: this.CANVAS_WIDTH - QUESTION_TEXT_MARGIN * 2,
-            useAdvancedWrap: true
-        }
+        this.optionsQuestionTextConfig.wordWrap.width = this.CANVAS_WIDTH - QUESTION_TEXT_MARGIN * 2;
         this.optionsQuestionTextConfig.stroke = "#000";
         this.optionsQuestionTextConfig.strokeThickness = 7;
     }

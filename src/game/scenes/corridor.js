@@ -80,7 +80,7 @@ export default class Corridor extends LaEntrevistaBaseScene {
 
         setTimeout(() => {
             this.dialogManager.setNode(locationNode);
-
+            
             let cafeteria = this.add.rectangle(0, 0, 160, this.CANVAS_HEIGHT, 0x000, 0).setOrigin(0, 0);
             this.setInteractive(cafeteria);
             cafeteria.on("pointerdown", () => {
@@ -90,8 +90,7 @@ export default class Corridor extends LaEntrevistaBaseScene {
             let waitingRoom = this.add.rectangle(955, 475, 240, 370, 0x000, 0);
             this.setInteractive(waitingRoom);
             waitingRoom.on("pointerdown", () => {
-                // TODO
-                // this.gameManager.startWaitingRoomScene();
+                this.gameManager.startWaitingRoomScene();
             });
         }, 200);
     }

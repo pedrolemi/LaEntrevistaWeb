@@ -35,6 +35,17 @@ export default class ConditionNode extends DialogNode {
                 {...}
             ]
         }
+    * 
+    *
+    * Los posibles valores de operator son:
+    *   equal       -> operador ===
+    *   different   -> operador !==
+    *   greater     -> operador >=
+    *   lower       -> operador <=
+    * 
+    * IMPORTANTE: Los operadores === y !== comprueban tanto el valor de la 
+    * variable como su tipo, de manera que 1 y "1" o 1 y true no seran iguales
+    * 
     */
 
     static TYPE = "condition";

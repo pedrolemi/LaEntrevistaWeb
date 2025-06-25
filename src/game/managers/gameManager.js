@@ -36,13 +36,14 @@ export default class GameManager extends Singleton {
             this.ui.scene.restart();
         }
 
-        this.blackboard.set("position", "programming");
+        // this.blackboard.set("position", "dataScience");
 
         // this.startMainMenu();
         // this.startHouseScene();
-        // this.startHallScene();
+        this.startHallScene();
         // this.startCorridorScene();
-        this.startCafeteriaScene();
+        // this.startCafeteriaScene();
+        // this.startOfficeScene();
     }
 
     startMainMenu() {
@@ -68,7 +69,21 @@ export default class GameManager extends Singleton {
         this.sceneManager.changeScene("Cafeteria", null, true, true);
     }
 
-    
+    startWaitingRoomScene() {
+        // TEST
+        // this.sceneManager.changeScene("Corridor", null, true, true);
+        this.sceneManager.changeScene("Office", null, true, true);
+    }
+
+    startOfficeScene() {
+        this.sceneManager.changeScene("Office", null, true, true);
+    }
+
+    startMirrorScene() {
+        // TEST
+        this.sceneManager.changeScene("Cafeteria", null, true, true);
+    }
+
     /**
     * Incrementar el numero de personajes con los que se ha hablado
     */

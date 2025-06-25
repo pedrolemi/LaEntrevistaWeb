@@ -92,11 +92,11 @@
                 "text": "Para viajar, pero por las tardes no puedo trabajar."
             }
         ],
-        "noOffers": {
-            "text": "Vaya, parece que no encuentra ninguna oferta. Voy a revisar la información, a lo mejor he hecho algo mal..."
-        },
         "findOffers": {
             "text": "Parece que hay dos ofertas. Una es para desarrollar software y la otra como analista de datos. ¿A cuál me presento?"
+        },
+        "noOffers": {
+            "text": "Vaya, parece que no encuentra ninguna oferta. Voy a revisar la información, a lo mejor he hecho algo mal..."
         }
     },
     "selectOffer": {

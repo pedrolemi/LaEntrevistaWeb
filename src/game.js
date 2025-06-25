@@ -4,8 +4,9 @@ import UI from "./game/UI/UI.js";
 import MainMenu from "./game/scenes/mainMenu.js";
 import House from "./game/scenes/house.js";
 import Hall from "./game/scenes/hall.js"
-import Cafeteria from "./game/scenes/cafeteria.js";
 import Corridor from "./game/scenes/corridor.js";
+import Cafeteria from "./game/scenes/cafeteria.js";
+import Office from "./game/scenes/office.js";
 
 const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
 const CONFIG = {
@@ -20,12 +21,12 @@ const CONFIG = {
         // Carga de assets
         BootScene,
 
-        // Test,
         MainMenu,
         House,
         Hall,
         Cafeteria,
         Corridor,
+        Office,
 
         UI,
     ],

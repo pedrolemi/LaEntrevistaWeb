@@ -178,18 +178,32 @@
             "type": "condition", 
             "conditions": [
                 {
-                    "next": "noOffers",
+                    "next": "offersFound",
                     "errors": {
-                        "value": 3,
-                        "operator": "greater",
+                        "value": 2,
+                        "operator": "lower",
                         "global": false,
                         "default": 0
                     }
                 },
                 {
-                    "next": "offersFound"
+                    "next": "noOffers"
                 }
             ]
+        },
+
+        "offersFound": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "offersFound"
+                }
+            ],
+            "next": "findOffers"
+        },
+        "findOffers": {
+            "type": "text",
+            "character": "player"
         },
 
         "noOffers": {
@@ -208,20 +222,6 @@
                 }
             ],
             "next": "restartPoint"
-        },
-
-        "offersFound": {
-            "type": "event",
-            "events": [
-                {
-                    "name": "offersFound"
-                }
-            ],
-            "next": "findOffers"
-        },
-        "findOffers": {
-            "type": "text",
-            "character": "player"
         }
     },
 

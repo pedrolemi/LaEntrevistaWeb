@@ -52,6 +52,8 @@ export default class OptionBox extends InteractiveContainer {
             pointerOverColor: "#d9d9d9"
         }
 
+        // TODO: Meter soporte para agrandar la caja si el texto no caba (y/o para usar nineslice)
+
         // Completar los parametros faltantes de los argumentos
         this.boxConfig = completeMissingProperties(boxConfig, DEFAULT_BOX_CONFIG);
         this.textConfig = completeMissingProperties(textConfig, DEFAULT_TEXT_CONFIG);
@@ -60,11 +62,16 @@ export default class OptionBox extends InteractiveContainer {
         this.box = scene.add.image(this.boxConfig.imgX, 0, this.boxConfig.img)
             .setOrigin(this.boxConfig.imgOriginX, this.boxConfig.imgOriginY).setScale(this.boxConfig.scaleX, this.boxConfig.scaleY).setAlpha(this.boxConfig.imgAlpha);
 
+
         if (boxConfig.realWidth == null) {
             this.boxConfig.realWidth = this.box.displayWidth - this.boxConfig.textHorizontalPadding * 2;
         }
         if (boxConfig.realHeight == null) {
             this.boxConfig.realHeight = this.box.displayHeight - this.boxConfig.textVerticalPadding * 2;
+        }
+
+        if (textConfig.wordWrap != null) {
+            this.textConfig.wordWrap.width = this.boxConfig.realWidth;
         }
 
         // Calcular la posicion de la caja dependiendo del numero total de cajas y su alineacion vertical total
@@ -96,6 +103,15 @@ export default class OptionBox extends InteractiveContainer {
         // Anadir los elementos al container
         this.add(this.box);
         this.add(this.textObj);
+
+        if (debug) {
+            let textDebug = scene.add.rectangle(textX, textY, this.boxConfig.realWidth, this.boxConfig.realHeight, 0xfff, 0.5)
+                .setOrigin(this.boxConfig.textOriginX, this.boxConfig.textOriginY).setScale(this.boxConfig.scaleX, this.boxConfig.scaleY);
+
+            this.add(textDebug);
+            this.bringToTop(this.textObj);
+        }
+
 
         this.calculateRectangleSize(debug, "dialogBox");
         this.addAnimations(onClick);

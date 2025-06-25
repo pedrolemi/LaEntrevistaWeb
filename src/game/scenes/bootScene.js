@@ -20,11 +20,12 @@ export default class BootScene extends BaseBootScene {
         }
 
         let dialogNamespaces = [
-            getSceneDialogPath("house"),
             getSceneDialogPath("test"),
-            getSceneDialogPath("cafeteria"),
+            getSceneDialogPath("house"),
+            getSceneDialogPath("hall"),
             getSceneDialogPath("corridor"),
-            getSceneDialogPath("hall")
+            getSceneDialogPath("cafeteria"),
+            getSceneDialogPath("office"),
         ];
         let namespaces = [
             "names",
@@ -107,7 +108,7 @@ export default class BootScene extends BaseBootScene {
         this.load.image("waitingRoom", "waitingRoomTextless.png");
 
         this.load.image("office", "office.png");
-        this.load.image("officeTable", "officeTable.png");
+        this.load.image("desk", "desk.png");
 
         this.load.image("30min", "30min.png");
 

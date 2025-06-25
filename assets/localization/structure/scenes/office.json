@@ -1,0 +1,566 @@
+{
+    "root": {
+        "type": "text",
+        "character": "Andres",
+        "next": "choices"
+    },
+    "choices": {
+        "type": "choice",
+        "choices":[
+            { "next": "good" },
+            { "next": "notSoGood" }
+        ]
+    },
+
+    "good": {
+        "type": "text",
+        "character": "Andres",
+        "next": "introduction"
+    },
+
+    "notSoGood": {
+        "type": "text",
+        "character": "Andres",
+        "next": "comment"
+    },
+    "comment": {
+        "type": "text",
+        "character": "player",
+        "next": "sure"
+    },
+    "sure": {
+        "type": "text",
+        "character": "Andres",
+        "next": "introduction"
+    },
+
+    "introduction": {
+        "type": "text",
+        "character": "Andres",
+        "next": "startQuestion"
+    },
+    "startQuestion": {
+        "type": "text",
+        "character": "Luisa",
+        "next": "interruption"
+    },
+    "interruption": {
+        "type": "text",
+        "character": "Andres",
+        "next": "mock"
+    },
+    "mock": {
+        "type": "text",
+        "character": "Luisa",
+        "next": "distracted"
+    },
+    "distracted": {
+        "type": "text",
+        "character": "Andres",
+        "next": "gaslight"
+    },
+    "gaslight": {
+        "type": "text",
+        "character": "Luisa",
+        "next": "gaslighted"
+    },
+    "gaslighted": {
+        "type": "text",
+        "character": "Andres",
+        "next": "repeat"
+    },
+    "repeat": {
+        "type": "text",
+        "character": "Luisa",
+        "next": "start"
+    },
+    "start": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer1"
+    },
+
+    "answer1": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV" },
+            { "next": "wrongAnswer1" },
+            { "next": "question2" },
+            { "next": "wrongAnswer1" }
+        ]
+    },
+    "checkCV": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer1"
+    },
+    "wrongAnswer1": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question2"
+    },
+    
+    "question2": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer2"
+    },
+    "answer2": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV2" },
+            { "next": "wrongAnswer2" },
+            { "next": "question3" },
+            { "next": "wrongAnswer2" }
+        ]
+    },
+    "checkCV2": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer2"
+    },
+    "wrongAnswer2": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question3"
+    },
+    
+    "question3": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer3"
+    },
+    "answer3": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV3" },
+            { "next": "wrongAnswer3" },
+            { "next": "wrongAnswer3" },
+            { "next": "question4" }
+        ]
+    },
+    "checkCV3": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer3"
+    },
+    "wrongAnswer3": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question4"
+    },
+    
+    "question4": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer4"
+    },
+    "answer4": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV4" },
+            { "next": "wrongAnswer4" },
+            { "next": "question5" },
+            { "next": "wrongAnswer4" }
+        ]
+    },
+    "checkCV4": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer4"
+    },
+    "wrongAnswer4": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question5"
+    },
+    
+    "question5": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer5"
+    },
+    "answer5": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV5" },
+            { "next": "wrongAnswer5" },
+            { "next": "wrongAnswer5" },
+            { "next": "question6" }
+        ]
+    },
+    "checkCV5": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer5"
+    },
+    "wrongAnswer5": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question6"
+    },
+    
+    "question6": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer6"
+    },
+    "answer6": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV6" },
+            { "next": "avoid6" },
+            { "next": "partnerCommentary" },
+            { "next": "wrongAnswer6" },
+            { "next": "wrongAnswer6" }
+        ]
+    },
+    "checkCV6": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer6"
+    },
+    "wrongAnswer6": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question7"
+    },
+    "avoid6": {
+        "type": "text",
+        "character": "player",
+        "next": "answer6"
+    },
+    "partnerCommentary": {
+        "type": "text",
+        "character": "Andres",
+        "next": "question7"
+    },
+    
+    "question7": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer7"
+    },
+    "answer7": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV7" },
+            { "next": "question8" },
+            { "next": "wrongAnswer7" }
+        ]
+    },
+    "checkCV7": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer7"
+    },
+    "wrongAnswer7": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question8"
+    },
+
+    "question8": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer8"
+    },
+    "answer8": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV8" },
+            { "next": "wrongAnswer8" },
+            { "next": "question9" },
+            { "next": "wrongAnswer8" }
+        ]
+    },
+    "checkCV8": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer8"
+    },
+    "wrongAnswer8": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question9"
+    },
+
+    "question9": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer9"
+    },
+    "answer9": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV9" },
+            { "next": "avoid9" },
+            { "next": "wrongAnswer9" },
+            { "next": "question10" }
+        ]
+    },
+    "checkCV9": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer9"
+    },
+    "wrongAnswer9": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question10"
+    },
+    "avoid9": {
+        "type": "text",
+        "character": "player",
+        "next": "answer9"
+    },
+
+    "question10": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer10"
+    },
+    "answer10": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV10" },
+            { "next": "question11" },
+            { "next": "avoid10" },
+            { "next": "wrongAnswer10" }
+        ]
+    },
+    "checkCV10": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer10"
+    },
+    "wrongAnswer10": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "question11"
+    },
+    "avoid10": {
+        "type": "text",
+        "character": "player",
+        "next": "answer10"
+    },
+
+    "question11": {
+        "type": "text",
+        "character": "Andres",
+        "next": "answer11"
+    },
+    "answer11": {
+        "type": "choice",
+        "choices":[
+            { "next": "checkCV11" },
+            { "next": "avoid11" },
+            { "next": "wrongAnswer11" },
+            { "next": "endInterview" }
+        ]
+    },
+    "checkCV11": {
+        "type": "event",
+        "events": [
+            {
+                "name": "checkCV"
+            }
+        ],
+        "next": "answer11"
+    },
+    "wrongAnswer11": {
+        "type": "event",
+        "events": [
+            {
+                "name": "wrongAnswer"
+            }
+        ],
+        "next": "endInterview"
+    },
+    "avoid11": {
+        "type": "text",
+        "character": "player",
+        "next": "answer11"
+    },
+
+    "endInterview": {
+        "type": "text",
+        "character": "Andres",
+        "next": "checkErrors"
+    },
+
+    "checkErrors": {
+        "type": "condition", 
+        "conditions": [
+            {
+                "next": "hired",
+                "errors": {
+                    "value": 2,
+                    "operator": "lower",
+                    "global": false,
+                    "default": 0
+                }
+            },
+            {
+                "next": "doubt",
+                "errors": {
+                    "value": 7,
+                    "operator": "lower",
+                    "global": false,
+                    "default": 0
+                }
+            },
+            {
+                "next": "notHired"
+            }
+        ]
+    },
+
+    "hired": {
+        "type": "text",
+        "character": "Andres",
+        "next": "thanks"
+    },
+    "doubt": {
+        "type": "text",
+        "character": "Andres",
+        "next": "thanks"
+    },
+    "notHired": {
+        "type": "text",
+        "character": "Andres",
+        "next": "thanks"
+    },
+
+    "thanks": {
+        "type": "text",
+        "character": "Andres",
+        "next": "checkErrors2"
+    },
+
+    "checkErrors2": {
+        "type": "condition", 
+        "conditions": [
+            {
+                "next": "contact",
+                "errors": {
+                    "value": 7,
+                    "operator": "lower",
+                    "global": false,
+                    "default": 0
+                }
+            },
+            {
+                "next": "end"
+            }
+        ]
+    },
+
+    "contact": {
+        "type": "text",
+        "character": "Andres",
+        "next": "exit"
+    },
+    "exit": {
+        "type": "event",
+        "events": [
+            {
+                "name": "exit"
+            }
+        ],
+        "next": "return"
+    },
+    "return":{
+        "type": "text",
+        "character": "player",
+        "next": "end"
+    },
+    "end": {
+        "type": "event",
+        "events": [
+            {
+                "name": "end"
+            }
+        ]
+    }
+}

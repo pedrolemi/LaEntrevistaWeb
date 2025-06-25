@@ -7,7 +7,6 @@ export default class DialogManager extends Singleton {
     constructor() {
         super("DialogManager");
 
-        this.characters = new Map();
         this.currNode = null;
         this.nodeReader = new NodeReader();
         this.dispatcher = EventDispatcher.getInstance();

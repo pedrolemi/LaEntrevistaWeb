@@ -6,6 +6,7 @@ import House from "./game/scenes/house.js";
 import Hall from "./game/scenes/hall.js"
 import Corridor from "./game/scenes/corridor.js";
 import Cafeteria from "./game/scenes/cafeteria.js";
+import WaitingRoom from "./game/scenes/waitingRoom.js";
 import Office from "./game/scenes/office.js";
 
 const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
@@ -26,6 +27,7 @@ const CONFIG = {
         Hall,
         Cafeteria,
         Corridor,
+        WaitingRoom,
         Office,
 
         UI,

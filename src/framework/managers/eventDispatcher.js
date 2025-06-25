@@ -220,7 +220,7 @@ export default class EventDispatcher extends Singleton {
     * @param {String} event - nombre del evento
     * @param {Object} params - parametros del evento (opcional)
     */
-    dispatch(event, params) {
+    dispatch(event, params = {}) {
         this.emitter.emit(event, params);
     }
 

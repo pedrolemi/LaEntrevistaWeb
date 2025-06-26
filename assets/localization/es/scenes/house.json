@@ -102,10 +102,8 @@
     "selectOffer": {
         "root": {
             "text": "<position | programming: Creo que la idea de desarrollar software me gusta más. | dataScience: Creo que encajo mejor en el perfil de analista de datos.>"
-        }
-    },
-    "askConfirmation": {
-        "root": [
+        },
+        "askConfirmation": [
             {
                 "text": "(Presentar candidatura)."
             },

@@ -44,7 +44,8 @@ export default class GameManager extends Singleton {
         // this.startCorridorScene();
         // this.startCafeteriaScene();
         // this.startOfficeScene();
-        this.startWaitingRoomScene();
+        // this.startWaitingRoomScene();
+        this.startMirrorScene();
     }
 
     startMainMenu() {
@@ -56,10 +57,7 @@ export default class GameManager extends Singleton {
     }
 
     startHallScene() {
-        this.sceneManager.changeScene("Hall", {
-            fadeOutTime: 500,
-            fadeInTime: 500,
-        }, true, false);
+        this.sceneManager.changeScene("Hall", null, true);
     }
 
     startCorridorScene() {
@@ -71,8 +69,6 @@ export default class GameManager extends Singleton {
     }
 
     startWaitingRoomScene() {
-        // TEST
-        // this.sceneManager.changeScene("Corridor", null, true, true);
         this.sceneManager.changeScene("WaitingRoom", null, true, true);
     }
 
@@ -81,8 +77,11 @@ export default class GameManager extends Singleton {
     }
 
     startMirrorScene() {
-        // TEST
-        this.sceneManager.changeScene("Cafeteria", null, true, true);
+        this.sceneManager.changeScene("Mirror", null, true, false);
+    }
+
+    startQuestionScene(number) {
+        this.sceneManager.changeScene("Question" + number, null, true, true);
     }
 
     /**
@@ -93,7 +92,7 @@ export default class GameManager extends Singleton {
     }
 
     /**
-    * Comprobar si se ha interactuado con todos los personajes necesarios 
+    * Comprobar si se ha interactuado con todos los personajes necesarios
     * @returns {Boolean} - true si alcanza el minimo requerido o false en caso contrario
     */
     hasMetInteractionRequirement() {

@@ -232,17 +232,6 @@
             "next": "askConfirmation"
         },
         "askConfirmation": {
-            "type": "event",
-            "events": [
-                {
-                    "name": "askConfirmation"
-                }
-            ]
-        }
-    },
-
-    "askConfirmation": {
-        "root": {
             "type": "choice",
             "choices":[
                 { "next": "confirm" },

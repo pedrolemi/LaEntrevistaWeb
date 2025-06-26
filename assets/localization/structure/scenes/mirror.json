@@ -1,0 +1,63 @@
+{
+    "start": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "choices"
+        },
+        "choices": {
+            "type": "choice",
+            "choices":[
+                { "next": "good" },
+                { "next": "mid" },
+                { "next": "bad" }
+            ]
+        },
+
+        "good": {
+            "type": "text",
+            "character": "player",
+            "next": "recap"
+        },
+        "mid": {
+            "type": "text",
+            "character": "player",
+            "next": "recap"
+        },
+        "bad": {
+            "type": "text",
+            "character": "player",
+            "next": "recap"
+        },
+
+        "recap": {
+            "type": "text",
+            "character": "player",
+            "next": "showQuestions"
+        },
+        "showQuestions": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "showQuestions"
+                }
+            ]
+        }
+    },
+
+    "end": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "end"
+        },
+        "end": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "end"
+                }
+            ]
+        }
+    }
+}

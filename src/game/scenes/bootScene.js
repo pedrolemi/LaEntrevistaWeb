@@ -26,6 +26,8 @@ export default class BootScene extends BaseBootScene {
             getSceneDialogPath("corridor"),
             getSceneDialogPath("cafeteria"),
             getSceneDialogPath("office"),
+            getSceneDialogPath("mirror"),
+            getSceneDialogPath("questions"),
         ];
         let namespaces = [
             "names",
@@ -150,5 +152,9 @@ export default class BootScene extends BaseBootScene {
         this.load.image("optionBox", "optionBox.png");
 
         this.load.image("cvSheet", "cvSheet.png");
+
+        this.load.image("questionButton", "questionButton.png");
+        this.load.image("questionArrow", "questionArrow.png");
+
     }
 }

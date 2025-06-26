@@ -1,0 +1,338 @@
+{
+    "question1": {
+        "root": {
+            "text": "Vengo a una entrevista de trabajo."
+        },
+        "info": {
+            "text": "Las entrevistas para la vacante de auxiliar administrativo se están haciendo en la cuarta planta. Puedes coger el ascensor que hay al fondo."
+        },
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que el recepcionista asuma que te presentas para el puesto de secretaria."
+            },
+            {
+                "text": "Que nadie te acompañe al lugar donde se van a hacer las entrevistas."
+            },
+            {
+                "text": "Que haya entrevistas para tantos puestos de trabajo al mismo tiempo."
+            }
+        ],
+
+        "wrong": {
+            "text": "No... creo que me chirría más que me confundiese con una secretaria."
+        },
+        "right": [
+            {
+                "text": "¡Auxiliar administrativo, dice!"
+            },
+            {
+                "text": "Tantos años estudiando <position | programming: Informática | dataScience: Matemáticas>, y no se ha planteado que pueda dedicarme a un puesto técnico."
+            },
+            {
+                "text": "Ni siquiera me ha preguntado a qué oferta me presentaba. ¿Qué pasa, que las mujeres no podemos entender de ciencias?"
+            }
+        ]
+    },
+
+    "question2": {
+        "root":[
+            {
+                "text": "¿Qué problema va a haber? Es solo que cada vez tengo más claro que no me van a dar el puesto. "
+            },
+            {
+                "text": "Mucha igualdad, pero luego todo es que si machismo, que si discriminación positiva,  que si tasas, que si ayudas a extranjeros, a minusválidos..."
+            },
+            {
+                "text": "¿Y los que hemos estudiado pero somos normales? A la calle todos. Quedaros con el puesto. Paso de esperar."
+            }
+        ],
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que el candidato piense que te van a contratar para mejorar la imagen de la empresa."
+            },
+            {
+                "text": "Que el candidato tenga tan poca confianza en sí mismo."
+            },
+            {
+                "text": "Que el candidato se vaya antes de hacer la entrevista."
+            }
+        ],
+
+        "wrong": {
+            "text": "No, ahora que lo pienso, lo raro es que pensase que me iban a contratar para mejorar la imagen de la empresa."
+        },
+        "right": {
+            "text": "Lo dice como si las cuotas fueran un sinónimo de \"contratamos a cualquier mujer que pase por la puerta\". No se da cuenta de que si estoy aquí es porque cumplo con los requisitos, como él?"
+        }
+    },
+
+    "question3": {
+        "root": [
+            {
+                "text": "Así no paso tanto tiempo en casa, y mi chica no tiene tanto tiempo para echarme la bronca. No valgo para las tareas del hogar, a ella se le da mucho mejor."
+            },
+            {
+                "text": "Que yo intento ayudar, pero no sirvo para esto. Seguro que en tu casa pasa lo mismo."
+            }
+        ],
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que el candidato delegue su responsabilidad en la casa en su mujer."
+            },
+            {
+                "text": "Que el candidato disfrute yendo a entrevistas de trabajo."
+            },
+            {
+                "text": "Que el candidato te cuente su vida sin conocerte de nada."
+            }
+        ],
+
+        "wrong": {
+            "text": "Bueno, eso y que el candidato delegue su responsabilidad en la casa en su mujer."
+        },
+        "right": [
+            {
+                "text": "Que \"ayuda\" a su novia, dice. ¿A qué? ¿A planchar sus camisas? ¿A cocinar su comida? ¿A lavar su ropa?"
+            },
+            {
+                "text": "¡Pero si esas son sus responsabilidades también! No está ayudando, está cumpliendo con sus deberes. ¿No se da cuenta de que su novia no está ahí para cuidarle?"
+            }
+        ]
+    },
+
+    "question4": {
+        "root": {
+            "text": "Se ha llenado esto de gente con la oferta de <position | programming: programador | dataScience: analista>."
+        },
+        "line2": {
+            "text": "Y ni una tía."
+        },
+        "line3": {
+            "text": "Normal. ¿Cuántas conoces que sepan <position | programming: programar | dataScience: matemáticas>? Además, mejor así, que luego te distraes."
+        },
+        "line8": {
+            "text": "Anda, volvamos a trabajar."
+        },
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que piensen que no hay mujeres que sepan <position | programming: programar | dataScience: matemáticas>."
+            },
+            {
+                "text": "Que haya tantos candidatos para el mismo puesto de trabajo."
+            },
+            {
+                "text": "Que su descanso dure tan poco tiempo."
+            }
+        ],
+
+        "wrong": {
+            "text": "Lo realmente indignante es que piensen que no hay mujeres que sepan <position | programming: programar | dataScience: matemáticas>."
+        },
+        "right": [
+            {
+                "text": "¿Cómo se pueden decir tantas cosas mal en tan poco tiempo? ¿Que no hay mujeres preparadas? Somos muchísimas, aunque no se nos dan las oportunidades que merecemos. ¿Que se distraen con nosotras? ¿Es que solo somos un entretenimiento para nuestros compañeros?"
+            },
+            {
+                "text": "Nuestro papel en las empresas es el de trabajar, no el de agradar o distraer a los hombres."
+            }
+        ]
+    },
+
+    "question5": {
+        "root": {
+            "text": "<position | programming: Tengo algunos problemas para encontrar todos los números primos en una lista. | dataScience: Tengo algunos problemas para calcular estas probabilidades.>"
+        },
+        "line2": {
+            "text": "<position | programming: ¿Conoces la criba de Eratóstenes? | dataScience: ¿Sabes hacer una aproximación normal?>"
+        },
+        "line3": {
+            "text": "Eso le estaba comentando, pero parece que no es la solución que  buscaba."
+        },
+        "line6": {
+            "text": "Voy a probar tu solución, Carlos."
+        },
+        "line7": {
+            "text": "Si Rebeca te da una solución, seguramente sea mejor que la mía. Sabe más que ninguno de nosotros."
+        },
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que la solución de Rebeca solo se tenga en cuenta cuando la comenta su compañero."
+            },
+            {
+                "text": "Que la mujer no conozca esa solución."
+            },
+            {
+                "text": "Que Rebeca lleve tanto tiempo trabajando en la empresa."
+            }
+        ],
+
+        "wrong": {
+                "text": "Aunque ahora que lo pienso, es casi peor que la solución de Rebeca solo se tenga en cuenta cuando la comenta Carlos."
+            },
+            "right": [
+                {
+                    "text": "¡Ay, Rebeca! ¡Cuántas veces he estado en tu situación! La de veces que he dado consejos, he enseñado soluciones o he propuesto ideas... ¡Pero si no me respalda un hombre, parece que no valen!"
+                },
+                {
+                    "text": "Y da igual la experiencia que tengas o lo mucho que sepas. En fin, ya llegará el momento en el que entendamos que las respuestas de una mujer son tan válidas como las de un hombre."
+                }
+            ]
+    },
+
+    "question6": {
+        "root": [
+            {
+                "text": "Antes de continuar, me gustaría presentarnos. Yo soy Andrés y esta es Luisa. Somos los encargados de las entrevistas de hoy."
+            },
+            {
+                "text": "Luisa, ¿te importaría ser tú quien tome las notas? Me encanta tu forma de escribir, tomas notas de forma mucho más organizada. Ya hago yo las preguntas."
+            }
+        ],
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que el rol de ella sea el de tomar notas y él se encargue de hacer la entrevista."
+            },
+            {
+                "text": "Que haya dos entrevistadores y no solo uno"
+            },
+            {
+                "text": "Que necesiten tomar notas de la entrevista si ya tienen tu CV"
+            }
+        ],
+
+        "wrong": {
+                "text": "Ahora me pregunto... ¿Por qué el rol de ella es el de tomar notas?"
+            },
+        "right": [
+            {
+                "text": "¿\"Los encargados\" de la entrevista? Pero si solo me ha preguntado él. Ella parecía más una secretaria que una trabajadora de Recursos Humanos."
+            },
+            {
+                "text": "Me pregunto por qué no aprende caligrafía en lugar de mandar a su compañera a tomar notas. ¿No se da cuenta de que los dos tienen el mismo puesto, y de que deberían trabajar igual?"
+            }
+        ]
+    },
+
+    "question7": {
+        "root": {
+            "text": "Vamos a pasar a otro tipo de preguntas. ¿Dónde te ves de aquí a cinco años? Y al hilo de esta pregunta, ¿tienes pareja?"
+        },
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que te pidan información personal en una entrevista de trabajo."
+            },
+            {
+                "text": "Que te pregunten por el futuro en una entrevista de trabajo."
+            },
+            {
+                "text": "Que no quieran saber el género de tu pareja"
+            }
+        ],
+
+        "wrong": {
+                "text": "En realidad, eso de pedirme información personal en una entrevista... No lo veo del todo bien."
+            },
+        "right": [
+            {
+                "text": "¿Que si tengo pareja? ¿Qué es esto, una entrevista de trabajo o una app de citas?"
+            },
+            {
+                "text": "No entiendo por qué tengo que dar información personal en una entrevista. ¿Es que piensan que voy a trabajar peor por tener familia?"
+            }
+        ]
+    },
+
+    "question8": {
+        "root": [
+            {
+                "text": "Déjame decirte que tienes una voz muy agradable, pero demasiado suave. Me da miedo que no sepas hacerte valer ante tus compañeros."
+            },
+            {
+                "text": "Pero también creo que puedes aportar humanidad y calidez al equipo. Por cierto, ¿no serás de las que se derrumban bajo presión?"
+            }
+        ],
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que tengan en cuenta lo agradable que eres para un puesto técnico."
+            },
+            {
+                "text": "Que tengas que hablar con tus compañeros en las horas de trabajo."
+            },
+            {
+                "text": "Que el equipo necesite alguien aportando humanidad para trabajar correctamente."
+            }
+        ],
+
+        "wrong": {
+                "text": "No, me he equivocado. Lo raro es que tengan en cuenta que soy \"agradable\", si me estoy presentando a un puesto técnico."
+            },
+        "right": [
+            {
+                "text": "¿Que si me derrumbo bajo presión? ¿Que tengo una voz \"suave\"? Calidez no sé si tengo, pero desde luego que me estoy calentando..."
+            },
+            {
+                "text": "¿Les dirán estas cosas al resto de candidatos, o solo a mí y a mis compañeras?"
+            }
+        ]
+    },
+
+    "question9": {
+        "root": {
+            "text": "¡Ah! Casi lo olvido. ¿Tienes algún familiar a tu cargo o tienes pensado tener hijos en los próximos años? Ya sabes que a veces es difícil compatibilizar todo."
+        },
+
+        "question": {
+            "text": "¿Qué te parece raro en esta escena?"
+        },
+        "answer": [
+            {
+                "text": "Que asuman que serás la encargada de cuidar a tus familiares y personas mayores."
+            },
+            {
+                "text": "Que casi se le olvide preguntar sobre este tema."
+            },
+            {
+                "text": "Que te pregunten por la compatibilización al final de la entrevista."
+            }
+        ],
+
+        "wrong": {
+            "text": "¿Y qué me dices de que asuman que seré la encargada de cuidar a los niños o personas mayores?"
+        },
+        "right": {
+            "text": "Tener hijos, cuidar de mayores... ¿Qué le importa a esta gente si lo hago o no? Y más importante, ¿quién dice que lo haría yo y no mi pareja?"
+        }
+    }
+}

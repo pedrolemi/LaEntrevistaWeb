@@ -8,6 +8,7 @@ import Corridor from "./game/scenes/corridor.js";
 import Cafeteria from "./game/scenes/cafeteria.js";
 import WaitingRoom from "./game/scenes/waitingRoom.js";
 import Office from "./game/scenes/office.js";
+import Mirror from "./game/scenes/mirror.js";
 
 const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
 const CONFIG = {
@@ -29,7 +30,8 @@ const CONFIG = {
         Corridor,
         WaitingRoom,
         Office,
-
+        Mirror,
+        
         UI,
     ],
     autoFocus: true,

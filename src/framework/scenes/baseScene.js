@@ -63,7 +63,7 @@ export default class BaseScene extends Phaser.Scene {
     */
     shutdown() {
         if (this.dispatcher != null) {
-            this.dispatcher.removeAll();
+            this.dispatcher.removeByObject(this);
         }
     }
 

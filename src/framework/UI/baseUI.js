@@ -52,7 +52,7 @@ export default class BaseUI extends BaseScene {
             this.textbox.activate(false, () => {
                 this.dispatcher.dispatch(DefaultEventNames.clearNodes);
             });
-        }, true);
+        });
     }
 
     shutdown() {
@@ -70,7 +70,6 @@ export default class BaseUI extends BaseScene {
         // Si llega un evento de empezar nodo de texto, comienza a procesarlo
         this.dispatcher.add(DefaultEventNames.startTextNode, this, (node) => {
             this.bgElements.activate(true);
-            // console.log(node);
 
             // Recorre todos los fragmentos obtenidos y los divide (por si
             // el texto es demasiado largo y no cabe en la caja de texto). 
@@ -87,12 +86,12 @@ export default class BaseUI extends BaseScene {
             // console.log(dialogs);
 
             this.startTextNode(node);
-        }, true);
+        });
 
         // Si llega un evento de actualizar el texto, lo cambia en la caja de texto
         this.dispatcher.add(DefaultEventNames.updateTextNode, this, (node) => {
             this.textbox.setDialog(node.name, node.character, node.dialogs[node.currDialog]);
-        }, true);
+        });
     }
 
     startTextNode(node) {
@@ -201,7 +200,7 @@ export default class BaseUI extends BaseScene {
         this.dispatcher.add(DefaultEventNames.startChoiceNode, this, (node) => {
             this.textbox.activate(false);
             this.createOptions(node);
-        }, true);
+        });
     }
 
     /**

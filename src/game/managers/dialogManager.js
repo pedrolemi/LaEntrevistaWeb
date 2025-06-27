@@ -26,9 +26,9 @@ export default class DialogManager extends Singleton {
             this.currNode = node;
             this.currNode.processNode();
         }
-        // else {
-        //     console.log(node)
-        // }
+        else {
+            console.warn("Node not processed:", node);
+        }
     }
 
     clearNodes() {

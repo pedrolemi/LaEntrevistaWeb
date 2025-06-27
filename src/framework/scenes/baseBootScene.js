@@ -111,6 +111,8 @@ export default class BaseBootScene extends Phaser.Scene {
         // Al completar la carga, emitir el evento start para avisar que se puede continuar
         this.load.once("complete", () => {
             this.events.emit("start");
+
+            sceneManager.runInParalell("UI");
         });
     }
 
@@ -193,11 +195,11 @@ export default class BaseBootScene extends Phaser.Scene {
         });
 
         /*
-      * i18next es un framework ampliamente utilizado para internacionalizacion en Javascript.
-      * Mas informacion y descarga:
-      *   - Pagina del plugin para Phaser3: https://rexrainbow.github.io/phaser3-rex-notes/docs/site/i18next/
-      *   - Documentacion oficial: https://www.i18next.com/
-      */
+     * i18next es un framework ampliamente utilizado para internacionalizacion en Javascript.
+     * Mas informacion y descarga:
+     *   - Pagina del plugin para Phaser3: https://rexrainbow.github.io/phaser3-rex-notes/docs/site/i18next/
+     *   - Documentacion oficial: https://www.i18next.com/
+     */
 
         // Se inicializa el plugin de traduccion con la configuracion especificada
         this.plugins.get(BaseBootScene.REX_TEXT_TRANSLATION_PLUGIN_KEY).initI18Next(this, {

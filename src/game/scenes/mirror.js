@@ -38,48 +38,74 @@ export default class Mirror extends LaEntrevistaBaseScene {
             stroke: "#000",
             strokeThickness: 10
         }
-        // let TEXT_PADDING = 50;
-        // let transition = new InteractiveContainer(this, 0, 0);
-        // let transitionBg = this.add.image(0, 0, "30min").setOrigin(0, 0);
-        // let transitionText = new TextArea(this, this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH, this.CANVAS_HEIGHT - TEXT_PADDING * 2,
-        //     this.localizationManager.translate("30min", "scenes"), transitionTextConfig).setOrigin(0.5, 0.5);
-        // transitionText.adjustFontSize();
+        let TEXT_PADDING = 50;
+        let transition = new InteractiveContainer(this, 0, 0);
+        let transitionBg = this.add.image(0, 0, "30min").setOrigin(0, 0);
+        let transitionText = new TextArea(this, this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH, this.CANVAS_HEIGHT - TEXT_PADDING * 2,
+            this.localizationManager.translate("30min", "scenes"), transitionTextConfig).setOrigin(0.5, 0.5);
+        transitionText.adjustFontSize();
 
-        // transition.add(transitionBg);
-        // transition.add(transitionText);
-        // transition.calculateRectangleSize();
+        transition.add(transitionBg);
+        transition.add(transitionText);
+        transition.calculateRectangleSize();
 
-        // // transition.setInteractive();
-        // transition.on("pointerdown", () => {
-        //     transition.activate(false, () => {
-        //         // this.dialogManager.setNode(node);
-        //     });
-        // });
+        transition.setInteractive();
+        transition.on("pointerdown", () => {
+            transition.activate(false, () => {
+                this.dialogManager.setNode(node);
+            });
+        });
 
+
+        let ANIM_TIME = 200;
+        let BLUR_STRENGTH = 2;
+        let blur = null;
+        let questions = this.createQuestionButtons();
+        questions.setVisible(false);
         this.dispatcher.add("showQuestions", this, () => {
-            let blur = sceneElements.postFX.addBlur(0);
+            blur = sceneElements.postFX.addBlur();
             this.tweens.add({
                 targets: blur,
-                strength: 2,
-                duration: 500,
-                yoyo: false,
+                strength: { from: 0, to: BLUR_STRENGTH },
+                duration: ANIM_TIME,
                 repeat: 0
             });
-        })
 
+            questions.setVisible(true);
+            this.tweens.add({
+                targets: questions,
+                alpha: { from: 0, to: 1 },
+                duration: ANIM_TIME,
+                repeat: 0
+            });
+        });
 
-        // Hace la animacion
-        // this.tweens.add({
-        //     targets: sceneElements,
-        //     blur: { from: 0, to: 1 },
-        //     duration: 500,
-        //     repeat: 0,
-        // });
-        // ;
+        this.dispatcher.add("allQuestionsComplete", this, () => {
+            console.log("hey")
+            let anim = this.tweens.add({
+                targets: blur,
+                strength: { from: BLUR_STRENGTH, to: 0 },
+                duration: ANIM_TIME,
+                repeat: 0
+            });
+            this.tweens.add({
+                targets: questions,
+                alpha: { from: 1, to: 0 },
+                duration: ANIM_TIME,
+                repeat: 0
+            });
 
-        // let img = this.add.image(500, 500, "questionButton").setOrigin(0.5, 0.5);
+            anim.on("complete", () => {
+                setTimeout(() => {
+                    node = this.dialogManager.readNodes(this, nodes, namespace, "end");
+                    this.dialogManager.setNode(node);
+                }, ANIM_TIME);
+            });
+        });
 
-        this.createQuestionButtons();
+        this.dispatcher.add("end", this, () => {
+            this.gameManager.startCreditsScene();
+        });
     }
 
 
@@ -92,13 +118,61 @@ export default class Mirror extends LaEntrevistaBaseScene {
             stroke: "#000",
             strokeThickness: 10
         }
-        this.createQuestionButton(0, 500, 500, textConfig);
+        let TOP = 273;
+        let BOTTOM = 626;
+        let BUTTON_SPACING = 335
+
+        let page1 = this.add.container(0, 0);
+
+        let page1Button = this.add.image(this.CANVAS_WIDTH - 100, this.CANVAS_HEIGHT / 2, "questionArrow").setOrigin(0.5, 0.5).setScale(1.7);
+        this.setInteractive(page1Button);
+        this.animateArrow(page1Button);
+        page1.add(page1Button);
+
+
+        this.createQuestionButton(page1, 1, this.CANVAS_WIDTH / 2 - BUTTON_SPACING, TOP, textConfig);
+        this.createQuestionButton(page1, 2, this.CANVAS_WIDTH / 2 + BUTTON_SPACING, TOP, textConfig);
+        this.createQuestionButton(page1, 3, this.CANVAS_WIDTH / 2 - BUTTON_SPACING, BOTTOM, textConfig);
+        this.createQuestionButton(page1, 4, this.CANVAS_WIDTH / 2 + BUTTON_SPACING, BOTTOM, textConfig);
+
+
+
+        let page2 = this.add.container(0, 0);
+
+        let page2Button = this.add.image(100, this.CANVAS_HEIGHT / 2, "questionArrow").setOrigin(0.5, 0.5).setScale(1.7);
+        page2Button.setFlipX(true);
+        this.setInteractive(page2Button);
+        this.animateArrow(page2Button);
+        page2.add(page2Button);
+
+        this.createQuestionButton(page2, 5, this.CANVAS_WIDTH / 2 - BUTTON_SPACING, TOP, textConfig);
+        this.createQuestionButton(page2, 6, this.CANVAS_WIDTH / 2, TOP, textConfig);
+        this.createQuestionButton(page2, 7, this.CANVAS_WIDTH / 2 + BUTTON_SPACING, TOP, textConfig);
+        this.createQuestionButton(page2, 8, this.CANVAS_WIDTH / 2 - BUTTON_SPACING / 2, BOTTOM, textConfig);
+        this.createQuestionButton(page2, 9, this.CANVAS_WIDTH / 2 + BUTTON_SPACING / 2, BOTTOM, textConfig);
+
+        page2.setVisible(false);
+        page1Button.on("pointerdown", () => {
+            page1.setVisible(false);
+            page2.setVisible(true);
+        });
+        page2Button.on("pointerdown", () => {
+            page2.setVisible(false);
+            page1.setVisible(true);
+        });
+
+        let questions = this.add.container(0, 0);
+        questions.add(page1);
+        questions.add(page2);
+
+        return questions;
     }
 
-    createQuestionButton(index, x, y, style) {
+
+    createQuestionButton(pageObj, index, x, y, style) {
         let button = new InteractiveContainer(this, 0, 0);
-        let img = this.add.image(x, y, "questionButton").setOrigin(0.5, 0.5);
-        let txt = new TextArea(this, img.x, img.y, img.displayWidth, img.displayHeight, index, style).setOrigin(0.5, 0.5);
+        let img = this.add.image(x, y, "questionButton").setOrigin(0.5, 0.5).setScale(1.3);
+        let txt = new TextArea(this, img.x, img.y, img.displayWidth, img.displayHeight, index, style).setOrigin(0.5, 0.5).setScale(img.scale);
         txt.adjustFontSize();
 
         button.add(img);
@@ -106,7 +180,8 @@ export default class Mirror extends LaEntrevistaBaseScene {
 
         button.calculateRectangleSize();
         button.setInteractive();
-        
+
+        pageObj.add(button);
 
         // Configuracion de las animaciones
         let tintFadeTime = 50;
@@ -154,8 +229,6 @@ export default class Mirror extends LaEntrevistaBaseScene {
 
         // Al hacer click, vuelve a cambiar el color de la caja al original y llama al onclick al terminar la animacion
         button.on('pointerdown', () => {
-            button.disableInteractive();
-
             let fadeColor = this.tweens.addCounter({
                 targets: [img, txt],
                 from: 0,
@@ -170,9 +243,48 @@ export default class Mirror extends LaEntrevistaBaseScene {
                 duration: tintFadeTime,
                 repeat: 0
             });
-            fadeColor.on('complete', () => {
-                this.gameManager.startQuestionScene(index);
+            if (!this.gameManager.sceneManager.fading) {
+                button.disableInteractive();
+
+                fadeColor.on('complete', () => {
+                    this.gameManager.startQuestionScene(index);
+                    this.gameManager.nQuestionsCompleted++;
+                });
+            }
+        });
+
+        return button;
+    }
+
+    animateArrow(button) {
+        let originalScale = button.scale;
+        let scaleMultiplier = 1.1;
+
+        button.on('pointerover', () => {
+            this.tweens.add({
+                targets: button,
+                scale: originalScale * scaleMultiplier,
+                duration: 0,
+                repeat: 0,
             });
         });
+        button.on('pointerout', () => {
+            this.tweens.add({
+                targets: button,
+                scale: originalScale,
+                duration: 0,
+                repeat: 0,
+            });
+        });
+        button.on('pointerdown', () => {
+            this.tweens.add({
+                targets: button,
+                scale: originalScale,
+                duration: 20,
+                repeat: 0,
+                yoyo: true
+            });
+        });
+
     }
 }

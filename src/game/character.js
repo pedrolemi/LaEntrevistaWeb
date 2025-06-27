@@ -78,6 +78,10 @@ export default class Character extends Phaser.GameObjects.Sprite {
         });
 
         this.playDefaultAnimation();
+
+        this.on("destroy", () => {
+            this.scene.dispatcher.removeByObject(this);
+        });
     }
 
     preUpdate(time, deltaTime) {

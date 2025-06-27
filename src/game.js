@@ -10,6 +10,17 @@ import WaitingRoom from "./game/scenes/waitingRoom.js";
 import Office from "./game/scenes/office.js";
 import Mirror from "./game/scenes/mirror.js";
 
+import Question1 from "./game/scenes/questions/question1.js";
+import Question2 from "./game/scenes/questions/question2.js";
+import Question3 from "./game/scenes/questions/question3.js";
+import Question4 from "./game/scenes/questions/question4.js";
+import Question5 from "./game/scenes/questions/question5.js";
+import Question6 from "./game/scenes/questions/question6.js";
+import Question7 from "./game/scenes/questions/question7.js";
+import Question8 from "./game/scenes/questions/question8.js";
+import Question9 from "./game/scenes/questions/question9.js";
+
+
 const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
 const CONFIG = {
     width: MAX_W,
@@ -31,6 +42,16 @@ const CONFIG = {
         WaitingRoom,
         Office,
         Mirror,
+
+        Question1,
+        Question2,
+        Question3,
+        Question4,
+        Question5,
+        Question6,
+        Question7,
+        Question8,
+        Question9,
         
         UI,
     ],

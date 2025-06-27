@@ -22,17 +22,42 @@ export default class SceneManager extends Singleton {
     }
 
     /**
-    * Detener y borrar todas las escenas activas
+    * Obtener una escena por su key
+    * @param {String} sceneKey - key de la escena que se quiere obtener
+    * @returns {Phaser.Scene} escena con la key indicada
     */
-    clearRunningScenes() {
-        this.runningScenes.forEach(sc => {
-            // Si la escena tiene el metodo shutdown, se llama a su shutdown antes de detenerla 
-            if (sc.shutdown != null && typeof sc.shutdown === "function") {
-                sc.shutdown();
-            }
-            sc.scene.stop(sc);
-        });
-        this.runningScenes.clear();
+    getScene(sceneKey) {
+        return this.currentScene.scene.get(sceneKey);
+    }
+
+    /**
+    * Ejecutar una escena en paralelo al resto
+    * 
+    * NO SE GUARDA EN LAS ESCENAS ACTUALES, POR LO QUE PARA GESTIONARLA 
+    * HACE FALTA HACER UN GET PRIMERO Y LUEGO HACER LO QUE SEA CON ELLA
+    * 
+    * @param {String} sceneKey - key de la escena a ejecutar en paralelo
+    */
+    runInParalell(sceneKey) {
+        this.currentScene.scene.launch(sceneKey);
+    }
+
+    /**
+    * Reiniciar la escena indicada
+    * @param {String} sceneKey - key de la escena a reiniciar
+    */
+    restartScene(sceneKey) {
+        let sc = this.currentScene.scene.get(sceneKey);
+        sc.scene.restart();
+    }
+
+     /**
+    * Detener la escena indicada
+    * @param {String} sceneKey - key de la escena a detener
+    */
+    stopScene(sceneKey) {
+        let sc = this.currentScene.scene.get(sceneKey);
+        sc.scene.stop(sc);
     }
 
     /**
@@ -66,26 +91,29 @@ export default class SceneManager extends Singleton {
         }
 
         let change = (cam, effect) => {
-            // Si no se puede volver a la escena anterior, se detienen todas las
-            // escenas que ya estaban creadas porque ya no van a hacer falta 
-            if (!canReturn) {
-                this.clearRunningScenes();
-                // Se inicia la escena completamente (eliminando la anterior)
-                this.currentScene.scene.start(sceneKey, params);
-            }
-            // Si no, se se duerme la escena actual en vez de destruirla ya que
-            // habria que mantener su estado por si se quiere volver a ella
-            else {
+            // Si se puede regresar a la escena de la que se viene, se duerme 
+            // para mantener su estado por si se quiere volver a ella
+            if (canReturn) {
                 // Dormir la escena actual
                 this.currentScene.scene.sleep();
-                // Se ejecuta la escena (sin reiniciarla si ya existia)
-                this.currentScene.scene.run(sceneKey, params);
             }
 
-            // Se anade la escena a las escenas que estan ejecutandose
+            // Se ejecuta la escena (sin reiniciarla si ya existia o creandola de 0 si no existia)
+            this.currentScene.scene.run(sceneKey, params);
             this.currentScene = this.currentScene.scene.get(sceneKey);
+
+            // Si no se puede volver a la escena anterior, se detienen todas las
+            // escenas que ya estaban creadas porque ya no van a hacer falta (a
+            // excepcion de la escena actual, por si se cambia a una escena a la
+            // que se podia regresar desde una escena a la que no se podra regresar)
+            if (!canReturn) {
+                this.clearRunningScenes();
+            }
+
+            // Se guarda la escena a las escenas que estan ejecutandose
             this.runningScenes.add(this.currentScene);
 
+            
             if (anim) {
                 let fadeIn = () => {
                     this.fadeIn(fadeInTime);
@@ -95,7 +123,6 @@ export default class SceneManager extends Singleton {
                 this.currentScene.events.on("wake", fadeIn);
             }
         }
-
         if (anim) {
             // Cuando acaba el fade out de la escena actual se cambia a la siguiente
             this.currentScene.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
@@ -106,6 +133,24 @@ export default class SceneManager extends Singleton {
             change(null, null);
         }
     }
+
+
+    /**
+    * Detener y borrar todas las escenas activas
+    */
+    clearRunningScenes() {
+        this.runningScenes.forEach(sc => {
+            if (sc != this.currentScene) {
+                // Si la escena tiene el metodo shutdown, se llama a su shutdown antes de detenerla 
+                if (sc.shutdown != null && typeof sc.shutdown === "function") {
+                    sc.shutdown();
+                }
+                this.stopScene(sc);
+            }
+        });
+        this.runningScenes.clear();
+    }
+
 
     /**
     * Hacer solo fade out

@@ -72,10 +72,10 @@ export default class UI extends BaseUI {
 
         this.dispatcher.add("checkCV", this, () => {
             this.cv.activate(true);
-        }, true);
+        });
         this.dispatcher.add("updateCV", this, () => {
             this.cv.updateInfo();
-        }, true);
+        });
 
         let questionTextConfig = { ...this.textConfig };
         questionTextConfig.align = "center";

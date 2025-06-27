@@ -33,6 +33,8 @@ export default class BootScene extends BaseBootScene {
             "names",
             "CVs",
             "scenes",
+            "creditsTitles",
+            "creditsNames",
         ]
 
         let loadAssets = () => {
@@ -68,9 +70,6 @@ export default class BootScene extends BaseBootScene {
     loadComputer() {
         this.load.setPath("assets/computer");
 
-        this.load.video("creditsAnimation", "animacioncreditos.mp4", true);
-        this.load.video("startAnimation", "animacionmenu.mp4", true);
-
         // this.load.image("blankScreen", "blankScreen.png");
         this.load.image("desktop", "desktop.png");
         this.load.image("browser", "browser.png");
@@ -100,9 +99,13 @@ export default class BootScene extends BaseBootScene {
 
         this.load.setPath("assets/backgrounds");
 
-        this.load.image("mainMenu", "mainMenu.png");
-        this.load.image("mainMenuBlank", "mainMenuBlank.png");
-        this.load.image("credits", "credits.png");
+        this.load.image("mainMenu", "menus/mainMenu.png");
+        this.load.image("mainMenuBlank", "menus/mainMenuBlank.png");
+        this.load.image("credits", "menus/credits.png");
+
+        this.load.video("startGameAnimation", "menus/startGameAnimation.mp4", true);
+        this.load.video("enterCreditsAnimation", "menus/enterCreditsAnimation.mp4", true);
+        this.load.video("exitCreditsAnimation", "menus/exitCreditsAnimation.mp4", true);
 
         this.load.image("hall", "hall.png");
         this.load.image("counter", "counter.png");

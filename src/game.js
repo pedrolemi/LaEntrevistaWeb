@@ -3,6 +3,7 @@ import UI from "./game/UI/UI.js";
 
 import MainMenu from "./game/scenes/mainMenu.js";
 import House from "./game/scenes/house.js";
+import Credits from "./game/scenes/credits.js"
 import Hall from "./game/scenes/hall.js"
 import Corridor from "./game/scenes/corridor.js";
 import Cafeteria from "./game/scenes/cafeteria.js";
@@ -35,6 +36,7 @@ const CONFIG = {
         BootScene,
 
         MainMenu,
+        Credits,
         House,
         Hall,
         Cafeteria,

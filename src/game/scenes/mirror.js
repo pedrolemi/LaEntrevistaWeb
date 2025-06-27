@@ -81,7 +81,6 @@ export default class Mirror extends LaEntrevistaBaseScene {
         });
 
         this.dispatcher.add("allQuestionsComplete", this, () => {
-            console.log("hey")
             let anim = this.tweens.add({
                 targets: blur,
                 strength: { from: BLUR_STRENGTH, to: 0 },

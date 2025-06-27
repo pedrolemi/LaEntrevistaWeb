@@ -25,8 +25,8 @@ export default class GameManager extends Singleton {
     init() {
         this.ui = this.sceneManager.getScene("UI");
 
-        this.startGame();
-        // this.startMainMenu();
+        // this.startGame();
+        this.startMainMenu();
     }
 
     startGame() {
@@ -43,19 +43,22 @@ export default class GameManager extends Singleton {
 
         this.blackboard.set("position", "dataScience");
 
+        this.startHouseScene();
+
+        // TEST
         // this.startMainMenu();
-        // this.startHouseScene();
         // this.startHallScene();
         // this.startCorridorScene();
         // this.startCafeteriaScene();
         // this.startOfficeScene();
-        this.startWaitingRoomScene();
+        // this.startWaitingRoomScene();
         // this.startMirrorScene();
         // this.startQuestionScene(8);
+        // this.startCreditsScene();
     }
 
-    startMainMenu() {
-        this.sceneManager.changeScene("MainMenu", null, true);
+    startMainMenu(fadeAnim = true) {
+        this.sceneManager.changeScene("MainMenu", null, fadeAnim);
     }
 
     startHouseScene() {
@@ -93,8 +96,8 @@ export default class GameManager extends Singleton {
         this.sceneManager.changeScene("Question" + number, { number: number }, true, true);
     }
 
-    startCreditsScene() {
-        this.startMainMenu();
+    startCreditsScene(fadeAnim = true) {
+        this.sceneManager.changeScene("Credits", null, fadeAnim);
     }
 
     /**

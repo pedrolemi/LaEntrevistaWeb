@@ -159,5 +159,8 @@ export default class BootScene extends BaseBootScene {
         this.load.image("questionButton", "questionButton.png");
         this.load.image("questionArrow", "questionArrow.png");
 
+        this.load.image("frontArrow", "frontArrow.png");
+        this.load.image("sideArrow", "sideArrow.png");
+
     }
 }

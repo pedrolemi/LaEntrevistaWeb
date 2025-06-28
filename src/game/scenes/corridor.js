@@ -76,7 +76,27 @@ export default class Corridor extends LaEntrevistaBaseScene {
         this.dispatcher.addOnce("manLeave", this, () => {
             this.leaveRoom([luisChar], exitPoint);
         });
-        
+        luisChar.once("targetReached", () => {
+            let arrowScale = 0.5;
+            let waitingRoomArrow = this.add.image(946, 658, "frontArrow").setOrigin(0.5, 0.5).setScale(arrowScale);
+            let cafeteriaArrow = this.add.image(100, 540, "sideArrow").setOrigin(0.5, 0.5).setScale(arrowScale).setAngle(-90);
+
+            this.tweens.add({
+                targets: [waitingRoomArrow, cafeteriaArrow],
+                alpha: { from: 0, to: 1 },
+                duration: 200,
+                repeat: 0
+            });
+
+            this.tweens.add({
+                targets: [waitingRoomArrow, cafeteriaArrow],
+                scale: { from: arrowScale, to: arrowScale * 1.2 },
+                duration: 1000,
+                repeat: -1,
+                yoyo: true
+            });
+        })
+
 
         setTimeout(() => {
             this.dialogManager.setNode(locationNode);
@@ -87,7 +107,7 @@ export default class Corridor extends LaEntrevistaBaseScene {
                 this.gameManager.startCafeteriaScene();
             });
 
-            let waitingRoom = this.add.rectangle(955, 475, 240, 370, 0x000, 0);
+            let waitingRoom = this.add.rectangle(955, 475, 240, 470, 0x000, 0);
             this.setInteractive(waitingRoom);
             waitingRoom.on("pointerdown", () => {
                 this.gameManager.startWaitingRoomScene();

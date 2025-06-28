@@ -46,6 +46,25 @@ export default class Hall extends LaEntrevistaBaseScene {
                 stairs.disableInteractive();
                 this.gameManager.startCorridorScene();
             });
+
+            let arrowScale = 0.6;
+            let arrow = this.add.image(1383, 699, "frontArrow").setOrigin(0.5, 0.5).setScale(arrowScale);
+
+            this.tweens.add({
+                targets: arrow,
+                alpha: { from: 0, to: 1 },
+                duration: 200,
+                repeat: 0
+            });
+
+            this.tweens.add({
+                targets: arrow,
+                scale: { from: arrowScale, to: arrowScale * 1.2 },
+                duration: 1000,
+                repeat: -1,
+                yoyo: true
+            });
         });
+        
     }
 }

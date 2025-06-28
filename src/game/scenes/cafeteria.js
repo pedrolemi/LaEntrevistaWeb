@@ -16,6 +16,17 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
         
         let bg = this.add.image(0, 0, "cafeteria").setOrigin(0, 0);
 
+        let arrowScale = 0.5;
+        let corridorArrow = this.add.image(1480, 830, "sideArrow").setOrigin(0.5, 0.5).setScale(arrowScale).setAngle(90);
+        this.tweens.add({
+            targets: corridorArrow,
+            scale: { from: arrowScale, to: arrowScale * 1.2 },
+            duration: 1000,
+            repeat: -1,
+            yoyo: true
+        });
+
+
         let nodes = this.cache.json.get("cafeteria");
         let namespace = "scenes\\cafeteria";
 

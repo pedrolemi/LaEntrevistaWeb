@@ -16,41 +16,30 @@ export default class Corridor extends LaEntrevistaBaseScene {
 
         let bg = this.add.image(0, 0, "corridor").setOrigin(0, 0);
 
-        this.debug = false;
+        let nodes = this.cache.json.get("corridor");
+        let dialogsNamespace = "scenes\\corridor";
 
-        this.nodes = this.cache.json.get("corridor");
-        this.DIALOGS_NAMESPACE = "scenes\\corridor";
+        let locationNode = this.dialogManager.readNodes(this, nodes, dialogsNamespace, "locationInquiry");
 
-        let locationNode = this.dialogManager.readNodes(this, this.nodes, this.DIALOGS_NAMESPACE, "locationInquiry");
+        let textAreaConfig = {
+            x: 575,
+            width: 325,
+            height: 90,
+            originX: 1,
+            originY: 0.5
+        };
 
-        this.TEXT_CONFIG = {
-            fontFamily: "lexend-variable",
-            fontSize: 35,
-            fontStyle: "normal",
-            color: "#ffffff",
-            align: "right",
-            stroke: "#000000",
-            strokeThickness: 5
+        let rectConfig = {
+            x: 393,
+            width: 410,
+            height: 105,
+            originX: 0.5,
+            originY: 0.5
         }
 
-        this.SIGN_CONFIG = {
-            text: {
-                x: 575,
-                width: 325,
-                height: 90,
-                originX: 1,
-                originY: 0.5
-            },
-            rect: {
-                x: 393,
-                width: 410,
-                height: 105,
-                originX: 0.5,
-                originY: 0.5
-            },
-        }
+        let signTextConfig = { ...this.signTextConfig };
+        signTextConfig.align = 'right';
 
-        const NAMESPACE = "scenes";
         let signs = [
             {
                 y: 216,
@@ -63,7 +52,17 @@ export default class Corridor extends LaEntrevistaBaseScene {
         ];
 
         signs.forEach(({ y, id }) => {
-            this.createSign(y, this.localizationManager.translate(id, NAMESPACE), id);
+            let textArea = super.createTextArea(textAreaConfig.x, y, textAreaConfig.width, textAreaConfig.height,
+                textAreaConfig.originX, textAreaConfig.originY, this.localizationManager.translate(id, "scenes"), signTextConfig);
+
+            let rect = this.add.zone(rectConfig.x, y, rectConfig.width, rectConfig.height);
+            rect.setOrigin(rectConfig.originX, rectConfig.originY);
+            this.setInteractive(rect);
+
+            let signNode = this.dialogManager.readNodes(this, nodes, dialogsNamespace, id);
+            rect.on('pointerdown', () => {
+                this.dialogManager.setNode(signNode);
+            });
         });
 
         // Luis
@@ -71,11 +70,12 @@ export default class Corridor extends LaEntrevistaBaseScene {
             x: -100,
             y: 650
         };
-        let luisChar = new Character(this, 1200, 650, 1.5, "Luis", this.characterConfig.speed, false, null);
+        let luisChar = new Character(this, 1200, exitPoint.y, 1.5, "Luis", this.characterConfig.speed, false, null);
         luisChar.setOrigin(0.5, 0.5);
-        this.dispatcher.addOnce("manLeave", this, () => {
+        this.dispatcher.addOnce("leaveRoom", this, () => {
             this.leaveRoom([luisChar], exitPoint);
         });
+
         luisChar.once("targetReached", () => {
             let arrowScale = 0.5;
             let waitingRoomArrow = this.add.image(946, 658, "frontArrow").setOrigin(0.5, 0.5).setScale(arrowScale);
@@ -97,10 +97,9 @@ export default class Corridor extends LaEntrevistaBaseScene {
             });
         })
 
-
         setTimeout(() => {
             this.dialogManager.setNode(locationNode);
-            
+
             let cafeteria = this.add.rectangle(0, 0, 160, this.CANVAS_HEIGHT, 0x000, 0).setOrigin(0, 0);
             this.setInteractive(cafeteria);
             cafeteria.on("pointerdown", () => {
@@ -113,28 +112,5 @@ export default class Corridor extends LaEntrevistaBaseScene {
                 this.gameManager.startWaitingRoomScene();
             });
         }, 200);
-    }
-
-    createSign(y, text, objectNodeName) {
-        if (this.debug) {
-            let debugRect = this.add.rectangle(this.SIGN_CONFIG.text.x, y,
-                this.SIGN_CONFIG.text.width, this.SIGN_CONFIG.text.height, 0x000000);
-            debugRect.setOrigin(this.SIGN_CONFIG.text.originX, this.SIGN_CONFIG.text.originY);
-        }
-        let signText = new TextArea(this, this.SIGN_CONFIG.text.x, y,
-            this.SIGN_CONFIG.text.width, this.SIGN_CONFIG.text.height, text, this.TEXT_CONFIG)
-        signText.setOrigin(this.SIGN_CONFIG.text.originX, this.SIGN_CONFIG.text.originY);
-        signText.adjustFontSize();
-
-        let signNode = this.dialogManager.readNodes(this, this.nodes, this.DIALOGS_NAMESPACE, objectNodeName);
-
-        let signRect = this.add.zone(this.SIGN_CONFIG.rect.x, y,
-            this.SIGN_CONFIG.rect.width, this.SIGN_CONFIG.rect.height);
-        signRect.setOrigin(this.SIGN_CONFIG.rect.originX, this.SIGN_CONFIG.rect.originY);
-
-        this.setInteractive(signRect);
-        signRect.on('pointerdown', () => {
-            this.dialogManager.setNode(signNode);
-        });
     }
 }

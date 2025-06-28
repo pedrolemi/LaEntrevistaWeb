@@ -48,13 +48,13 @@
         "line9": {
             "type": "text",
             "character": "Pedro",
-            "next": "menExit"
+            "next": "menLeave"
         },
-        "menExit": {
+        "menLeave": {
             "type": "event",
             "events": [
                 {
-                    "name": "menExit"
+                    "name": "menLeave"
                 }
             ]
         }
@@ -145,13 +145,13 @@
         "line8": {
             "type": "text",
             "character": "Rebeca",
-            "next": "trioExit"
+            "next": "trioLeave"
         },
-        "trioExit": {
+        "trioLeave": {
             "type": "event",
             "events": [
                 {
-                    "name": "trioExit"
+                    "name": "trioLeave"
                 }
             ]
         }

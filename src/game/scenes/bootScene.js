@@ -28,6 +28,7 @@ export default class BootScene extends BaseBootScene {
             getSceneDialogPath("office"),
             getSceneDialogPath("mirror"),
             getSceneDialogPath("questions"),
+            getSceneDialogPath("waitingRoom")
         ];
         let namespaces = [
             "names",

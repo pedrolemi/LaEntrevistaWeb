@@ -8,13 +8,13 @@
         "staffResponse": {
             "type": "text",
             "character": "Luis",
-            "next": "manLeave"
+            "next": "leaveRoom"
         },
-        "manLeave": {
+        "leaveRoom": {
             "type": "event",
             "events": [
                 {
-                    "name": "manLeave"
+                    "name": "leaveRoom"
                 }
             ]
         }

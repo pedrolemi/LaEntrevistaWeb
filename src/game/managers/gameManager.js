@@ -16,7 +16,7 @@ export default class GameManager extends Singleton {
         this.ui = null;
 
         this.nInteractedCharacters = 0;
-        this.N_REQUIRED_INTERACTIONS = 7;
+        this.N_REQUIRED_INTERACTIONS = 8;
 
         this.nQuestionsCompleted = 0;
         this.N_REQUIRED_QUESTIONS = 9;

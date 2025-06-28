@@ -3,7 +3,7 @@ import Character from "../character.js";
 
 export default class waitingRoom extends LaEntrevistaBaseScene {
     /**
-    * Escena del pasillo
+    * Escena de la sala de espera
     * @extends LaEntrevistaBaseScene
     */
     constructor() {
@@ -14,6 +14,8 @@ export default class waitingRoom extends LaEntrevistaBaseScene {
         super.create();
 
         let bg = this.add.image(0, 0, "waitingRoom").setOrigin(0, 0);
+        let nodes = this.cache.json.get("waitingRoom");
+        let namespace = "scenes\\waitingRoom";
 
         let arrowScale = 0.5;
         let corridorArrow = this.add.image(100, 540, "sideArrow").setOrigin(0.5, 0.5).setScale(arrowScale).setAngle(-90);
@@ -34,31 +36,75 @@ export default class waitingRoom extends LaEntrevistaBaseScene {
             this.gameManager.startCorridorScene();
         });
 
-        // TODO: Hacer todo lo posterior a esto cuando se hable con todos los personajes
-        doorArrow.setVisible(true);
-        this.tweens.add({
-            targets: doorArrow,
-            alpha: { from: 0, to: 1 },
-            duration: 200,
-            repeat: 0
-        });
-        
+        // Puerta
+        let doorNode = this.dialogManager.readNodes(this, nodes, namespace, "door");
+
         let door = this.add.rectangle(1097, 430, 140, 470, 0x000, 0).setOrigin(0.5, 0.5);
         this.setInteractive(door);
         door.on("pointerdown", () => {
-            let anim = this.tweens.add({
-                targets: [corridorArrow, doorArrow],
-                alpha: { from: 1, to: 0 },
-                duration: 200,
-                repeat: 0
-            });
-            anim.on("complete", () => {
-                corridorArrow.setVisible(false);
-                doorArrow.setVisible(false);
-            });
-            this.gameManager.startOfficeScene();
+            if (this.gameManager.hasMetInteractionRequirement()) {
+                let anim = this.tweens.add({
+                    targets: [corridorArrow, doorArrow],
+                    alpha: { from: 1, to: 0 },
+                    duration: 200,
+                    repeat: 0
+                });
+                anim.on("complete", () => {
+                    corridorArrow.setVisible(false);
+                    doorArrow.setVisible(false);
+                });
+                this.gameManager.startOfficeScene();
+            }
+            else {
+                this.dialogManager.setNode(doorNode);
+            }
         });
 
-        
+        let textArea = super.createTextArea(1227, 280, 95, 60, 0.5, 0.5,
+            this.localizationManager.translate("humanResourcesSign", "scenes"), this.signTextConfig);
+
+        // Jaime
+        let jaimeExitPoint = {
+            x: -100,
+            y: 740
+        }
+
+        let jaimeNode = this.dialogManager.readNodes(this, nodes, namespace, "JaimeConversation");
+        let jaimeConfig = {
+            x: 442,
+            scale: 0.9
+        }
+        let jaimeChar = new Character(this, jaimeConfig.x, jaimeExitPoint.y, jaimeConfig.scale, "Jaime",
+            this.characterConfig.speed, true, () => {
+                this.dialogManager.setNode(jaimeNode);
+            });
+        jaimeChar.setOrigin(0.5, 1);
+
+        this.dispatcher.addOnce("JaimeLeave", this, () => {
+            jaimeChar.setScale(jaimeChar.scale * 0.80);
+            this.leaveRoom([jaimeChar], jaimeExitPoint);
+        })
+
+        // Antonio
+        let antonioExitPoint = {
+            x: -100,
+            y: 550
+        }
+
+        let antonioNode = this.dialogManager.readNodes(this, nodes, namespace, "AntonioConversation");
+        let antonioConfig = {
+            x: 730,
+            scale: 0.8
+        }
+        let antonioChar = new Character(this, antonioConfig.x, antonioExitPoint.y, antonioConfig.scale, "Antonio",
+            this.characterConfig.speed, false, () => {
+                this.dialogManager.setNode(antonioNode);
+            });
+        antonioChar.setOrigin(0.5, 0.5);
+
+        this.dispatcher.addOnce("AntonioLeave", this, () => {
+            antonioChar.setScale(antonioChar.scale * 0.68);
+            this.leaveRoom([antonioChar], antonioExitPoint);
+        })
     }
 }

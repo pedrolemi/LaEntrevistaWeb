@@ -18,5 +18,7 @@
         }
     },
 
-    "30min": "30 minutos después..."
+    "30min": "30 minutos después...",
+
+    "humanResourcesSign": "Recursos\nHumanos"
 }

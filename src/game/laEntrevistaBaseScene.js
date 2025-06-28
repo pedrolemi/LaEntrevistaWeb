@@ -1,6 +1,7 @@
 import BaseScene from "../framework/scenes/baseScene.js"
 import DialogManager from "./managers/dialogManager.js";
 import GameManager from "./managers/gameManager.js";
+import TextArea from "../framework/UI/textArea.js";
 
 export default class LaEntrevistaBaseScene extends BaseScene {
     constructor(name) {
@@ -18,9 +19,20 @@ export default class LaEntrevistaBaseScene extends BaseScene {
 
         this.characterConfig = {
             speed: 0.27,
-            originX: 0.5,
-            originY: 0.5
         };
+
+        this.iconConfig = {
+            scale: 0.4
+        };
+
+        this.signTextConfig = {
+            fontFamily: "lexend-variable",
+            fontSize: 35,
+            fontStyle: "normal",
+            color: "#ffffff",
+            stroke: "#000000",
+            strokeThickness: 5
+        }
     }
 
     /**
@@ -86,5 +98,30 @@ export default class LaEntrevistaBaseScene extends BaseScene {
         if (!this.interactableObjects.has(gameObject)) {
             this.interactableObjects.add(gameObject);
         }
+    }
+
+    /**
+    * Crea una TexArea con opcion de mostrar un rectangulo de depuracion
+    * @param {Number} x - posicion x
+    * @param {Number} y - posicion y
+    * @param {Number} width - ancho del area
+    * @param {Number} height - alto del area
+    * @param {Number} originX - punto de origen x
+    * @param {Number} originY - punto de origen y
+    * @param {String} text - texto que se muestra
+    * @param {Object} textConfig - estilo del texto
+    * @returns {TextArea} - TextArea creada
+    */
+    createTextArea(x, y, width, height, originX, originY, text, textConfig) {
+        let debug = this.sys.game.debug;
+        if (debug.enable) {
+            let debugRect = this.add.rectangle(x, y, width, height, 0x000000, 0);
+            debugRect.setStrokeStyle(2, debug.color);
+            debugRect.setOrigin(originX, originY);
+        }
+        let textArea = new TextArea(this, x, y, width, height, text, textConfig);
+        textArea.setOrigin(originX, originY);
+        textArea.adjustFontSize();
+        return textArea;
     }
 }

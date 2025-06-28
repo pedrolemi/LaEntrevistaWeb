@@ -13,7 +13,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
     create() {
         super.create();
 
-        
+
         let bg = this.add.image(0, 0, "cafeteria").setOrigin(0, 0);
 
         let arrowScale = 0.5;
@@ -33,8 +33,8 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
         let menNode = this.dialogManager.readNodes(this, nodes, namespace, "menConversation");
 
         let exitPoint = {
-            x: 1700,
-            y: 1000
+            x: this.CANVAS_WIDTH + 100,
+            y: this.CANVAS_HEIGHT + 100
         };
 
         // Pedro
@@ -46,7 +46,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
         let pedroChar = new Character(this, pedroConfig.x, pedroConfig.y, pedroConfig.scale, "Pedro", this.characterConfig.speed, false, () => {
             this.dialogManager.setNode(menNode);
         });
-        pedroChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
+        pedroChar.setOrigin(0.5, 0.5);
 
         this.add.sprite(0, 0, "tableTop").setOrigin(0, 0);
         this.add.sprite(0, 0, "tableLegs").setOrigin(0, 0);
@@ -61,9 +61,9 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
             this.dialogManager.setNode(menNode);
         });
 
-        jesusChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
+        jesusChar.setOrigin(0.5, 0.5);
 
-        this.dispatcher.addOnce("menExit", this, () => {
+        this.dispatcher.addOnce("menLeave", this, () => {
             this.leaveRoom([jesusChar, pedroChar], exitPoint);
         })
 
@@ -81,7 +81,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
         let monicaChar = new Character(this, monicaConfig.x, monicaConfig.y, monicaConfig.scale, "Monica", this.characterConfig.speed, true, () => {
             setWomenNode();
         });
-        monicaChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
+        monicaChar.setOrigin(0.5, 0.5);
 
         // Rebeca
         let rebecaConfig = {
@@ -109,8 +109,8 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
             scale: 0.96
         }
         let carlosChar = new Character(this, exitPoint.x, exitPoint.y, carlosConfig.scale, "Carlos", this.characterConfig.speed, false, null);
-        carlosChar.setOrigin(this.characterConfig.originX, this.characterConfig.originY);
-        this.dispatcher.addOnce("trioExit", this, () => {
+        carlosChar.setOrigin(0.5, 0.5);
+        this.dispatcher.addOnce("trioLeave", this, () => {
             this.leaveRoom([monicaChar, rebecaChar, carlosChar], exitPoint);
         })
 
@@ -137,7 +137,7 @@ export default class Cafeteria extends LaEntrevistaBaseScene {
             continueConversation();
         });
 
-        
+
         let corridor = this.add.rectangle(this.CANVAS_WIDTH, 0, 160, this.CANVAS_HEIGHT, 0x000, 0).setOrigin(1, 0);
         this.setInteractive(corridor);
         corridor.on("pointerdown", () => {

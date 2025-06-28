@@ -1,0 +1,162 @@
+{
+    "JaimeConversation": {
+        "root": {
+            "text": "Hola, ¿qué tal?"
+        },
+        "line1": {
+            "text": "¿Qué hay?"
+        },
+        "line2": {
+            "text": "¿También vienes a la entrevista? ¿Sabes si hay que esperar mucho?"
+        },
+        "line3": {
+            "text": "¿Tú también? ¿Acaso es que te presentas para el puesto?"
+        },
+        "line4": {
+            "text": "A eso he venido, claro. ¿Por? ¿Hay algún problema?"
+        },
+        "line5": {
+            "text": "No, hombre. ¿Qué problema va a haber? Es solo que..."
+        },
+        "rethoricalChoices": [
+            {
+                "text": "¿Sí?"
+            },
+            {
+                "text": "(A saber)."
+            }
+        ],
+        "doubt": {
+            "text": "Es solo que cada vez tengo más claro que no me van a dar el puesto."
+        },
+        "reaction": [
+            {
+                "text": "Bueno, somos muchos candidatos, pero también hay mucha demanda. Si no tenemos suerte aquí, podemos probar en otros sitios."
+            },
+            {
+                "text": "¿Por qué lo dices?"
+            }
+        ],
+        "accusation": {
+            "text": "Supongo que eso es verdad. Pero no creo que yo tenga opciones. Tú, en cambio..."
+        },
+        "quotas": [
+            {
+                "text": "Ya sabes, hay muchas candidaturas. Pero también están las cuotas que cumplir, y las ayudas que dan a las empresas."
+            },
+            {
+                "text": "Ya sabes, por contratar a cierto tipo de personas."
+            }
+        ],
+        "changeTopic": [
+            {
+                "text": "(No me gusta por dónde está yendo la conversación, voy a callarme)."
+            },
+            {
+                "text": "Simplemente hazlo lo mejor que puedas, y no te preocupes."
+            }
+        ],
+        "equality": [
+            {
+                "text": "¡Es que así es imposible! Mucha igualdad, pero luego todo es que si machismo, que si discriminación positiva, que si cuotas, que si ayudas a extranjeros, a minusválidos..."
+            },
+            {
+                "text": "¿Y los que hemos estudiado pero somos normales? A la calle todos. ¿Sabes qué te digo? Que os quedéis con el puesto. Paso de esperar aquí para nada."
+            }
+        ]
+    },
+    "AntonioConversation": {
+        "root": {
+            "text": "Perdona, ¿también has venido a la entrevista de <position | programming: programador junior | dataScience: analista de datos>?"
+        },
+        "line1": {
+            "text": "Sí, a ver qué tal se me da. ¿Entonces tú también estás aquí por las entrevistas?"
+        },
+        "responses": [
+            {
+                "text": "Sí, a ver si tengo suerte. He hecho pocas entrevistas."
+            },
+            {
+                "text": "Sí. Acabo de terminar la carrera, y me he preparado mucho para esta entrevista."
+            }
+        ],
+        "encourage": {
+            "text": "Seguro que te va bien, no te preocupes."
+        },
+        "jokeLuck": {
+            "text": "Entonces no hace falta que te desee suerte, je, je."
+        },
+        "interviews": {
+            "text": "Esto de las entrevistas es bastante sencillo. Al final, acabas cogiéndole gustillo y todo."
+        },
+        "askWaiting": [
+            {
+                "text": "¿Llevas esperando mucho tiempo? Estoy un poco de los nervios."
+            },
+            {
+                "text": "¿Y por qué te interesa esta empresa?"
+            },
+            {
+                "text": "¿Sabes si ha pasado ya mucha gente para las entrevistas?"
+            }
+        ],
+        "waitingEarly": {
+            "text": "La verdad es que sí, he venido antes de tiempo."
+        },
+        "notInterested": {
+            "text": "Bueno, no es que me interese especialmente. Pero me gusta hacer entrevistas e intentarlo en todos los sitios."
+        },
+        "waitingLong": {
+            "text": "Llevo ya una hora, y solo han pasado un par de personas. No es que me hayan hecho esperar tanto, je, je. Es que he venido antes de tiempo."
+        },
+        "avoidHome": {
+            "text": "Así no paso tanto tiempo en casa."
+        },
+        "responseHome": [
+            {
+                "text": "(Menudo personaje, venir para estar esperando... Mejor ni pregunto)."
+            },
+            {
+                "text": "¿Y eso? ¿Es que te aburres en casa?"
+            }
+        ],
+        "defensive": {
+            "text": "No me mires así."
+        },
+        "girlfriend": [
+            {
+                "text": "Así mi chica no tiene tanto tiempo para echarme la bronca. Que si \"Antonio, has quemado la camisa\". Que si \"Antonio, la ropa hay que separarla por colores\"."
+            },
+            {
+                "text": "No valgo para las tareas del hogar, a ella se le da mucho mejor. No se da cuenta de que pone las expectativas muy altas, y aunque lo intente, no llego, je, je."
+            }
+        ],
+        "reaction": [
+            {
+                "text": "Claro. Te entiendo."
+            },
+            {
+                "text": "(Este tío es tonto). Quizás, si trabajaras más en casa, no tendrías esos problemas."
+            }
+        ],
+        "helpAttempt": {
+            "text": "Que yo intento ayudar, pero no sirvo para esto. Doy gracias todos los días por haber conocido a Nieves... ¡Es una santa!"
+        },
+        "messUp": [
+            {
+                "text": "¡Qué va! Cada vez que intento ayudar, lo estropeo más. Nieves es una santa por aguantarme. No todo el mundo vale para todo."
+            },
+            {
+                "text": "Yo, por ejemplo, no sirvo para planchar. Seguro que en tu casa pasa lo mismo. Qué le vamos a hacer."
+            }
+        ],
+        "goodbye": {
+            "text": "Bueno, parece que me llaman. ¡Un gusto conocerte!"
+        }
+    },
+    "door": {
+        "root": {
+            "text": "(Todavía no es la hora que me habían indicado. Podría ver qué más cosas hay por el edificio)."
+        }
+    }
+}

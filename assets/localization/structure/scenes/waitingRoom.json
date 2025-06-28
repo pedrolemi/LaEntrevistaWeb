@@ -1,0 +1,228 @@
+{
+    "JaimeConversation": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "line1"
+        },
+        "line1": {
+            "type": "text",
+            "character": "Jaime",
+            "next": "line2"
+        },
+        "line2": {
+            "type": "text",
+            "character": "player",
+            "next": "line3"
+        },
+        "line3": {
+            "type": "text",
+            "character": "Jaime",
+            "next": "line4"
+        },
+        "line4": {
+            "type": "text",
+            "character": "player",
+            "next": "line5"
+        },
+        "line5": {
+            "type": "text",
+            "character": "Jaime",
+            "next": "rethoricalChoices"
+        },
+        "rethoricalChoices": {
+            "type": "choice",
+            "choices": [
+                {
+                    "next": "doubt"
+                },
+                {
+                    "next": "doubt"
+                }
+            ]
+        },
+        "doubt": {
+            "type": "text",
+            "character": "Jaime",
+            "next": "reaction"
+        },
+        "reaction": {
+            "type": "choice",
+            "choices": [
+                {
+                    "next": "accusation"
+                },
+                {
+                    "next": "quotas"
+                }
+            ]
+        },
+        "accusation": {
+            "type": "text",
+            "character": "Jaime",
+            "next": "changeTopic"
+        },
+        "quotas": {
+            "type": "text",
+            "character": "Jaime",
+            "next": "changeTopic"
+        },
+        "changeTopic": {
+            "type": "choice",
+            "choices": [
+                {
+                    "next": "equality"
+                },
+                {
+                    "next": "equality"
+                }
+            ]
+        },
+        "equality": {
+            "type": "text",
+            "character": "Jaime",
+            "next": "JaimeLeave"
+        },
+        "JaimeLeave": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "JaimeLeave"
+                }
+            ]
+        }
+    },
+    "AntonioConversation": {
+        "root": {
+            "type": "text",
+            "character": "player",
+            "next": "line1"
+        },
+        "line1": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "responses"
+        },
+        "responses": {
+            "type": "choice",
+            "choices": [
+                {
+                    "next": "encourage"
+                },
+                {
+                    "next": "jokeLuck"
+                }
+            ]
+        },
+        "encourage": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "interviews"
+        },
+        "jokeLuck": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "interviews"
+        },
+        "interviews": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "askWaiting"
+        },
+        "askWaiting": {
+            "type": "choice",
+            "choices": [
+                {
+                    "next": "waitingEarly"
+                },
+                {
+                    "next": "notInterested"
+                },
+                {
+                    "next": "waitingLong"
+                }
+            ]
+        },
+        "waitingEarly": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "avoidHome"
+        },
+        "notInterested": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "avoidHome"
+        },
+        "waitingLong": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "avoidHome"
+        },
+        "avoidHome": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "responseHome"
+        },
+        "responseHome": {
+            "type": "choice",
+            "choices": [
+                {
+                    "next": "defensive"
+                },
+                {
+                    "next": "girlfriend"
+                }
+            ]
+        },
+        "defensive": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "girlfriend"
+        },
+        "girlfriend": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "reaction"
+        },
+        "reaction": {
+            "type": "choice",
+            "choices": [
+                {
+                    "next": "helpAttempt"
+                },
+                {
+                    "next": "messUp"
+                }
+            ]
+        },
+        "helpAttempt": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "goodbye"
+        },
+        "messUp": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "goodbye"
+        },
+        "goodbye": {
+            "type": "text",
+            "character": "Antonio",
+            "next": "AntonioLeave"
+        },
+        "AntonioLeave": {
+            "type": "event",
+            "events": [
+                {
+                    "name": "AntonioLeave"
+                }
+            ]
+        }
+    },
+    "door": {
+        "root": {
+            "type": "text",
+            "character": "player"
+        }
+    }
+}

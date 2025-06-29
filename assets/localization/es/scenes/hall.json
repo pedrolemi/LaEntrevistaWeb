@@ -14,12 +14,12 @@
                 "text": "Perdón, ¿cómo dice?"
             },
             {
-                "text": "Creo que no me he explicado. Vengo por el puesto de <position | programming: programador | dataScience: analista>."
+                "text": "Creo que no me he explicado. Vengo por el puesto de <<position || programming: programador || dataScience: analista>>."
             }
         ],
 
         "fakeAssThanks": {
-            "text": "(Creo que tendré que buscar por mi cuenta... Idiota)."
+            "text": "(Creo que tendré que buscar por mi cuenta... Idiota.)"
         },
 
         "ask": [
@@ -33,7 +33,7 @@
 
         "clarify": [
             {
-                "text": "(Se sorprende)."
+                "text": "(Se sorprende.)"
             },
             {
                 "text": "Las entrevistas para puestos técnicos son en la segunda planta. Te recomiendo usar las escaleras."

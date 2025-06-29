@@ -10,16 +10,16 @@
     "meetingRoomSign": {
         "root": [
             {
-                "text": "Al final del pasillo está la sala de reuniones."
+                "text": "(Al final del pasillo está la sala de reuniones.)"
             },
             {
-                "text": "He oído que las entrevistas de trabajo son por ahí."
+                "text": "(He oído que las entrevistas de trabajo son por ahí.)"
             }
         ]
     },
     "cafeteriaSign": {
         "root": {
-            "text": "La cafetería está por la izquierda... Podría investigar"
+            "text": "(La cafetería está por la izquierda... Podría investigar.)"
         }
     }
 }

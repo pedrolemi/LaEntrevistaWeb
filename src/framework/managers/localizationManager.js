@@ -31,7 +31,6 @@ export default class LocalizationManager extends Singleton {
 
         // Si se ha obtenido algo
         if (str != null) {
-
             // Si el objeto obtenido no es un array,
             if (!Array.isArray(str)) {
                 // Si el objeto tiene la propiedad text, se guarda
@@ -61,22 +60,22 @@ export default class LocalizationManager extends Singleton {
     * Reemplaza todas las expresiones regulares encontradas por el texto correspondiente
     * 
     * Ejemplo:
-    *   "Es <gender | male:un | female:una | ... > joven con <studies | fp: un grado superior de reposteria | uni: una licenciatura en derecho | ...>."
+    *   "{{name}} es <<gender || male:un || female:una || ... >> joven con <<studies || fp: un grado superior de reposteria || uni: una licenciatura en derecho || ...>>."
     * 
-    * De esta manera, si el valor de gender es male y el de studies es fp, el texto resultante seria:
-    *   Es un joven con un grado superior de reposteria.
+    * De esta manera, si el valor de name es Jesse, el de gender es male y el de studies es fp, el texto resultante seria:
+    *   Jesse es un joven con un grado superior de reposteria.
     * 
     * En caso de que el nombre de la variable no se encuentre o que su valor no coincida con ninguno
     * de los valores a sustituir, la expresion se sustituira por el nombre de la variable entre { }
     * 
-    * Antes y despues de los caracteres separadores ("|" y ":") pueden ir cualquier numero de espacios
-    * (0 incluido), pero no se tendran en cuenta a la hora de reemplazar el texto y se omitiran
+    * Inmediatamente antes y despues de los caracteres separadores ("{{}}", "<<", ">>", "||" y ":") pueden ir cualquier 
+    * numero de espacios (0 incluido), pero no se tendran en cuenta a la hora de reemplazar el texto y se omitiran
     * 
     * 
-    * @param {String} inputText - texto en el que reemplazar las expresiones <>
+    * @param {String} inputText - texto en el que reemplazar las expresiones regulares
     * @param {Array[Map]} contextMaps - array de mapas en los que buscar el valor de la expresion a sustituir
     * (si alguna clave coincide, se guardara el valor que tenga dicha clave en el ultimo mapa del array)
-    * @returns {String} - texto con las expresiones <> reemplazadas
+    * @returns {String} - texto con las expresiones regulares reemplazadas
     */
     replaceRegularExpressions(inputText, contextMaps) {
         // Se unen los mapas del array en otro mapa
@@ -87,26 +86,78 @@ export default class LocalizationManager extends Singleton {
             return merged;
         }, new Map());
 
+        // console.log(inputText)
 
-        // Expresion a sustituir (todo lo que haya entre <>)
-        let regex = /<([^>]+)>/g;
+        let result = this.replaceValues(inputText, mergedContext); 
+        result = this.replaceVariants(result, mergedContext);
 
-        // Encuentra todos los elementos entre <>
+        return result;
+    }
+
+
+    replaceValues(inputText, mergedContext) {
+        // Expresion a sustituir (todo lo que haya entre {{}})
+        let regex = /{{\s*([^>>]+\S)\s*}}/g;
+
+        // console.log(inputText)
+
+        // Encuentra todos los elementos entre {{}}
+        let matches = [...inputText.matchAll(regex)];
+
+        // console.log(matches)
+        
+        let result = "";
+        let lastEndIndex = 0;
+
+        // Por cada {{}}
+        matches.forEach((match, index) => {
+            // match devuelve un objeto en el que el primer elemento es toda la expresion 
+            // regular incluidos {{}} y el segundo elemento es el texto contenido entre {{}}
+            let [fullMatch, content] = match;
+
+            // El nombre de la variable es todo el texto entre {{}} ignorando todos los espacios
+            const variableName = content.replace(/\s*:\s*/g, ':');
+
+            // El texto por defecto con el que se reemplazara es el nombre de la variable entre {{}}
+            let replacement = "{" + variableName + "}";
+
+            // Si existe la variable en el mapa, se  guarda su valor
+            if (mergedContext.has(variableName)) {
+                replacement = mergedContext.get(variableName);
+            }
+
+            // Anade el texto reemplazado al texto completo
+            result += inputText.slice(lastEndIndex, match.index) + replacement;
+
+            // Actualiza el indice del ultimo {{}} para el siguiente {{}}
+            lastEndIndex = match.index + fullMatch.length;
+        });
+        
+        // Anade el resto del texto al texto completo
+        result += inputText.slice(lastEndIndex);
+        return result;
+    }
+
+    replaceVariants(inputText, mergedContext) {
+        // Expresion a sustituir (todo lo que haya entre <<>>)
+        let regex = /<<([^>>]+)>>/g;
+
+        // Encuentra todos los elementos entre <<>>
         let matches = [...inputText.matchAll(regex)];
 
         let result = "";
         let lastEndIndex = 0;
 
-        // Por cada <>
+        // Por cada <<>>
         matches.forEach((match, index) => {
             // match devuelve un objeto en el que el primer elemento es toda la expresion 
-            // regular incluidos <> y el segundo elemento es el texto contenido entre <>
+            // regular incluidos <<>> y el segundo elemento es el texto contenido entre <<>>
             let [fullMatch, content] = match;
 
-            // Se separa el texto por | ignorando los espacios para obtener todas las variaciones que tiene el texto
-            let components = content.split("|").map(word => word.trim());
+            // Se separa el texto por || ignorando los espacios para obtener todas las variaciones que tiene el texto
+            let components = content.split("||").map(word => word.trim());
 
-            // Se obtiene el nombre de la variable (el elemento anterior al primer "|") y se elimina de las variaciones
+            // Se obtiene el nombre de la variable (el elemento anterior al primer "||") y se elimina de las variaciones
             let variableName = components[0];
             components.shift();
 
@@ -126,7 +177,7 @@ export default class LocalizationManager extends Singleton {
 
                     // Si hay mas de 1 elemento en las partes es que hay valor para
                     // la variable y texto con el que reemplazar la expresion
-                    if (parts.length > 1) {
+                    if (parts.length >> 1) {
                         // El valor de la variable es el elemento anterior al primer ":"
                         let variableValue = parts[0];
 
@@ -149,7 +200,7 @@ export default class LocalizationManager extends Singleton {
             // Anade el texto reemplazado al texto completo
             result += inputText.slice(lastEndIndex, match.index) + replacement;
 
-            // Actualiza el indice del ultimo <> para el siguiente <>
+            // Actualiza el indice del ultimo <<>> para el siguiente <<>>
             lastEndIndex = match.index + fullMatch.length;
         });
 

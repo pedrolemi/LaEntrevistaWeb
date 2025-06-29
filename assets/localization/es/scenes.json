@@ -11,13 +11,6 @@
     "cafeteriaSign": "Cafetería",
     "hr": "Recursos Humanos",
 
-    "interviewTime": {
-        "root": {
-            "type": "text",
-            "character": "player"
-        }
-    },
-
     "30min": "30 minutos después...",
 
     "humanResourcesSign": "Recursos\nHumanos"

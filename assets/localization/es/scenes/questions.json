@@ -30,7 +30,7 @@
                 "text": "¡Auxiliar administrativo, dice!"
             },
             {
-                "text": "Tantos años estudiando <position | programming: Informática | dataScience: Matemáticas>, y no se ha planteado que pueda dedicarme a un puesto técnico."
+                "text": "Tantos años estudiando <<position || programming: Informática || dataScience: Matemáticas>>, y no se ha planteado que pueda dedicarme a un puesto técnico."
             },
             {
                 "text": "Ni siquiera me ha preguntado a qué oferta me presentaba. ¿Qué pasa, que las mujeres no podemos entender de ciencias?"
@@ -47,7 +47,7 @@
                 "text": "Mucha igualdad, pero luego todo es que si machismo, que si discriminación positiva,  que si tasas, que si ayudas a extranjeros, a minusválidos..."
             },
             {
-                "text": "¿Y los que hemos estudiado pero somos normales? A la calle todos. Quedaros con el puesto. Paso de esperar."
+                "text": "¿Y los que hemos estudiado pero somos normales? A la calle todos. Quedaos con el puesto. Paso de esperar."
             }
         ],
 
@@ -70,14 +70,14 @@
             "text": "No, ahora que lo pienso, lo raro es que pensase que me iban a contratar para mejorar la imagen de la empresa."
         },
         "right": {
-            "text": "Lo dice como si las cuotas fueran un sinónimo de \"contratamos a cualquier mujer que pase por la puerta\". No se da cuenta de que si estoy aquí es porque cumplo con los requisitos, como él?"
+            "text": "Lo dice como si las cuotas fueran un sinónimo de \"contratamos a cualquier mujer que pase por la puerta\". ¿No se da cuenta de que si estoy aquí es porque cumplo con los requisitos como él?"
         }
     },
 
     "question3": {
         "root": [
             {
-                "text": "Así no paso tanto tiempo en casa, y mi chica no tiene tanto tiempo para echarme la bronca. No valgo para las tareas del hogar, a ella se le da mucho mejor."
+                "text": "Así no paso tanto tiempo en casa y mi chica no tiene tanto tiempo para echarme la bronca. No valgo para las tareas del hogar, a ella se le da mucho mejor."
             },
             {
                 "text": "Que yo intento ayudar, pero no sirvo para esto. Seguro que en tu casa pasa lo mismo."
@@ -114,13 +114,13 @@
 
     "question4": {
         "root": {
-            "text": "Se ha llenado esto de gente con la oferta de <position | programming: programador | dataScience: analista>."
+            "text": "Se ha llenado esto de gente con la oferta de <<position || programming: programador || dataScience: analista>>."
         },
         "line2": {
             "text": "Y ni una tía."
         },
         "line3": {
-            "text": "Normal. ¿Cuántas conoces que sepan <position | programming: programar | dataScience: matemáticas>? Además, mejor así, que luego te distraes."
+            "text": "Normal. ¿Cuántas conoces que sepan <<position || programming: programar || dataScience: matemáticas>>? Además, mejor así, que luego te distraes."
         },
         "line8": {
             "text": "Anda, volvamos a trabajar."
@@ -131,7 +131,7 @@
         },
         "answer": [
             {
-                "text": "Que piensen que no hay mujeres que sepan <position | programming: programar | dataScience: matemáticas>."
+                "text": "Que piensen que no hay mujeres que sepan <<position || programming: programar || dataScience: matemáticas>>."
             },
             {
                 "text": "Que haya tantos candidatos para el mismo puesto de trabajo."
@@ -142,7 +142,7 @@
         ],
 
         "wrong": {
-            "text": "Lo realmente indignante es que piensen que no hay mujeres que sepan <position | programming: programar | dataScience: matemáticas>."
+            "text": "Lo realmente indignante es que piensen que no hay mujeres que sepan <<position || programming: programar || dataScience: matemáticas>>."
         },
         "right": [
             {
@@ -156,10 +156,10 @@
 
     "question5": {
         "root": {
-            "text": "<position | programming: Tengo algunos problemas para encontrar todos los números primos en una lista. | dataScience: Tengo algunos problemas para calcular estas probabilidades.>"
+            "text": "<<position || programming: Tengo algunos problemas para encontrar todos los números primos en una lista. || dataScience: Tengo algunos problemas para calcular estas probabilidades.>>"
         },
         "line2": {
-            "text": "<position | programming: ¿Conoces la criba de Eratóstenes? | dataScience: ¿Sabes hacer una aproximación normal?>"
+            "text": "<<position || programming: ¿Conoces la criba de Eratóstenes? || dataScience: ¿Sabes hacer una aproximación normal?>>"
         },
         "line3": {
             "text": "Eso le estaba comentando, pero parece que no es la solución que  buscaba."
@@ -232,7 +232,7 @@
                 "text": "¿\"Los encargados\" de la entrevista? Pero si solo me ha preguntado él. Ella parecía más una secretaria que una trabajadora de Recursos Humanos."
             },
             {
-                "text": "Me pregunto por qué no aprende caligrafía en lugar de mandar a su compañera a tomar notas. ¿No se da cuenta de que los dos tienen el mismo puesto, y de que deberían trabajar igual?"
+                "text": "Me pregunto por qué no aprende caligrafía en lugar de mandar a su compañera a tomar notas. ¿No se da cuenta de que los dos tienen el mismo puesto y de que deberían trabajar igual?"
             }
         ]
     },
@@ -296,7 +296,7 @@
         ],
 
         "wrong": {
-                "text": "No, me he equivocado. Lo raro es que tengan en cuenta que soy \"agradable\", si me estoy presentando a un puesto técnico."
+                "text": "No, me he equivocado. Lo raro es que tengan en cuenta que soy \"agradable\" si me estoy presentando a un puesto técnico."
             },
         "right": [
             {

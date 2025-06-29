@@ -25,8 +25,8 @@ export default class GameManager extends Singleton {
     init() {
         this.ui = this.sceneManager.getScene("UI");
 
-        // this.startGame();
-        this.startMainMenu();
+        this.startGame();
+        // this.startMainMenu();
     }
 
     startGame() {
@@ -47,13 +47,13 @@ export default class GameManager extends Singleton {
 
         // TEST
         // this.startMainMenu();
-        // this.startHallScene();
+        this.startHallScene();
         // this.startCorridorScene();
         // this.startCafeteriaScene();
         // this.startWaitingRoomScene();
         // this.startOfficeScene();
         // this.startMirrorScene();
-        // this.startQuestionScene(8);
+        // this.startQuestionScene(1);
         // this.startCreditsScene();
     }
 

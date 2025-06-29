@@ -4,13 +4,13 @@
             "text": "¿Has visto cómo está hoy la sala de reuniones?"
         },
         "line1": {
-            "text": "La verdad es que con la oferta para <position | programming: programador | dataScience: analista> junior se ha llenado esto de gente."
+            "text": "La verdad es que con la oferta para <<position || programming: programador || dataScience: analista>> junior se ha llenado esto de gente."
         },
         "line2": {
             "text": "Y no hay ni una tía."
         },
         "line3": {
-            "text": "Normal. ¿Cuántas conoces que sepan <position | programming: programar | dataScience: matemáticas>?"
+            "text": "Normal. ¿Cuántas conoces que sepan <<position || programming: programar || dataScience: matemáticas>>?"
         },
         "line4": {
             "text": "Alguna habrá, digo yo."
@@ -36,10 +36,10 @@
             "text": "¿Cómo llevas el proyecto?"
         },
         "line2": {
-            "text": "La verdad es que estoy teniendo algunos problemas para <position | programming: encontrar todos los números primos en una lista | dataScience: calcular las probabilidades de que cierto evento ocurra>."
+            "text": "La verdad es que estoy teniendo algunos problemas para <<position || programming: encontrar todos los números primos en una lista || dataScience: calcular las probabilidades de que cierto evento ocurra>>."
         },
         "line3": {
-            "text": "Lo primero que se me ocurre es que <position | programming: uses la criba de Eratóstenes | dataScience: hagas una aproximación normal>. No es el proceso más rápido, pero te aseguro que funciona."
+            "text": "Lo primero que se me ocurre es que <<position || programming: uses la criba de Eratóstenes || dataScience: hagas una aproximación normal>>. No es el proceso más rápido, pero te aseguro que funciona."
         },
         "line4": [
             {
@@ -55,14 +55,14 @@
             "text": "¡Hey! ¿Qué tal, chicas? Casi no os veo. ¿De qué estabais hablando?"
         },
         "line1": {
-            "text": "Pues le estaba comentando a Rebeca que no sé cómo <position | programming: encontrar todos los números primos en una lista | dataScience: calcular cierta probabilidad>."
+            "text": "Pues le estaba comentando a Rebeca que no sé cómo <<position || programming: encontrar todos los números primos en una lista || dataScience: calcular cierta probabilidad>>."
         },
         "line2": [
             {
-                "text": "¡Ah! ¡Qué interesante! <position | programming: ¿Conoces la criba de Eratóstenes? | dataScience: ¿Sabes hacer una aproximación normal?>"
+                "text": "¡Ah! ¡Qué interesante! <<position || programming: ¿Conoces la criba de Eratóstenes? || dataScience: ¿Sabes hacer una aproximación normal?>>"
             },
             {
-                "text": "Con ese <position | programming: algoritmo vas descartando todos los números que no son primos, y te quedan los primos | dataScience: método te puedes sacar unos resultados bastante fiables para lo que estás intentando hacer>."
+                "text": "Con ese <<position || programming: algoritmo vas descartando todos los números que no son primos y te quedan los primos || dataScience: método te puedes sacar unos resultados bastante fiables para lo que estás intentando hacer>>."
             }
         ],
         "line3": {
@@ -78,7 +78,7 @@
             "text": "No, no hace falta. Voy a probar tu solución, Carlos. Solo quería asegurarme de que la solución era válida."
         },
         "line7": {
-            "text": "Si Rebeca te da una solución seguramente sea mejor que la mía. Con todos los años que lleva trabajando aquí, sabe más que ninguno de nosotros."
+            "text": "Si Rebeca te da una solución, seguramente sea mejor que la mía. Con todos los años que lleva trabajando aquí, sabe más que ninguno de nosotros."
         },
         "line8": {
             "text": "En fin, nos vemos en otro momento. Ya me contarás si te ha servido mi consejo."

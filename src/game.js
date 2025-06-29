@@ -81,6 +81,6 @@ const CONFIG = {
 
 const GAME = new Phaser.Game(CONFIG);
 GAME.debug = {
-    enable: true,
+    enable: false,
     color: "0x00ff00"
 }

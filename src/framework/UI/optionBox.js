@@ -52,7 +52,7 @@ export default class OptionBox extends InteractiveContainer {
             pointerOverColor: "#d9d9d9"
         }
 
-        // TODO: Meter soporte para agrandar la caja si el texto no caba (y/o para usar nineslice)
+        // TODO: Meter soporte para agrandar la caja si el texto no cabe (y/o para usar nineslice)
 
         // Completar los parametros faltantes de los argumentos
         this.boxConfig = completeMissingProperties(boxConfig, DEFAULT_BOX_CONFIG);

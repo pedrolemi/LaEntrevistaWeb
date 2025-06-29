@@ -23,7 +23,7 @@
                 "text": "¿Sí?"
             },
             {
-                "text": "(A saber)."
+                "text": "(A saber.)"
             }
         ],
         "doubt": {
@@ -42,7 +42,7 @@
         },
         "quotas": [
             {
-                "text": "Ya sabes, hay muchas candidaturas. Pero también están las cuotas que cumplir, y las ayudas que dan a las empresas."
+                "text": "Ya sabes, hay muchas candidaturas. Pero también están las cuotas que cumplir y las ayudas que dan a las empresas."
             },
             {
                 "text": "Ya sabes, por contratar a cierto tipo de personas."
@@ -50,10 +50,10 @@
         ],
         "changeTopic": [
             {
-                "text": "(No me gusta por dónde está yendo la conversación, voy a callarme)."
+                "text": "(No me gusta por dónde está yendo la conversación, voy a callarme.)"
             },
             {
-                "text": "Simplemente hazlo lo mejor que puedas, y no te preocupes."
+                "text": "Simplemente hazlo lo mejor que puedas y no te preocupes."
             }
         ],
         "equality": [
@@ -67,7 +67,7 @@
     },
     "JaimeConversation": {
         "root": {
-            "text": "Perdona, ¿también has venido a la entrevista de <position | programming: programador junior | dataScience: analista de datos>?"
+            "text": "Perdona, ¿también has venido a la entrevista de <<position || programming: programador junior || dataScience: analista de datos>>?"
         },
         "line1": {
             "text": "Sí, a ver qué tal se me da. ¿Entonces tú también estás aquí por las entrevistas?"
@@ -77,7 +77,7 @@
                 "text": "Sí, a ver si tengo suerte. He hecho pocas entrevistas."
             },
             {
-                "text": "Sí. Acabo de terminar la carrera, y me he preparado mucho para esta entrevista."
+                "text": "Sí. Acabo de terminar la carrera y me he preparado mucho para esta entrevista."
             }
         ],
         "encourage": {
@@ -87,7 +87,7 @@
             "text": "Entonces no hace falta que te desee suerte, je, je."
         },
         "interviews": {
-            "text": "Esto de las entrevistas es bastante sencillo. Al final, acabas cogiéndole gustillo y todo."
+            "text": "Esto de las entrevistas es bastante sencillo. Al final acabas cogiéndole gustillo y todo."
         },
         "askWaiting": [
             {
@@ -107,14 +107,14 @@
             "text": "Bueno, no es que me interese especialmente. Pero me gusta hacer entrevistas e intentarlo en todos los sitios."
         },
         "waitingLong": {
-            "text": "Llevo ya una hora, y solo han pasado un par de personas. No es que me hayan hecho esperar tanto, je, je. Es que he venido antes de tiempo."
+            "text": "Llevo ya una hora y solo han pasado un par de personas. No es que me hayan hecho esperar tanto, je, je. Es que he venido antes de tiempo."
         },
         "avoidHome": {
             "text": "Así no paso tanto tiempo en casa."
         },
         "responseHome": [
             {
-                "text": "(Menudo personaje, venir para estar esperando... Mejor ni pregunto)."
+                "text": "(Menudo personaje, venir para estar esperando... Mejor ni pregunto.)"
             },
             {
                 "text": "¿Y eso? ¿Es que te aburres en casa?"
@@ -136,7 +136,7 @@
                 "text": "Claro. Te entiendo."
             },
             {
-                "text": "(Este tío es tonto). Quizás, si trabajaras más en casa, no tendrías esos problemas."
+                "text": "(Este tío es tonto.) Quizás, si trabajaras más en casa, no tendrías esos problemas."
             }
         ],
         "helpAttempt": {
@@ -156,7 +156,7 @@
     },
     "door": {
         "root": {
-            "text": "(Todavía no es la hora que me habían indicado. Podría ver qué más cosas hay por el edificio)."
+            "text": "(Todavía no es la hora que me habían indicado. Podría ver qué más cosas hay por el edificio.)"
         }
     }
 }

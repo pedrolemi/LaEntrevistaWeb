@@ -54,6 +54,8 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         let playButton = this.createButton(586, 431, 313, 234, 3.6, this.localizationManager.translate("play", namespace).toUpperCase());
         let creditsButton = this.createButton(471, 854, 263, 215, 14.11, this.localizationManager.translate("credits", namespace).toUpperCase());
         
+        // TODO: Boton y aviso de preguntas
+
         playButton.on("pointerdown", () => {
             let anim = this.tweens.add({
                 targets: blankScreen,

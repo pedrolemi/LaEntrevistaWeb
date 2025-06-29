@@ -212,8 +212,7 @@ export default class BaseUI extends BaseScene {
 
         // Recorre todos los textos de las opciones
         for (let i = 0; i < node.choices.length; i++) {
-            // Crea una OptionBox cuyo onClick establece como siguiente nodo el correspondiente 
-            // al indice de la opcion elegida y elimina el resto de opciones
+            // Crea una OptionBox cuyo onClick establece como siguiente nodo el correspondiente al indice de la opcion elegida y elimina el resto de opciones
             let opt = new OptionBox(this, i, node.choices.length, this.replaceRegularExpressions(node.choices[i], node), () => {
                 node.nextIndex = i;
                 node.nextNode();

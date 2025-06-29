@@ -18,7 +18,7 @@
         ],
         "checkEducation": [
             {
-                "text": "(Mirar mi CV)."
+                "text": "Mirar mi CV."
             }
         ],
         "educationComplete": {
@@ -29,7 +29,7 @@
         },
         "checkLanguages": [
             {
-                "text": "(Mirar mi CV)."
+                "text": "Mirar mi CV."
             },
             {
                 "text": "Inglés, nivel A2."
@@ -46,7 +46,7 @@
         },
         "checkSkills": [
             {
-                "text": "(Mirar mi CV)."
+                "text": "Mirar mi CV."
             },
             {
                 "text": "El dibujo y el manejo de herramientas de diseño."
@@ -63,7 +63,7 @@
         },
         "checkSkills2": [
             {
-                "text": "(Mirar mi CV)."
+                "text": "Mirar mi CV."
             },
             {
                 "text": "Capacidad de organización y resolución de problemas."
@@ -80,7 +80,7 @@
         },
         "checkAvailability": [
             {
-                "text": "(Mirar mi CV)."
+                "text": "Mirar mi CV."
             },
             {
                 "text": "Horaria y para viajar."
@@ -101,11 +101,11 @@
     },
     "selectOffer": {
         "root": {
-            "text": "<position | programming: Creo que la idea de desarrollar software me gusta más. | dataScience: Creo que encajo mejor en el perfil de analista de datos.>"
+            "text": "<<position || programming: Creo que la idea de desarrollar software me gusta más. || dataScience: Creo que encajo mejor en el perfil de analista de datos.>>"
         },
         "askConfirmation": [
             {
-                "text": "(Presentar candidatura)."
+                "text": "(Presentar candidatura.)"
             },
             {
                 "text": "Mejor voy a pensarlo un poco más..."

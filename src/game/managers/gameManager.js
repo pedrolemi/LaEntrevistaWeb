@@ -25,8 +25,8 @@ export default class GameManager extends Singleton {
     init() {
         this.ui = this.sceneManager.getScene("UI");
 
-        this.startGame();
-        // this.startMainMenu();
+        // this.startGame();
+        this.startMainMenu();
     }
 
     startGame() {
@@ -49,7 +49,7 @@ export default class GameManager extends Singleton {
         // this.startMainMenu();
         // this.startHallScene();
         // this.startCorridorScene();
-        this.startCafeteriaScene();
+        // this.startCafeteriaScene();
         // this.startWaitingRoomScene();
         // this.startOfficeScene();
         // this.startMirrorScene();
@@ -62,7 +62,7 @@ export default class GameManager extends Singleton {
     }
 
     startHouseScene() {
-        this.sceneManager.changeScene("House", null, false);
+        this.sceneManager.changeScene("House", null, true);
     }
 
     startHallScene() {
@@ -105,13 +105,9 @@ export default class GameManager extends Singleton {
     */
     increaseInteractedCharacters() {
         ++this.nInteractedCharacters;
-    }
-
-    /**
-    * Comprobar si se ha interactuado con todos los personajes necesarios
-    * @returns {Boolean} - true si alcanza el minimo requerido o false en caso contrario
-    */
-    hasMetInteractionRequirement() {
-        return this.nInteractedCharacters >= this.N_REQUIRED_INTERACTIONS;
+        if (this.nInteractedCharacters >= this.N_REQUIRED_INTERACTIONS) {
+            console.log(this.nInteractedCharacters);
+            this.dispatcher.dispatch("allPeopleInteracted");
+        }
     }
 }

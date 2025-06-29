@@ -58,21 +58,21 @@ export default class Credits extends LaEntrevistaBaseScene {
         txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("port2", namesNamespace), this.INFO_TEXT_CONFIG);
 
 
-        let video = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, "exitCreditsAnimation");
-        video.setVisible(false);
+        // let video = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, "exitCreditsAnimation");
+        // video.setVisible(false);
 
-        video.on("created", () => {
-            // console.log(video.width)
-            let scaleX = this.CANVAS_WIDTH / video.width;
-            let scaleY = this.CANVAS_HEIGHT / video.height;
-            let scale = Math.max(scaleX, scaleY);
+        // video.on("created", () => {
+        //     // console.log(video.width)
+        //     let scaleX = this.CANVAS_WIDTH / video.width;
+        //     let scaleY = this.CANVAS_HEIGHT / video.height;
+        //     let scale = Math.max(scaleX, scaleY);
 
-            video.setScale(scale * 1.15);
-            video.setPlaybackRate(3);
-        });
-        video.on("complete", () => {
-            this.gameManager.startMainMenu(false);
-        });
+        //     video.setScale(scale * 1.15);
+        //     video.setPlaybackRate(3);
+        // });
+        // video.on("complete", () => {
+        //     this.gameManager.startMainMenu(false);
+        // });
         
         let ARROW_POS = 50;
         let returnButton = this.add.image(ARROW_POS, ARROW_POS, "questionArrow").setOrigin(0, 0);
@@ -81,9 +81,10 @@ export default class Credits extends LaEntrevistaBaseScene {
         this.animateArrow(returnButton);
         
         returnButton.on("pointerdown", () => {
-            returnButton.setVisible(false);
-            video.setVisible(true);
-            video.play();
+            this.gameManager.startMainMenu();
+            // returnButton.setVisible(false);
+            // video.setVisible(true);
+            // video.play();
         });
     }
 

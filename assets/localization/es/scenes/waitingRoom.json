@@ -1,5 +1,5 @@
 {
-    "JaimeConversation": {
+    "AntonioConversation": {
         "root": {
             "text": "Hola, ¿qué tal?"
         },
@@ -65,7 +65,7 @@
             }
         ]
     },
-    "AntonioConversation": {
+    "JaimeConversation": {
         "root": {
             "text": "Perdona, ¿también has venido a la entrevista de <position | programming: programador junior | dataScience: analista de datos>?"
         },
@@ -125,7 +125,7 @@
         },
         "girlfriend": [
             {
-                "text": "Así mi chica no tiene tanto tiempo para echarme la bronca. Que si \"Antonio, has quemado la camisa\". Que si \"Antonio, la ropa hay que separarla por colores\"."
+                "text": "Así mi chica no tiene tanto tiempo para echarme la bronca. Que si \"Jaime, has quemado la camisa\". Que si \"Jaime, la ropa hay que separarla por colores\"."
             },
             {
                 "text": "No valgo para las tareas del hogar, a ella se le da mucho mejor. No se da cuenta de que pone las expectativas muy altas, y aunque lo intente, no llego, je, je."

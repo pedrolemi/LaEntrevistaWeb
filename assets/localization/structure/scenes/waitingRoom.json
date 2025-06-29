@@ -1,5 +1,5 @@
 {
-    "JaimeConversation": {
+    "AntonioConversation": {
         "root": {
             "type": "text",
             "character": "player",
@@ -7,7 +7,7 @@
         },
         "line1": {
             "type": "text",
-            "character": "Jaime",
+            "character": "Antonio",
             "next": "line2"
         },
         "line2": {
@@ -17,7 +17,7 @@
         },
         "line3": {
             "type": "text",
-            "character": "Jaime",
+            "character": "Antonio",
             "next": "line4"
         },
         "line4": {
@@ -27,7 +27,7 @@
         },
         "line5": {
             "type": "text",
-            "character": "Jaime",
+            "character": "Antonio",
             "next": "rethoricalChoices"
         },
         "rethoricalChoices": {
@@ -43,7 +43,7 @@
         },
         "doubt": {
             "type": "text",
-            "character": "Jaime",
+            "character": "Antonio",
             "next": "reaction"
         },
         "reaction": {
@@ -59,12 +59,12 @@
         },
         "accusation": {
             "type": "text",
-            "character": "Jaime",
+            "character": "Antonio",
             "next": "changeTopic"
         },
         "quotas": {
             "type": "text",
-            "character": "Jaime",
+            "character": "Antonio",
             "next": "changeTopic"
         },
         "changeTopic": {
@@ -80,19 +80,19 @@
         },
         "equality": {
             "type": "text",
-            "character": "Jaime",
-            "next": "JaimeLeave"
+            "character": "Antonio",
+            "next": "AntonioLeave"
         },
-        "JaimeLeave": {
+        "AntonioLeave": {
             "type": "event",
             "events": [
                 {
-                    "name": "JaimeLeave"
+                    "name": "AntonioLeave"
                 }
             ]
         }
     },
-    "AntonioConversation": {
+    "JaimeConversation": {
         "root": {
             "type": "text",
             "character": "player",
@@ -100,7 +100,7 @@
         },
         "line1": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "responses"
         },
         "responses": {
@@ -116,17 +116,17 @@
         },
         "encourage": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "interviews"
         },
         "jokeLuck": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "interviews"
         },
         "interviews": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "askWaiting"
         },
         "askWaiting": {
@@ -145,22 +145,22 @@
         },
         "waitingEarly": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "avoidHome"
         },
         "notInterested": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "avoidHome"
         },
         "waitingLong": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "avoidHome"
         },
         "avoidHome": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "responseHome"
         },
         "responseHome": {
@@ -176,12 +176,12 @@
         },
         "defensive": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "girlfriend"
         },
         "girlfriend": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "reaction"
         },
         "reaction": {
@@ -197,24 +197,24 @@
         },
         "helpAttempt": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "goodbye"
         },
         "messUp": {
             "type": "text",
-            "character": "Antonio",
+            "character": "Jaime",
             "next": "goodbye"
         },
         "goodbye": {
             "type": "text",
-            "character": "Antonio",
-            "next": "AntonioLeave"
+            "character": "Jaime",
+            "next": "JaimeLeave"
         },
-        "AntonioLeave": {
+        "JaimeLeave": {
             "type": "event",
             "events": [
                 {
-                    "name": "AntonioLeave"
+                    "name": "JaimeLeave"
                 }
             ]
         }

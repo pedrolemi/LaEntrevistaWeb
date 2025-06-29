@@ -15,37 +15,38 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         super.create();
 
         let bg = this.add.image(0, 0, "mainMenu").setOrigin(0, 0);
-        
-        let startVideo = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, "startGameAnimation");
-        startVideo.setVisible(false);
+        let blankScreen = this.add.image(0, 0, "mainMenuBlank").setOrigin(0, 0);
 
-        let creditsVideo = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, "enterCreditsAnimation");
-        creditsVideo.setVisible(false);
+        // let startVideo = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, "startGameAnimation");
+        // startVideo.setVisible(false);
 
-        startVideo.on("created", () => {
-            let scaleX = this.CANVAS_WIDTH / startVideo.width;
-            let scaleY = this.CANVAS_HEIGHT / startVideo.height;
-            let scale = Math.max(scaleX, scaleY);
+        // let creditsVideo = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, "enterCreditsAnimation");
+        // creditsVideo.setVisible(false);
 
-            startVideo.setScale(scale * 1.15);
-            startVideo.setPlaybackRate(3);
-        });
-        startVideo.on("complete", () => {
-            this.gameManager.startGame();
-        });
+        // startVideo.on("created", () => {
+        //     let scaleX = this.CANVAS_WIDTH / startVideo.width;
+        //     let scaleY = this.CANVAS_HEIGHT / startVideo.height;
+        //     let scale = Math.max(scaleX, scaleY);
 
-        creditsVideo.on("created", () => {
-            // console.log(video.width)
-            let scaleX = this.CANVAS_WIDTH / creditsVideo.width;
-            let scaleY = this.CANVAS_HEIGHT / creditsVideo.height;
-            let scale = Math.max(scaleX, scaleY);
+        //     startVideo.setScale(scale * 1.15);
+        //     startVideo.setPlaybackRate(3);
+        // });
+        // startVideo.on("complete", () => {
+        //     this.gameManager.startGame();
+        // });
 
-            creditsVideo.setScale(scale * 1.15);
-            creditsVideo.setPlaybackRate(3);
-        });
-        creditsVideo.on("complete", () => {
-            this.gameManager.startCreditsScene(false);
-        });
+        // creditsVideo.on("created", () => {
+        //     // console.log(video.width)
+        //     let scaleX = this.CANVAS_WIDTH / creditsVideo.width;
+        //     let scaleY = this.CANVAS_HEIGHT / creditsVideo.height;
+        //     let scale = Math.max(scaleX, scaleY);
+
+        //     creditsVideo.setScale(scale * 1.15);
+        //     creditsVideo.setPlaybackRate(3);
+        // });
+        // creditsVideo.on("complete", () => {
+        //     this.gameManager.startCreditsScene(false);
+        // });
         
 
         let namespace = "scenes";
@@ -54,19 +55,33 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         let creditsButton = this.createButton(471, 854, 263, 215, 14.11, this.localizationManager.translate("credits", namespace).toUpperCase());
         
         playButton.on("pointerdown", () => {
-            playButton.activate(false);
-            creditsButton.activate(false);
+            let anim = this.tweens.add({
+                targets: blankScreen,
+                alpha: { from: 1, to: 0 },
+                duration: 200,
+                repeat: 0,
+            });
+            
+            anim.on("complete", () => { 
+                setTimeout(() => {
+                    this.gameManager.startHouseScene();
+                }, 500);
+            });
+            // playButton.activate(false);
+            // creditsButton.activate(false);
 
-            startVideo.setVisible(true);
-            startVideo.play();
+            // startVideo.setVisible(true);
+            // startVideo.play();
         });
 
         creditsButton.on("pointerdown", () => {
-            playButton.activate(false);
-            creditsButton.activate(false);
+            this.gameManager.startCreditsScene();
+
+            // playButton.activate(false);
+            // creditsButton.activate(false);
             
-            creditsVideo.setVisible(true);
-            creditsVideo.play();
+            // creditsVideo.setVisible(true);
+            // creditsVideo.play();
         });
     }
 

@@ -70,25 +70,18 @@ export function setInteractive(gameObject, config = {}) {
 
     gameObject.setInteractive(config);
 
+    // Guarda la llamada original al disableInteractive del objeto
+    let defaultDisableInteractive = gameObject.disableInteractive.bind(gameObject);
 
-    // Si existe un cursor por defecto
-    if (scene.registry.get("default") != null) {
-        // Guarda la llamada original al disableInteractive del objeto
-        let defaultDisableInteractive = gameObject.disableInteractive.bind(gameObject);
+    // Cambia la funcionalidad del disableInteractive
+    gameObject.disableInteractive = () => {
+        // console.log("disabled");
 
-        // Cambia la funcionalidad del disableInteractive
-        gameObject.disableInteractive = () => {
-            // console.log("disabled");
+        // Llama al disableInteractive original forzando el cambio de cursor al por defecto
+        defaultDisableInteractive(true);
 
-            // Llama al disableInteractive original
-            defaultDisableInteractive();
-
-            // Fuerza el cambio de cursor al por defecto
-            gameObject.scene.input.setDefaultCursor(`url(${scene.registry.get("default")}), pointer`);
-
-            // Restaura el disableInteractive por la llamada original
-            gameObject.disableInteractive = defaultDisableInteractive;
-        }
+        // Restaura el disableInteractive por la llamada original
+        gameObject.disableInteractive = defaultDisableInteractive;
     }
 
     let debug = scene.sys.game.debug;

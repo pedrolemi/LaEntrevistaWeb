@@ -42,7 +42,21 @@ export default class waitingRoom extends LaEntrevistaBaseScene {
         let door = this.add.rectangle(1097, 430, 140, 470, 0x000, 0).setOrigin(0.5, 0.5);
         this.setInteractive(door);
         door.on("pointerdown", () => {
-            if (this.gameManager.hasMetInteractionRequirement()) {
+            this.dialogManager.setNode(doorNode);
+        });
+
+
+        this.dispatcher.add("allPeopleInteracted", this, () => {
+            doorArrow.setVisible(true);
+            this.tweens.add({
+                targets: [doorArrow],
+                scale: { from: arrowScale, to: arrowScale * 1.2 },
+                duration: 1000,
+                repeat: -1,
+                yoyo: true
+            });
+            
+            door.on("pointerdown", () => {
                 let anim = this.tweens.add({
                     targets: [corridorArrow, doorArrow],
                     alpha: { from: 1, to: 0 },
@@ -54,11 +68,11 @@ export default class waitingRoom extends LaEntrevistaBaseScene {
                     doorArrow.setVisible(false);
                 });
                 this.gameManager.startOfficeScene();
-            }
-            else {
-                this.dialogManager.setNode(doorNode);
-            }
+            });
+
+            doorNode = null;
         });
+
 
         let textArea = super.createTextArea(1227, 280, 95, 60, 0.5, 0.5,
             this.localizationManager.translate("humanResourcesSign", "scenes"), this.signTextConfig);

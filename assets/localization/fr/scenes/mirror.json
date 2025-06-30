@@ -1,0 +1,50 @@
+{
+    "start": {
+        "root": {
+            "text": "Después de pensarlo un poco, la entrevista me ha salido..."
+        },
+        "choices": [
+            {
+                "text": "Bastante bien, creo que la he clavado."
+            },
+            {
+                "text": "Regular, podría haberlo hecho algo mejor."
+            },
+            {
+                "text": "Fatal, no me había sentido tan incómoda en mucho tiempo."
+            }
+        ],
+        "good": {
+            "text": "No he tenido la oportunidad de  hacer muchas entrevistas, pero creo que esta ha sido un  buen comienzo."
+        },
+        "mid": {
+            "text": "También es verdad que era mi primera entrevista. Siempre se puede mejorar."
+        },
+        "bad": {
+            "text": "No me he podido concentrar ni en lo que iba a responder. Solo quería que se acabase."
+        },
+
+        "recap": [
+            {
+                "text": "Aunque, ahora que lo pienso, los entrevistadores... el entrevistador, mejor dicho, ha sido un poco raro."
+            },
+            {
+                "text": "Bueno, él y todos, en general. Menudo día. No me puedo creer que haya escuchado tantas cosas. A ver si soy capaz de acordarme de todas..."
+            }
+        ]
+    },
+
+    "end": {
+        "root": [
+            {
+                "text": "Vaya día me ha tocado vivir. Tengo que reconocer que no es lo más habitual encontrar todas estas situaciones, pero cuando pasan..."
+            },
+            {
+                "text": "Aunque la gente no se dé cuenta, todos los días hacemos comentarios que pueden ser sexistas. Por eso es tan importante pensar en lo que estamos diciendo y corregir los comentarios que sean discriminatorios."
+            },
+            {
+                "text": "Las mujeres merecemos el mismo respeto que los hombres, y somos capaces de conseguir lo mismo que ellos."
+            }
+        ]
+    }
+}

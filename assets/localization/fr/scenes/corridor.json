@@ -1,0 +1,25 @@
+{
+    "locationInquiry": {
+        "root": {
+            "text": "Hola, vengo por una entrevista de trabajo. ¿Sabría decirme dónde ir?"
+        },
+        "staffResponse": {
+            "text": "Claro, por el pasillo del fondo. Si tienes que esperar, puedes pasarte por la cafetería mientras tanto. ¡Suerte!"
+        }
+    },
+    "meetingRoomSign": {
+        "root": [
+            {
+                "text": "(Al final del pasillo está la sala de reuniones.)"
+            },
+            {
+                "text": "(He oído que las entrevistas de trabajo son por ahí.)"
+            }
+        ]
+    },
+    "cafeteriaSign": {
+        "root": {
+            "text": "(La cafetería está por la izquierda... Podría investigar.)"
+        }
+    }
+}

@@ -1,0 +1,373 @@
+{
+    "root": [
+        {
+            "text": "Buenos días. Por favor, siéntate."
+        },
+        {
+            "text": "¿Qué tal? Espero que no lleves mucho tiempo esperando."
+        }
+    ],
+    "choices": [
+        {
+            "text": "Estoy bien, gracias."
+        },
+        {
+            "text": "Bueno, ha sido una mañana... peculiar."
+        }
+    ],
+
+    "good": {
+        "text": "Me alegro."
+    },
+
+    "notSoGood": {
+        "text": "¿Y eso? ¿Has tenido algún problema?"
+    },
+    "comment": {
+        "text": "Ah, no, solo era un comentario."
+    },
+    "sure": {
+        "text": "Genial."
+    },
+
+    "introduction": [
+        {
+            "text": "Antes de continuar, me gustaría presentarnos. Yo soy Andrés Rodríguez y esta es mi compañera, Luisa."
+        },
+        {
+            "text": "Ambos trabajamos en el departamento de Recursos Humanos de esta empresa. Somos los encargados de las entrevistas de hoy."
+        },
+        {
+            "text": "Por cierto... Luisa, ¿te importaría ser tú quien tome las notas? Sabes que me encanta tu forma de escribir porque tienes mejor letra que yo y tomas notas de forma mucho más organizada."
+        }
+    ],
+    "startQuestion": {
+        "text": "Como quieras. Bueno, en primer lugar, nos gustaría saber..."
+    },
+    "interruption": {
+        "text": "No te preocupes, Luisa. Ya hago yo las preguntas."
+    },
+    "mock": {
+        "text": "*Murmura* \"yi higui yi lis priguintis\". Idiota."
+    },
+    "distracted": {
+        "text": "Perdona, no te he oído. ¿Me dices algo?"
+    },
+    "gaslight": {
+        "text": "Que... que me parece perfecto. Así me puedo concentrar en... tomar notas."
+    },
+    "gaslighted": {
+        "text": "Perfecto."
+    },
+    "repeat": {
+        "text": "Perfectísimo."
+    },
+    "start": [
+        {
+            "text": "Genial, pues empecemos."
+        },
+        {
+            "text": "Dinos, ¿por qué quieres trabajar con nosotros?"
+        }
+    ],
+    "answer1": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "Acabo de terminar la carrera y estoy buscando una empresa para desarrollarme como profesional."
+        },
+        {
+            "text": "<<position || programming: Sé la reputación que tiene desarrollando programas innovadores. Creo que con mi formación, mi curiosidad e iniciativa podré contribuir en el diseño de los proyectos que tienen trazados para este año. || dataScience: Sé el alcance que tiene a nivel nacional. Creo que con mi formación, mi curiosidad e iniciativa podré contribuir a obtener resultados fiables para cada proyecto en el que trabajemos.>>"
+        },
+        {
+            "text": "Es una gran oportunidad para aprender y creo que puedo aportar mucho al equipo."
+        }
+    ],
+
+    "question2": [
+        {
+            "text": "Somos una empresa con sedes en diferentes países, con las que colaboramos a menudo. Por eso necesitamos gente que se desenvuelva en otros idiomas."
+        },
+        {
+            "text": "¿Qué nivel de inglés tienes?"
+        }
+    ],
+    "answer2": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "Tengo un nivel medio. Hace poco, obtuve el B2."
+        },
+        {
+            "text": "Tengo un nivel alto. Hace unos meses, obtuve el C1 mediante un examen de Cambridge."
+        },
+        {
+            "text": "Leo algunas cosillas en inglés y me defiendo al hablar y escribir."
+        }
+    ],
+
+    "question3": [
+        {
+            "text": "Bien, bien."
+        },
+        {
+            "text": "<<position || programming: Como empresa centrada en el desarrollo de software, necesitamos gente que tenga cierta base programando. || dataScience: Aunque no seamos una empresa centrada en el desarrollo de software, necesitamos gente que tenga cierta base programando.>>"
+        },
+        {
+            "text": "¿Cuál es su experiencia programando? ¿Qué lenguajes ha utilizado?"
+        }
+    ],
+    "answer3": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "He tenido varias asignaturas de programación y, por tanto, he usado diferentes lenguajes."
+        },
+        {
+            "text": "En la universidad participé en varios proyectos, que desarrollé utilizando lenguajes orientados a objetos."
+        },
+        {
+            "text": "Desde que empecé la carrera he desarrollado diferentes programas utilizando <<position || programming: , principalmente, C++. También he trabajado otros lenguajes como Java y Javascript. || dataScience: Python.>>"
+        }
+    ],
+
+    "question4": [
+        {
+            "text": "De acuerdo."
+        },
+        {
+            "text": "También nos interesa saber si has <<position || programming: utilizado algún sistema de control de versiones como Git. || dataScience: trabajado con bases de datos y si has desarrollado alguna.>>"
+        }
+    ],
+    "answer4": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "Claro, <<position || programming: lo || dataScience: las >> he utilizado para las prácticas de la carrera."
+        },
+        {
+            "text": "Por supuesto. Desde que empecé a <<position || programming: desarrollar software, Git ha sido una herramienta esencial para trabajar en equipo o a solas. Pueden echar un vistazo a todo mi trabajo de la carrera en mis repositorios. || dataScience: estudiar, las bases de datos han sido una herramienta esencial para recoger y clasificar datos. Me alegra decir que he podido crear alguna, aunque no fuera la más completa. >>"
+        },
+        {
+            "text": "Sí, todos mis proyectos universitarios <<position || programming: tienen un repositorio en GitHub, para facilitar el trabajo en equipo. || dataScience: los hice con bases de datos, para facilitar la recogida de datos.>>"
+        }
+    ],
+
+    "question5": [
+        {
+            "text": "Muy bien. Vamos a pasar a otro tipo de preguntas, menos técnicas."
+        },
+        {
+            "text": "¿Dónde te ves de aquí a cinco años? ¿Qué quieres conseguir?"
+        }
+    ],
+    "answer5": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "Es mucho tiempo, pueden pasar tantas cosas que no sé qué decir. Nunca me lo había planteado."
+        },
+        {
+            "text": "Me gustaría tener una buena base de experiencia que me permita seguir escalando profesionalmente."
+        },
+        {
+            "text": "Me encantaría trabajar en proyectos que me apasionen y que me permitan seguir desarrollándome tanto profesional como personalmente."
+        }
+    ],
+
+    "question6": [
+        {
+            "text": "Entiendo."
+        },
+        {
+            "text": "Al hilo de esta pregunta..."
+        },
+        {
+            "text": "¿Tienes pareja?"
+        }
+    ],
+    "answer6": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "¿Es esto relevante para el puesto?"
+        },
+        {
+            "text": "No, quiero centrarme en mi carrera profesional."
+        },
+        {
+            "text": "Sí, tengo pareja."
+        },
+        {
+            "text": "Sí, pero no va a impedir que me dedique de lleno a mi carrera profesional."
+        }
+    ],
+    "avoid6": {
+        "text": "(No quiero faltarles el respeto... A ver qué respondo.)"
+    },
+    "partnerCommentary": {
+        "text": "Genial, es importante ganar experiencia cuando se es joven."
+    },
+
+    "question7": [
+        {
+            "text": "Como empresa internacional, a veces es necesario enviar desarrolladores a otros países durante algunos días."
+        },
+        {
+            "text": "¿Tendrás disponibilidad para viajar?"
+        }
+    ],
+    "answer7": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "Por supuesto que la tengo. Siempre me gusta cumplir con mis compromisos, y el trabajo es de los más importantes para mí."
+        },
+        {
+            "text": "Tendría que estudiarlo pero, si es necesario, viajaría."
+        }
+    ],
+
+    "question8": [
+        {
+            "text": "Interesante. Déjame decirte que tienes una voz muy agradable, aunque quizá es demasiado suave."
+        },
+        {
+            "text": "Te lo digo porque me da miedo que no sepas hacerte valer ante tus compañeros cuando sea necesario."
+        }
+    ],
+    "answer8": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "Es verdad que a veces no comparto todas las ideas que tengo, pero cuando lo hago, la gente suele escucharme."
+        },
+        {
+            "text": "Cuando he aportado mis ideas a proyectos en los que he trabajado, he sabido argumentarlas sin tener que elevar mi tono."
+        },
+        {
+            "text": "Si el resto de compañeros están dispuestos a escuchar mis ideas, no debería haber problemas."
+        }
+    ],
+
+    "question9": [
+        {
+            "text": "Muy bien."
+        },
+        {
+            "text": "También me gustaría decirte que creo que puedes aportar un toque único al equipo."
+        },
+        {
+            "text": "Me parece que puedes aportar cierta humanidad y calidez al equipo."
+        }
+    ],
+    "answer9": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "Pensaba que el puesto era para <<position || programming: desarrollar software || dataScience: analizar datos >>, no para \"aportar calidez\"."
+        },
+        {
+            "text": "Supongo que es importante fomentar un buen ambiente de trabajo."
+        },
+        {
+            "text": "Y no solo eso; tengo muchas ganas de empezar a dar mis ideas y demostrar mi capacidad técnica."
+        }
+    ],
+    "avoid9": {
+        "text": "(Mejor no digo nada...)"
+    },
+
+    "question10": [
+        {
+            "text": "Ya por último quiero comentarte que este es un trabajo muy exigente. En el pasado hemos tenido problemas con personas que, en los momentos de mayor presión, se derrumban."
+        },
+        {
+            "text": "¿No serás de estas personas que se derrumban al trabajar bajo presión?"
+        }
+    ],
+    "answer10": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "Para nada. Ante situaciones de estrés, soy capaz de concentrarme y sacar el trabajo adelante."
+        },
+        {
+            "text": "Pero, ¿esto a qué viene?"
+        },
+        {
+            "text": "No creo que a nadie le guste trabajar bajo presión, pero tampoco tengo problemas con ello."
+        }
+    ],
+    "avoid10": {
+        "text": "(Menudas preguntas... A ver qué respondo)"
+    },
+
+    "question11": [
+        {
+            "text": "¡Ah! Casi lo olvido. Respecto al tema de viajar..."
+        },
+        {
+            "text": "¿Tienes algún familiar a tu cargo o tienes pensado tener hijos en los próximos años?"
+        },
+        {
+            "text": "Ya sabes que a veces es difícil compatibilizar todo."
+        }
+    ],
+    "answer11": [
+        {
+            "text": "Mirar mi CV."
+        },
+        {
+            "text": "¿Otra vez con esas?"
+        },
+        {
+            "text": "Como le decía antes, hay muchas cosas que pueden ocurrir, y no he pensado mucho en el futuro."
+        },
+        {
+            "text": "Como le decía antes, quiero centrarme totalmente en el trabajo. Aunque tenga familia, no me va a impedir trabajar correctamente."
+        }
+    ],
+    "avoid11": {
+        "text": "(Después de haber aguantado tanto, no voy a responder ahora así. Ya queda poco.)"
+    },
+
+    "endInterview": {
+        "text": "Genial. Con esto hemos terminado la entrevista. Muchas gracias por tu tiempo."
+    },
+    
+    "hired": {
+        "text": "Tendremos en cuenta tu candidatura y te avisaremos cuando terminemos el proceso de entrevistas."
+    },
+    "doubt": {
+        "text": "No puedo adelantarle mucha más información, pero he de decirte que puedes encajar muy bien en el puesto. "
+    },
+    "notHired": [
+        {
+            "text": "Creo que, con lo que hemos visto, no terminas de encajar en el puesto que estamos buscando."
+        },
+        {
+            "text": "Pero nos guardamos tu CV por si hubiera otro puesto que encajara mejor."
+        }
+    ],
+
+    "thanks": {
+        "text": "De nuevo, nos gustaría agradecerte tu tiempo y desearte un buen día."
+    },
+    "contact": {
+        "text": "En las próximas semanas nos pondremos en contacto contigo."
+    },
+    "return": {
+        "text": "Ha sido... toda una experiencia. Debería volver a casa."
+    }
+}

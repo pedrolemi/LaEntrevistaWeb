@@ -1,0 +1,52 @@
+{
+    "start": {
+        "root": {
+            "text": "Buenos días, vengo a una entrevista de trabajo."
+        },
+        "greetings": {
+            "text": "Buenos días. Las entrevistas para la vacante de auxiliar administrativo se están haciendo en la cuarta planta. Puedes coger el ascensor que hay al fondo."
+        },
+        "choices": [
+            {
+                "text": "Vale, gracias."
+            },
+            {
+                "text": "Perdón, ¿cómo dice?"
+            },
+            {
+                "text": "Creo que no me he explicado. Vengo por el puesto de <<position || programming: programador || dataScience: analista>>."
+            }
+        ],
+
+        "fakeAssThanks": {
+            "text": "(Creo que tendré que buscar por mi cuenta... Idiota.)"
+        },
+
+        "ask": [
+            {
+                "text": "Tenemos varios puestos vacantes. Las entrevistas para auxiliar administrativo son en la cuarta planta, como le decía. Puede coger el ascensor que hay al fondo."
+            },
+            {
+                "text": "Si vienes por el puesto en Recursos Humanos, tienes que ir a la tercera planta. Las entrevistas son en la sala que hay al final del pasillo izquierdo."
+            }
+        ],
+
+        "clarify": [
+            {
+                "text": "(Se sorprende.)"
+            },
+            {
+                "text": "Las entrevistas para puestos técnicos son en la segunda planta. Te recomiendo usar las escaleras."
+            }
+        ],
+        "realThanks": {
+            "text": "Gracias."
+        }
+    },
+
+    "repeat": {
+        "root": {
+            "text": "Perdona, pero tengo trabajo que hacer."
+        }
+    }
+}

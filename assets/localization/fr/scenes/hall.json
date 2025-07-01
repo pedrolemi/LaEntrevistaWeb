@@ -1,52 +1,52 @@
 {
     "start": {
         "root": {
-            "text": "Buenos días, vengo a una entrevista de trabajo."
+            "text": "Bonjour, je suis ici pour un entretien d'embauche."
         },
         "greetings": {
-            "text": "Buenos días. Las entrevistas para la vacante de auxiliar administrativo se están haciendo en la cuarta planta. Puedes coger el ascensor que hay al fondo."
+            "text": "Bonjour. Les entretiens pour le poste vacant d'assistant administratif se déroulent au quatrième étage. Vous pouvez prendre l'ascenseur à l'arrière."
         },
         "choices": [
             {
-                "text": "Vale, gracias."
+                "text": "D'accord, merci."
             },
             {
-                "text": "Perdón, ¿cómo dice?"
+                "text": "Pardon, je vous demande pardon ?"
             },
             {
-                "text": "Creo que no me he explicado. Vengo por el puesto de <<position || programming: programador || dataScience: analista>>."
+                "text": "Je ne pense pas avoir été assez clair. Je suis ici pour le poste de <<position || programming:programmeur|| dataScience:data analyste>> junior."
             }
         ],
 
         "fakeAssThanks": {
-            "text": "(Creo que tendré que buscar por mi cuenta... Idiota.)"
+            "text": "(Je pense que je vais devoir chercher moi-même.... Idiot.)"
         },
 
         "ask": [
             {
-                "text": "Tenemos varios puestos vacantes. Las entrevistas para auxiliar administrativo son en la cuarta planta, como le decía. Puede coger el ascensor que hay al fondo."
+                "text": "Nous avons plusieurs postes vacants. Les entretiens pour les assistants administratifs se déroulent au quatrième étage, comme je l'ai dit. Vous pouvez prendre l'ascenseur à l'arrière."
             },
             {
-                "text": "Si vienes por el puesto en Recursos Humanos, tienes que ir a la tercera planta. Las entrevistas son en la sala que hay al final del pasillo izquierdo."
+                "text": "Si vous venez pour le poste aux Ressources Humaines, vous devez vous rendre au troisième étage. Les entretiens se déroulent dans la salle située au bout du couloir de gauche."
             }
         ],
 
         "clarify": [
             {
-                "text": "(Se sorprende.)"
+                "text": "(Se surprend.)"
             },
             {
-                "text": "Las entrevistas para puestos técnicos son en la segunda planta. Te recomiendo usar las escaleras."
+                "text": "Les entretiens pour les postes techniques se déroulent au premier étage. Je vous recommande d'emprunter les escaliers."
             }
         ],
         "realThanks": {
-            "text": "Gracias."
+            "text": "Merci de votre attention."
         }
     },
 
     "repeat": {
         "root": {
-            "text": "Perdona, pero tengo trabajo que hacer."
+            "text": "Excusez-moi, mais j'ai du travail."
         }
     }
 }

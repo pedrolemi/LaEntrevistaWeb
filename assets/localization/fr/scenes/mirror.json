@@ -1,35 +1,35 @@
 {
     "start": {
         "root": {
-            "text": "Después de pensarlo un poco, la entrevista me ha salido..."
+            "text": "Après réflexion, l'entretien s'est déroulé..."
         },
         "choices": [
             {
-                "text": "Bastante bien, creo que la he clavado."
+                "text": "Plutôt bien, je pense que j'ai réussi."
             },
             {
-                "text": "Regular, podría haberlo hecho algo mejor."
+                "text": "Régulier, j'aurais pu faire mieux."
             },
             {
-                "text": "Fatal, no me había sentido tan incómoda en mucho tiempo."
+                "text": "Terrible, je ne me suis pas sentie aussi mal à l'aise depuis longtemps."
             }
         ],
         "good": {
-            "text": "No he tenido la oportunidad de  hacer muchas entrevistas, pero creo que esta ha sido un  buen comienzo."
+            "text": "Je n'ai pas eu l'occasion de faire beaucoup d'interviews, mais je pense que c'était un bon début."
         },
         "mid": {
-            "text": "También es verdad que era mi primera entrevista. Siempre se puede mejorar."
+            "text": "Il est vrai aussi que c'était mon premier entretien. Il est toujours possible de s'améliorer."
         },
         "bad": {
-            "text": "No me he podido concentrar ni en lo que iba a responder. Solo quería que se acabase."
+            "text": "Je n'arrivais même pas à me concentrer sur ce que j'allais répondre. Je voulais juste que ce soit fini."
         },
 
         "recap": [
             {
-                "text": "Aunque, ahora que lo pienso, los entrevistadores... el entrevistador, mejor dicho, ha sido un poco raro."
+                "text": "Pourtant, à bien y penser, les interviewers... l'interviewer, plutôt, était un peu bizarre."
             },
             {
-                "text": "Bueno, él y todos, en general. Menudo día. No me puedo creer que haya escuchado tantas cosas. A ver si soy capaz de acordarme de todas..."
+                "text": "Enfin, lui et tous, en général. Quelle journée ! Je n'arrive pas à croire que j'ai entendu autant de choses. Voyons si j'arriverai à me souvenir de tout..."
             }
         ]
     },
@@ -37,13 +37,13 @@
     "end": {
         "root": [
             {
-                "text": "Vaya día me ha tocado vivir. Tengo que reconocer que no es lo más habitual encontrar todas estas situaciones, pero cuando pasan..."
+                "text": "Quelle journée j'ai passée ! Je dois admettre que ce n'est pas la chose la plus habituelle de trouver toutes ces situations, mais lorsqu'elles se produisent..."
             },
             {
-                "text": "Aunque la gente no se dé cuenta, todos los días hacemos comentarios que pueden ser sexistas. Por eso es tan importante pensar en lo que estamos diciendo y corregir los comentarios que sean discriminatorios."
+                "text": "Même si les gens ne s'en rendent pas compte, nous faisons tous les jours des commentaires qui peuvent être sexistes. C'est pourquoi il est si important de réfléchir à ce que nous disons et de corriger les commentaires discriminatoires."
             },
             {
-                "text": "Las mujeres merecemos el mismo respeto que los hombres, y somos capaces de conseguir lo mismo que ellos."
+                "text": "Les femmes méritent le même respect que les hommes, et nous sommes capables de réaliser les mêmes choses qu'eux."
             }
         ]
     }

@@ -1,17 +1,17 @@
 {
-    "play": "Jugar",
-    "credits": "Créditos",
-    "questions": "Preguntas",
+    "play": "Jouer",
+    "credits": "Crédits",
+    "questions": "Questions",
 
-    "platform": "Portal \nde empleo",
-    "programming": "Programación",
-    "data": "Análisis de datos",
+    "platform": "Portail d'offres d'emploi",
+    "programming": "Programation",
+    "data": "Analyse de données",
 
-    "meetingRoomSign": "Sala de reuniones",
-    "cafeteriaSign": "Cafetería",
-    "hr": "Recursos Humanos",
+    "meetingRoomSign": "Salle de réunions",
+    "cafeteriaSign": "Cafeteria",
+    "hr": "Ressources Humaines",
 
-    "30min": "30 minutos después...",
+    "30min": "30 minutes plus tard...",
 
-    "humanResourcesSign": "Recursos\nHumanos"
+    "humanResourcesSign": "Ressources\nHumaines"
 }

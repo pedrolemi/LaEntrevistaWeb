@@ -1,8 +1,8 @@
 {
-    "directors": "Directores del proyecto:",
-    "development": "Desarrollo:",
-    "idea": "Idea original:",
-    "art": "Director de arte:",
-    "port": "Versión web:",
-    "localizationFrench":"Traducción al francés:"
+    "directors": "Chefs de projet:",
+    "development": "Développement:",
+    "idea": "Idée originale :",
+    "art": "Directeur artistique:",
+    "port": "Version web:",
+    "localizationFrench":"Traduction au français:"
 }

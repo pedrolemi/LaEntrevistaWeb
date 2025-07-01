@@ -1,50 +1,50 @@
 {
-    "title": "Sobre mí",
+    "title": "Informations personnelles",
 
-    "nameTitle": "Nombre",
-    "name": "Alex Rodríguez",
+    "nameTitle": "Nom",
+    "name": "Alex Rodrigue",
     
-    "civilStateTitle": "Pareja",
-    "civilState": "2 años y medio en pareja",
+    "civilStateTitle": "Couple",
+    "civilState": "2 ans et demi en couple",
     
-    "educationTitle": "Estudios",
-    "education": "Grado en STEM",
+    "educationTitle": "Etudes",
+    "education": "Diplôme d'école d'ingénieur",
     
-    "ageTitle": "Edad",
-    "age": "24 años",
+    "ageTitle": "Age",
+    "age": "24 ans",
     
-    "skillsTitle": "aptitudes",
+    "skillsTitle": "Compétences",
     "bulletPoint": "·   ",
-    "skill1": "Inglés nivel C1",
-    "skill2": "Análisis de datos y cálculo",
-    "skill3": "Trabajo bajo presión",
-    "skill4": "Nociones de programación",
-    "skill5": "Trabajo en equipo",
+    "skill1": "Anglais niveau C1",
+    "skill2": "Analyse de données et calcul",
+    "skill3": "Travail sous pression",
+    "skill4": "Notions de programmation",
+    "skill5": "Travail d'équipe",
 
 
-    "data": "Datos de interés",
-    "data1Title": "Dato 1: Viajes",
-    "data1Description": "Me gusta viajar y conocer nuevos sitios. Podría desplazarme si el trabajo lo requiere.",
-    "data2Title": "Dato 2: Futuro",
-    "data2Description": "Ahora que he terminado la carrera no tengo ningún problema de horario. Podría adaptarme a las horas que se necesiten.",
-    "data3Title": "Dato 3: Habilidades",
-    "data3Description": "Durante la carrera he trabajado en grandes equipos. Es muy importante aportar ideas relevantes, escuchar las críticas de los compañeros y aprender a controlar el estrés.",
-    "data4Title": "Dato 4: Experiencia",
-    "data4Description": "Aunque no he trabajado en ninguna empresa antes, durante la carrera he trabajado mucho. Tengo ganas de demostrar todo lo que he aprendido estos años.",
+    "data": "Faits intéressants",
+    "data1Title": "Fait 1: Voyages",
+    "data1Description": "J'aime voyager et découvrir de nouveaux endroits. Je pourrais voyager si le travail l'exige.",
+    "data2Title": "Fait 2: Futur",
+    "data2Description": "Maintenant que j'ai eu mon diplôme, mon emploi du temps ne me pose aucun problème. Je peux m'adapter aux heures nécessaires.",
+    "data3Title": "Fait 3: Compétences",
+    "data3Description": "Au cours de mes études, j'ai travaillé dans de grandes équipes. Il est très important d'apporter des idées pertinentes, d'écouter les critiques des collègues et d'apprendre à gérer le stress.",
+    "data4Title": "Fait 4: Expérience",
+    "data4Description": "Bien que je n'ai jamais travaillé dans une entreprise, j'ai beaucoup travaillé pendant mes études. Je me réjouis de pouvoir démontrer tout ce que j'ai appris au fil des ans.",
 
 
-    "educationReviewed": "<<position || programming: Grado en informática || dataScience: Grado en matemáticas>>",
+    "educationReviewed": "<<position || programming: Ingénieur en informatique || dataScience: Ingénieur en mathématiques>>",
 
-    "skill2Reviewed": "Manejo de bases de datos",
+    "skill2Reviewed": "Gestion des bases de données",
 
-    "skill3Reviewed": "<<position || programming: Programación con C++, Java y JavaScript || dataScience: Nociones de programación con Python>>",
+    "skill3Reviewed": "<<position || programming: Programmation avec C++, Java et JavaScript || dataScience: Notions de programmation avec Python>>",
 
-    "skill4Reviewed": "<<position || programming: Sistemas de control de versiones || dataScience: Minería de datos y Machine Learning>>",
+    "skill4Reviewed": "<<position || programming: Systèmes de contrôle des versions || dataScience: Exploration de données et Machine Learning>>",
 
 
-    "data1DescriptionReviewed": "Me gusta viajar y conocer nuevos sitios, pero tengo un miedo atroz a los aviones.",
+    "data1DescriptionReviewed": "J'aime voyager et découvrir de nouveaux endroits, mais j'ai une peur bleue des avions.",
 
-    "data2DescriptionReviewed": "En un futuro me gustaría tener hijos, pero ahora quiero centrarme en trabajar y desarrollarme como profesional.",
+    "data2DescriptionReviewed": "À l'avenir, j'aimerais avoir des enfants, mais pour l'instant, je veux me concentrer sur mon travail et mon développement professionnel.",
     
-    "data4DescriptionReviewed": "Aunque no he trabajado en ninguna empresa antes, durante la carrera he <<position || programming: desarrollado muchos programas || dataScience: llevado a cabo varios estudios>>. Tengo ganas de demostrar todo lo que he aprendido estos años."
+    "data4DescriptionReviewed": "Bien que je n'ai pas travaillé dans une entreprise auparavant, au cours de mes études j'ai <<position || programming: développé de nombreux programmes || dataScience: réalisé plusieurs études>>. J'ai hâte de montrer tout ce que j'ai appris au fil des ans."
 }

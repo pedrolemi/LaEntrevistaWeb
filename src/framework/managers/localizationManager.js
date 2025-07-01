@@ -88,7 +88,7 @@ export default class LocalizationManager extends Singleton {
 
         // console.log(inputText)
 
-        let result = this.replaceValues(inputText, mergedContext); 
+        let result = this.replaceValues(inputText, mergedContext);
         result = this.replaceVariants(result, mergedContext);
 
         return result;
@@ -105,7 +105,7 @@ export default class LocalizationManager extends Singleton {
         let matches = [...inputText.matchAll(regex)];
 
         // console.log(matches)
-        
+
         let result = "";
         let lastEndIndex = 0;
 
@@ -132,7 +132,7 @@ export default class LocalizationManager extends Singleton {
             // Actualiza el indice del ultimo {{}} para el siguiente {{}}
             lastEndIndex = match.index + fullMatch.length;
         });
-        
+
         // Anade el resto del texto al texto completo
         result += inputText.slice(lastEndIndex);
         return result;
@@ -208,4 +208,14 @@ export default class LocalizationManager extends Singleton {
         result += inputText.slice(lastEndIndex);
         return result;
     }
+
+    /**
+    * Cambia el idioma actual de la aplicacion
+    *
+    * @param {String} language - Codigo del idioma a establecer (por ejemplo, 'en', 'es', 'fr').
+    */
+    changeLanguage(language) {
+        this.i18next.changeLanguage(language);
+    }
+
 }

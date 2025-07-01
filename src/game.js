@@ -20,6 +20,7 @@ import Question6 from "./game/scenes/questions/question6.js";
 import Question7 from "./game/scenes/questions/question7.js";
 import Question8 from "./game/scenes/questions/question8.js";
 import Question9 from "./game/scenes/questions/question9.js";
+import LanguageMenu from "./game/scenes/languageMenu.js";
 
 
 const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
@@ -35,6 +36,7 @@ const CONFIG = {
         // Carga de assets
         BootScene,
 
+        LanguageMenu,
         MainMenu,
         Credits,
         House,

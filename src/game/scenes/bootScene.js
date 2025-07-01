@@ -43,7 +43,6 @@ export default class BootScene extends BaseBootScene {
             this.loadBackgrounds();
             this.loadCharacters();
             this.loadUI();
-            this.loadPointers();
         }
 
         let bg = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
@@ -150,6 +149,11 @@ export default class BootScene extends BaseBootScene {
     }
 
     loadUI() {
+        this.loadPointers();
+
+        this.load.setPath("assets/UI/flags");
+        this.load.atlas("flags", "flags.png", "flags.json");
+
         this.load.setPath("assets/UI");
 
         this.load.image("textbox", "textbox.png");

@@ -47,7 +47,7 @@ export default class GameManager extends Singleton {
 
         // TEST
         // this.startMainMenu();
-        this.startHallScene();
+        // this.startHallScene();
         // this.startCorridorScene();
         // this.startCafeteriaScene();
         // this.startWaitingRoomScene();
@@ -55,6 +55,7 @@ export default class GameManager extends Singleton {
         // this.startMirrorScene();
         // this.startQuestionScene(1);
         // this.startCreditsScene();
+        this.startLanguageMenu();
     }
 
     startMainMenu(fadeAnim = true) {
@@ -98,6 +99,10 @@ export default class GameManager extends Singleton {
 
     startCreditsScene(fadeAnim = true) {
         this.sceneManager.changeScene("Credits", null, fadeAnim);
+    }
+
+    startLanguageMenu() {
+        this.sceneManager.changeScene("LanguageMenu", null, false);
     }
 
     /**

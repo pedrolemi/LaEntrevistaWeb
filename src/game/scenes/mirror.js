@@ -1,6 +1,7 @@
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 import Character from "../character.js";
 import InteractiveContainer from "../../framework/UI/interactiveContainer.js";
+import TextButton from "../../framework/UI/textButton.js";
 
 export default class Mirror extends LaEntrevistaBaseScene {
     /**
@@ -102,8 +103,13 @@ export default class Mirror extends LaEntrevistaBaseScene {
 
             anim.on("complete", () => {
                 setTimeout(() => {
-                    node = this.dialogManager.readNodes(this, nodes, namespace, "end");
-                    this.dialogManager.setNode(node);
+                    if (!params.skip) {
+                        node = this.dialogManager.readNodes(this, nodes, namespace, "end");
+                        this.dialogManager.setNode(node);
+                    }
+                    else {
+                        this.gameManager.startCreditsScene();
+                    }
                 }, ANIM_TIME);
             });
         });
@@ -111,6 +117,7 @@ export default class Mirror extends LaEntrevistaBaseScene {
         this.dispatcher.add("end", this, () => {
             this.gameManager.startCreditsScene();
         });
+
     }
 
 
@@ -134,12 +141,10 @@ export default class Mirror extends LaEntrevistaBaseScene {
         this.animateArrow(page1Button);
         page1.add(page1Button);
 
-
         this.createQuestionButton(page1, 1, this.CANVAS_WIDTH / 2 - BUTTON_SPACING, TOP, textConfig);
         this.createQuestionButton(page1, 2, this.CANVAS_WIDTH / 2 + BUTTON_SPACING, TOP, textConfig);
         this.createQuestionButton(page1, 3, this.CANVAS_WIDTH / 2 - BUTTON_SPACING, BOTTOM, textConfig);
         this.createQuestionButton(page1, 4, this.CANVAS_WIDTH / 2 + BUTTON_SPACING, BOTTOM, textConfig);
-
 
 
         let page2 = this.add.container(0, 0);
@@ -175,87 +180,16 @@ export default class Mirror extends LaEntrevistaBaseScene {
 
 
     createQuestionButton(pageObj, index, x, y, style) {
-        let button = new InteractiveContainer(this, 0, 0);
-        let img = this.add.image(x, y, "questionButton").setOrigin(0.5, 0.5).setScale(1.3);
-        let txt = this.createTextArea(img.x, img.y, img.displayWidth, img.displayHeight, 0.5, 0.5, index, style).setScale(img.scale);
-        txt.adjustFontSize();
-
-        button.add(img);
-        button.add(txt);
-
-        button.calculateRectangleSize();
-        button.setInteractive();
+        let button = new TextButton(this, x, y, 0, 0);
+        button.createImgButton(index, style, () => {
+            button.disableInteractive();
+            this.gameManager.startQuestionScene(index);
+            this.gameManager.nQuestionsCompleted++;
+            button.image.setTint(0x969696);
+            button.textObj.setTint(0x969696);
+        }, "questionButton", 0.5, 0.5, 1.4, 1.4, 1, 0, 0, 0.5, 0.5, 0.5, 0.5);
 
         pageObj.add(button);
-
-        // Configuracion de las animaciones
-        let tintFadeTime = 50;
-        let noTintColor = "#ffffff";
-        let pointerOverColor = "#d9d9d9"
-        let offColor = "#919191"
-
-        let noTint = Phaser.Display.Color.HexStringToColor(noTintColor);
-        let pointerOver = Phaser.Display.Color.HexStringToColor(pointerOverColor);
-        let off = Phaser.Display.Color.HexStringToColor(offColor);
-
-        // Hace fade del color de la caja al pasar o quitar el raton por encima
-        button.on('pointerover', () => {
-            this.tweens.addCounter({
-                targets: [img, txt],
-                from: 0,
-                to: 100,
-                onUpdate: (tween) => {
-                    const value = tween.getValue();
-                    let col = Phaser.Display.Color.Interpolate.ColorWithColor(noTint, pointerOver, 100, value);
-                    let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    Phaser.Actions.SetTint([img, txt], colInt);
-                },
-                duration: tintFadeTime,
-                repeat: 0,
-            });
-        });
-        button.on('pointerout', () => {
-            this.tweens.addCounter({
-                targets: [img, txt],
-                from: 0,
-                to: 100,
-                onUpdate: (tween) => {
-                    const value = tween.getValue();
-                    let col = Phaser.Display.Color.Interpolate.ColorWithColor(pointerOver, noTint, 100, value);
-                    let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    Phaser.Actions.SetTint([img, txt], colInt);
-                },
-                duration: tintFadeTime,
-                repeat: 0,
-            });
-        });
-
-        // Al hacer click, vuelve a cambiar el color de la caja al original y llama al onclick al terminar la animacion
-        button.on('pointerdown', () => {
-            let fadeColor = this.tweens.addCounter({
-                targets: [img, txt],
-                from: 0,
-                to: 100,
-                onUpdate: (tween) => {
-                    const value = tween.getValue();
-                    let col = Phaser.Display.Color.Interpolate.ColorWithColor(pointerOver, off, 100, value);
-                    let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    Phaser.Actions.SetTint([img, txt], colInt);
-                },
-                duration: tintFadeTime,
-                repeat: 0
-            });
-            if (!this.gameManager.sceneManager.fading) {
-                button.disableInteractive();
-
-                fadeColor.on('complete', () => {
-                    this.gameManager.startQuestionScene(index);
-                    this.gameManager.nQuestionsCompleted++;
-                });
-            }
-        });
-
-        return button;
     }
 
     animateArrow(button) {

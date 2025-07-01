@@ -56,13 +56,13 @@ export default class TextArea extends Phaser.GameObjects.Text {
     * DEL TEXTO ES ENORME O LA REDUCCION ES MUY PEQUENA, TARDARA MUCHO TIEMPO EN TERMINAR
     */
     adjustFontSize(text = "", reduction = 5) {
-        if (text == "") {
+        if (text == null || text == "") {
             text = this.text;
         }
         if (text != "") {
             let textConfig = this.style;
             let fontSize = textConfig.fontSize.replace("px", "");
-
+            
             while (this.maxWidth > 0 && this.maxHeight > 0 && text != "" && !this.fits(text)) {
                 fontSize -= reduction;
                 this.setFontSize(fontSize);

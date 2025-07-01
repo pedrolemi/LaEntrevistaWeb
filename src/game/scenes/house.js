@@ -69,7 +69,7 @@ export default class House extends LaEntrevistaBaseScene {
         portalText.setVisible(false);
 
         let ICONS_Y = 300;
-        let TEXT_Y = 450;
+        let TEXT_Y = 460;
         textConfig.fontSize = 40;
         textConfig.fontFamily = 40;
         textConfig.fontFamily = "barlowCondensed-regular";

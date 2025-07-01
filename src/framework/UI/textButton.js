@@ -9,6 +9,7 @@ export default class TextButton extends InteractiveContainer {
     * IMPORTANTE: COMO NO SE PUEDE SOBRECARGAR LA CONSTRUCTORA, ES NECESARIO HACER PRIMERO UN NEW Y LUEGO
     * HACER UN CREATEIMGBUTTON O UN CREATERECTBUTTON DEPENDIENDO DEL TIPO DE BOTON QUE SE QUIERA CREAR
     * 
+    * @extends InteractiveContainer
     * @param {Phaser.Scene} scene - escena en la que se va a crear el boton 
     * @param {Number} x - posicion x del boton 
     * @param {Number} y - posicion y del boton 
@@ -35,30 +36,30 @@ export default class TextButton extends InteractiveContainer {
     * @param {Number} imgScaleX - escala x de la imagen (opcional)
     * @param {Number} imgScaleY - escala y de la imagen (opcional)
     * @param {Number} imgAlpha - alpha de la imagen [0-1] (opcional)
-    * @param {Number} normalTintColor - valor hex del color normal
-    * @param {Number} hoverTintColor - valor hex del color al pasar el puntero por encima
-    * @param {Number} pressingTintColor - valor hex del color al pulsar el boton
     * @param {Number} textMarginX - margen x del texto [0-1] (si esta alineado en el centro, se ignora) (opcional)
     * @param {Number} textMarginY - margen y del texto [0-1] (si esta alineado en el centro, se ignora) (opcional)
     * @param {Number} textOriginX - origen x del texto [0-1] (si esta alineado en el centro, se ignora) (opcional)
     * @param {Number} textOriginY - origen y del texto [0-1] (si esta alineado en el centro, se ignora) (opcional)
     * @param {Number} textAlignX - alineacion horizontal del texto [0-1] (opcional)
     * @param {Number} textAlignY - alineacion vertical del texto [0-1] (opcional)
+    * @param {Number} normalTintColor - valor hex del color normal
+    * @param {Number} hoverTintColor - valor hex del color al pasar el puntero por encima
+    * @param {Number} pressingTintColor - valor hex del color al pulsar el boton
     */
     createImgButton(text = "", textConfig = {}, onClick = () => { },
         img = "", imgOriginX = 0.5, imgOriginY = 0.5, imgScaleX = 1, imgScaleY = 1, imgAlpha = 1,
-        normalTintColor = 0xffffff, hoverTintColor = 0xd9d9d9, pressingTintColor = 0x969696,
-        textMarginX = 0, textMarginY = 0, textOriginX = 0.5, textOriginY = 0.5, textAlignX = 0.5, textAlignY = 0.5)
+        textMarginX = 0, textMarginY = 0, textOriginX = 0.5, textOriginY = 0.5, textAlignX = 0.5, textAlignY = 0.5,
+        normalTintColor = 0xffffff, hoverTintColor = 0xd9d9d9, pressingTintColor = 0x969696)
     {
-        let image = this.scene.add.image(this.posX, this.posY, img).setOrigin(imgOriginX, imgOriginY).setScale(imgScaleX, imgScaleY).setAlpha(imgAlpha);
-        this.add(image);
+        this.image = this.scene.add.image(this.posX, this.posY, img).setOrigin(imgOriginX, imgOriginY).setScale(imgScaleX, imgScaleY).setAlpha(imgAlpha);
+        this.add(this.image);
 
-        let textObj = this.createText(text, textConfig, textMarginX, textMarginY, textOriginX, textOriginY, textAlignX, textAlignY);
-        this.add(textObj);
+        this.textObj = this.createText(text, textConfig, textMarginX, textMarginY, textOriginX, textOriginY, textAlignX, textAlignY);
+        this.add(this.textObj);
 
         this.calculateRectangleSize();
         this.setInteractive();
-        this.animateButton([image, textObj], onClick, normalTintColor, hoverTintColor, pressingTintColor);
+        this.animateButton([this.image, this.textObj], onClick, normalTintColor, hoverTintColor, pressingTintColor);
     }
 
     /**
@@ -73,8 +74,6 @@ export default class TextButton extends InteractiveContainer {
     * @param {Number} borderThickness - ancho del borde del rectangulo (opcional)
     * @param {Number} borderNormalColor - valor hex del color por defecto del borde (opcional)
     * @param {Number} borderAlpha - alpha del borde [0-1] (opcional)
-    * @param {Number} normalTintColor - valor hex del color normal (opcional)
-    * @param {Number} hoverTintColor - valor hex del color al pasar el puntero por encima (opcional)
     * @param {Number} pressingTintColor - valor hex del color al pulsar el boton (opcional)
     * @param {Number} textMarginX - margen x del texto [0-1] (si esta alineado en el centro, se ignora) (opcional)
     * @param {Number} textMarginY - margen y del texto [0-1] (si esta alineado en el centro, se ignora) (opcional)
@@ -82,11 +81,13 @@ export default class TextButton extends InteractiveContainer {
     * @param {Number} textOriginY - origen y del texto [0-1] (si esta alineado en el centro, se ignora) (opcional)
     * @param {Number} textAlignX - alineacion horizontal del texto [0-1] (opcional)
     * @param {Number} textAlignY - alineacion vertical del texto [0-1] (opcional)
+    * @param {Number} normalTintColor - valor hex del color normal (opcional)
+    * @param {Number} hoverTintColor - valor hex del color al pasar el puntero por encima (opcional)
     */
     createRectButton(text = "", textConfig = {}, onClick = () => { }, textureId = "buttonTexture",
         radiusPercentage = 0, fillColor = 0xffffff, fillAlpha = 1, borderThickness = 5, borderNormalColor = 0x000000, borderAlpha = 1,
-        normalTintColor = 0xffffff, hoverTintColor = 0xd9d9d9, pressingTintColor = 0x969696,
-        textMarginX = 0, textMarginY = 0, textOriginX = 0.5, textOriginY = 0.5, textAlignX = 0.5, textAlignY = 0.5) 
+        textMarginX = 0, textMarginY = 0, textOriginX = 0.5, textOriginY = 0.5, textAlignX = 0.5, textAlignY = 0.5,
+        normalTintColor = 0xffffff, hoverTintColor = 0xd9d9d9, pressingTintColor = 0x969696) 
     {
         // Se crea el rectangulo con el borde
         let graphics = this.scene.add.graphics();
@@ -103,15 +104,15 @@ export default class TextButton extends InteractiveContainer {
         graphics.destroy();
 
         // Se crea la imagen en base a la textura
-        let image = this.scene.add.image(this.posX, this.posY, textureId).setOrigin(0.5, 0.5);
-        this.add(image);
+        this.image = this.scene.add.image(this.posX, this.posY, textureId).setOrigin(0.5, 0.5);
+        this.add(this.image);
 
-        let textObj = this.createText(text, textConfig, textMarginX, textMarginY, textOriginX, textOriginY, textAlignX, textAlignY);
-        this.add(textObj);
+        this.textObj = this.createText(text, textConfig, textMarginX, textMarginY, textOriginX, textOriginY, textAlignX, textAlignY);
+        this.add(this.textObj);
 
         this.calculateRectangleSize();
         this.setInteractive();
-        this.animateButton([image, textObj], onClick, normalTintColor, hoverTintColor, pressingTintColor);
+        this.animateButton([this.image, this.textObj], onClick, normalTintColor, hoverTintColor, pressingTintColor);
     }
 
     /**
@@ -127,7 +128,7 @@ export default class TextButton extends InteractiveContainer {
     * @returns {TextArea} - texto creado
     */
     createText(text = "", textConfig = {}, textMarginX = 0, textMarginY = 0, textOriginX = 0.5, textOriginY = 0.5, textAlignX = 0.5, textAlignY = 0.5) {
-        let textObj = new TextArea(this.scene, this.posX, this.posY, this.rectWidth - textMarginX * 2, this.rectHeight - textMarginX * 2, text, textConfig)
+        let textObj = new TextArea(this.scene, this.posX, this.posY, this.rectWidth - textMarginX * 2, this.rectHeight - textMarginY * 2, text, textConfig)
             .setOrigin(textOriginX, textOriginY);
 
         this.textX = this.posX - this.rectWidth * (0.5 - textAlignX) + textMarginX * (0.5 - textAlignX) * 2;

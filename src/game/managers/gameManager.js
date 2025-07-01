@@ -43,7 +43,7 @@ export default class GameManager extends Singleton {
             this.sceneManager.restartScene("UI");
         }
 
-        this.blackboard.set("position", "dataScience");
+        // this.blackboard.set("position", "dataScience");
 
         this.startHouseScene();
 
@@ -57,7 +57,7 @@ export default class GameManager extends Singleton {
         // this.startMirrorScene();
         // this.startQuestionScene(1);
         // this.startCreditsScene();
-        this.startLanguageMenu();
+        // this.startLanguageMenu();
     }
 
     startMainMenu(fadeAnim = true) {
@@ -89,6 +89,9 @@ export default class GameManager extends Singleton {
     }
 
     startMirrorScene(skip = false) {
+        if (skip) {
+            this.nQuestionsCompleted = 0;
+        }
         this.sceneManager.changeScene("Mirror", {skip : skip}, true, false);
         if (this.nQuestionsCompleted >= this.N_REQUIRED_QUESTIONS) {
             this.dispatcher.dispatch("allQuestionsComplete");

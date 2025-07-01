@@ -10,486 +10,24 @@
             "scale": 1,
             "frames": [
                 {
-                    "filename": "Jaime_sitting_0001",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0006",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 364,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0011",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 728,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0016",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1092,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0021",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1456,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0026",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1820,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0031",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 2184,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0036",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 2548,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0041",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 726,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0046",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 364,
-                        "y": 726,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_sitting_0050",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 728,
-                        "y": 726,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0001",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1092,
-                        "y": 726,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0006",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1456,
-                        "y": 726,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0011",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1820,
-                        "y": 726,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0016",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 2184,
-                        "y": 726,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0021",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 2548,
-                        "y": 726,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0026",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 1452,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0031",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 364,
-                        "y": 1452,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0036",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 728,
-                        "y": 1452,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0041",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1092,
-                        "y": 1452,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0046",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1456,
-                        "y": 1452,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
-                    "filename": "Jaime_talking_0050",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 364,
-                        "h": 726
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 364,
-                        "h": 726
-                    },
-                    "frame": {
-                        "x": 1820,
-                        "y": 1452,
-                        "w": 364,
-                        "h": 726
-                    }
-                },
-                {
                     "filename": "Jaime_walking_0001",
                     "rotated": false,
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 2184,
-                        "y": 1452,
+                        "x": 2,
+                        "y": 2,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -498,19 +36,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 2548,
-                        "y": 1452,
+                        "x": 370,
+                        "y": 2,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -519,19 +57,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 2178,
+                        "x": 738,
+                        "y": 2,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -540,19 +78,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 364,
-                        "y": 2178,
+                        "x": 1106,
+                        "y": 2,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -561,19 +99,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 728,
-                        "y": 2178,
+                        "x": 1474,
+                        "y": 2,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -582,19 +120,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 1092,
-                        "y": 2178,
+                        "x": 1842,
+                        "y": 2,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -603,19 +141,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 1456,
-                        "y": 2178,
+                        "x": 2,
+                        "y": 705,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -624,19 +162,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 1820,
-                        "y": 2178,
+                        "x": 370,
+                        "y": 705,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -645,19 +183,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 2184,
-                        "y": 2178,
+                        "x": 738,
+                        "y": 705,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -666,19 +204,19 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 2548,
-                        "y": 2178,
+                        "x": 1106,
+                        "y": 705,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     }
                 },
                 {
@@ -687,19 +225,481 @@
                     "trimmed": false,
                     "sourceSize": {
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "spriteSourceSize": {
                         "x": 0,
                         "y": 0,
                         "w": 364,
-                        "h": 726
+                        "h": 699
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 2904,
+                        "x": 1474,
+                        "y": 705,
                         "w": 364,
-                        "h": 726
+                        "h": 699
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 1842,
+                        "y": 705,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0006",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 2036,
+                        "y": 705,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0011",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 2,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0016",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 196,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0021",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 390,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0026",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 584,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 778,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0036",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 972,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 1166,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0046",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 1360,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_sitting_0050",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 1554,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 1748,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0006",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 1942,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0011",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 2136,
+                        "y": 1408,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0016",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 2,
+                        "y": 1927,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0021",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 196,
+                        "y": 1927,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0026",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 390,
+                        "y": 1927,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 584,
+                        "y": 1927,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0036",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 778,
+                        "y": 1927,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 972,
+                        "y": 1927,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0046",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 1166,
+                        "y": 1927,
+                        "w": 190,
+                        "h": 515
+                    }
+                },
+                {
+                    "filename": "Jaime_talking_0050",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 190,
+                        "h": 515
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 190,
+                        "h": 515
+                    },
+                    "frame": {
+                        "x": 1360,
+                        "y": 1927,
+                        "w": 190,
+                        "h": 515
                     }
                 }
             ]

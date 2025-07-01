@@ -10,468 +10,6 @@
             "scale": 1,
             "frames": [
                 {
-                    "filename": "Antonio_sitting_0001",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0006",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 524,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0011",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 1048,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0016",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 1572,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0021",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 2096,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0026",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 2620,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0031",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 3144,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0036",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 889,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0041",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 524,
-                        "y": 889,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0046",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 1048,
-                        "y": 889,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_sitting_0050",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 1572,
-                        "y": 889,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0001",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 2096,
-                        "y": 889,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0006",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 2620,
-                        "y": 889,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0011",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 3144,
-                        "y": 889,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0016",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 1778,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0021",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 524,
-                        "y": 1778,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0026",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 1048,
-                        "y": 1778,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0031",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 1572,
-                        "y": 1778,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0036",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 2096,
-                        "y": 1778,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0041",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 2620,
-                        "y": 1778,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0046",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 3144,
-                        "y": 1778,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
-                    "filename": "Antonio_talking_0050",
-                    "rotated": false,
-                    "trimmed": false,
-                    "sourceSize": {
-                        "w": 524,
-                        "h": 889
-                    },
-                    "spriteSourceSize": {
-                        "x": 0,
-                        "y": 0,
-                        "w": 524,
-                        "h": 889
-                    },
-                    "frame": {
-                        "x": 0,
-                        "y": 2667,
-                        "w": 524,
-                        "h": 889
-                    }
-                },
-                {
                     "filename": "Antonio_walking_0001",
                     "rotated": false,
                     "trimmed": false,
@@ -486,8 +24,8 @@
                         "h": 889
                     },
                     "frame": {
-                        "x": 524,
-                        "y": 2667,
+                        "x": 0,
+                        "y": 0,
                         "w": 524,
                         "h": 889
                     }
@@ -507,8 +45,8 @@
                         "h": 889
                     },
                     "frame": {
-                        "x": 1048,
-                        "y": 2667,
+                        "x": 524,
+                        "y": 0,
                         "w": 524,
                         "h": 889
                     }
@@ -528,8 +66,8 @@
                         "h": 889
                     },
                     "frame": {
-                        "x": 1572,
-                        "y": 2667,
+                        "x": 1048,
+                        "y": 0,
                         "w": 524,
                         "h": 889
                     }
@@ -549,8 +87,8 @@
                         "h": 889
                     },
                     "frame": {
-                        "x": 2096,
-                        "y": 2667,
+                        "x": 1572,
+                        "y": 0,
                         "w": 524,
                         "h": 889
                     }
@@ -570,8 +108,8 @@
                         "h": 889
                     },
                     "frame": {
-                        "x": 2620,
-                        "y": 2667,
+                        "x": 2096,
+                        "y": 0,
                         "w": 524,
                         "h": 889
                     }
@@ -591,8 +129,8 @@
                         "h": 889
                     },
                     "frame": {
-                        "x": 3144,
-                        "y": 2667,
+                        "x": 0,
+                        "y": 889,
                         "w": 524,
                         "h": 889
                     }
@@ -612,8 +150,8 @@
                         "h": 889
                     },
                     "frame": {
-                        "x": 0,
-                        "y": 3556,
+                        "x": 524,
+                        "y": 889,
                         "w": 524,
                         "h": 889
                     }
@@ -633,10 +171,472 @@
                         "h": 889
                     },
                     "frame": {
-                        "x": 524,
-                        "y": 3556,
+                        "x": 1048,
+                        "y": 889,
                         "w": 524,
                         "h": 889
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 1572,
+                        "y": 889,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0006",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 1787,
+                        "y": 889,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0011",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 2002,
+                        "y": 889,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0016",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 2217,
+                        "y": 889,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0021",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 2432,
+                        "y": 889,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0026",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 215,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0036",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 430,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 645,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0046",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 860,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_sitting_0050",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 1075,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0001",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 1290,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0006",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 1505,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0011",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 1720,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0016",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 1935,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0021",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 2150,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0026",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 2365,
+                        "y": 1778,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0031",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 0,
+                        "y": 2349,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0036",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 215,
+                        "y": 2349,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0041",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 430,
+                        "y": 2349,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0046",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 645,
+                        "y": 2349,
+                        "w": 215,
+                        "h": 571
+                    }
+                },
+                {
+                    "filename": "Antonio_talking_0050",
+                    "rotated": false,
+                    "trimmed": false,
+                    "sourceSize": {
+                        "w": 215,
+                        "h": 571
+                    },
+                    "spriteSourceSize": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 215,
+                        "h": 571
+                    },
+                    "frame": {
+                        "x": 860,
+                        "y": 2349,
+                        "w": 215,
+                        "h": 571
                     }
                 }
             ]

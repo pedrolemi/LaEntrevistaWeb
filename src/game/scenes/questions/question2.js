@@ -10,6 +10,6 @@ export default class Question2 extends QuestionBaseScene {
         super.create(params);
 
         this.add.image(0, 0, "waitingRoom").setOrigin(0, 0);
-        new Character(this, 850, 700, 1.7, "Antonio", this.characterConfig.speed, false, () => { });
+        new Character(this, 785, 839, 1.7, "Antonio", this.characterConfig.speed, false, () => { });
     }
 }

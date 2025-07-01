@@ -1,3 +1,4 @@
+import TextArea from "../../framework/UI/textArea.js";
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 
 export default class House extends LaEntrevistaBaseScene {
@@ -54,8 +55,9 @@ export default class House extends LaEntrevistaBaseScene {
                 useAdvancedWrap: true
             }
         }
-        let portalText = this.createTextArea(800, portalLogo.y, maxWidth, portalLogo.displayHeight, 0, 0.5,
-             this.localizationManager.translate("platform", "scenes"), textConfig);
+        let portalText = new TextArea(this, 800, portalLogo.y, maxWidth, portalLogo.displayHeight,
+            this.localizationManager.translate("platform", "scenes"), textConfig, this.sys.game.debug.enable);
+        portalText.setOrigin(0, 0.5);
         portalText.adjustFontSize();
 
 
@@ -76,14 +78,16 @@ export default class House extends LaEntrevistaBaseScene {
         textConfig.fontStyle = "normal";
 
         let programmingIcon = this.add.image(600, ICONS_Y, "programming");
-        let programmingText = this.createTextArea(programmingIcon.x, TEXT_Y, programmingIcon.displayWidth, programmingIcon.displayHeight, 0.5, 0.5,
-            this.localizationManager.translate("programming", "scenes").toUpperCase(), textConfig);
+        let programmingText = new TextArea(this, programmingIcon.x, TEXT_Y, programmingIcon.displayWidth, programmingIcon.displayHeight,
+            this.localizationManager.translate("programming", "scenes").toUpperCase(), textConfig, this.sys.game.debug.enable);
+        programmingText.setOrigin(0.5, 0.5);
         programmingText.adjustFontSize();
         this.setInteractive(programmingIcon);
 
         let dataIcon = this.add.image(1005, ICONS_Y, "data");
-        let dataText = this.createTextArea(dataIcon.x, TEXT_Y, dataIcon.displayWidth, dataIcon.displayHeight, 0.5, 0.5,
-            this.localizationManager.translate("data", "scenes").toUpperCase(), textConfig);
+        let dataText = new TextArea(this, dataIcon.x, TEXT_Y, dataIcon.displayWidth, dataIcon.displayHeight,
+            this.localizationManager.translate("data", "scenes").toUpperCase(), textConfig, this.sys.game.debug.enable);
+        dataText.setOrigin(0.5, 0.5);
         dataText.adjustFontSize();
         this.setInteractive(dataIcon);
 

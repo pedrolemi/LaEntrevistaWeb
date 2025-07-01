@@ -1,3 +1,4 @@
+import TextArea from "../../framework/UI/textArea.js";
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 
 export default class Credits extends LaEntrevistaBaseScene {
@@ -72,13 +73,13 @@ export default class Credits extends LaEntrevistaBaseScene {
         // video.on("complete", () => {
         //     this.gameManager.startMainMenu(false);
         // });
-        
+
         let ARROW_POS = 50;
         let returnButton = this.add.image(ARROW_POS, ARROW_POS, "questionArrow").setOrigin(0, 0);
         returnButton.setFlipX(true);
         this.setInteractive(returnButton);
         this.animateArrow(returnButton);
-        
+
         returnButton.on("pointerdown", () => {
             this.gameManager.startMainMenu();
             // returnButton.setVisible(false);
@@ -90,7 +91,9 @@ export default class Credits extends LaEntrevistaBaseScene {
 
     createText(y, text, style) {
         let pos = this.calculatePosition(y);
-        let txt = this.createTextArea(pos.x + this.TEXT_MARGIN, y, pos.width - (this.TEXT_MARGIN * 2), style.fontSize * 2, 0, 0, text, style);
+        let txt = new TextArea(this, pos.x + this.TEXT_MARGIN, y, pos.width - (this.TEXT_MARGIN * 2), style.fontSize * 2, text,
+            style, this.sys.game.debug.enable);
+        txt.setOrigin(0, 0);
         txt.adjustFontSize();
         return txt;
     }

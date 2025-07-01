@@ -1,4 +1,5 @@
 import InteractiveContainer from "../../framework/UI/interactiveContainer.js";
+import TextArea from "../../framework/UI/textArea.js";
 import TextButton from "../../framework/UI/textButton.js";
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 
@@ -120,8 +121,9 @@ export default class MainMenu extends LaEntrevistaBaseScene {
     createGameButton(x, y, width, height, rotation, text) {
         let button = new InteractiveContainer(this, 0, 0);
         let rect = this.add.rectangle(0, 0, width, height, 0xFFFFFF, 1).setOrigin(0.5, 0.5);
-        let textObj = this.createTextArea(rect.x, rect.y, rect.displayWidth - this.TEXT_MARGIN * 2, rect.displayHeight - this.TEXT_MARGIN * 2, 0.5, 0.5,
-            text, this.TEXT_CONFIG);
+        let textObj = new TextArea(this, rect.x, rect.y, rect.displayWidth - this.TEXT_MARGIN * 2, rect.displayHeight - this.TEXT_MARGIN * 2, text,
+            this.TEXT_CONFIG, this.sys.game.debug.enable);
+        textObj.setOrigin(0.5, 0.5);
         textObj.adjustFontSize();
 
         let cross = this.add.rectangle(rect.x, rect.y, width * 0.95, height * 0.02, this.TEXT_CONFIG.color, 1).setOrigin(0.5, 0.5);
@@ -156,8 +158,9 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         let textRect = this.add.rectangle(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH * POPUP_SCALE, this.CANVAS_HEIGHT * POPUP_SCALE, 0xFFFFFF, 1)
             .setOrigin(0.5, 0.5);
 
-        let warningTitleText = this.createTextArea(textRect.x, textRect.y - textRect.displayHeight / 2 + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
-            textRect.displayHeight * 0.15, 0.5, 0, this.localizationManager.translate("questionsWarningTitle", namespace), this.TEXT_CONFIG);
+        let warningTitleText = new TextArea(this, textRect.x, textRect.y - textRect.displayHeight / 2 + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
+            textRect.displayHeight * 0.15, this.localizationManager.translate("questionsWarningTitle", namespace), this.TEXT_CONFIG, this.sys.game.debug.enable);
+        warningTitleText.setOrigin(0.5, 0);
         warningTitleText.adjustFontSize();
 
 
@@ -166,9 +169,9 @@ export default class MainMenu extends LaEntrevistaBaseScene {
             width: textRect.displayWidth - this.TEXT_MARGIN * 2,
             useAdvancedWrap: true
         }
-        let warningText = this.createTextArea(textRect.x, warningTitleText.y + warningTitleText.displayHeight + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
-            textRect.displayHeight * 0.5, 0.5, 0.5, this.localizationManager.translate("questionsWarning", namespace),
-            warningTextConfig);
+        let warningText = new TextArea(this, textRect.x, warningTitleText.y + warningTitleText.displayHeight + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
+            textRect.displayHeight * 0.5, this.localizationManager.translate("questionsWarning", namespace), warningTextConfig, this.sys.game.debug.enable);
+        warningText.setOrigin(0.5, 0.5);
         warningText.y += warningText.displayHeight / 2;
         warningText.adjustFontSize();
 

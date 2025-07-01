@@ -1,5 +1,6 @@
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 import Character from "../character.js";
+import TextArea from "../../framework/UI/textArea.js";
 
 export default class Corridor extends LaEntrevistaBaseScene {
     /**
@@ -51,8 +52,9 @@ export default class Corridor extends LaEntrevistaBaseScene {
         ];
 
         signs.forEach(({ y, id }) => {
-            let textArea = super.createTextArea(textAreaConfig.x, y, textAreaConfig.width, textAreaConfig.height,
-                textAreaConfig.originX, textAreaConfig.originY, this.localizationManager.translate(id, "scenes"), signTextConfig);
+            let textArea = new TextArea(this, textAreaConfig.x, y, textAreaConfig.width, textAreaConfig.height,
+                this.localizationManager.translate(id, "scenes"), signTextConfig, this.sys.game.debug.enable);
+            textArea.setOrigin(textAreaConfig.originX, textAreaConfig.originY);
 
             let rect = this.add.zone(rectConfig.x, y, rectConfig.width, rectConfig.height);
             rect.setOrigin(rectConfig.originX, rectConfig.originY);

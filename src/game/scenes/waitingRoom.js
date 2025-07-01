@@ -1,5 +1,6 @@
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 import Character from "../character.js";
+import TextArea from "../../framework/UI/textArea.js";
 
 export default class waitingRoom extends LaEntrevistaBaseScene {
     /**
@@ -55,7 +56,7 @@ export default class waitingRoom extends LaEntrevistaBaseScene {
                 repeat: -1,
                 yoyo: true
             });
-            
+
             door.on("pointerdown", () => {
                 let anim = this.tweens.add({
                     targets: [corridorArrow, doorArrow],
@@ -74,25 +75,27 @@ export default class waitingRoom extends LaEntrevistaBaseScene {
         });
 
 
-        let textArea = super.createTextArea(1227, 280, 95, 60, 0.5, 0.5,
-            this.localizationManager.translate("humanResourcesSign", "scenes"), this.signTextConfig);
+
+        let textArea = new TextArea(this, 1227, 280, 95, 60, this.localizationManager.translate("humanResourcesSign", "scenes"),
+            this.signTextConfig, this.sys.game.debug.enable);
+        textArea.setOrigin(0.5, 0.5);
+        textArea.adjustFontSize();
 
         // Jaime
         let jaimeExitPoint = {
             x: -100,
-            y: 740
+            y: 530
         }
 
         let jaimeNode = this.dialogManager.readNodes(this, nodes, namespace, "JaimeConversation");
         let jaimeConfig = {
-            x: 442,
+            x: 439,
             scale: 0.9
         }
         let jaimeChar = new Character(this, jaimeConfig.x, jaimeExitPoint.y, jaimeConfig.scale, "Jaime",
             this.characterConfig.speed, true, () => {
                 this.dialogManager.setNode(jaimeNode);
             });
-        jaimeChar.setOrigin(0.5, 1);
 
         this.dispatcher.addOnce("JaimeLeave", this, () => {
             jaimeChar.setScale(jaimeChar.scale * 0.80);
@@ -102,19 +105,18 @@ export default class waitingRoom extends LaEntrevistaBaseScene {
         // Antonio
         let antonioExitPoint = {
             x: -100,
-            y: 550
+            y: 542
         }
 
         let antonioNode = this.dialogManager.readNodes(this, nodes, namespace, "AntonioConversation");
         let antonioConfig = {
-            x: 730,
-            scale: 0.8
+            x: 706,
+            scale: 0.85
         }
         let antonioChar = new Character(this, antonioConfig.x, antonioExitPoint.y, antonioConfig.scale, "Antonio",
             this.characterConfig.speed, false, () => {
                 this.dialogManager.setNode(antonioNode);
             });
-        antonioChar.setOrigin(0.5, 0.5);
 
         this.dispatcher.addOnce("AntonioLeave", this, () => {
             antonioChar.setScale(antonioChar.scale * 0.68);

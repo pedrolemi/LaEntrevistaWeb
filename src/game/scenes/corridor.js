@@ -1,6 +1,5 @@
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 import Character from "../character.js";
-import TextArea from "../../framework/UI/textArea.js";
 
 export default class Corridor extends LaEntrevistaBaseScene {
     /**

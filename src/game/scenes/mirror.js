@@ -1,7 +1,6 @@
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 import Character from "../character.js";
 import InteractiveContainer from "../../framework/UI/interactiveContainer.js";
-import TextArea from "../../framework/UI/textArea.js";
 
 export default class Mirror extends LaEntrevistaBaseScene {
     /**
@@ -12,8 +11,8 @@ export default class Mirror extends LaEntrevistaBaseScene {
         super("Mirror");
     }
 
-    create() {
-        super.create();
+    create(params) {
+        super.create(params);
 
         let nodes = this.cache.json.get("mirror");
         let namespace = "scenes\\mirror";
@@ -39,24 +38,31 @@ export default class Mirror extends LaEntrevistaBaseScene {
             strokeThickness: 10
         }
         let TEXT_PADDING = 50;
-        let transition = new InteractiveContainer(this, 0, 0);
-        let transitionBg = this.add.image(0, 0, "30min").setOrigin(0, 0);
-        let transitionText = new TextArea(this, this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH, this.CANVAS_HEIGHT - TEXT_PADDING * 2,
-            this.localizationManager.translate("30min", "scenes"), transitionTextConfig).setOrigin(0.5, 0.5);
-        transitionText.adjustFontSize();
+        if (!params.skip) {
+            let transition = new InteractiveContainer(this, 0, 0);
+            let transitionBg = this.add.image(0, 0, "30min").setOrigin(0, 0);
+            let transitionText = this.createTextArea(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH, this.CANVAS_HEIGHT - TEXT_PADDING * 2, 0.5, 0.5,
+                this.localizationManager.translate("30min", "scenes"), transitionTextConfig);
+            transitionText.adjustFontSize();
 
-        transition.add(transitionBg);
-        transition.add(transitionText);
-        transition.calculateRectangleSize();
+            transition.add(transitionBg);
+            transition.add(transitionText);
+            transition.calculateRectangleSize();
 
-        transition.setInteractive();
-        transition.on("pointerdown", () => {
-            transition.activate(false, () => {
-                this.dialogManager.setNode(node);
+            transition.setInteractive();
+            transition.on("pointerdown", () => {
+                transition.activate(false, () => {
+                    this.dialogManager.setNode(node);
+                });
             });
-        });
-
-
+        }
+        else {
+            setTimeout(() => {
+                this.dispatcher.dispatch("showQuestions");
+            }, 100);
+        }
+        
+        
         let ANIM_TIME = 200;
         let BLUR_STRENGTH = 2;
         let blur = null;
@@ -171,7 +177,7 @@ export default class Mirror extends LaEntrevistaBaseScene {
     createQuestionButton(pageObj, index, x, y, style) {
         let button = new InteractiveContainer(this, 0, 0);
         let img = this.add.image(x, y, "questionButton").setOrigin(0.5, 0.5).setScale(1.3);
-        let txt = new TextArea(this, img.x, img.y, img.displayWidth, img.displayHeight, index, style).setOrigin(0.5, 0.5).setScale(img.scale);
+        let txt = this.createTextArea(img.x, img.y, img.displayWidth, img.displayHeight, 0.5, 0.5, index, style).setScale(img.scale);
         txt.adjustFontSize();
 
         button.add(img);
@@ -202,8 +208,7 @@ export default class Mirror extends LaEntrevistaBaseScene {
                     const value = tween.getValue();
                     let col = Phaser.Display.Color.Interpolate.ColorWithColor(noTint, pointerOver, 100, value);
                     let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    img.setTint(colInt);
-                    txt.setTint(colInt);
+                    Phaser.Actions.SetTint([img, txt], colInt);
                 },
                 duration: tintFadeTime,
                 repeat: 0,
@@ -218,8 +223,7 @@ export default class Mirror extends LaEntrevistaBaseScene {
                     const value = tween.getValue();
                     let col = Phaser.Display.Color.Interpolate.ColorWithColor(pointerOver, noTint, 100, value);
                     let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    img.setTint(colInt);
-                    txt.setTint(colInt);
+                    Phaser.Actions.SetTint([img, txt], colInt);
                 },
                 duration: tintFadeTime,
                 repeat: 0,
@@ -236,8 +240,7 @@ export default class Mirror extends LaEntrevistaBaseScene {
                     const value = tween.getValue();
                     let col = Phaser.Display.Color.Interpolate.ColorWithColor(pointerOver, off, 100, value);
                     let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    img.setTint(colInt);
-                    txt.setTint(colInt);
+                    Phaser.Actions.SetTint([img, txt], colInt);
                 },
                 duration: tintFadeTime,
                 repeat: 0

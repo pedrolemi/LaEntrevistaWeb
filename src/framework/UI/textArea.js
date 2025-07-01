@@ -29,9 +29,11 @@ export default class TextArea extends Phaser.GameObjects.Text {
         this.setText(text);
         let fits = true;
 
+        // Si el texto no tiene ajuste de linea, cabe si tanto su ancho como su alto no exceden los limites
         if (this.style.wordWrapWidth == null) {
             fits = this.displayWidth <= this.maxWidth && this.displayHeight <= this.maxHeight;
         }
+        // Si tiene ajuste de linea, cabe si su alto no excede los limites (independientemente del ancho)
         else {
             fits = this.displayHeight <= this.maxHeight;
         }

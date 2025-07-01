@@ -10,19 +10,19 @@ export class EventHandler {
         this.emitter = emitter;
 
         /**
-       * Mapa de eventos a suscriptores 
-       * @type {Map<String, Set<Object>>}
-       * Mapea un nombre de evento a los objetos que lo escuchan
-       * Facilita la eliminación por nombre de evento
-       */
+      * Mapa de eventos a suscriptores 
+      * @type {Map<String, Set<Object>>}
+      * Mapea un nombre de evento a los objetos que lo escuchan
+      * Facilita la eliminación por nombre de evento
+      */
         this.eventsMap = new Map();
 
         /**
-       * Mapa de objetos a eventos y sus callbacks asociados 
-       * @type {Map<Object, Map<String, Set<Function>>>}
-       * Mapea un objeto a sus eventos y funciones asociadas
-       * Facilita la eliminación de eventos por objeto o eliminar un evento especifico
-       */
+      * Mapa de objetos a eventos y sus callbacks asociados 
+      * @type {Map<Object, Map<String, Set<Function>>>}
+      * Mapea un objeto a sus eventos y funciones asociadas
+      * Facilita la eliminación de eventos por objeto o eliminar un evento especifico
+      */
         this.objectsMap = new Map();
     }
 

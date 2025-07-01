@@ -41,3 +41,7 @@ export function hexToRgb(hex) {
     }
     return null;
 }
+
+export function hexToColor(hex) {
+    return Phaser.Display.Color.IntegerToColor(hex);
+}

@@ -97,11 +97,10 @@ export default class InteractiveContainer extends Phaser.GameObjects.Container {
 
         let rectangle = new Phaser.Geom.Rectangle(dims.x + dims.width / 2, dims.y + dims.height / 2, dims.width, dims.height);
 
-        let interactiveConfig = {
+        setInteractive(this, {
             hitArea: rectangle,
             hitAreaCallback: Phaser.Geom.Rectangle.Contains
-        }
-        setInteractive(this, interactiveConfig);
+        });
 
         if (debug) {
             this.add(this.scene.add.rectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x000, 0.4));

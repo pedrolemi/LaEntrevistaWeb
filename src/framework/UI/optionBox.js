@@ -136,8 +136,7 @@ export default class OptionBox extends InteractiveContainer {
                     const value = tween.getValue();
                     let col = Phaser.Display.Color.Interpolate.ColorWithColor(noTint, pointerOverColor, 100, value);
                     let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    this.box.setTint(colInt);
-                    this.textObj.setTint(colInt);
+                    Phaser.Actions.SetTint([this.box, this.textObj], colInt);
                 },
                 duration: tintFadeTime,
                 repeat: 0,
@@ -152,8 +151,7 @@ export default class OptionBox extends InteractiveContainer {
                     const value = tween.getValue();
                     let col = Phaser.Display.Color.Interpolate.ColorWithColor(pointerOverColor, noTint, 100, value);
                     let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    this.box.setTint(colInt);
-                    this.textObj.setTint(colInt);
+                    Phaser.Actions.SetTint([this.box, this.textObj], colInt);
                 },
                 duration: tintFadeTime,
                 repeat: 0,
@@ -171,8 +169,7 @@ export default class OptionBox extends InteractiveContainer {
                     const value = tween.getValue();
                     let col = Phaser.Display.Color.Interpolate.ColorWithColor(pointerOverColor, noTint, 100, value);
                     let colInt = Phaser.Display.Color.GetColor(col.r, col.g, col.b);
-                    this.box.setTint(colInt);
-                    this.textObj.setTint(colInt);
+                    Phaser.Actions.SetTint([this.box, this.textObj], colInt);
                 },
                 duration: tintFadeTime,
                 repeat: 0,

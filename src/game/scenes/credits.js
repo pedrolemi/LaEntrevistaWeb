@@ -1,5 +1,4 @@
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
-import TextArea from "../../framework/UI/textArea.js";
 
 export default class Credits extends LaEntrevistaBaseScene {
     /**
@@ -91,7 +90,7 @@ export default class Credits extends LaEntrevistaBaseScene {
 
     createText(y, text, style) {
         let pos = this.calculatePosition(y);
-        let txt = new TextArea(this, pos.x + this.TEXT_MARGIN, y, pos.width - (this.TEXT_MARGIN * 2), style.fontSize * 2, text, style).setOrigin(0, 0);
+        let txt = this.createTextArea(pos.x + this.TEXT_MARGIN, y, pos.width - (this.TEXT_MARGIN * 2), style.fontSize * 2, 0, 0, text, style);
         txt.adjustFontSize();
         return txt;
     }

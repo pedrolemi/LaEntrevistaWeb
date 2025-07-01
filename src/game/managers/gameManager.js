@@ -20,13 +20,15 @@ export default class GameManager extends Singleton {
 
         this.nQuestionsCompleted = 0;
         this.N_REQUIRED_QUESTIONS = 9;
+
+        this.gameCompleted = false;
     }
 
     init() {
         this.ui = this.sceneManager.getScene("UI");
 
-        this.startGame();
-        // this.startMainMenu();
+        // this.startGame();
+        this.startMainMenu();
     }
 
     startGame() {
@@ -43,7 +45,7 @@ export default class GameManager extends Singleton {
 
         this.blackboard.set("position", "dataScience");
 
-        // this.startHouseScene();
+        this.startHouseScene();
 
         // TEST
         // this.startMainMenu();
@@ -86,10 +88,11 @@ export default class GameManager extends Singleton {
         this.sceneManager.changeScene("Office", null, true, true);
     }
 
-    startMirrorScene() {
-        this.sceneManager.changeScene("Mirror", null, true, false);
+    startMirrorScene(skip = false) {
+        this.sceneManager.changeScene("Mirror", {skip : skip}, true, false);
         if (this.nQuestionsCompleted >= this.N_REQUIRED_QUESTIONS) {
             this.dispatcher.dispatch("allQuestionsComplete");
+            this.gameCompleted = true;
         }
     }
 

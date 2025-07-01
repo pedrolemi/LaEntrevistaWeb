@@ -1,5 +1,5 @@
 import InteractiveContainer from "../../framework/UI/interactiveContainer.js";
-import TextArea from "../../framework/UI/textArea.js";
+import TextButton from "../../framework/UI/textButton.js";
 import LaEntrevistaBaseScene from "../laEntrevistaBaseScene.js";
 
 export default class MainMenu extends LaEntrevistaBaseScene {
@@ -47,24 +47,42 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         // creditsVideo.on("complete", () => {
         //     this.gameManager.startCreditsScene(false);
         // });
-        
+
+        this.TEXT_MARGIN = 25;
+        this.TEXT_CONFIG = {
+            fontFamily: "leagueSpartan-variable",
+            fontSize: 100,
+            fontStyle: "normal",
+            color: "#000000",
+            align: "center",
+        };
 
         let namespace = "scenes";
 
-        let playButton = this.createButton(586, 431, 313, 234, 3.6, this.localizationManager.translate("play", namespace).toUpperCase());
-        let creditsButton = this.createButton(471, 854, 263, 215, 14.11, this.localizationManager.translate("credits", namespace).toUpperCase());
-        
-        // TODO: Boton y aviso de preguntas
+        let playButton = this.createGameButton(586, 431, 313, 234, 3.6, this.localizationManager.translate("play", namespace).toUpperCase());
+        let creditsButton = this.createGameButton(471, 854, 263, 215, 14.11, this.localizationManager.translate("credits", namespace).toUpperCase());
+        let questionsButton = this.createGameButton(205, 570, 355, 245, -12.2, this.localizationManager.translate("questions", namespace).toUpperCase());
+
+        let popup = this.createPopup(namespace);
+        popup.setVisible(false);
+
+        this.makeInactive = () => {
+            playButton.disableInteractive();
+            creditsButton.disableInteractive();
+            questionsButton.disableInteractive();
+        }
 
         playButton.on("pointerdown", () => {
+            this.makeInactive();
+
             let anim = this.tweens.add({
                 targets: blankScreen,
                 alpha: { from: 1, to: 0 },
                 duration: 200,
                 repeat: 0,
             });
-            
-            anim.on("complete", () => { 
+
+            anim.on("complete", () => {
                 setTimeout(() => {
                     this.gameManager.startHouseScene();
                 }, 500);
@@ -77,40 +95,114 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         });
 
         creditsButton.on("pointerdown", () => {
+            this.makeInactive();
+
             this.gameManager.startCreditsScene();
 
             // playButton.activate(false);
             // creditsButton.activate(false);
-            
+
             // creditsVideo.setVisible(true);
             // creditsVideo.play();
         });
+
+        questionsButton.on("pointerdown", () => {
+            if (!this.gameManager.gameCompleted) {
+                popup.activate(true);
+            }
+            else {
+                this.makeInactive();
+                this.gameManager.startMirrorScene(true);
+            }
+        });
     }
 
-    createButton(x, y, width, height, rotation, text) {
-        let TEXT_MARGIN = 25;
-        let INFO_TEXT_CONFIG = {
-            fontFamily: "leagueSpartan-variable",
-            fontSize: 100,
-            fontStyle: "normal",
-            color: "#000000",
-            align: "center",
-        };
-        
+    createGameButton(x, y, width, height, rotation, text) {
         let button = new InteractiveContainer(this, 0, 0);
         let rect = this.add.rectangle(0, 0, width, height, 0xFFFFFF, 1).setOrigin(0.5, 0.5);
-        let textObj = new TextArea(this, rect.x, rect.y, rect.displayWidth - TEXT_MARGIN * 2, rect.displayHeight - TEXT_MARGIN * 2, 
-            text, INFO_TEXT_CONFIG).setOrigin(0.5, 0.5);
+        let textObj = this.createTextArea(rect.x, rect.y, rect.displayWidth - this.TEXT_MARGIN * 2, rect.displayHeight - this.TEXT_MARGIN * 2, 0.5, 0.5,
+            text, this.TEXT_CONFIG);
         textObj.adjustFontSize();
+
+        let cross = this.add.rectangle(rect.x, rect.y, width * 0.95, height * 0.02, this.TEXT_CONFIG.color, 1).setOrigin(0.5, 0.5);
+        cross.setVisible(false);
 
         button.add(rect);
         button.add(textObj);
+        button.add(cross);
         button.calculateRectangleSize();
 
         button.setAngle(rotation);
         button.setPosition(x, y);
         button.setInteractive();
 
+        button.on("pointerover", () => {
+            cross.setVisible(true);
+        });
+        button.on("pointerout", () => {
+            cross.setVisible(false);
+        });
+
         return button;
     }
+
+    createPopup(namespace) {
+        let POPUP_SCALE = 0.5;
+
+        let popup = new InteractiveContainer(this, 0, 0);
+        let blackBg = this.add.rectangle(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT, 0x000000, 0.5).setOrigin(0, 0);
+
+        // TODO: Cambiar
+        let textRect = this.add.rectangle(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH * POPUP_SCALE, this.CANVAS_HEIGHT * POPUP_SCALE, 0xFFFFFF, 1)
+            .setOrigin(0.5, 0.5);
+
+        let warningTitleText = this.createTextArea(textRect.x, textRect.y - textRect.displayHeight / 2 + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
+            textRect.displayHeight * 0.15, 0.5, 0, this.localizationManager.translate("questionsWarningTitle", namespace), this.TEXT_CONFIG);
+        warningTitleText.adjustFontSize();
+
+
+        let warningTextConfig = { ...this.TEXT_CONFIG };
+        warningTextConfig.wordWrap = {
+            width: textRect.displayWidth - this.TEXT_MARGIN * 2,
+            useAdvancedWrap: true
+        }
+        let warningText = this.createTextArea(textRect.x, warningTitleText.y + warningTitleText.displayHeight + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
+            textRect.displayHeight * 0.5, 0.5, 0.5, this.localizationManager.translate("questionsWarning", namespace),
+            warningTextConfig);
+        warningText.y += warningText.displayHeight / 2;
+        warningText.adjustFontSize();
+
+
+        let buttonsY = warningText.y + warningText.displayHeight;
+        let buttonsWidth = textRect.displayWidth / 2 - this.TEXT_MARGIN * 2;
+        let buttonsHeight = warningTitleText.displayHeight * 1.5;
+
+        let yesButton = new TextButton(this, textRect.x - buttonsWidth / 2 - this.TEXT_MARGIN / 2, buttonsY, buttonsWidth, buttonsHeight);
+        yesButton.createRectButton(this.localizationManager.translate("yes", namespace), this.TEXT_CONFIG, () => {
+            this.gameManager.startMirrorScene(true);
+            yesButton.disableInteractive();
+        }, "yesButton", 25, 0xe02424, 1, 5);
+
+        let noButton = new TextButton(this, textRect.x + buttonsWidth / 2 + this.TEXT_MARGIN / 2, buttonsY, buttonsWidth, buttonsHeight);
+        noButton.createRectButton(this.localizationManager.translate("no", namespace), this.TEXT_CONFIG, () => {
+            noButton.disableInteractive();
+            popup.activate(false, () => {
+                noButton.setInteractive();
+            });
+        }, "noButton", 25, 0x36b030, 1, 5);
+
+        popup.add(blackBg);
+        popup.add(textRect);
+        popup.add(warningTitleText);
+        popup.add(warningText);
+        popup.add(yesButton);
+        popup.add(noButton);
+
+        blackBg.setInteractive();
+
+        popup.calculateRectangleSize();
+
+        return popup;
+    }
+
 }

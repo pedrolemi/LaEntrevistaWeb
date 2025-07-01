@@ -14,7 +14,8 @@ export default class ChoiceNode extends DialogNode {
                 { "next": "choice1" },
                 { "next": "choice2" },
                 { ... }
-            ]
+            ],
+            "shuffle": true
         }
     *
     * Archivo de localizacion:
@@ -49,6 +50,16 @@ export default class ChoiceNode extends DialogNode {
         node.choices.forEach((choice) => {
             this.next.push(choice.next)
         });
+
+        // Si se elige que el orden de las respuestas se aleatorio, se barajan tanto
+        // el texto de las opciones como los nodos siguientes con el Fisher-Yates Shuffle
+        if (node.shuffle != null && node.shuffle) {
+            for (let i = this.choices.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [this.choices[i], this.choices[j]] = [this.choices[j], this.choices[i]];
+                [this.next[i], this.next[j]] = [this.next[j], this.next[i]];
+            }
+        }
     }
 
     processNode() {

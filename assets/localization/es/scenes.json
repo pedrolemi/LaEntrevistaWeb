@@ -2,7 +2,11 @@
     "play": "Jugar",
     "credits": "Créditos",
     "questions": "Preguntas",
-
+    "questionsWarningTitle": "¡AVISO!",
+    "questionsWarning": "Se recomienda completar el juego antes de acceder a las preguntas. ¿Quieres acceder igualmente?", 
+    "yes": "Sí",
+    "no": "No",
+    
     "platform": "Portal \nde empleo",
     "programming": "Programación",
     "data": "Análisis de datos",

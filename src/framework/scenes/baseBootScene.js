@@ -66,7 +66,7 @@ export default class BaseBootScene extends Phaser.Scene {
         this.LOCALIZATION_PATH = "assets/localization";
         this.i18nConfig = {
             defaultLanguage: "es",
-            supportedLanguages: ["es"],
+            supportedLanguages: ["es", "fr"],
         }
     }
 

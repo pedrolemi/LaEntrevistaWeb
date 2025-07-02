@@ -172,8 +172,8 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         let warningText = new TextArea(this, textRect.x, warningTitleText.y + warningTitleText.displayHeight + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
             textRect.displayHeight * 0.5, this.localizationManager.translate("questionsWarning", namespace), warningTextConfig, this.sys.game.debug.enable);
         warningText.setOrigin(0.5, 0.5);
-        warningText.y += warningText.displayHeight / 2;
         warningText.adjustFontSize();
+        warningText.y += warningText.displayHeight / 2;
 
 
         let buttonsY = warningText.y + warningText.displayHeight;

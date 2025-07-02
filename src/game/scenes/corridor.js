@@ -55,6 +55,7 @@ export default class Corridor extends LaEntrevistaBaseScene {
             let textArea = new TextArea(this, textAreaConfig.x, y, textAreaConfig.width, textAreaConfig.height,
                 this.localizationManager.translate(id, "scenes"), signTextConfig, this.sys.game.debug.enable);
             textArea.setOrigin(textAreaConfig.originX, textAreaConfig.originY);
+            textArea.adjustFontSize();
 
             let rect = this.add.zone(rectConfig.x, y, rectConfig.width, rectConfig.height);
             rect.setOrigin(rectConfig.originX, rectConfig.originY);

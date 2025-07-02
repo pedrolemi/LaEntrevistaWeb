@@ -5,9 +5,8 @@ export default class InteractiveContainer extends Phaser.GameObjects.Container {
     * Clase base para los elementos de dialogo, con metodos para activar/desactivar el objeto y calcular su rectangulo de colision
     * @extends Phaser.GameObjects.Container
     * @param {Phaser.Scene} scene - escena a la que pertenece
-    * @param {*} scene 
-    * @param {*} x 
-    * @param {*} y 
+    * @param {Number} x - posicion x (opcional)
+    * @param {Number} y - posicion y (opcional)
     */
     constructor(scene, x = 0, y = 0) {
         super(scene, x, y);
@@ -105,7 +104,7 @@ export default class InteractiveContainer extends Phaser.GameObjects.Container {
         if (debug) {
             this.add(this.scene.add.rectangle(rectangle.x, rectangle.y, rectangle.width, rectangle.height, 0x000, 0.4));
             this.on("pointerdown", () => {
-                console.log("clicking",objectName);
+                console.log("clicking", objectName);
             });
         }
         this.disableInteractive();

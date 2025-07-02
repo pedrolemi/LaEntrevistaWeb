@@ -62,7 +62,7 @@
                 "text": "Ah, comme c'est intéressant ! <<position || programming:Connais-tu le tamis d'Eratosthène ?|| dataScience:Sais-tu comment faire une approche normale ?>>"
             },
             {
-                "text": "Avec <<position || programming:cet algorithme tu élimines tous les nombres qui ne sont pas premiers et il ne reste que les nombres premiers|| dataScience:cette méthode tu peux obtenir des résultats relativement fiables pour ce que vous essayez de faire>>."
+                "text": "Avec <<position || programming:cet algorithme tu élimines tous les nombres qui ne sont pas premiers et il ne reste que les nombres premiers|| dataScience:cette méthode tu peux obtenir des résultats relativement fiables pour ce que tu essayes de faire>>."
             }
         ],
         "line3": {

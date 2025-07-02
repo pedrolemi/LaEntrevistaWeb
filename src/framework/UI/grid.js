@@ -29,8 +29,7 @@ export default class Grid {
         this.cellWidth = (this.width - this.margin * 2) / this.columns;
         this.cellHeight = (this.height - this.margin * 2) / this.rows;
 
-        this.items = [];
-        this.itemsSet = new Set();
+        this.items = this.scene.add.group();
 
         let debug = this.scene.sys.game.debug;
         if (debug.enable) {
@@ -41,7 +40,7 @@ export default class Grid {
     }
 
     arrange() {
-        Phaser.Actions.GridAlign(this.items, {
+        Phaser.Actions.GridAlign(this.items.getChildren(), {
             width: this.columns,
             height: this.rows,
             cellWidth: this.cellWidth,
@@ -53,9 +52,8 @@ export default class Grid {
     }
 
     addItem(item) {
-        if (!this.itemsSet.has(item)) {
-            this.items.push(item);
-            this.itemsSet.add(item);
+        if (!this.items.contains(item)) {
+            this.items.add(item);
             this.arrange();
         }
     }

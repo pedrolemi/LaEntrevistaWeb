@@ -1,3 +1,4 @@
+import AnimatedContainer from "../../framework/UI/animatedContainer.js";
 import InteractiveContainer from "../../framework/UI/interactiveContainer.js";
 import TextArea from "../../framework/UI/textArea.js";
 import TextButton from "../../framework/UI/textButton.js";
@@ -151,7 +152,7 @@ export default class MainMenu extends LaEntrevistaBaseScene {
     createPopup(namespace) {
         let POPUP_SCALE = 0.5;
 
-        let popup = new InteractiveContainer(this, 0, 0);
+        let popup = new AnimatedContainer(this, 0, 0);
         let blackBg = this.add.rectangle(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT, 0x000000, 0.5).setOrigin(0, 0);
 
         // TODO: Cambiar
@@ -202,8 +203,6 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         popup.add(noButton);
 
         blackBg.setInteractive();
-
-        popup.calculateRectangleSize();
 
         return popup;
     }

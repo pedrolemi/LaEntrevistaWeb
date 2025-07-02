@@ -28,7 +28,8 @@ export default class GameManager extends Singleton {
         this.ui = this.sceneManager.getScene("UI");
 
         // this.startGame();
-        this.startMainMenu();
+        // this.startMainMenu();
+        this.startLanguageMenu();
     }
 
     startGame() {
@@ -45,7 +46,7 @@ export default class GameManager extends Singleton {
 
         // this.blackboard.set("position", "dataScience");
 
-        this.startHouseScene();
+        // this.startHouseScene();
 
         // TEST
         // this.startMainMenu();

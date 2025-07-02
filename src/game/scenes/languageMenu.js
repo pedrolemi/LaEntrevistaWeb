@@ -33,7 +33,7 @@ export default class LanguageMenu extends LaEntrevistaBaseScene {
     * @returns {Phaser.GameObjects.Image} - boton interactivo de la bandera
     */
     createFlagButton(frame, language, scale = 1) {
-        let animTime = 200;
+        let animTime = 50;
 
         let button = this.add.image(0, 0, 'flags', frame);
         this.setInteractive(button);
@@ -51,12 +51,18 @@ export default class LanguageMenu extends LaEntrevistaBaseScene {
             this.tweens.add({
                 targets: button,
                 scale: scale,
-                duration: animTime,
+                duration: 0,
                 repeat: 0,
             });
         });
 
         button.on('pointerdown', () => {
+            this.tweens.add({
+                targets: button,
+                scale: scale,
+                duration: 0,
+                repeat: 0,
+            });
             this.localizationManager.changeLanguage(language);
             this.gameManager.startMainMenu();
         });

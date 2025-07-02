@@ -1,39 +1,39 @@
 {
     "question1": {
         "root": {
-            "text": "Vengo a una entrevista de trabajo."
+            "text": "Je suis ici pour un entretien d'embauche."
         },
         "info": {
-            "text": "Las entrevistas para la vacante de auxiliar administrativo se están haciendo en la cuarta planta. Puedes coger el ascensor que hay al fondo."
+            "text": "Les entretiens pour le poste vacant d'assistant administratif se déroulent au quatrième étage. Vous pouvez prendre l'ascenseur à l'arrière."
         },
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que el recepcionista asuma que te presentas para el puesto de secretaria."
+                "text": "Que le réceptionniste supposes que tu postules au poste de secrétaire."
             },
             {
-                "text": "Que nadie te acompañe al lugar donde se van a hacer las entrevistas."
+                "text": "Que personne ne t'accompagnes jusqu'au lieu où se dérouleront les entretiens."
             },
             {
-                "text": "Que haya entrevistas para tantos puestos de trabajo al mismo tiempo."
+                "text": "Qu'il y ait des entretiens pour autant d'emplois en même temps."
             }
         ],
 
         "wrong": {
-            "text": "No... creo que me chirría más que me confundiese con una secretaria."
+            "text": "Non... Je pense que je suis plus ennuyée qu'il m'ait prise pour une secrétaire."
         },
         "right": [
             {
-                "text": "¡Auxiliar administrativo, dice!"
+                "text": "¡Assistante administrative, il m'a dit!"
             },
             {
-                "text": "Tantos años estudiando <<position || programming: Informática || dataScience: Matemáticas>>, y no se ha planteado que pueda dedicarme a un puesto técnico."
+                "text": "Tant d'années d'études <<position || programming: d'informatique || dataScience: de mathématiques>>, et il n'a pas été envisagé que je puisse occuper un poste technique."
             },
             {
-                "text": "Ni siquiera me ha preguntado a qué oferta me presentaba. ¿Qué pasa, que las mujeres no podemos entender de ciencias?"
+                "text": "Il ne m'a même pas demandé ce pour quoi je postulais. Qu'est-ce qui se passe, les femmes ne peuvent pas comprendre la science ?"
             }
         ]
     },
@@ -41,160 +41,160 @@
     "question2": {
         "root":[
             {
-                "text": "¿Qué problema va a haber? Es solo que cada vez tengo más claro que no me van a dar el puesto. "
+                "text": "Quel est le problème ? C'est juste qu'il devient de plus en plus clair pour moi que je n'obtiendrai pas le poste."
             },
             {
-                "text": "Mucha igualdad, pero luego todo es que si machismo, que si discriminación positiva,  que si tasas, que si ayudas a extranjeros, a minusválidos..."
+                "text": "Beaucoup d'égalité, mais ensuite c'est le sexisme, la discrimination positive, les quotas, l'aide aux étrangers, aux handicapés..."
             },
             {
-                "text": "¿Y los que hemos estudiado pero somos normales? A la calle todos. Quedaos con el puesto. Paso de esperar."
+                "text": "Qu'en est-il de ceux d'entre nous qui ont étudié mais qui sont normaux ? Dans la rue, tous. Vous savez ce que je dis ? Gardez le travail. Je n'attends pas ici pour rien."
             }
         ],
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que el candidato piense que te van a contratar para mejorar la imagen de la empresa."
+                "text": "Que le candidat pense que tu allais être engagé pour améliorer l'image de l'entreprise."
             },
             {
-                "text": "Que el candidato tenga tan poca confianza en sí mismo."
+                "text": "Que le candidat ait si peu confiance en lui."
             },
             {
-                "text": "Que el candidato se vaya antes de hacer la entrevista."
+                "text": "Que le candidat part avant l'entretien."
             }
         ],
 
         "wrong": {
-            "text": "No, ahora que lo pienso, lo raro es que pensase que me iban a contratar para mejorar la imagen de la empresa."
+            "text": "Non, en y réfléchissant, ce qui est étrange, c'est que je pensais que j'allais être embauché pour améliorer l'image de l'entreprise."
         },
         "right": {
-            "text": "Lo dice como si las cuotas fueran un sinónimo de \"contratamos a cualquier mujer que pase por la puerta\". ¿No se da cuenta de que si estoy aquí es porque cumplo con los requisitos como él?"
+            "text": "Il dit cela comme si les quotas étaient synonymes de \"nous embauchons toutes les femmes qui franchissent la porte\". Ne se rend-il pas compte que si je suis ici, c'est parce que je suis aussi qualifié que lui ?"
         }
     },
 
     "question3": {
         "root": [
             {
-                "text": "Así no paso tanto tiempo en casa y mi chica no tiene tanto tiempo para echarme la bronca. No valgo para las tareas del hogar, a ella se le da mucho mejor."
+                "text": "De cette façon, je passe moins de temps à la maison et ma copine n'a pas autant de temps pour me gronder. Je ne suis pas doué pour les tâches ménagères, elle l'est beaucoup plus."
             },
             {
-                "text": "Que yo intento ayudar, pero no sirvo para esto. Seguro que en tu casa pasa lo mismo."
+                "text": "J'essaie d'aider, mais je ne suis pas douée. Je suis sûr que c'est la même chose chez vous."
             }
         ],
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que el candidato delegue su responsabilidad en la casa en su mujer."
+                "text": "Que le candidat délègue à sa femme la responsabilité du ménage."
             },
             {
-                "text": "Que el candidato disfrute yendo a entrevistas de trabajo."
+                "text": "Que le candidat aime se rendre à des entretiens d'embauche."
             },
             {
-                "text": "Que el candidato te cuente su vida sin conocerte de nada."
+                "text": "Que le candidat vous raconte sa vie sans vous connaître."
             }
         ],
 
         "wrong": {
-            "text": "Bueno, eso y que el candidato delegue su responsabilidad en la casa en su mujer."
+            "text": "Eh bien, cela et le fait que le candidat délègue à sa copine la responsabilité du ménage."
         },
         "right": [
             {
-                "text": "Que \"ayuda\" a su novia, dice. ¿A qué? ¿A planchar sus camisas? ¿A cocinar su comida? ¿A lavar su ropa?"
+                "text": "C'est comme ça qu'il \"aide\" sa petite amie, dit-il. Pour quoi faire ? Repasser ses chemises ? Faire cuire sa nourriture ? Laver ses vêtements ?"
             },
             {
-                "text": "¡Pero si esas son sus responsabilidades también! No está ayudando, está cumpliendo con sus deberes. ¿No se da cuenta de que su novia no está ahí para cuidarle?"
+                "text": "Mais ce sont aussi ses responsabilités aussi ! Il n'aide pas, il fait son devoir, il ne se rend pas compte que sa copine n'est pas là pour s'occuper de lui ?"
             }
         ]
     },
 
     "question4": {
         "root": {
-            "text": "Se ha llenado esto de gente con la oferta de <<position || programming: programador || dataScience: analista>>."
+            "text": "La salle d'attente a été remplie de personnes ayant une offre de <<position || programming:programmeur|| dataScience: data analyste>> junior."
         },
         "line2": {
-            "text": "Y ni una tía."
+            "text": "Et pas une seule fille."
         },
         "line3": {
-            "text": "Normal. ¿Cuántas conoces que sepan <<position || programming: programar || dataScience: matemáticas>>? Además, mejor así, que luego te distraes."
+            "text": "Normal. Combien en connais-tu qui savent <<position || programming:programmer|| dataScience:les mathématiques>>? D'ailleurs, c'est presque mieux ainsi, car on se laisse distraire."
         },
         "line8": {
-            "text": "Anda, volvamos a trabajar."
+            "text": "Allez, on se remet au travail."
         },
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que piensen que no hay mujeres que sepan <<position || programming: programar || dataScience: matemáticas>>."
+                "text": "Qu'ils pensent qu'il n'y a pas de femmes qui sachent <<position || programming:programmer|| dataScience:les mathématiques>>."
             },
             {
-                "text": "Que haya tantos candidatos para el mismo puesto de trabajo."
+                "text": "Qu'il y ait tant de candidats pour le même poste."
             },
             {
-                "text": "Que su descanso dure tan poco tiempo."
+                "text": "Que leur repos soit de si courte durée."
             }
         ],
 
         "wrong": {
-            "text": "Lo realmente indignante es que piensen que no hay mujeres que sepan <<position || programming: programar || dataScience: matemáticas>>."
+            "text": "Ce qui est vraiment scandaleux, c'est qu'ils pensent qu'il n'y a pas de femmes qui savent <<position || programming:programmer|| dataScience: les mathématiques>>."
         },
         "right": [
             {
-                "text": "¿Cómo se pueden decir tantas cosas mal en tan poco tiempo? ¿Que no hay mujeres preparadas? Somos muchísimas, aunque no se nos dan las oportunidades que merecemos. ¿Que se distraen con nosotras? ¿Es que solo somos un entretenimiento para nuestros compañeros?"
+                "text": "Comment peut-on dire autant de choses fausses en si peu de temps ? Qu'il n'y a pas de femmes qualifiées ? Nous sommes nombreuses, mais nous ne recevons pas les opportunités que nous méritons. Sont-ils distraits par nous ? Sommes-nous un simple divertissement pour nos collègues?"
             },
             {
-                "text": "Nuestro papel en las empresas es el de trabajar, no el de agradar o distraer a los hombres."
+                "text": "Notre rôle dans l'entreprise est de travailler, pas de plaire ou de distraire les hommes."
             }
         ]
     },
 
     "question5": {
         "root": {
-            "text": "<<position || programming: Tengo algunos problemas para encontrar todos los números primos en una lista. || dataScience: Tengo algunos problemas para calcular estas probabilidades.>>"
+            "text": "<<position || programming:J'ai des problèmes pour trouver tous les nombres premiers dans une liste.|| dataScience:Le calcul des probabilités qu'un certain événement se produise me pose quelques problèmes.>>"
         },
         "line2": {
-            "text": "<<position || programming: ¿Conoces la criba de Eratóstenes? || dataScience: ¿Sabes hacer una aproximación normal?>>"
+            "text": "<<position || programming:Connaissez-vous le tamis d'Eratosthène ?|| dataScience:Savez-vous comment faire une approche normale ?>>"
         },
         "line3": {
-            "text": "Eso le estaba comentando, pero parece que no es la solución que  buscaba."
+            "text": "C'est ce que je lui disais, mais cela ne semble pas être la solution qu'il recherchait."
         },
         "line6": {
-            "text": "Voy a probar tu solución, Carlos."
+            "text": "Je vais essayer ta solution, Charles."
         },
         "line7": {
-            "text": "Si Rebeca te da una solución, seguramente sea mejor que la mía. Sabe más que ninguno de nosotros."
+            "text": "Si Rebecca vous donne une solution, elle est probablement meilleure que la mienne. Elle en sait plus que nous tous."
         },
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que la solución de Rebeca solo se tenga en cuenta cuando la comenta su compañero."
+                "text": "La solution de Rebecca ne doit être prise en compte que lorsque son collège la commente."
             },
             {
-                "text": "Que la mujer no conozca esa solución."
+                "text": "Que la femme ne connaisse pas cette solution."
             },
             {
-                "text": "Que Rebeca lleve tanto tiempo trabajando en la empresa."
+                "text": "Que Rebecca travaille dans l'entreprise depuis si longtemps."
             }
         ],
 
         "wrong": {
-                "text": "Aunque ahora que lo pienso, es casi peor que la solución de Rebeca solo se tenga en cuenta cuando la comenta Carlos."
+                "text": "Même si, maintenant que j'y pense, il est presque pire que la solution de Rebecca ne soit prise en compte que lorsque Charles la commente."
             },
             "right": [
                 {
-                    "text": "¡Ay, Rebeca! ¡Cuántas veces he estado en tu situación! La de veces que he dado consejos, he enseñado soluciones o he propuesto ideas... ¡Pero si no me respalda un hombre, parece que no valen!"
+                    "text": "Oh, Rebecca, combien de fois ai-je été dans ta situation ! Le nombre de fois où j'ai donné des conseils, montré des solutions ou proposé des idées... Mais si je n'ai pas un homme derrière moi, elles ne semblent pas en valoir la peine !"
                 },
                 {
-                    "text": "Y da igual la experiencia que tengas o lo mucho que sepas. En fin, ya llegará el momento en el que entendamos que las respuestas de una mujer son tan válidas como las de un hombre."
+                    "text": "Et peu importe votre expérience ou vos connaissances. Quoi qu'il en soit, le temps viendra où nous comprendrons que les réponses d'une femme sont tout aussi valables que celles d'un homme."
                 }
             ]
     },
@@ -202,70 +202,70 @@
     "question6": {
         "root": [
             {
-                "text": "Antes de continuar, me gustaría presentarnos. Yo soy Andrés y esta es Luisa. Somos los encargados de las entrevistas de hoy."
+                "text": "Avant de poursuivre, je voudrais nous présenter. Je suis André Rodríguez et voici ma collègue, Louise. Nous sommes chargés des entretiens d'aujourd'hui."
             },
             {
-                "text": "Luisa, ¿te importaría ser tú quien tome las notas? Me encanta tu forma de escribir, tomas notas de forma mucho más organizada. Ya hago yo las preguntas."
+                "text": "Louise, tu veux bien prendre des notes ? Tu sais que j'aime ta façon d'écrire parce que tu as une meilleure écriture que moi et que tu prends des notes de façon beaucoup plus organisée. Je poserai moi-même les questions."
             }
         ],
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que el rol de ella sea el de tomar notas y él se encargue de hacer la entrevista."
+                "text": "Qu'elle doit prendre des notes et lui doit être responsable de l'entretien."
             },
             {
-                "text": "Que haya dos entrevistadores y no solo uno"
+                "text": "Qu'il y ait deux enquêteurs et non un seul"
             },
             {
-                "text": "Que necesiten tomar notas de la entrevista si ya tienen tu CV"
+                "text": "Qu'ils doivent prendre des notes de l'entretien s'ils ont déjà ton CV"
             }
         ],
 
         "wrong": {
-                "text": "Ahora me pregunto... ¿Por qué el rol de ella es el de tomar notas?"
+                "text": "Je me demande maintenant... Pourquoi son rôle a elle est-il de prendre des notes ?"
             },
         "right": [
             {
-                "text": "¿\"Los encargados\" de la entrevista? Pero si solo me ha preguntado él. Ella parecía más una secretaria que una trabajadora de Recursos Humanos."
+                "text": "\"Les chargés\" de l'entretien ? Mais il est le seul à m'avoir posé les questions. Elle ressemblait plus à une secrétaire qu'à une employée des Ressources Humaines."
             },
             {
-                "text": "Me pregunto por qué no aprende caligrafía en lugar de mandar a su compañera a tomar notas. ¿No se da cuenta de que los dos tienen el mismo puesto y de que deberían trabajar igual?"
+                "text": "Je me demande pourquoi il n'apprend pas la calligraphie au lieu de demander à sa collège de prendre des notes. Il ne se rend pas compte qu'ils ont tous les deux le même travail et qu'ils devraient travailler de la même manière ?"
             }
         ]
     },
 
     "question7": {
         "root": {
-            "text": "Vamos a pasar a otro tipo de preguntas. ¿Dónde te ves de aquí a cinco años? Y al hilo de esta pregunta, ¿tienes pareja?"
+            "text": "Passons à d'autres questions : où vous voyez-vous dans cinq ans ? Et dans le prolongement de cette question, est-ce que vous êtes en couple?"
         },
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que te pidan información personal en una entrevista de trabajo."
+                "text": "De se voir demander des informations personnelles lors d'un entretien d'embauche."
             },
             {
-                "text": "Que te pregunten por el futuro en una entrevista de trabajo."
+                "text": "D'Être interrogé sur l'avenir lors d'un entretien d'embauche."
             },
             {
-                "text": "Que no quieran saber el género de tu pareja"
+                "text": "Qu'ils ne veulent pas connaître le sexe de votre partenaire"
             }
         ],
 
         "wrong": {
-                "text": "En realidad, eso de pedirme información personal en una entrevista... No lo veo del todo bien."
+                "text": "En fait, me demander des informations personnelles lors d'un entretien... Je n'y vois pas clair."
             },
         "right": [
             {
-                "text": "¿Que si tengo pareja? ¿Qué es esto, una entrevista de trabajo o una app de citas?"
+                "text": "Est-ce que je suis en couple? Qu'est-ce que c'est un entretien d'embauche ou une application de rencontre ?"
             },
             {
-                "text": "No entiendo por qué tengo que dar información personal en una entrevista. ¿Es que piensan que voy a trabajar peor por tener familia?"
+                "text": "Je ne comprends pas pourquoi je dois donner des informations personnelles lors d'un entretien. Pensent-ils que je vais travailler moins bien parce que j'ai une famille ?"
             }
         ]
     },
@@ -273,66 +273,66 @@
     "question8": {
         "root": [
             {
-                "text": "Déjame decirte que tienes una voz muy agradable, pero demasiado suave. Me da miedo que no sepas hacerte valer ante tus compañeros."
+                "text": " Permettez-moi de vous dire que vous avez une très belle voix, même si elle est peut-être trop douce. Je crains que vous ne puissiez pas vous affirmer devant vos collègues."
             },
             {
-                "text": "Pero también creo que puedes aportar humanidad y calidez al equipo. Por cierto, ¿no serás de las que se derrumban bajo presión?"
+                "text": "Mais je pense que vous pouvez apporter une certaine humanité et une certaine chaleur humaine à l'équipe. Au fait, vous ne faites pas partie de ces personnes qui s'effondrent lorsqu'elles travaillent sous pression ?"
             }
         ],
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que tengan en cuenta lo agradable que eres para un puesto técnico."
+                "text": "Qu'ils tiennent compte de votre gentillesse pour un poste technique."
             },
             {
-                "text": "Que tengas que hablar con tus compañeros en las horas de trabajo."
+                "text": "Que vous devez parler à vos collègues pendant les heures de travail."
             },
             {
-                "text": "Que el equipo necesite alguien aportando humanidad para trabajar correctamente."
+                "text": "Que l'équipe a besoin de quelqu'un qui apporte de l'humanité pour fonctionner correctement."
             }
         ],
 
         "wrong": {
-                "text": "No, me he equivocado. Lo raro es que tengan en cuenta que soy \"agradable\" si me estoy presentando a un puesto técnico."
+                "text": "Non, je me suis trompé. Ce qui est étrange, c'est qu'ils prennent en compte le fait que j'ai \"une très belle voix\" si je postule à un poste technique."
             },
         "right": [
             {
-                "text": "¿Que si me derrumbo bajo presión? ¿Que tengo una voz \"suave\"? Calidez no sé si tengo, pero desde luego que me estoy calentando..."
+                "text": "Et si je m'effondre sous la pression ? Que j'ai une voix \"trop douce\"? Je ne sais pas si j’ai vraiment cette chaleur humaine, mais ça m'échauffe et m’énerve de plus en plus..."
             },
             {
-                "text": "¿Les dirán estas cosas al resto de candidatos, o solo a mí y a mis compañeras?"
+                "text": "Est-ce qu'ils diront ces choses aux autres candidats, ou seulement à moi et à mes collègues femme?"
             }
         ]
     },
 
     "question9": {
         "root": {
-            "text": "¡Ah! Casi lo olvido. ¿Tienes algún familiar a tu cargo o tienes pensado tener hijos en los próximos años? Ya sabes que a veces es difícil compatibilizar todo."
+            "text": "Ah, j'allais oublier, avez-vous des personnes à charge ou prévoyez-vous d'avoir des enfants dans les prochaines années ? Vous savez qu'il est parfois difficile de tout concilier."
         },
 
         "question": {
-            "text": "¿Qué te parece raro en esta escena?"
+            "text": "Qu'est-ce qui vous semble étrange dans cette scène ?"
         },
         "answer": [
             {
-                "text": "Que asuman que serás la encargada de cuidar a tus familiares y personas mayores."
+                "text": "Qu'il supposes que tu serais l'aidante de vos proches et des personnes âgées."
             },
             {
-                "text": "Que casi se le olvide preguntar sobre este tema."
+                "text": "Qu'il ai presque oublié de poser une question à ce sujet."
             },
             {
-                "text": "Que te pregunten por la compatibilización al final de la entrevista."
+                "text": "Qu'il t'interroge sur la compatibilité à la fin de l'entretien."
             }
         ],
 
         "wrong": {
-            "text": "¿Y qué me dices de que asuman que seré la encargada de cuidar a los niños o personas mayores?"
+            "text": "Qu'en est-il de l'hypothèse selon laquelle c'est moi qui m'occuperai des enfants ou des personnes âgées ?"
         },
         "right": {
-            "text": "Tener hijos, cuidar de mayores... ¿Qué le importa a esta gente si lo hago o no? Y más importante, ¿quién dice que lo haría yo y no mi pareja?"
+            "text": "Avoir des enfants, s'occuper de personnes âgées... Qu'importe à ces personnes que je le fasse ou non ? Et surtout, qui dit que c'est moi qui le ferais et pas mon partenaire?"
         }
     }
 }

@@ -1,162 +1,162 @@
 {
     "AntonioConversation": {
         "root": {
-            "text": "Hola, ¿qué tal?"
+            "text": "Bonjour, comment allez-vous ?"
         },
         "line1": {
-            "text": "¿Qué hay?"
+            "text": "Qu'est-ce qu'il y a ?"
         },
         "line2": {
-            "text": "¿También vienes a la entrevista? ¿Sabes si hay que esperar mucho?"
+            "text": "Venez-vous également à l'entretien ? Savez-vous si l'attente est longue ?"
         },
         "line3": {
-            "text": "¿Tú también? ¿Acaso es que te presentas para el puesto?"
+            "text": "Vous aussi ? Vous postulez à l'emploi ?"
         },
         "line4": {
-            "text": "A eso he venido, claro. ¿Por? ¿Hay algún problema?"
+            "text": "C'est pour cela que je suis venu, bien sûr. Pourquoi ? Y a-t-il un problème ?"
         },
         "line5": {
-            "text": "No, hombre. ¿Qué problema va a haber? Es solo que..."
+            "text": "Non, mec, quel est le problème ? C'est juste que..."
         },
         "rethoricalChoices": [
             {
-                "text": "¿Sí?"
+                "text": "Oui?"
             },
             {
-                "text": "(A saber.)"
+                "text": "(A comprendre)"
             }
         ],
         "doubt": {
-            "text": "Es solo que cada vez tengo más claro que no me van a dar el puesto."
+            "text": "C'est juste qu'il devient de plus en plus clair pour moi que je n'obtiendrai pas le poste."
         },
         "reaction": [
             {
-                "text": "Bueno, somos muchos candidatos, pero también hay mucha demanda. Si no tenemos suerte aquí, podemos probar en otros sitios."
+                "text": "Nous sommes beaucoup de candidats, mais il y a aussi beaucoup de demandes. Si nous n'avons pas de chance ici, nous pouvons essayer ailleurs."
             },
             {
-                "text": "¿Por qué lo dices?"
+                "text": "Pourquoi dites-vous cela ?"
             }
         ],
         "accusation": {
-            "text": "Supongo que eso es verdad. Pero no creo que yo tenga opciones. Tú, en cambio..."
+            "text": "Je suppose que c'est vrai. Mais je ne pense pas avoir le choix. Toi, par contre..."
         },
         "quotas": [
             {
-                "text": "Ya sabes, hay muchas candidaturas. Pero también están las cuotas que cumplir y las ayudas que dan a las empresas."
+                "text": "Vous savez, il y a beaucoup de candidatures. Mais il y a aussi les quotas à atteindre et le soutien qui est apporté aux entreprises."
             },
             {
-                "text": "Ya sabes, por contratar a cierto tipo de personas."
+                "text": "Vous savez, pour l'embauche de certains types de personnes.."
             }
         ],
         "changeTopic": [
             {
-                "text": "(No me gusta por dónde está yendo la conversación, voy a callarme.)"
+                "text": "(Je n'aime pas la tournure que prend cette conversation, je vais me taire.)"
             },
             {
-                "text": "Simplemente hazlo lo mejor que puedas y no te preocupes."
+                "text": "Faites seulement de votre mieux et ne vous inquiétez pas."
             }
         ],
         "equality": [
             {
-                "text": "¡Es que así es imposible! Mucha igualdad, pero luego todo es que si machismo, que si discriminación positiva, que si cuotas, que si ayudas a extranjeros, a minusválidos..."
+                "text": "C'est impossible ! Beaucoup d'égalité, mais ensuite c'est le sexisme, la discrimination positive, les quotas, l'aide aux étrangers, aux handicapés..."
             },
             {
-                "text": "¿Y los que hemos estudiado pero somos normales? A la calle todos. ¿Sabes qué te digo? Que os quedéis con el puesto. Paso de esperar aquí para nada."
+                "text": "Qu'en est-il de ceux d'entre nous qui ont étudié mais qui sont normaux ? Dans la rue, tous. Vous savez ce que je dis ? Gardez le travail. Je n'attends pas ici pour rien."
             }
         ]
     },
     "JaimeConversation": {
         "root": {
-            "text": "Perdona, ¿también has venido a la entrevista de <<position || programming: programador junior || dataScience: analista de datos>>?"
+            "text": "Excusez-moi, êtes-vous également venu à l'entretien pour le poste de <<position || programming:programmeur|| dataScience:analyste de données>> junior?"
         },
         "line1": {
-            "text": "Sí, a ver qué tal se me da. ¿Entonces tú también estás aquí por las entrevistas?"
+            "text": "Oui, voyons comment je me débrouille. Vous êtes donc ici pour les entretiens aussi ?"
         },
         "responses": [
             {
-                "text": "Sí, a ver si tengo suerte. He hecho pocas entrevistas."
+                "text": "Oui, voyons si j'ai de la chance. J'ai passé quelques entretiens."
             },
             {
-                "text": "Sí. Acabo de terminar la carrera y me he preparado mucho para esta entrevista."
+                "text": "Oui, je viens de terminer mes études et je me suis beaucoup préparée à cet entretien."
             }
         ],
         "encourage": {
-            "text": "Seguro que te va bien, no te preocupes."
+            "text": "Je suis sûr que tout ira bien, ne vous inquiétez pas."
         },
         "jokeLuck": {
-            "text": "Entonces no hace falta que te desee suerte, je, je."
+            "text": "Je n'ai donc pas besoin de vous souhaiter bonne chance, heh, heh."
         },
         "interviews": {
-            "text": "Esto de las entrevistas es bastante sencillo. Al final acabas cogiéndole gustillo y todo."
+            "text": "Le principe de l'entretien est assez simple. En fin de compte, vous finissez par l'aimer et s'y habituer."
         },
         "askWaiting": [
             {
-                "text": "¿Llevas esperando mucho tiempo? Estoy un poco de los nervios."
+                "text": "Vous attendez depuis longtemps ? Je suis un peu à cran."
             },
             {
-                "text": "¿Y por qué te interesa esta empresa?"
+                "text": "Et pourquoi vous intéressez-vous à cette entreprise ?"
             },
             {
-                "text": "¿Sabes si ha pasado ya mucha gente para las entrevistas?"
+                "text": "Savez-vous si de nombreuses personnes ont déjà passé des entretiens ?"
             }
         ],
         "waitingEarly": {
-            "text": "La verdad es que sí, he venido antes de tiempo."
+            "text": "La vérité est que, oui, je suis arrivé tôt."
         },
         "notInterested": {
-            "text": "Bueno, no es que me interese especialmente. Pero me gusta hacer entrevistas e intentarlo en todos los sitios."
+            "text": "Bon, ce n'est pas que cela m'intéresse particulièrement. Mais j'aime faire des entretiens et essayer partout."
         },
         "waitingLong": {
-            "text": "Llevo ya una hora y solo han pasado un par de personas. No es que me hayan hecho esperar tanto, je, je. Es que he venido antes de tiempo."
+            "text": "Cela fait une heure que j'attends et seules deux personnes sont déjà passées. Non pas que l'on m'ait fait attendre aussi longtemps, heh, heh. C'est juste que je suis arrivé en avance."
         },
         "avoidHome": {
-            "text": "Así no paso tanto tiempo en casa."
+            "text": "Je passe donc moins de temps à la maison."
         },
         "responseHome": [
             {
-                "text": "(Menudo personaje, venir para estar esperando... Mejor ni pregunto.)"
+                "text": "(Quel personnage, qui vient pour être en train d'attendre.... Je ferais mieux de ne même pas demander.)"
             },
             {
-                "text": "¿Y eso? ¿Es que te aburres en casa?"
+                "text": "Comment cela se fait-il ? Vous vous ennuyez à la maison ?"
             }
         ],
         "defensive": {
-            "text": "No me mires así."
+            "text": "Ne me regardez pas comme ça."
         },
         "girlfriend": [
             {
-                "text": "Así mi chica no tiene tanto tiempo para echarme la bronca. Que si \"Jaime, has quemado la camisa\". Que si \"Jaime, la ropa hay que separarla por colores\"."
+                "text": "De cette façon, ma copine n'a pas autant de temps pour me gronder. Et si \"Jacques, tu as brûlé la chemise\" ?. Et si \"Jacques, tu dois séparer les vêtements par couleur\"."
             },
             {
-                "text": "No valgo para las tareas del hogar, a ella se le da mucho mejor. No se da cuenta de que pone las expectativas muy altas, y aunque lo intente, no llego, je, je."
+                "text": "Je ne suis pas doué pour les tâches ménagères, elle l'est beaucoup plus. Elle ne se rend pas compte qu'elle place la barre trop haut, et même si j'essaie, je n'y arrive pas, heh, heh."
             }
         ],
         "reaction": [
             {
-                "text": "Claro. Te entiendo."
+                "text": "Bien sûr. Je vous comprends."
             },
             {
-                "text": "(Este tío es tonto.) Quizás, si trabajaras más en casa, no tendrías esos problemas."
+                "text": "(Ce type est un imbécile.) Peut-être que si vous travailliez davantage à la maison, vous n'auriez pas ces problèmes."
             }
         ],
         "helpAttempt": {
-            "text": "Que yo intento ayudar, pero no sirvo para esto. Doy gracias todos los días por haber conocido a Nieves... ¡Es una santa!"
+            "text": "J'essaie d'aider, mais je ne suis pas douée. Je remercie chaque jour d'avoir rencontré Neige.... C'est une sainte !"
         },
         "messUp": [
             {
-                "text": "¡Qué va! Cada vez que intento ayudar, lo estropeo más. Nieves es una santa por aguantarme. No todo el mundo vale para todo."
+                "text": "Pas question ! Chaque fois que j'essaie d'aider, je gâche encore plus les choses. Neige est une sainte pour me supporter. Tout le monde n'est pas bon pour tout."
             },
             {
-                "text": "Yo, por ejemplo, no sirvo para planchar. Seguro que en tu casa pasa lo mismo. Qué le vamos a hacer."
+                "text": "Par exemple, je ne suis pas douée pour le repassage. Je suis sûr que c'est la même chose chez vous. On n'y peut rien."
             }
         ],
         "goodbye": {
-            "text": "Bueno, parece que me llaman. ¡Un gusto conocerte!"
+            "text": "Il semble que l'on m'appelle. Enchanté de vous rencontrer !"
         }
     },
     "door": {
         "root": {
-            "text": "(Todavía no es la hora que me habían indicado. Podría ver qué más cosas hay por el edificio.)"
+            "text": "(Ce n'est pas encore l'heure pour l'entretien. J'ai pu voir ce qu'il y a d'autre dans le bâtiment.)"
         }
     }
 }

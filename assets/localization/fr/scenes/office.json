@@ -1,110 +1,110 @@
 {
     "root": [
         {
-            "text": "Buenos días. Por favor, siéntate."
+            "text": "Bonjour. Asseyez-vous, s'il vous plaît."
         },
         {
-            "text": "¿Qué tal? Espero que no lleves mucho tiempo esperando."
+            "text": "Comment allez-vous ? J'espère que vous n'avez pas attendu trop longtemps."
         }
     ],
     "choices": [
         {
-            "text": "Estoy bien, gracias."
+            "text": "Je vais bien, merci."
         },
         {
-            "text": "Bueno, ha sido una mañana... peculiar."
+            "text": "Eh bien, la matinée a été... particulière."
         }
     ],
 
     "good": {
-        "text": "Me alegro."
+        "text": "Je m'en réjouis."
     },
 
     "notSoGood": {
-        "text": "¿Y eso? ¿Has tenido algún problema?"
+        "text": "Comment cela se fait-il ? Avez-vous eu des problèmes ?"
     },
     "comment": {
-        "text": "Ah, no, solo era un comentario."
+        "text": "Ah, non, c'était juste un comentaire."
     },
     "sure": {
-        "text": "Genial."
+        "text": "Génial."
     },
 
     "introduction": [
         {
-            "text": "Antes de continuar, me gustaría presentarnos. Yo soy Andrés Rodríguez y esta es mi compañera, Luisa."
+            "text": "Avant de poursuivre, je voudrais nous présenter. Je suis André Rodríguez et voici ma collègue, Louise."
         },
         {
-            "text": "Ambos trabajamos en el departamento de Recursos Humanos de esta empresa. Somos los encargados de las entrevistas de hoy."
+            "text": "Nous travaillons tous les deux dans le département des Ressources Humaines de cette entreprise. Nous sommes chargés des entretiens d'aujourd'hui."
         },
         {
-            "text": "Por cierto... Luisa, ¿te importaría ser tú quien tome las notas? Sabes que me encanta tu forma de escribir porque tienes mejor letra que yo y tomas notas de forma mucho más organizada."
+            "text": "D'ailleurs... Louise, tu veux bien prendre des notes ? Tu sais que j'aime ta façon d'écrire parce que tu as une meilleure écriture que moi et que tu prends des notes de façon beaucoup plus organisée."
         }
     ],
     "startQuestion": {
-        "text": "Como quieras. Bueno, en primer lugar, nos gustaría saber..."
+        "text": "Comme tu le souhaites. Bon, tout d'abord, nous aimerions savoir..."
     },
     "interruption": {
-        "text": "No te preocupes, Luisa. Ya hago yo las preguntas."
+        "text": "Ne t'inquiétes pas, Louise. Je poserai moi-même les questions."
     },
     "mock": {
-        "text": "*Murmura* \"yi higui yi lis priguintis\". Idiota."
+        "text": "*Murmure* \"ji posiri mi-mime les qistions\". Idiot."
     },
     "distracted": {
-        "text": "Perdona, no te he oído. ¿Me dices algo?"
+        "text": "Désolé, je n'ai pas entendu, est-ce que tu m'as dit quelque chose ?"
     },
     "gaslight": {
-        "text": "Que... que me parece perfecto. Así me puedo concentrar en... tomar notas."
+        "text": "C'est... c'est parfait pour moi. Je peux donc me concentrer sur... sur prendre des notes."
     },
     "gaslighted": {
-        "text": "Perfecto."
+        "text": "Parfait."
     },
     "repeat": {
-        "text": "Perfectísimo."
+        "text": "Parfaitement."
     },
     "start": [
         {
-            "text": "Genial, pues empecemos."
+            "text": "Très bien, alors commençons."
         },
         {
-            "text": "Dinos, ¿por qué quieres trabajar con nosotros?"
+            "text": "Dites-nous, pourquoi voulez-vous travailler avec nous ?"
         }
     ],
     "answer1": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "Acabo de terminar la carrera y estoy buscando una empresa para desarrollarme como profesional."
+            "text": "Je viens de terminer mes études et je cherche une entreprise pour me développer en tant que professionnel."
         },
         {
-            "text": "<<position || programming: Sé la reputación que tiene desarrollando programas innovadores. Creo que con mi formación, mi curiosidad e iniciativa podré contribuir en el diseño de los proyectos que tienen trazados para este año. || dataScience: Sé el alcance que tiene a nivel nacional. Creo que con mi formación, mi curiosidad e iniciativa podré contribuir a obtener resultados fiables para cada proyecto en el que trabajemos.>>"
+            "text": "<<position || programming: Je sais que vous avez la réputation de développer des programmes innovants. Je pense que ma formation, ma curiosité et mon esprit d'initiative me permettront de contribuer à la conception des projets que vous avez prévus pour cette année. || dataScience: Je sais à quel point elle a une portée nationale. Je pense qu'avec ma formation, ma curiosité et mon sens de l'initiative, je pourrai contribuer à l'obtention de résultats fiables pour chaque projet sur lequel nous travaillerons.>>"
         },
         {
-            "text": "Es una gran oportunidad para aprender y creo que puedo aportar mucho al equipo."
+            "text": "C'est une excellente occasion d'apprendre et je pense que je peux apporter beaucoup à l'équipe."
         }
     ],
 
     "question2": [
         {
-            "text": "Somos una empresa con sedes en diferentes países, con las que colaboramos a menudo. Por eso necesitamos gente que se desenvuelva en otros idiomas."
+            "text": "Nous sommes une entreprise ayant des bureaux dans différents pays, avec lesquels nous collaborons souvent. C'est pourquoi nous avons besoin de personnes qui parlent couramment d'autres langues."
         },
         {
-            "text": "¿Qué nivel de inglés tienes?"
+            "text": "Quel est votre niveau d'anglais ?"
         }
     ],
     "answer2": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "Tengo un nivel medio. Hace poco, obtuve el B2."
+            "text": "J'ai un niveau intermédiaire. J'ai récemment obtenu le B2."
         },
         {
-            "text": "Tengo un nivel alto. Hace unos meses, obtuve el C1 mediante un examen de Cambridge."
+            "text": "J'ai un niveau élevé. Il y a quelques mois, j'ai obtenu le C1 grâce à un examen de Cambridge."
         },
         {
-            "text": "Leo algunas cosillas en inglés y me defiendo al hablar y escribir."
+            "text": "Je lis un peu en anglais et je peux parler et écrire en anglais."
         }
     ],
 
@@ -113,261 +113,261 @@
             "text": "Bien, bien."
         },
         {
-            "text": "<<position || programming: Como empresa centrada en el desarrollo de software, necesitamos gente que tenga cierta base programando. || dataScience: Aunque no seamos una empresa centrada en el desarrollo de software, necesitamos gente que tenga cierta base programando.>>"
+            "text": "<<position || programming: En tant qu'entreprise axée sur le développement de logiciels, nous avons besoin de personnes ayant une certaine base de programmation. || dataScience: Bien que nous ne soyons pas une société de développement de logiciels, nous avons besoin de personnes ayant une certaine base de programmation.>>"
         },
         {
-            "text": "¿Cuál es su experiencia programando? ¿Qué lenguajes ha utilizado?"
+            "text": "Quelle est votre expérience en matière de programmation ? Quels sont les langages que vous avez utilisés ?"
         }
     ],
     "answer3": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "He tenido varias asignaturas de programación y, por tanto, he usado diferentes lenguajes."
+            "text": "J'ai suivi plusieurs cours de programmation et j'ai donc utilisé différents langages."
         },
         {
-            "text": "En la universidad participé en varios proyectos, que desarrollé utilizando lenguajes orientados a objetos."
+            "text": "À l'université, j'ai participé à plusieurs projets que j'ai développés à l'aide de langages orientés objet."
         },
         {
-            "text": "Desde que empecé la carrera he desarrollado diferentes programas utilizando <<position || programming: , principalmente, C++. También he trabajado otros lenguajes como Java y Javascript. || dataScience: Python.>>"
+            "text": "Depuis que j'ai commencé ma formation, j'ai développé différents programmes en utilisant <<position || programming:principalement C++. J'ai également travaillé avec d'autres langages tels que Java et Javascript.|| dataScience:Python.>>"
         }
     ],
 
     "question4": [
         {
-            "text": "De acuerdo."
+            "text": "D'accord."
         },
         {
-            "text": "También nos interesa saber si has <<position || programming: utilizado algún sistema de control de versiones como Git. || dataScience: trabajado con bases de datos y si has desarrollado alguna.>>"
+            "text": "Nous sommes également intéressés de savoir si vous avez <<position || programming: utilisé un système de contrôle de version tel que Git.|| dataScience: travaillé avec des bases de données et si vous en avez développé.>>"
         }
     ],
     "answer4": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "Claro, <<position || programming: lo || dataScience: las >> he utilizado para las prácticas de la carrera."
+            "text": "Bien sûr, <<position || programming: je l'ai utilisé || dataScience: je les ai utilisés >> pour les TPs durant mes études."
         },
         {
-            "text": "Por supuesto. Desde que empecé a <<position || programming: desarrollar software, Git ha sido una herramienta esencial para trabajar en equipo o a solas. Pueden echar un vistazo a todo mi trabajo de la carrera en mis repositorios. || dataScience: estudiar, las bases de datos han sido una herramienta esencial para recoger y clasificar datos. Me alegra decir que he podido crear alguna, aunque no fuera la más completa. >>"
+            "text": "Depuis que j'ai commencé à <<position || programming:développer des logiciels, Git est un outil essentiel pour travailler en équipe ou seul. Vous pouvez jeter un coup d'œil à tous mes travaux de mes années d'études dans mes dépôts Git.|| dataScience:étudier. Les bases de données ont été un outil essentiel pour la collecte et la classification des données. Je suis heureux de pouvoir dire que j'ai pu en créer une, même si elle n'était pas la plus complète.>>"
         },
         {
-            "text": "Sí, todos mis proyectos universitarios <<position || programming: tienen un repositorio en GitHub, para facilitar el trabajo en equipo. || dataScience: los hice con bases de datos, para facilitar la recogida de datos.>>"
+            "text": "Oui, tous mes projets universitaires <<position || programming:disposent d'un dépôt sur GitHub, pour faciliter le travail en équipe.|| dataScience:, je les ai réalisés avec des bases de données, pour faciliter la collecte des données.>>"
         }
     ],
 
     "question5": [
         {
-            "text": "Muy bien. Vamos a pasar a otro tipo de preguntas, menos técnicas."
+            "text": "Très bien. Passons à d'autres questions, moins techniques."
         },
         {
-            "text": "¿Dónde te ves de aquí a cinco años? ¿Qué quieres conseguir?"
+            "text": "Où vous voyez-vous dans cinq ans ? Quels sont vos objectifs ?"
         }
     ],
     "answer5": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "Es mucho tiempo, pueden pasar tantas cosas que no sé qué decir. Nunca me lo había planteado."
+            "text": "C'est long, il peut se passer tellement de choses que je ne sais pas quoi dire. Je n'y avais jamais pensé auparavant."
         },
         {
-            "text": "Me gustaría tener una buena base de experiencia que me permita seguir escalando profesionalmente."
+            "text": "J'aimerais avoir une bonne base d'expérience qui me permette de continuer à gravir les échelons de la carrière professionel."
         },
         {
-            "text": "Me encantaría trabajar en proyectos que me apasionen y que me permitan seguir desarrollándome tanto profesional como personalmente."
+            "text": "J'aimerais travailler sur des projets qui me passionnent et qui me permettent de continuer à me développer tant sur le plan professionnel que personnel."
         }
     ],
 
     "question6": [
         {
-            "text": "Entiendo."
+            "text": "Je comprends."
         },
         {
-            "text": "Al hilo de esta pregunta..."
+            "text": "Et dans le prolongement de cette question..."
         },
         {
-            "text": "¿Tienes pareja?"
+            "text": "Est-ce que vous êtes en couple?"
         }
     ],
     "answer6": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "¿Es esto relevante para el puesto?"
+            "text": "Est-ce pertinent pour le poste ?"
         },
         {
-            "text": "No, quiero centrarme en mi carrera profesional."
+            "text": "Non, je veux me concentrer sur ma carrière professionnelle."
         },
         {
-            "text": "Sí, tengo pareja."
+            "text": "Oui, je suis en couple."
         },
         {
-            "text": "Sí, pero no va a impedir que me dedique de lleno a mi carrera profesional."
+            "text": "Oui, mais cela ne m'empêchera pas de poursuivre ma carrière professionnelle."
         }
     ],
     "avoid6": {
-        "text": "(No quiero faltarles el respeto... A ver qué respondo.)"
+        "text": "(Je ne veux pas leur manquer de respect.... Voyons comment je réagis.)"
     },
     "partnerCommentary": {
-        "text": "Genial, es importante ganar experiencia cuando se es joven."
+        "text": "Génial, il est important d'acquérir de l'expérience quand on est jeune."
     },
 
     "question7": [
         {
-            "text": "Como empresa internacional, a veces es necesario enviar desarrolladores a otros países durante algunos días."
+            "text": "En tant qu'entreprise internationale, il est parfois nécessaire d'envoyer des <<position || programming:programmeurs|| dataScience:data scientists>> dans d'autres pays pour quelques jours."
         },
         {
-            "text": "¿Tendrás disponibilidad para viajar?"
+            "text": "Serez-vous disponible pour voyager ?"
         }
     ],
     "answer7": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "Por supuesto que la tengo. Siempre me gusta cumplir con mis compromisos, y el trabajo es de los más importantes para mí."
+            "text": "Bien sûr que je suis disponible. J'aime toujours respecter mes engagements, et le travail est l'un des plus importants pour moi."
         },
         {
-            "text": "Tendría que estudiarlo pero, si es necesario, viajaría."
+            "text": "Je devrais l'étudier mais, si nécessaire, je me déplacerais."
         }
     ],
 
     "question8": [
         {
-            "text": "Interesante. Déjame decirte que tienes una voz muy agradable, aunque quizá es demasiado suave."
+            "text": "Intéressant. Permettez-moi de vous dire que vous avez une très belle voix, même si elle est peut-être trop douce."
         },
         {
-            "text": "Te lo digo porque me da miedo que no sepas hacerte valer ante tus compañeros cuando sea necesario."
+            "text": "Je vous le dis parce que je crains que vous ne puissiez pas vous affirmer devant vos collègues lorsque c'est nécessaire."
         }
     ],
     "answer8": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "Es verdad que a veces no comparto todas las ideas que tengo, pero cuando lo hago, la gente suele escucharme."
+            "text": "Il est vrai que parfois je ne partage pas toutes les idées que j'ai, mais lorsque je le fais, les gens m'écoutent généralement."
         },
         {
-            "text": "Cuando he aportado mis ideas a proyectos en los que he trabajado, he sabido argumentarlas sin tener que elevar mi tono."
+            "text": "Lorsque j'ai apporté mes idées aux projets sur lesquels j'ai travaillé, j'ai pu les argumenter sans avoir à hausser le ton."
         },
         {
-            "text": "Si el resto de compañeros están dispuestos a escuchar mis ideas, no debería haber problemas."
+            "text": "Si les autres collègues sont prêts à écouter mes idées, il ne devrait pas y avoir de problème."
         }
     ],
 
     "question9": [
         {
-            "text": "Muy bien."
+            "text": "Très bien."
         },
         {
-            "text": "También me gustaría decirte que creo que puedes aportar un toque único al equipo."
+            "text": "Je voudrais également vous dire que je pense que vous pouvez apporter une touche unique à l'équipe."
         },
         {
-            "text": "Me parece que puedes aportar cierta humanidad y calidez al equipo."
+            "text": "Je pense que vous pouvez apporter une certaine humanité et une certaine chaleur humaine à l'équipe."
         }
     ],
     "answer9": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "Pensaba que el puesto era para <<position || programming: desarrollar software || dataScience: analizar datos >>, no para \"aportar calidez\"."
+            "text": "Je pensais que le poste était destiné à <<position || programming: développer des logiciels || dataScience: analyser des données >>, non pour \"apporter une certaine chaleur humaine à l'équipe.\"."
         },
         {
-            "text": "Supongo que es importante fomentar un buen ambiente de trabajo."
+            "text": "Je pense qu'il est important de favoriser un bon environnement de travail."
         },
         {
-            "text": "Y no solo eso; tengo muchas ganas de empezar a dar mis ideas y demostrar mi capacidad técnica."
+            "text": "Et ce n'est pas tout : j'ai hâte de commencer à donner mes idées et à démontrer mes compétences techniques."
         }
     ],
     "avoid9": {
-        "text": "(Mejor no digo nada...)"
+        "text": "(Je ferais mieux de ne rien dire...)"
     },
 
     "question10": [
         {
-            "text": "Ya por último quiero comentarte que este es un trabajo muy exigente. En el pasado hemos tenido problemas con personas que, en los momentos de mayor presión, se derrumban."
+            "text": "Enfin, je voudrais dire qu'il s'agit d'un travail très exigeant. Par le passé, nous avons eu des problèmes avec des personnes qui, en période de forte pression, s'effondraient."
         },
         {
-            "text": "¿No serás de estas personas que se derrumban al trabajar bajo presión?"
+            "text": "Vous ne faites pas partie de ces personnes qui s'effondrent lorsqu'elles travaillent sous pression ?"
         }
     ],
     "answer10": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "Para nada. Ante situaciones de estrés, soy capaz de concentrarme y sacar el trabajo adelante."
+            "text": "Pas du tout. Dans les situations de stress, je suis capable de me concentrer et d'accomplir mon travail."
         },
         {
-            "text": "Pero, ¿esto a qué viene?"
+            "text": "Mais quel est l'intérêt ?"
         },
         {
-            "text": "No creo que a nadie le guste trabajar bajo presión, pero tampoco tengo problemas con ello."
+            "text": "Je pense que personne n'aime travailler sous pression, mais cela ne me pose aucun problème non plus."
         }
     ],
     "avoid10": {
-        "text": "(Menudas preguntas... A ver qué respondo)"
+        "text": "(Quelles questions... Voyons comment je réponds)"
     },
 
     "question11": [
         {
-            "text": "¡Ah! Casi lo olvido. Respecto al tema de viajar..."
+            "text": "Ah, j'allais oublier. A propos de voyage..."
         },
         {
-            "text": "¿Tienes algún familiar a tu cargo o tienes pensado tener hijos en los próximos años?"
+            "text": "Avez-vous des personnes à charge ou prévoyez-vous d'avoir des enfants dans les prochaines années ?"
         },
         {
-            "text": "Ya sabes que a veces es difícil compatibilizar todo."
+            "text": "Vous savez qu'il est parfois difficile de tout concilier."
         }
     ],
     "answer11": [
         {
-            "text": "Mirar mi CV."
+            "text": "Regarder mon CV."
         },
         {
-            "text": "¿Otra vez con esas?"
+            "text": "Encore une fois ?"
         },
         {
-            "text": "Como le decía antes, hay muchas cosas que pueden ocurrir, y no he pensado mucho en el futuro."
+            "text": "Comme je l'ai déjà dit, beaucoup de choses peuvent arriver et je n'ai pas beaucoup réfléchi à l'avenir."
         },
         {
-            "text": "Como le decía antes, quiero centrarme totalmente en el trabajo. Aunque tenga familia, no me va a impedir trabajar correctamente."
+            "text": "Comme je l'ai déjà dit, je veux me concentrer entièrement sur le travail. Même si j'ai une famille, cela ne m'empêchera pas de travailler correctement."
         }
     ],
     "avoid11": {
-        "text": "(Después de haber aguantado tanto, no voy a responder ahora así. Ya queda poco.)"
+        "text": "(Après avoir enduré tant de choses, je ne vais pas réagir comme ça maintenant. Il ne reste plus grand-chose.)"
     },
 
     "endInterview": {
-        "text": "Genial. Con esto hemos terminado la entrevista. Muchas gracias por tu tiempo."
+        "text": "C'est très bien. L'entretien est terminé. Merci beaucoup pour le temps que vous nous avez accordé."
     },
     
     "hired": {
-        "text": "Tendremos en cuenta tu candidatura y te avisaremos cuando terminemos el proceso de entrevistas."
+        "text": "Nous examinerons votre candidature et vous informerons lorsque nous aurons terminé le processus d'entretien."
     },
     "doubt": {
-        "text": "No puedo adelantarle mucha más información, pero he de decirte que puedes encajar muy bien en el puesto. "
+        "text": "Je ne peux pas vous donner beaucoup plus d'informations, mais je dois vous dire que vous pouvez très bien correspondre à ce poste."
     },
     "notHired": [
         {
-            "text": "Creo que, con lo que hemos visto, no terminas de encajar en el puesto que estamos buscando."
+            "text": "Je pense que, d'après ce que nous avons vu, vous ne correspondez pas tout à fait au poste que nous recherchons."
         },
         {
-            "text": "Pero nos guardamos tu CV por si hubiera otro puesto que encajara mejor."
+            "text": "Mais nous conserverons votre CV au cas où un autre poste vous conviendrait mieux."
         }
     ],
 
     "thanks": {
-        "text": "De nuevo, nos gustaría agradecerte tu tiempo y desearte un buen día."
+        "text": "Nous vous remercions à nouveau pour le temps que vous nous avez accordé et vous souhaitons une bonne journée."
     },
     "contact": {
-        "text": "En las próximas semanas nos pondremos en contacto contigo."
+        "text": "Nous vous contacterons dans les semaines à venir."
     },
     "return": {
-        "text": "Ha sido... toda una experiencia. Debería volver a casa."
+        "text": "Cela a été... une sacrée expérience. Je devrais rentrer chez moi."
     }
 }

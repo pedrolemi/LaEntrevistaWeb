@@ -2,13 +2,17 @@
     "play": "Jouer",
     "credits": "Crédits",
     "questions": "Questions",
+    "questionsWarningTitle": "Attention!",
+    "questionsWarning": "Il est recommandé de terminer le jeu avant d'accéder aux questions. Voulez-vous quand même y accéder ?", 
+    "yes": "Oui",
+    "no": "Non",
 
     "platform": "Portail d'offres d'emploi",
     "programming": "Programation",
     "data": "Analyse de données",
 
     "meetingRoomSign": "Salle de réunions",
-    "cafeteriaSign": "Cafeteria",
+    "cafeteriaSign": "Caféteria",
     "hr": "Ressources Humaines",
 
     "30min": "30 minutes plus tard...",

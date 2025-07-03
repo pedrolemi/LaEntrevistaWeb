@@ -1,4 +1,5 @@
 import BootScene from "./game/scenes/bootScene.js";
+import PreloaderScene from "./game/scenes/preloaderScene.js";
 import UI from "./game/UI/UI.js";
 
 import MainMenu from "./game/scenes/mainMenu.js";
@@ -22,7 +23,6 @@ import Question8 from "./game/scenes/questions/question8.js";
 import Question9 from "./game/scenes/questions/question9.js";
 import LanguageMenu from "./game/scenes/languageMenu.js";
 
-
 const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
 const CONFIG = {
     width: MAX_W,
@@ -35,6 +35,7 @@ const CONFIG = {
     scene: [
         // Carga de assets
         BootScene,
+        PreloaderScene,
 
         LanguageMenu,
         MainMenu,
@@ -56,7 +57,7 @@ const CONFIG = {
         Question7,
         Question8,
         Question9,
-        
+
         UI,
     ],
     autoFocus: true,

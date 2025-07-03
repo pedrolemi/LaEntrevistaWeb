@@ -30,12 +30,11 @@ export default class BootScene extends BaseBootScene {
             getSceneDialogPath("questions"),
             getSceneDialogPath("waitingRoom")
         ];
-        let namespaces = [
+        let basicNamespaces = [
             "names",
             "CVs",
             "scenes",
             "creditsTitles",
-            "creditsNames",
         ]
 
         let loadAssets = () => {
@@ -43,11 +42,14 @@ export default class BootScene extends BaseBootScene {
             this.loadBackgrounds();
             this.loadCharacters();
             this.loadUI();
+
+            this.load.setPath("");
+            this.load.json("creditsNames", this.LOCALIZATION_PATH + "/creditsNames.json");
         }
 
         let bg = this.add.image(0, 0, "blankScreen").setOrigin(0, 0);
 
-        super.create(loadAssets, true, dialogNamespaces, namespaces);
+        super.create(loadAssets, true, dialogNamespaces, basicNamespaces);
 
         let dialogManager = DialogManager.create();
         dialogManager.init();

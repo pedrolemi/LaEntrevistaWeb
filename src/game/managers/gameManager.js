@@ -25,11 +25,11 @@ export default class GameManager extends Singleton {
     }
 
     init() {
-        this.ui = this.sceneManager.getScene("UI");
+        this.startLanguageMenu();
 
+        // TEST
         // this.startGame();
         // this.startMainMenu();
-        this.startLanguageMenu();
     }
 
     startGame() {
@@ -46,7 +46,7 @@ export default class GameManager extends Singleton {
 
         // this.blackboard.set("position", "dataScience");
 
-        // this.startHouseScene();
+        this.startHouseScene();
 
         // TEST
         // this.startMainMenu();
@@ -62,6 +62,11 @@ export default class GameManager extends Singleton {
     }
 
     startMainMenu(fadeAnim = true) {
+        if (this.ui == null) {
+            this.sceneManager.runInParalell("UI");
+            this.ui = this.sceneManager.getScene("UI");
+        }
+        
         this.sceneManager.changeScene("MainMenu", null, fadeAnim);
     }
 
@@ -118,7 +123,6 @@ export default class GameManager extends Singleton {
     increaseInteractedCharacters() {
         ++this.nInteractedCharacters;
         if (this.nInteractedCharacters >= this.N_REQUIRED_INTERACTIONS) {
-            console.log(this.nInteractedCharacters);
             this.dispatcher.dispatch("allPeopleInteracted");
         }
     }

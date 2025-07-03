@@ -75,9 +75,10 @@ export default class waitingRoom extends LaEntrevistaBaseScene {
         });
 
 
-
+        let textConfig = {...this.signTextConfig};
+        textConfig.align = "center"
         let textArea = new TextArea(this, 1227, 280, 95, 60, this.localizationManager.translate("humanResourcesSign", "scenes"),
-            this.signTextConfig, this.sys.game.debug.enable);
+            textConfig, this.sys.game.debug.enable);
         textArea.setOrigin(0.5, 0.5);
         textArea.adjustFontSize();
 

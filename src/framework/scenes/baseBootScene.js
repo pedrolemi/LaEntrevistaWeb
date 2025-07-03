@@ -78,18 +78,22 @@ export default class BaseBootScene extends Phaser.Scene {
     /**
     * Aqui se deben cargar el resto de assets como imagenes, videos o los archivos de localizacion
     * 
-    * IMPORTANTE: para configurar la barra de carga y los archivos de localizacion, es necesario modificar
-    * los atributos de la clase corresopondiente antes de llamar a este metodo con super.create();
+    * IMPORTANTE: para configurar la barra de carga es necesario modificar los 
+    * atributos corresopondiente antes de llamar a este metodo con super.create();
     * 
     * @param {Function} loadAssets - funcion con la carga del resto de assets
     * @param {Boolean} makeLoadingBar - true para mostrar la barra de carga al empezar, false en caso contrario
+    * @param {Array} dialogNamespaces - array con la ruta de los archivos de la estructura y traduccion de los nodos de dialogo (sin la extension) 
+    *                                   usando assets/localization/structure/ O assets/localization/{idioma}/ como raiz
+    * @param {Array} basicNamespaces - array con la ruta de los archivos de traduccion general (sin la extension) con assets/localization/{idioma}/ como raiz
     */
-    create(loadAssets = null, makeLoadingBar = true, dialogNamespaces = [], namespaces = []) {
+    create(loadAssets = null, makeLoadingBar = true, dialogNamespaces = [], basicNamespaces = []) {
         if (makeLoadingBar) {
             this.createLoadingBar();
         }
-        this.loadi18next(dialogNamespaces, namespaces);
+        this.loadi18next(dialogNamespaces, basicNamespaces);
         this.loadDialogs(dialogNamespaces);
+
         if (loadAssets != null && typeof loadAssets == "function") {
             loadAssets();
         }
@@ -111,9 +115,10 @@ export default class BaseBootScene extends Phaser.Scene {
         // Al completar la carga, emitir el evento start para avisar que se puede continuar
         this.load.once("complete", () => {
             this.events.emit("start");
-
-            sceneManager.runInParalell("UI");
         });
+
+        // Reinicia la ruta de carga de assets
+        this.load.setPath("");
     }
 
 
@@ -185,22 +190,22 @@ export default class BaseBootScene extends Phaser.Scene {
     /**
     * Se inicializa y configura el plugin de i18next para la internacionalizacion 
     */
-    loadi18next(dialogNamespaces, namespaces) {
-        // Se unen todos los namespaces que se usaran
-        let allNamespaces = dialogNamespaces.concat(namespaces);
+    loadi18next(dialogNamespaces, basicNamespaces) {
+        // Se unen todos los basicNamespaces que se usaran
+        let allNamespaces = dialogNamespaces.concat(basicNamespaces);
 
         // Convertir "/" a "\\" para rutas en i18next (requisito del plugin)
         allNamespaces.forEach((namespace, index) => {
             allNamespaces[index] = namespace.replace(/\//g, "\\");
         });
 
-        /*
-    * i18next es un framework ampliamente utilizado para internacionalizacion en Javascript.
-    * Mas informacion y descarga:
-    *   - Pagina del plugin para Phaser3: https://rexrainbow.github.io/phaser3-rex-notes/docs/site/i18next/
-    *   - Documentacion oficial: https://www.i18next.com/
-    */
 
+        /*
+        * i18next es un framework ampliamente utilizado para internacionalizacion en Javascript.
+        * Mas informacion y descarga:
+        *   - Pagina del plugin para Phaser3: https://rexrainbow.github.io/phaser3-rex-notes/docs/site/i18next/
+        *   - Documentacion oficial: https://www.i18next.com/
+        */
         // Se inicializa el plugin de traduccion con la configuracion especificada
         this.plugins.get(BaseBootScene.REX_TEXT_TRANSLATION_PLUGIN_KEY).initI18Next(this, {
             // Idioma inicial por defecto
@@ -212,14 +217,14 @@ export default class BaseBootScene extends Phaser.Scene {
             // Se precargan todos los idiomas soportados. En caso contrario, al usar un idioma por
             // primera vez, este no ha cargado todavia y se usa el por defecto
             preload: this.i18nConfig.supportedLanguages,
-            // Namespaces a cargar (archivos de traduccion)
+            // basicNamespaces a cargar (archivos de traduccion)
             ns: allNamespaces,
             // Modo debug (logs por consola)
             debug: this.sys.game.debug.enable,
             // Ruta base para cargar los archivos de traduccion en formato JSON
             backend: {
                 // {{lng}} --> nombre de las carpetas de idiomas
-                // {{ns}} --> nombre de los archivos JSON namespaces
+                // {{ns}} --> nombre de los archivos JSON basicNamespaces
                 loadPath: this.LOCALIZATION_PATH + "/{{lng}}/{{ns}}.json"
             }
         })

@@ -29,34 +29,87 @@ export default class Credits extends LaEntrevistaBaseScene {
             align: "left",
         }
 
-        this.TEXT_MARGIN = 40;
-        let TEXT_SPACING = 13;
-
         let bg = this.add.image(0, 0, "credits").setOrigin(0, 0);
 
         let titlesNamespace = "creditsTitles";
-        let namesNamespace = "creditsNames";
+        let names = this.cache.json.get("creditsNames");
 
-        let startY = 85;
-        let txt = this.createText(startY, this.localizationManager.translate("directors", titlesNamespace), this.TITLES_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("director1", namesNamespace), this.INFO_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("director2", namesNamespace), this.INFO_TEXT_CONFIG);
+        let textParams = [
+            { key: "directors", ns: titlesNamespace },
+            { key: "director1", ns: names },
+            { key: "director2", ns: names },
+            
+            { key: "development", ns: titlesNamespace },
+            { key: "developer", ns: names },
 
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING * 2, this.localizationManager.translate("development", titlesNamespace), this.TITLES_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("developer", namesNamespace), this.INFO_TEXT_CONFIG);
+            { key: "idea", ns: titlesNamespace },
+            { key: "idea1", ns: names },
+            { key: "idea2", ns: names },
+            { key: "idea3", ns: names },
 
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING * 2, this.localizationManager.translate("idea", titlesNamespace), this.TITLES_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("idea1", namesNamespace), this.INFO_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("idea2", namesNamespace), this.INFO_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("idea3", namesNamespace), this.INFO_TEXT_CONFIG);
+            { key: "art", ns: titlesNamespace },
+            { key: "artist", ns: names },
 
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING * 2, this.localizationManager.translate("art", titlesNamespace), this.TITLES_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("artist", namesNamespace), this.INFO_TEXT_CONFIG);
+            { key: "port", ns: titlesNamespace },
+            { key: "port1", ns: names },
+            { key: "port2", ns: names },
 
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING * 2, this.localizationManager.translate("port", titlesNamespace), this.TITLES_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("port1", namesNamespace), this.INFO_TEXT_CONFIG);
-        txt = this.createText(txt.y + txt.displayHeight + TEXT_SPACING, this.localizationManager.translate("port2", namesNamespace), this.INFO_TEXT_CONFIG);
+            { key: "frLocalization", ns: titlesNamespace },
+            { key: "fr1", ns: names },
+        ]
 
+        this.TEXT_MARGIN = 40;
+        let TEXT_SPACING = 13;
+        
+        let START_Y = 70;
+        let LIMIT_Y = 740;
+        // let LIMIT_Y = 600;
+        let MAX_HEIGHT = LIMIT_Y - START_Y - TEXT_SPACING;
+        
+        
+        let textsContainer = this.add.container(this.calculatePosition(START_Y).x + this.TEXT_MARGIN, START_Y);
+        let textObj = null;
+        textParams.forEach((param) => {
+            let y = START_Y;
+            if (textObj != null) {
+                y = textObj.y + textObj.displayHeight + TEXT_SPACING;
+            }
+
+            let textConfig = this.TITLES_TEXT_CONFIG;
+            let text = "";
+            if (param.ns == titlesNamespace) {
+                text = this.localizationManager.translate(param.key, titlesNamespace) + ":";
+                if (textObj != null) {
+                    y += TEXT_SPACING;
+                }
+            }
+            else {
+                textConfig = this.INFO_TEXT_CONFIG;
+                text = names[param.key];
+            }
+            
+            textObj = this.createText(y, text, textConfig).setOrigin(0, 0);
+            textsContainer.add(textObj);
+
+        });
+
+        let dims = textsContainer.getBounds();
+        textsContainer.setSize(dims.width, dims.height);
+
+        textsContainer.list.forEach((child) => {
+            let matrix = child.getWorldTransformMatrix();
+            // console.log(child.y)
+            // console.log(matrix.ty)
+            child.x -= (matrix.tx - child.x);
+            child.y -= (matrix.ty - child.y);
+        });
+
+        if (dims.height > MAX_HEIGHT) {
+            let scale = MAX_HEIGHT / dims.height;
+            let prevWidth = dims.width;
+            let prevScale = textsContainer.scale;
+            textsContainer.setScale(scale);
+        }
 
         // let video = this.add.video(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, "exitCreditsAnimation");
         // video.setVisible(false);

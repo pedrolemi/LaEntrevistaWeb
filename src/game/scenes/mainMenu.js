@@ -155,12 +155,14 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         let popup = new AnimatedContainer(this, 0, 0);
         let blackBg = this.add.rectangle(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT, 0x000000, 0.5).setOrigin(0, 0);
 
-        // TODO: Cambiar
         let textRect = this.add.rectangle(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH * POPUP_SCALE, this.CANVAS_HEIGHT * POPUP_SCALE, 0xFFFFFF, 1)
             .setOrigin(0.5, 0.5);
 
-        let warningTitleText = new TextArea(this, textRect.x, textRect.y - textRect.displayHeight / 2 + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
-            textRect.displayHeight * 0.15, this.localizationManager.translate("questionsWarningTitle", namespace), this.TEXT_CONFIG, this.sys.game.debug.enable);
+        let warningTitleY = textRect.y - textRect.displayHeight / 2 + this.TEXT_MARGIN * 1.5;
+        let warningTitleMaxWidth = textRect.displayWidth - this.TEXT_MARGIN * 2;
+        let warningTitleMaxHeight = textRect.displayHeight * 0.15;
+        let warningTitleText = new TextArea(this, textRect.x, warningTitleY, warningTitleMaxWidth, warningTitleMaxHeight, 
+            this.localizationManager.translate("questionsWarningTitle", namespace), this.TEXT_CONFIG, this.sys.game.debug.enable);
         warningTitleText.setOrigin(0.5, 0);
         warningTitleText.adjustFontSize();
 
@@ -170,22 +172,29 @@ export default class MainMenu extends LaEntrevistaBaseScene {
             width: textRect.displayWidth - this.TEXT_MARGIN * 2,
             useAdvancedWrap: true
         }
-        let warningText = new TextArea(this, textRect.x, warningTitleText.y + warningTitleText.displayHeight + this.TEXT_MARGIN, textRect.displayWidth - this.TEXT_MARGIN * 2,
-            textRect.displayHeight * 0.5, this.localizationManager.translate("questionsWarning", namespace), warningTextConfig, this.sys.game.debug.enable);
+
+        let warningTextY = warningTitleY + warningTitleMaxHeight + this.TEXT_MARGIN / 2;
+        let warningTextMaxWidth = textRect.displayWidth - this.TEXT_MARGIN;
+        let warningTextMaxHeight = textRect.displayHeight * 0.5 - this.TEXT_MARGIN;
+        let warningText = new TextArea(this, textRect.x, warningTextY, warningTextMaxWidth, warningTextMaxHeight, 
+            this.localizationManager.translate("questionsWarning", namespace), warningTextConfig, this.sys.game.debug.enable);
         warningText.setOrigin(0.5, 0.5);
         warningText.adjustFontSize();
         warningText.y += warningText.displayHeight / 2;
 
+        // this.add.rectangle(warningTitleText.x, warningTitleY, warningTitleMaxWidth, warningTitleMaxHeight, 0xfff, 0.5).setOrigin(0.5, 0)
+        // this.add.rectangle(warningText.x, warningTextY, warningText.displayWidth, warningTextMaxHeight, 0x000, 0.5).setOrigin(0.5, 0)
 
-        let buttonsY = warningText.y + warningText.displayHeight;
-        let buttonsWidth = textRect.displayWidth / 2 - this.TEXT_MARGIN * 2;
-        let buttonsHeight = warningTitleText.displayHeight * 1.5;
+        let buttonsY = warningTextY + warningTextMaxHeight + this.TEXT_MARGIN / 2;
+        let buttonsHeight = textRect.displayHeight - (warningTitleMaxHeight + warningTextMaxHeight + this.TEXT_MARGIN * 4);
+        let buttonsWidth = buttonsHeight * 1.6 * 2;
 
         let yesButton = new TextButton(this, textRect.x - buttonsWidth / 2 - this.TEXT_MARGIN / 2, buttonsY, buttonsWidth, buttonsHeight);
         yesButton.createRectButton(this.localizationManager.translate("yes", namespace), this.TEXT_CONFIG, () => {
             this.gameManager.startMirrorScene(true);
             yesButton.disableInteractive();
         }, "yesButton", 25, 0xe02424, 1, 5);
+        yesButton.y += yesButton.displayHeight / 2;
 
         let noButton = new TextButton(this, textRect.x + buttonsWidth / 2 + this.TEXT_MARGIN / 2, buttonsY, buttonsWidth, buttonsHeight);
         noButton.createRectButton(this.localizationManager.translate("no", namespace), this.TEXT_CONFIG, () => {
@@ -194,7 +203,8 @@ export default class MainMenu extends LaEntrevistaBaseScene {
                 noButton.setInteractive();
             });
         }, "noButton", 25, 0x36b030, 1, 5);
-
+        noButton.y += noButton.displayHeight / 2;
+        
         popup.add(blackBg);
         popup.add(textRect);
         popup.add(warningTitleText);

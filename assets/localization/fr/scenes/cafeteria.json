@@ -55,18 +55,18 @@
             "text": "Hé, quoi de neuf les filles ? J'ai failli ne pas vous voir. De quoi parliez-vous ?"
         },
         "line1": {
-            "text": "Je disais justement à Rebecca que je ne sais pas comment faire pour <<position || programming:trouver tous les nombres premiers dans une liste|| dataScience:calculer une certaine probabilité>>."
+            "text": "Je disais justement à Rebecca que je ne sais pas comment faire pour <<position || programming: trouver tous les nombres premiers dans une liste|| dataScience: calculer une certaine probabilité>>."
         },
         "line2": [
             {
-                "text": "Ah, comme c'est intéressant ! <<position || programming:Connais-tu le tamis d'Eratosthène ?|| dataScience:Sais-tu comment faire une approche normale ?>>"
+                "text": "Ah, comme c'est intéressant ! <<position || programming: Connais-tu le tamis d'Eratosthène ?|| dataScience: Sais-tu comment faire une approche normale ?>>"
             },
             {
-                "text": "Avec <<position || programming:cet algorithme tu élimines tous les nombres qui ne sont pas premiers et il ne reste que les nombres premiers|| dataScience:cette méthode tu peux obtenir des résultats relativement fiables pour ce que tu essayes de faire>>."
+                "text": "Avec <<position || programming: cet algorithme tu élimines tous les nombres qui ne sont pas premiers et il ne reste que les nombres premiers|| dataScience: cette méthode tu peux obtenir des résultats relativement fiables pour ce que tu essayes de faire>>."
             }
         ],
         "line3": {
-            "text": "C'est ce que je lui disais, mais cela ne semble pas être la solution qu'il recherchait."
+            "text": "C'est ce que je lui disais, mais cela ne semble pas être la solution qu'elle recherchait."
         },
         "line4": {
             "text": "Bon, je cherchais une deuxième option."

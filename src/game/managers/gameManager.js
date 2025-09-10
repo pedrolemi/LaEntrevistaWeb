@@ -125,6 +125,7 @@ export default class GameManager extends Singleton {
                 this.ui.enablePauseMenu(false);
 
                 // TRACKER EVENT
+                this.gameManager.progressGame();
                 this.trackerManager.sendCompleteGame(true);
             }
             else {

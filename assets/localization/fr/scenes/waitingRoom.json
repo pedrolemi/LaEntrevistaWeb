@@ -38,7 +38,7 @@
             }
         ],
         "accusation": {
-            "text": "Je suppose que c'est vrai. Mais je ne pense pas avoir le choix. Toi, par contre..."
+            "text": "Je suppose que c'est vrai. Mais je ne pense pas avoir le choix. Vous, par contre..."
         },
         "quotas": [
             {
@@ -77,7 +77,7 @@
                 "text": "Oui, voyons si j'ai de la chance. J'ai passé quelques entretiens."
             },
             {
-                "text": "Oui, je viens de terminer mes études et je me suis beaucoup préparée à cet entretien."
+                "text": "Oui, je viens de terminer mes études et je me suis beaucoup préparé à cet entretien."
             }
         ],
         "encourage": {
@@ -110,7 +110,7 @@
             "text": "Cela fait une heure que j'attends et seules deux personnes sont déjà passées. Non pas que l'on m'ait fait attendre aussi longtemps, heh, heh. C'est juste que je suis arrivé en avance."
         },
         "avoidHome": {
-            "text": "Je passe donc moins de temps à la maison."
+            "text": "Je passe ainsi moins de temps à la maison."
         },
         "responseHome": [
             {
@@ -147,7 +147,7 @@
                 "text": "Pas question ! Chaque fois que j'essaie d'aider, je gâche encore plus les choses. Neige est une sainte pour me supporter. Tout le monde n'est pas bon pour tout."
             },
             {
-                "text": "Par exemple, je ne suis pas douée pour le repassage. Je suis sûr que c'est la même chose chez vous. On n'y peut rien."
+                "text": "Par exemple, je ne suis pas doué pour le repassage. Je suis sûr que c'est la même chose chez vous. On n'y peut rien."
             }
         ],
         "goodbye": {
@@ -156,7 +156,7 @@
     },
     "door": {
         "root": {
-            "text": "(Ce n'est pas encore l'heure pour l'entretien. J'ai pu voir ce qu'il y a d'autre dans le bâtiment.)"
+            "text": "(Ce n'est pas encore l'heure de l'entretien. Voyons ce qu'il y a d'autre dans le bâtiment.)"
         }
     }
 }

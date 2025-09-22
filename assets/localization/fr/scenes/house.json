@@ -93,7 +93,7 @@
             }
         ],
         "findOffers": {
-            "text": "Il semble y avoir deux offres. L'une pour le développement de logiciels et l'autre en tant qu'analyste de données. Lequel dois-je solliciter ?"
+            "text": "Il semble y avoir deux offres. L'une pour le développement de logiciels et l'autre en tant qu'analyste de données. A laquelle dois-je postuler ?"
         },
         "noOffers": {
             "text": "Il me semble que je n'arrive pas à trouver aucune offre. Je vais vérifier les informations que j'ai rentré, peut-être l'ai-je mal rempli..."

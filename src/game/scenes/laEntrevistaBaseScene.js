@@ -37,8 +37,8 @@ export default class LaEntrevistaBaseScene extends BaseScene {
     * y la vuelve a activar una vez que todos hayan salido
     * @param {Array} characters - array con los personajes que deben salir
     * @param {Phaser.Math.Vector2} exitPoint - punto destino
-    * @param {Number} scaleFactor - factor para disminuir o aumentar la escala de los personajes el movimiento (opcional)
-    * @param {Number} depth - profundidad que se asigna los personajes al salir (opcional)
+    * @param {number} scaleFactor - factor para disminuir o aumentar la escala de los personajes el movimiento (opcional)
+    * @param {number} depth - profundidad que se asigna los personajes al salir (opcional)
     */
     leaveRoom(characters, exitPoint, scaleFactor = 1, depth = 1) {
         let nCharactersExited = 0;
@@ -93,7 +93,7 @@ export default class LaEntrevistaBaseScene extends BaseScene {
     /**
     * Configura un objeto para que sea interactivo y lo agrega al conjunto de objetos interactuables
     * @param {Phaser.GameObjects.GameObject} gameObject - objeto que se va a hacer interactivo 
-    * @param {Object} prevConfig - configuracion a la que agregar el parametro del cursor 
+    * @param {object} prevConfig - configuracion a la que agregar el parametro del cursor 
     */
     setInteractive(gameObject, config = {}) {
         super.setInteractive(gameObject, config);

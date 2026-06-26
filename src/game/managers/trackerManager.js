@@ -5,8 +5,8 @@ class Completable {
     * Clase que representa un objeto que puede ser completado.
     * Proporciona metodos para notificar el inicio, progreso y finalizacion del objeto
     * @param {SeriousGameTracker} seriousGameTracker - instancia del tracker
-    * @param {String} id - identificador de los eventos
-    * @param {String} type - tipo del elemento Completable
+    * @param {string} id - identificador de los eventos
+    * @param {string} type - tipo del elemento Completable
     */
     constructor(seriousGameTracker, id, type) {
         this.seriousGameTracker = seriousGameTracker;

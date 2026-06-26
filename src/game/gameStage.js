@@ -3,8 +3,8 @@ import TrackerManager from "./managers/trackerManager.js";
 export default class GameStage {
     /**
     * Representa una etapa del juego que pueder ser completada
-    * @param {String} id - identificador de la etapa 
-    * @param {Number} totalSteps - numero total de pasos para completar la etapa
+    * @param {string} id - identificador de la etapa 
+    * @param {number} totalSteps - numero total de pasos para completar la etapa
     */
     constructor(id, totalSteps) {
         let trackerManager = TrackerManager.getInstance();
@@ -24,8 +24,8 @@ export default class GameStage {
 
     /**
     * Actualiza el progreso de la etapa
-    * @param {Number} errors - numero de errores que han ocurrido en la etapa (opcional)
-    * @param {Object} extensions - informacion adicional que enviar al evento
+    * @param {number} errors - numero de errores que han ocurrido en la etapa (opcional)
+    * @param {object} extensions - informacion adicional que enviar al evento
     */
     progress(errors = null, extensions = {}) {
         if (this.initialized) {

@@ -132,7 +132,7 @@ export default class Character extends Phaser.GameObjects.PathFollower {
     /**
     * Si no se esta moviendo actualmente, inicia el movimiento hacia target
     * @param {Phaser.Math.Vector2} target - punto destino
-    * @param {Number} scaleFactor - factor para disminuir o aumentar la escala durante el movimiento (opcional)
+    * @param {number} scaleFactor - factor para disminuir o aumentar la escala durante el movimiento (opcional)
     */
     moveTowards(target, scaleIncrease = 1) {
         this.path.lineTo(target.x, target.y);

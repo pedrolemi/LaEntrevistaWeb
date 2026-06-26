@@ -28,9 +28,9 @@ export default class LanguageMenu extends LaEntrevistaBaseScene {
     /**
     * Crea un boton interactivo con una bandera para seleccionar el idioma
     * 
-    * @param {String} frame - nombre del frame (pais) dentro del atlas
-    * @param {String} language - codigo del idioma que se activara al hacer clic
-    * @param {Number} scale - escala inicial del boton (opcional)
+    * @param {string} frame - nombre del frame (pais) dentro del atlas
+    * @param {string} language - codigo del idioma que se activara al hacer clic
+    * @param {number} scale - escala inicial del boton (opcional)
     * @returns {Phaser.GameObjects.Image} - boton interactivo de la bandera
     */
     createFlagButton(frame, language, scale = 1) {

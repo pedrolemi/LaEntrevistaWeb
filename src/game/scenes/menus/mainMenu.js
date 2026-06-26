@@ -126,6 +126,7 @@ export default class MainMenu extends LaEntrevistaBaseScene {
 
     createGameButton(x, y, width, height, rotation, text) {
         let button = new InteractiveContainer(this, 0, 0);
+        button.setOrigin(0.5, 0.5);
         let rect = this.add.rectangle(0, 0, width, height, 0xFFFFFF, 1).setOrigin(0.5, 0.5);
         let textObj = new TextArea(this, rect.x, rect.y, rect.displayWidth, rect.displayHeight, text, this.TEXT_CONFIG, 0.5, 0.5, this.TEXT_MARGIN, this.TEXT_MARGIN);
         textObj.adjustFontSize();
@@ -156,6 +157,7 @@ export default class MainMenu extends LaEntrevistaBaseScene {
         const POPUP_SCALE = 0.5;
 
         let popup = new AnimatedContainer(this, 0, 0);
+        popup.setOrigin(0, 0);
         let blackBg = this.add.rectangle(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT, 0x000000, 0.5).setOrigin(0, 0);
 
         let textRect = this.add.rectangle(this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH * POPUP_SCALE, this.CANVAS_HEIGHT * POPUP_SCALE, 0xFFFFFF, 1)
@@ -195,7 +197,7 @@ export default class MainMenu extends LaEntrevistaBaseScene {
                 this.gameManager.startMirrorScene(true);
             }, "yesButton", 0.5, 0, 25, 0xe02424);
         tintAnimation(yesButton, yesButton.list, yesButton.onClick, true);
-
+        
         let noButton = new RectTextButton(this, textRect.x + textRect.displayWidth / 4, buttonsY, buttonsWidth, buttonsHeight,
             this.localizationManager.translate("no", namespace), this.TEXT_CONFIG, () => {
                 // TRACKER EVENT

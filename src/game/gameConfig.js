@@ -24,6 +24,7 @@ import Question8 from "./scenes/gameLoop/questions/question8.js";
 import Question9 from "./scenes/gameLoop/questions/question9.js";
 
 import UI from "./UI/UI.js";
+import Test from "./test.js";
 
 
 const MAX_W = 1600, MAX_H = 900, MIN_W = 320, MIN_H = 240;
@@ -36,6 +37,7 @@ const CONFIG = {
     type: Phaser.AUTO,
     // Nota: el orden de las escenas es relevante, y las que se encuentren antes en el array se renderizaran por debajo de las siguientes
     scene: [
+        Test,
         // Carga de assets
         BootScene,
         PreloaderScene,
@@ -83,9 +85,11 @@ const CONFIG = {
         },
         zoom: 1,
         parent: "game",
+        expandParent: false
     },
 }
 
-gameDebug.enable = false;
+gameDebug.enable = true;
 gameDebug.enableText = false;
 const GAME = new Phaser.Game(CONFIG);
+console.log(Phaser.Input.Keyboard.Events.ANY_KEY_DOWN)

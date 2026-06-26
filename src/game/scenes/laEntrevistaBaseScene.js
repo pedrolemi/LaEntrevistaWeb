@@ -92,7 +92,7 @@ export default class LaEntrevistaBaseScene extends BaseScene {
 
     /**
     * Configura un objeto para que sea interactivo y lo agrega al conjunto de objetos interactuables
-    * @param {Phaser.GameObject} gameObject - objeto que se va a hacer interactivo 
+    * @param {Phaser.GameObjects.GameObject} gameObject - objeto que se va a hacer interactivo 
     * @param {Object} prevConfig - configuracion a la que agregar el parametro del cursor 
     */
     setInteractive(gameObject, config = {}) {

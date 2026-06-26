@@ -28,6 +28,7 @@ export default class Mirror extends LaEntrevistaBaseScene {
         let effect = this.add.image(0, 0, "mirrorEffect").setOrigin(0, 0).setAlpha(0.6);
 
         let sceneElements = new AnimatedContainer(this, 0, 0);
+        sceneElements.setOrigin(0, 0);
         sceneElements.add(white);
         sceneElements.add(playerChar);
         sceneElements.add(bg);
@@ -44,6 +45,7 @@ export default class Mirror extends LaEntrevistaBaseScene {
         const TEXT_PADDING = 50;
         if (!params.fromMenu) {
             let transition = new InteractiveContainer(this, 0, 0);
+            transition.setOrigin(0, 0);
             let transitionBg = this.add.image(0, 0, "30min").setOrigin(0, 0);
 
             let transitionText = new TextArea(this, this.CANVAS_WIDTH / 2, this.CANVAS_HEIGHT / 2, this.CANVAS_WIDTH, this.CANVAS_HEIGHT,

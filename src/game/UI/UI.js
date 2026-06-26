@@ -89,6 +89,7 @@ export default class UI extends BaseUI {
             "", this.optionsQuestionTextConfig, 0.5, 0.5);
 
         this.questionBgElements = new AnimatedContainer(this, 0, 0);
+        this.questionBgElements.setOrigin(0, 0);
         this.questionBgElements.add(this.darkBg);
         this.questionBgElements.add(this.questionText);
         this.questionBgElements.setVisible(false);
@@ -118,6 +119,7 @@ export default class UI extends BaseUI {
         const RADIUS_PERCENTAGE = 5;
 
         let pauseMenu = new AnimatedContainer(this, 0, 0).setDepth(1);
+        pauseMenu.setOrigin(0, 0);
         let blackBg = this.add.rectangle(0, 0, this.CANVAS_WIDTH, this.CANVAS_HEIGHT, 0x000000, 0.5).setOrigin(0, 0);
 
         let textureId = "pauseMenu";

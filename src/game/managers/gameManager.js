@@ -107,7 +107,7 @@ export default class GameManager extends Singleton {
     }
 
     startMirrorScene(fromMenu) {
-        if (fromMenu) {
+        if (fromMenu && !this.questionsStage.initialized) {
             this.questionsStage.reset();
             this.resetGame();
         }
@@ -126,6 +126,9 @@ export default class GameManager extends Singleton {
 
                 // TRACKER EVENT
                 this.trackerManager.sendCompleteGame(true);
+            }
+            else {
+                this.questionsStage.reset();
             }
         }
     }
